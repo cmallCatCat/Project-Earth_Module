@@ -3,7 +3,7 @@ using Core.Save_And_Load.Event;
 using Core.Save_And_Load.Utilities;
 using Framework;
 
-namespace Core.Save_And_Load
+namespace Core.Save_And_Load.Systems
 {
     public class SaveAndLoadSystem : AbstractSystem
     {

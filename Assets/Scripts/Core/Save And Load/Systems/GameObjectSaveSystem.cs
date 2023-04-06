@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.Save_And_Load.Event;
+using Core.Save_And_Load.Utilities;
 using Framework;
 using UnityEngine;
 
-namespace Core.Save_And_Load.Utilities
+namespace Core.Save_And_Load.Systems
 {
-    public class GameObjectSaveUtility : AbstractSystem
+    public class GameObjectSaveSystem : AbstractSystem
     {
         private SaveUtility saveUtility;
         private List<GameObject> gameObjects;
@@ -23,24 +24,29 @@ namespace Core.Save_And_Load.Utilities
         {
             gameObjects = Resources.FindObjectsOfTypeAll(typeof(GameObject)).Cast<GameObject>().ToList();
             List<string> keys = new List<string>();
-            for (int index = 0; index < gameObjects.Count; index++)
+            foreach (GameObject gameObject in gameObjects)
             {
-                GameObject gameObject = gameObjects[index];
                 string key = gameObject.GetInstanceID().ToString();
-                ISave[] components = gameObject.GetComponents<ISave>();
-                if (components.Length == 0)
-                {
-                    continue;
-                }
-
-                List<string> types = components.Select(save => save.GetType().FullName).ToList();
-                List<object> data = components.Select(save => save.Save()).ToList();
-                keys.Add(key);
-                saveUtility.SaveList(types, key + "_types");
-                saveUtility.SaveList(data, key + "_data", unity: false);
+                if (SaveGameObject(gameObject, key))
+                    keys.Add(key);
             }
 
             saveUtility.SaveList(keys.ToList(), "gameObjectKeys");
+        }
+
+        private bool SaveGameObject(GameObject gameObject, string key)
+        {
+            ISave[] components = gameObject.GetComponents<ISave>();
+            if (components.Length == 0)
+            {
+                return false;
+            }
+
+            List<string> types = components.Select(save => save.GetType().AssemblyQualifiedName).ToList();
+            List<object> data = components.Select(save => save.Save()).ToList();
+            saveUtility.SaveList(types, key + "_types");
+            saveUtility.SaveList(data, key + "_data", unity: false);
+            return true;
         }
 
         private void OnLoad(LoadEvent obj)
@@ -48,16 +54,16 @@ namespace Core.Save_And_Load.Utilities
             List<string> keys = saveUtility.LoadList<string>("gameObjectKeys");
             foreach (string key in keys)
             {
+                List<string> componentsB = saveUtility.LoadList<string>(key + "_types");
+                List<object> data = saveUtility.LoadList<object>(key + "_data", unity: false);
                 GameObject gameObject = new GameObject();
-                List<string> componentsB =
-                    saveUtility.LoadList<string>(key + "_types");
                 List<Type> components = new List<Type>(componentsB.Count);
                 for (int i = 0; i < componentsB.Count; i++)
                 {
-                    Type type = Type.GetType(componentsB[i]+", Assembly-CSharp");
+                    Type type = Type.GetType(componentsB[i]);
                     components.Add(type);
                 }
-                List<object> data = saveUtility.LoadList<object>(key + "_data", unity: false);
+
                 for (int i = 0; i < components.Count; i++)
                 {
                     ISave save = (ISave)gameObject.AddComponent(components[i]);
