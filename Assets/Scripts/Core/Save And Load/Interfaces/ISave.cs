@@ -1,4 +1,4 @@
-﻿namespace Core.Save_And_Load
+﻿namespace Core.Save_And_Load.Interfaces
 {
     public interface ISave
     {

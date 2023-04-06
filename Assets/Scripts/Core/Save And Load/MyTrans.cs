@@ -2,7 +2,7 @@
 using Vector3 = System.Numerics.Vector3;
 using Vector4 = System.Numerics.Vector4;
 
-namespace Others
+namespace Core.Save_And_Load
 {
     public static class MyTrans
     {

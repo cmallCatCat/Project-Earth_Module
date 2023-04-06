@@ -3,11 +3,11 @@ using Framework;
 
 namespace Core.Save_And_Load.Command
 {
-    public class SaveCommand : AbstractCommand
+    public class LoadCommand : AbstractCommand
     {
         protected override void OnExecute()
         {
-            this.SendEvent<SaveEvent>();
+            this.SendEvent<LoadEvent>();
         }
     }
 }

@@ -17,16 +17,13 @@ namespace Core.Systems
             InventoryModel.InventorySave inventorySave = saveUtility.LoadObject("Inventory",
                 new InventoryModel.InventorySave(new Dictionary<int, Inventory>(), 0));
             inventoryModel.GetLoad(inventorySave);
+
             void OnEvent(SaveEvent e)
             {
                 saveUtility.SaveObject(inventoryModel.GetSave(), "Inventory");
             }
-            
-
 
             this.RegisterEvent<SaveEvent>(OnEvent);
         }
-        
-        
     }
 }

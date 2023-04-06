@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Core.Save_And_Load.Utilities
+namespace Core.QFramework
 {
     [Serializable]
     public struct KeyValueStruct<S, T>
@@ -15,9 +15,10 @@ namespace Core.Save_And_Load.Utilities
             Value = value;
         }
 
-        public override string ToString()
+        public void Deconstruct(out S key, out T value)
         {
-            return $"{nameof(Key)}: {Key}, {nameof(Value)}: {Value}";
+            key = Key;
+            value = Value;
         }
     }
 }

@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace Core.Save_And_Load.Utilities
+namespace Core.Save_And_Load.DictionaryAndList
 {
     public static class SerializeList
     {

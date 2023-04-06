@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Core.QFramework;
 
-namespace Core.Save_And_Load.Utilities
+namespace Core.Save_And_Load.DictionaryAndList
 {
     public static class DictionaryTransList
     {

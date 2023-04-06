@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.QFramework;
 using Core.Save_And_Load.Event;
+using Core.Save_And_Load.Interfaces;
 using Core.Save_And_Load.Utilities;
 using Framework;
 using UnityEngine;
@@ -10,8 +12,8 @@ namespace Core.Save_And_Load.Systems
 {
     public class GameObjectSaveSystem : AbstractSystem
     {
+        private const string POSTFIX = "_data";
         private SaveUtility saveUtility;
-        private List<GameObject> gameObjects;
 
         protected override void OnInit()
         {
@@ -22,31 +24,26 @@ namespace Core.Save_And_Load.Systems
 
         private void OnSave(SaveEvent obj)
         {
-            gameObjects = Resources.FindObjectsOfTypeAll(typeof(GameObject)).Cast<GameObject>().ToList();
+            List<GameObject> gameObjects = Resources.FindObjectsOfTypeAll(typeof(GameObject)).Cast<GameObject>().ToList();
             List<string> keys = new List<string>();
             foreach (GameObject gameObject in gameObjects)
             {
+                //是否需要储存
                 string key = gameObject.GetInstanceID().ToString();
-                if (SaveGameObject(gameObject, key))
-                    keys.Add(key);
+                ISave[] components = gameObject.GetComponents<ISave>();
+                if (components.Length == 0)
+                {
+                    continue;
+                }
+
+                //需要储存
+                List<KeyValueStruct<string,object>> data = components.Select
+                    (save => new KeyValueStruct<string,object>(save.GetType().AssemblyQualifiedName, save.Save())).ToList();
+                saveUtility.SaveList(data, key + POSTFIX, unity: false);
+                keys.Add(key);
             }
 
             saveUtility.SaveList(keys.ToList(), "gameObjectKeys");
-        }
-
-        private bool SaveGameObject(GameObject gameObject, string key)
-        {
-            ISave[] components = gameObject.GetComponents<ISave>();
-            if (components.Length == 0)
-            {
-                return false;
-            }
-
-            List<string> types = components.Select(save => save.GetType().AssemblyQualifiedName).ToList();
-            List<object> data = components.Select(save => save.Save()).ToList();
-            saveUtility.SaveList(types, key + "_types");
-            saveUtility.SaveList(data, key + "_data", unity: false);
-            return true;
         }
 
         private void OnLoad(LoadEvent obj)
@@ -54,20 +51,15 @@ namespace Core.Save_And_Load.Systems
             List<string> keys = saveUtility.LoadList<string>("gameObjectKeys");
             foreach (string key in keys)
             {
-                List<string> componentsB = saveUtility.LoadList<string>(key + "_types");
-                List<object> data = saveUtility.LoadList<object>(key + "_data", unity: false);
                 GameObject gameObject = new GameObject();
-                List<Type> components = new List<Type>(componentsB.Count);
-                for (int i = 0; i < componentsB.Count; i++)
+                // AddComponent
+                List<KeyValueStruct<string,object>> myStructs = saveUtility.LoadList<KeyValueStruct<string,object>>(key + POSTFIX, unity: false);
+                foreach (KeyValueStruct<string,object> t in myStructs)
                 {
-                    Type type = Type.GetType(componentsB[i]);
-                    components.Add(type);
-                }
-
-                for (int i = 0; i < components.Count; i++)
-                {
-                    ISave save = (ISave)gameObject.AddComponent(components[i]);
-                    save.Load(data[i]);
+                    (string typeString, object data) = t;
+                    Type type = Type.GetType(typeString);
+                    ISave save = (ISave)gameObject.AddComponent(type);
+                    save.Load(data);
                 }
             }
         }

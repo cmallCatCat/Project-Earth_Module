@@ -13,7 +13,7 @@ namespace Core.Architectures
         {
             RegisterModel(new InventoryModel());
             RegisterUtility<SaveUtility>(new JsonSaveUtility());
-            RegisterSystem(new InventoryArchiveSystem());
+            // RegisterSystem(new InventoryArchiveSystem());
             RegisterSystem(new GameObjectSaveSystem());
         }
     }
