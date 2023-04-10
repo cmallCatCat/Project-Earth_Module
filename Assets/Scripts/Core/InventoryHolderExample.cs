@@ -1,10 +1,10 @@
 ﻿using Core.Architectures;
 using Core.Inventory_And_Item.Controllers;
-using Framework;
+using QFramework;
 
 namespace Core
 {
-    public class ARInventoryHolder: InventoryHolder
+    public class InventoryHolderExample: InventoryHolder
     {
         public override IArchitecture GetArchitecture()
         {

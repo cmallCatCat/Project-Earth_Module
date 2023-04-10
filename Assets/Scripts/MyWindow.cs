@@ -4,7 +4,7 @@ using Core.Inventory_And_Item.Data;
 using Core.Inventory_And_Item.Models;
 using Core.QFramework;
 using Core.Save_And_Load.DictionaryAndList;
-using Framework;
+using QFramework;
 using UnityEditor;
 
 public class MyWindow : EditorWindow, IController

@@ -1,4 +1,5 @@
-﻿using Core.Save_And_Load.Interfaces;
+﻿using Core.Save_And_Load.Expansions;
+using Core.Save_And_Load.Interfaces;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using Vector3 = System.Numerics.Vector3;
@@ -23,6 +24,7 @@ namespace Core.Save_And_Load.Commons
             public Vector3 position;
             public Vector4 rotation;
             public Vector3 scale;
+            public string name;
 
             public TransformData(Transform transform)
             {
@@ -30,11 +32,13 @@ namespace Core.Save_And_Load.Commons
                 position = vector3;
                 rotation = vector4;
                 scale = s;
+                name = transform.name;
             }
 
             public void Deconstruct(Transform transform)
             {
                 transform.Set(position, rotation, scale);
+                transform.name = name;
             }
         }
     }

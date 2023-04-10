@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using Core.Inventory_And_Item.Data;
-using Core.Inventory_And_Item.Events;
 using Core.Inventory_And_Item.Models;
 using Core.Save_And_Load.Event;
 using Core.Save_And_Load.Utilities;
-using Framework;
+using QFramework;
 
 namespace Core.Systems
 {

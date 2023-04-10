@@ -1,7 +1,14 @@
-﻿namespace Core
+﻿using Core.Architectures;
+using QFramework;
+using UnityEngine;
+
+namespace Core
 {
-    public class GameController
+    public abstract class GameController: MonoBehaviour,IController
     {
-        
+        public IArchitecture GetArchitecture()
+        {
+            return InGame.Interface;
+        }
     }
 }

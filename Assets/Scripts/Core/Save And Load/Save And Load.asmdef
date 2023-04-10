@@ -1,4 +1,16 @@
 {
-	"name": "SaveAndLoad",
-	"references":[ "GUID:242f6b49004943c46b64bcc2652fe727" ]
+    "name": "SaveAndLoad",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9e97e42c28a41430880bee376c274c86"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

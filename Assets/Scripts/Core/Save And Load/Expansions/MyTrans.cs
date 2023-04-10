@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
+using Vector2 = System.Numerics.Vector2;
 using Vector3 = System.Numerics.Vector3;
 using Vector4 = System.Numerics.Vector4;
 
-namespace Core.Save_And_Load
+namespace Core.Save_And_Load.Expansions
 {
     public static class MyTrans
     {
+        public static Vector2 Save(this UnityEngine.Vector2 vector2) =>
+            new Vector2(vector2.x, vector2.y);
+
         public static Vector3 Save(this UnityEngine.Vector3 vector3)
             => new Vector3(vector3.x, vector3.y, vector3.z);
 

@@ -1,9 +1,8 @@
 ﻿using Core.Inventory_And_Item.Models;
-using Core.Save_And_Load;
 using Core.Save_And_Load.Systems;
 using Core.Save_And_Load.Utilities;
 using Core.Systems;
-using Framework;
+using QFramework;
 
 namespace Core.Architectures
 {
@@ -13,7 +12,7 @@ namespace Core.Architectures
         {
             RegisterModel(new InventoryModel());
             RegisterUtility<SaveUtility>(new JsonSaveUtility());
-            // RegisterSystem(new InventoryArchiveSystem());
+            RegisterSystem(new InventoryArchiveSystem());
             RegisterSystem(new GameObjectSaveSystem());
         }
     }
