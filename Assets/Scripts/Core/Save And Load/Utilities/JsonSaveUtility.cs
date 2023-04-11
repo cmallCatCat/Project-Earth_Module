@@ -44,7 +44,8 @@ namespace Core.Save_And_Load.Utilities
         public override void SaveObject<T>(T obj, string path)
         {
             CreateDirectoryIfNotExist(Application.persistentDataPath + "/objects");
-            File.WriteAllText($"{Application.persistentDataPath}/objects/{path}.json", JsonUtility.ToJson(obj));
+            // File.WriteAllText($"{Application.persistentDataPath}/objects/{path}.json", JsonUtility.ToJson(obj));
+            ES3.Save<T>(path + ".json", obj);
         }
 
         #endregion
@@ -92,7 +93,8 @@ namespace Core.Save_And_Load.Utilities
                 return defaultValue;
             }
 
-            return JsonUtility.FromJson<T>(File.ReadAllText($"{Application.persistentDataPath}/objects/{path}.json"));
+            // return JsonUtility.FromJson<T>(File.ReadAllText($"{Application.persistentDataPath}/objects/{path}.json"));
+            return ES3.Load<T>(path + ".json");
         }
 
         #endregion

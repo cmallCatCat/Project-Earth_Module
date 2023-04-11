@@ -1,12 +1,11 @@
 ﻿using Core.Inventory_And_Item.Data;
 using Core.Inventory_And_Item.Models;
-using Core.Save_And_Load.Interfaces;
 using QFramework;
 using UnityEngine;
 
 namespace Core.Inventory_And_Item.Controllers
 {
-    public abstract class InventoryHolder : MonoBehaviour, IController, ISave
+    public abstract class InventoryHolder : MonoBehaviour, IController
     {
         [SerializeField] private int inventoryCapacity;
         [SerializeField] private int inventoryKey = -1;
@@ -15,7 +14,7 @@ namespace Core.Inventory_And_Item.Controllers
         public int InventoryKey => inventoryKey;
         public Inventory Inventory => inventory;
 
-        protected void SetInventory(int inventoryKey)
+        public void SetInventory(int inventoryKey)
         {
             if (this.inventoryKey != -1)
                 UnregisterInventory();
@@ -23,10 +22,10 @@ namespace Core.Inventory_And_Item.Controllers
             inventory = this.GetModel<InventoryModel>().inventories[inventoryKey];
         }
 
-        public void RegisterInventory()
+        public void RegisterInventory(bool isPlayer = false)   
         {
             inventory = new Inventory(inventoryCapacity);
-            inventoryKey = this.GetModel<InventoryModel>().Register(inventory);
+            inventoryKey = this.GetModel<InventoryModel>().Register(inventory, isPlayer);
         }
 
         protected void UnregisterInventory()
@@ -42,15 +41,5 @@ namespace Core.Inventory_And_Item.Controllers
         }
 
         public abstract IArchitecture GetArchitecture();
-
-        public object Save()
-        {
-            return inventoryKey;
-        }
-
-        public void Load(object save)
-        {
-            SetInventory((int)save);
-        }
     }
 }

@@ -13,16 +13,22 @@ namespace Core.Systems
         {
             SaveUtility saveUtility = this.GetUtility<SaveUtility>();
             InventoryModel inventoryModel = this.GetModel<InventoryModel>();
-            InventoryModel.InventorySave inventorySave = saveUtility.LoadObject("Inventory",
-                new InventoryModel.InventorySave(new Dictionary<int, Inventory>(), 0));
-            inventoryModel.GetLoad(inventorySave);
 
-            void OnEvent(SaveEvent e)
+
+            void OnSave(SaveEvent e)
             {
                 saveUtility.SaveObject(inventoryModel.GetSave(), "Inventory");
             }
 
-            this.RegisterEvent<SaveEvent>(OnEvent);
+            void OnLoad(LoadEvent e)
+            {
+                InventoryModel.InventorySave inventorySave = saveUtility.LoadObject("Inventory",
+                    new InventoryModel.InventorySave(new Dictionary<int, Inventory>(), 0));
+                inventoryModel.GetLoad(inventorySave);
+            }
+
+            this.RegisterEvent<SaveEvent>(OnSave);
+            this.RegisterEvent<LoadEvent>(OnLoad);
         }
     }
 }

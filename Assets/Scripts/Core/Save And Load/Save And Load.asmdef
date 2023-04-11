@@ -2,7 +2,8 @@
     "name": "SaveAndLoad",
     "rootNamespace": "",
     "references": [
-        "GUID:9e97e42c28a41430880bee376c274c86"
+        "GUID:9e97e42c28a41430880bee376c274c86",
+        "GUID:912239183abeac544b7c92e8e48dce1d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

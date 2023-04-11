@@ -6,6 +6,7 @@ using Core.Inventory_And_Item.Filters;
 using Core.QFramework;
 using Core.Save_And_Load.DictionaryAndList;
 using QFramework;
+using UnityEngine;
 
 namespace Core.Inventory_And_Item.Models
 {
@@ -14,15 +15,25 @@ namespace Core.Inventory_And_Item.Models
     {
         public int inventoryKey;
         public Dictionary<int, Inventory> inventories; // TODO: 正式运行时改为private
-        
+        private int playerKey = -1;
+
         protected override void OnInit()
         {
             inventoryKey = 0;
             inventories = new Dictionary<int, Inventory>();
         }
 
-        public int Register(Inventory inventory)
+        public int Register(Inventory inventory, bool isPlayer = false)
         {
+            if (isPlayer)
+            {
+                if (playerKey != -1)
+                {
+                    Debug.LogWarning("InventoryModel.Register: PlayerKey is assigned. Please confirm it.");
+                }
+                playerKey = inventoryKey;
+            }
+
             inventories.Add(inventoryKey, inventory);
             return inventoryKey++;
         }
@@ -43,6 +54,8 @@ namespace Core.Inventory_And_Item.Models
             stack.ItemIdentification.Decorator.Remove(decoration);
             this.SendEvent(new UnDecorateEvent(stack, decoration));
         }
+
+        public int PlayerKey => playerKey;
 
         #region 增删改查
 
@@ -116,7 +129,5 @@ namespace Core.Inventory_And_Item.Models
         }
 
         #endregion
-
-        
     }
 }

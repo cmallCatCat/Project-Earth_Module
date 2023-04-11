@@ -7,6 +7,7 @@ using Core.Save_And_Load.Interfaces;
 using Core.Save_And_Load.Utilities;
 using QFramework;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Core.Save_And_Load.Systems
 {
@@ -30,16 +31,17 @@ namespace Core.Save_And_Load.Systems
             {
                 //是否需要储存
                 string key = gameObject.GetInstanceID().ToString();
-                ISave[] components = gameObject.GetComponents<ISave>();
-                if (components.Length == 0)
-                {
-                    continue;
-                }
-
-                //需要储存
-                List<KeyValueStruct<string,object>> data = components.Select
-                    (save => new KeyValueStruct<string,object>(save.GetType().AssemblyQualifiedName, save.Save())).ToList();
-                saveUtility.SaveList(data, key + POSTFIX, unity: false);
+                // ISave[] components = gameObject.GetComponents<ISave>();
+                // if (components.Length == 0)
+                // {
+                //     continue;
+                // }
+                //
+                // //需要储存
+                // List<KeyValueStruct<string, object>> data = components.Select
+                //     (save => new KeyValueStruct<string, object>(save.GetType().AssemblyQualifiedName, save.Save())).ToList();
+                // saveUtility.SaveList(data, key + POSTFIX, unity: false);
+                saveUtility.SaveObject(gameObject, key + POSTFIX);
                 keys.Add(key);
             }
 
@@ -51,16 +53,26 @@ namespace Core.Save_And_Load.Systems
             List<string> keys = saveUtility.LoadList<string>("gameObjectKeys");
             foreach (string key in keys)
             {
-                GameObject gameObject = new GameObject();
-                // AddComponent
-                List<KeyValueStruct<string,object>> myStructs = saveUtility.LoadList<KeyValueStruct<string,object>>(key + POSTFIX, unity: false);
-                foreach (KeyValueStruct<string,object> t in myStructs)
-                {
-                    (string typeString, object data) = t;
-                    Type type = Type.GetType(typeString);
-                    ISave save = (ISave)gameObject.AddComponent(type);
-                    save.Load(data);
-                }
+                // GameObject gameObject = new GameObject();
+                // // AddComponent
+                // List<KeyValueStruct<string, object>> myStructs
+                //     = saveUtility.LoadList<KeyValueStruct<string, object>>(key + POSTFIX, unity: false);
+                // foreach (KeyValueStruct<string, object> t in myStructs)
+                // {
+                //     (string typeString, object data) = t;
+                //     Type type = Type.GetType(typeString);
+                //     if (gameObject.TryGetComponent(type,out Component component))
+                //     {
+                //         if (component is ISave)
+                //         {
+                //             Object.Destroy(component);
+                //         }
+                //     }
+                //     ISave save = (ISave)gameObject.AddComponent(type);
+                //     save.Load(data);
+                // }
+                GameObject loadObject = saveUtility.LoadObject(key+POSTFIX, new GameObject());
+                Object.Instantiate(loadObject);
             }
         }
     }
