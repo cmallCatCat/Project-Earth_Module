@@ -1,60 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
+using Core.Inventory_And_Item.Data.ItemIdentifications;
 using Core.Inventory_And_Item.Filters;
 using UnityEngine;
-using static Core.Inventory_And_Item.Filters.IdentificationFilters;
 
 namespace Core.Inventory_And_Item.Data
 {
     [Serializable]
-    public class ItemSlot : ISerializationCallbackReceiver
+    public class ItemSlot
     {
         [SerializeField] private ItemStack itemStack;
-
-        [SerializeField] private IdentificationFilterType identificationFilterType;
-        [SerializeField] private List<ItemIdentification> customIdentifications;
-        [NonSerialized] private IdentificationFilter identificationFilter;
+        [SerializeReference] private IdentificationFilter identificationFilter;
 
         public ItemSlot()
         {
             itemStack = null;
-            identificationFilter = All;
+            identificationFilter = new U_EnumIdentificationFilter(Array.Empty<string>());
         }
 
         public ItemStack ItemStack => itemStack;
         public IdentificationFilter IdentificationFilter => identificationFilter;
-
-        public void OnBeforeSerialize()
-        {
-            if (IdentificationFilter == All)
-            {
-                identificationFilterType = IdentificationFilterType.All;
-            }
-            else if (IdentificationFilter == None)
-            {
-                identificationFilterType = IdentificationFilterType.None;
-            }
-            else if (IdentificationFilter is CustomIdentificationFilter customIdentificationFilter)
-            {
-                identificationFilterType = IdentificationFilterType.Custom;
-                customIdentifications = customIdentificationFilter.ItemIdentifications;
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException(nameof(IdentificationFilter));
-            }
-        }
-
-        public void OnAfterDeserialize()
-        {
-            identificationFilter = identificationFilterType switch
-            {
-                IdentificationFilterType.All => All,
-                IdentificationFilterType.None => None,
-                IdentificationFilterType.Custom => new CustomIdentificationFilter(customIdentifications),
-                _ => throw new ArgumentOutOfRangeException(nameof(identificationFilterType))
-            };
-        }
 
         internal void SetIdentificationFilter(IdentificationFilter newIdentificationFilter)
         {

@@ -1,12 +1,14 @@
 ﻿#nullable enable
 using System;
 using Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data.ItemIdentifications;
 
 namespace Core.Inventory_And_Item.Filters
 {
-    public class IdentificationFilter
+    [Serializable]
+    public abstract class IdentificationFilter
     {
-        private Predicate<ItemIdentification?> _isMatch;
+        protected Predicate<ItemIdentification?> _isMatch;
 
         internal IdentificationFilter(Predicate<ItemIdentification?> isMatch)
         {

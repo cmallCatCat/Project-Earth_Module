@@ -4,6 +4,6 @@
     {
         All,
         None,
-        Custom
+        Enum
     }
 }

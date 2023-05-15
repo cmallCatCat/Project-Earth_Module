@@ -17,8 +17,4 @@ MonoBehaviour:
   maxStack: 1
   spriteIcon: {fileID: 0}
   spriteInGame: {fileID: 0}
-  decorator:
-    decorations: []
-  references:
-    version: 2
-    RefIds: []
+  itemFeatures: []

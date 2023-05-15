@@ -484,9 +484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9323207486e47374aaef1ec1c0c9c5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryKey: 0
   itemIdentification: {fileID: 11400000, guid: c28147b7f9be0494a9aecc9e49d6b481, type: 2}
-  inventoryHolderExample: {fileID: 0}
+  inventoryModel:
+    inventoryKey: 0
 --- !u!4 &1698715987
 Transform:
   m_ObjectHideFlags: 0

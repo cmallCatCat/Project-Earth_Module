@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Core.QFramework;
 using Core.Save_And_Load.DictionaryAndList;
@@ -15,7 +16,7 @@ namespace Core.Save_And_Load.Utilities
 
         #region Save
 
-        public override void SaveDictionary<S, T>(Dictionary<S, T> dictionary, string path,bool unity = true)
+        public override void SaveDictionary<S, T>(Dictionary<S, T> dictionary, string path, bool unity = true)
         {
             List<KeyValueStruct<S, T>> dictionaryToList = DictionaryTransList.DictionaryToList(dictionary);
             string json = SerializeList.ListToJson(dictionaryToList, unity);
@@ -27,7 +28,7 @@ namespace Core.Save_And_Load.Utilities
             string json = SerializeList.ListToJson(list, unity);
             SaveString(json, path);
         }
-        
+
 
         public override void SaveString(string toSave, string path)
         {
@@ -43,9 +44,8 @@ namespace Core.Save_And_Load.Utilities
 
         public override void SaveObject<T>(T obj, string path)
         {
-            CreateDirectoryIfNotExist(Application.persistentDataPath + "/objects");
-            // File.WriteAllText($"{Application.persistentDataPath}/objects/{path}.json", JsonUtility.ToJson(obj));
-            ES3.Save<T>(path + ".json", obj);
+            // TODO: Save object to file
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -53,7 +53,8 @@ namespace Core.Save_And_Load.Utilities
 
         #region Load
 
-        public override Dictionary<S, T> LoadDictionary<S, T>(string path, Dictionary<S, T> defaultValue = null, bool unity = true)
+        public override Dictionary<S, T> LoadDictionary<S, T>(string path, Dictionary<S, T> defaultValue = null,
+            bool unity = true)
         {
             if (!File.Exists($"{Application.persistentDataPath}/strings/{path}.json")) return defaultValue;
 
@@ -88,13 +89,8 @@ namespace Core.Save_And_Load.Utilities
 
         public override T LoadObject<T>(string path, T defaultValue = default)
         {
-            if (!File.Exists($"{Application.persistentDataPath}/objects/{path}.json"))
-            {
-                return defaultValue;
-            }
-
-            // return JsonUtility.FromJson<T>(File.ReadAllText($"{Application.persistentDataPath}/objects/{path}.json"));
-            return ES3.Load<T>(path + ".json");
+            // TODO: Load object from file
+            throw new System.NotImplementedException();
         }
 
         #endregion

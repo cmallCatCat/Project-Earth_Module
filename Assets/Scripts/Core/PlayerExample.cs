@@ -1,4 +1,5 @@
-﻿using Core.Inventory_And_Item.Controllers;
+﻿using System;
+using Core.Inventory_And_Item.Controllers;
 using Core.Save_And_Load.Commons;
 using Core.Save_And_Load.Interfaces;
 using Newtonsoft.Json.Linq;
@@ -9,10 +10,10 @@ namespace Core
 {
     public class PlayerExample : MonoBehaviour
     {
-        private InventoryHolder inventoryHolder;
-        private SpriteRenderer spriteRenderer;
-        private InventoryGetter inventoryGetter;
-        private ResLoader resLoader = ResLoader.Allocate();
+        [SerializeField]private InventoryHolder inventoryHolder;
+        [SerializeField]private SpriteRenderer spriteRenderer;
+        [SerializeField]private InventoryGetter inventoryGetter;
+        [SerializeField]private ResLoader resLoader = ResLoader.Allocate();
 
         public void RegisterInventory(bool isPlayer = false)
         {

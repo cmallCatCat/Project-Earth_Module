@@ -2,8 +2,7 @@
     "name": "InventoryAndItem",
     "rootNamespace": "",
     "references": [
-        "QFramework",
-        "SaveAndLoad"
+        "QFramework"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,11 +1,13 @@
 ﻿using System;
-using Core.Save_And_Load.Utilities;
+using Core.Inventory_And_Item.Data.ItemIdentifications;
+using Core.QFramework.Framework.Scripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.Inventory_And_Item.Data
 {
     [Serializable]
-    public class ItemStack : ISerializationCallbackReceiver
+    public class  ItemStack : ISerializationCallbackReceiver
     {
         [SerializeField] private int number;
         [NonSerialized] private ItemIdentification itemIdentification;
@@ -53,18 +55,28 @@ namespace Core.Inventory_And_Item.Data
 
         #region 序列化
 
-        [SerializeField] private string itemJson;
+        [SerializeField] private string itemNameSave;
 
         public void OnBeforeSerialize()
         {
-            itemJson = JsonUtility.ToJson(ItemIdentification);
+            itemNameSave = ItemIdentification.GetType().FullName;
         }
 
         public void OnAfterDeserialize()
         {
-            itemIdentification = SOHelper.JsonToScriptableObject<ItemIdentification>(itemJson);
+            ItemIdentification findItemIdentification = SOFinder.FindItemIdentification(itemNameSave);
+            itemIdentification = SOHelper.CloneScriptableObject(findItemIdentification);
         }
 
         #endregion
+    }
+
+    public static class SOFinder
+    {
+        public static ItemIdentification FindItemIdentification(string FullName)
+        {
+            // TODO: 在这里添加查找物品的逻辑
+            throw new NotImplementedException();
+        }
     }
 }

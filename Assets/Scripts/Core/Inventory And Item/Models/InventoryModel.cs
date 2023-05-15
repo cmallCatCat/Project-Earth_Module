@@ -43,18 +43,6 @@ namespace Core.Inventory_And_Item.Models
             inventories.Remove(holder);
         }
 
-        public void Decorate(ItemStack stack, Decoration decoration)
-        {
-            stack.ItemIdentification.Decorator.Add(decoration);
-            this.SendEvent(new DecorateEvent(stack, decoration));
-        }
-
-        public void UnDecorate(ItemStack stack, Decoration decoration)
-        {
-            stack.ItemIdentification.Decorator.Remove(decoration);
-            this.SendEvent(new UnDecorateEvent(stack, decoration));
-        }
-
         public int PlayerKey => playerKey;
 
         #region 增删改查
