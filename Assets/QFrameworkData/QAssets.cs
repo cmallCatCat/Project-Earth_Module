@@ -11,10 +11,10 @@
 namespace QAssetBundle
 {
     
-    public class Itembar_prefab
+    public class Inventorypanel_prefab
     {
-        public const string BundleName = "itembar_prefab";
-        public const string ITEMBAR = "itembar";
+        public const string BundleName = "inventorypanel_prefab";
+        public const string INVENTORYPANEL = "inventorypanel";
     }
     public class Minimalist_cartoon_animal_png
     {

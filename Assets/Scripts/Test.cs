@@ -1,34 +1,37 @@
 using System;
 using Core;
 using Core.Architectures;
-using Core.Inventory_And_Item.Command;
-using Core.Inventory_And_Item.Data;
 using Core.Inventory_And_Item.Data.ItemIdentifications;
-using Core.Inventory_And_Item.Models;
-using Core.Save_And_Load.Command;
 using QFramework;
-using QFramework.UI;
+using UI.InGame;
 using UnityEngine;
 
 public class Test : MonoBehaviour, IController
 {
     public ItemIdentification itemIdentification;
-    public InventoryModel inventoryModel;
     private ResLoader resLoader = ResLoader.Allocate();
 
     private void Awake()
     {
         ResKit.Init();
-        UIKit.OpenPanel<ItemBar>();
-        inventoryModel = this.GetModel<InventoryModel>();
+        UIKit.OpenPanel<InventoryPanel>();
+        UIKit.ClosePanel<InventoryPanel>();
     }
 
     private void OnGUI()
     {
         if (GUILayout.Button("创建"))
         {
+            if (SceneEnvironment.Instance.Player != null)
+            {
+                throw new Exception("Player is already created");
+            }
+
             GameObject loadSync = resLoader.LoadSync<GameObject>(QAssetBundle.Player_prefab.PLAYER);
-            Instantiate(loadSync);
+            GameObject instantiate = Instantiate(loadSync);
+            UIKit.OpenPanel<InventoryPanel>(
+                new InventoryPanelData(instantiate.GetComponentInChildren<InventoryHolderExample>().Inventory));
+            instantiate.name = "Player";
         }
 
         // if (GUILayout.Button("加载"))

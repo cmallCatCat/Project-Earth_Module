@@ -13,3 +13,11 @@ MonoBehaviour:
   m_Name: CreateGameObject
   m_EditorClassIdentifier: 
   toCreate: {fileID: 0}
+  useObjectPool: 0
+  referencePosition: 1
+  position: {x: 0, y: 0}
+  considerHorizontalAxisPosition: 0
+  considerRotationPosition: 0
+  referenceRotation: 1
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  considerHorizontalAxisRotation: 0

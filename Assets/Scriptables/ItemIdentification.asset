@@ -17,4 +17,5 @@ MonoBehaviour:
   maxStack: 1
   spriteIcon: {fileID: 0}
   spriteInGame: {fileID: 0}
-  itemFeatures: []
+  itemFeatures:
+  - {fileID: 11400000, guid: 35e0a350a6bb51445bc0fbe0a022fdb5, type: 2}

@@ -10,16 +10,6 @@ namespace Core
 {
     public class PlayerExample : MonoBehaviour
     {
-        [SerializeField]private InventoryHolder inventoryHolder;
-        [SerializeField]private SpriteRenderer spriteRenderer;
-        [SerializeField]private InventoryGetter inventoryGetter;
-        [SerializeField]private ResLoader resLoader = ResLoader.Allocate();
-
-        public void RegisterInventory(bool isPlayer = false)
-        {
-            inventoryHolder.RegisterInventory(isPlayer);
-        }
-
         private void Update()
         {
             float hor = Input.GetAxis("Horizontal");

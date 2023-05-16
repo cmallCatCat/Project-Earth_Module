@@ -46,9 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a66f5030323458eb53dd4e5a02e3fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryHolder: {fileID: 5625319286754115678}
-  spriteRenderer: {fileID: 8335459827179066613}
-  inventoryGetter: {fileID: 2361322963037962353}
 --- !u!1 &5754585615653142242
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +182,7 @@ MonoBehaviour:
     capacity: 0
     activeIndex: 0
     itemSlots: []
+  isPlayer: 1
 --- !u!114 &2361322963037962353
 MonoBehaviour:
   m_ObjectHideFlags: 0

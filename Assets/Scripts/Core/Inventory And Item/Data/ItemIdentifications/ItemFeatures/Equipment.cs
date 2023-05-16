@@ -8,12 +8,18 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures
     [Serializable]
     public abstract class Equipment : ItemFeature
     {
-        [SerializeReference] public List<ItemEffect> equipOn;
-        [SerializeReference] public List<ItemEffect> equipOff;
+        [SerializeReference] public List<Effect> equipOn;
+        [SerializeReference] public List<Effect> equipOff;
 
-        public void OnEquip()
+        public void OnEquip(IEffectSender sender, IEnvironment environment)
         {
-            // equipOn.work();
+            equipOn.ForEach(x => x.Work(sender, environment));
         }
+        
+        public void OffEquip(IEffectSender sender, IEnvironment environment)
+        {
+            equipOff.ForEach(x => x.Work(sender, environment));
+        }
+
     }
 }

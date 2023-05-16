@@ -1,5 +1,6 @@
-﻿using Core.Inventory_And_Item.Data;
-using Core.Inventory_And_Item.Models;
+﻿using System;
+using Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using QFramework;
 using UnityEngine;
 
@@ -8,38 +9,35 @@ namespace Core.Inventory_And_Item.Controllers
     public abstract class InventoryHolder : MonoBehaviour, IController
     {
         [SerializeField] private int inventoryCapacity;
-        [SerializeField] private int inventoryKey = -1;
+        [SerializeField] private bool isPlayer;
         [SerializeField] private Inventory inventory; // TODO: 正式运行时删除SerializeField
 
-        public int InventoryKey => inventoryKey;
         public Inventory Inventory => inventory;
 
-        public void SetInventory(int inventoryKey)
+        protected void Awake()
         {
-            if (this.inventoryKey != -1)
-                UnregisterInventory();
-            this.inventoryKey = inventoryKey;
-            inventory = this.GetModel<InventoryModel>().inventories[inventoryKey];
+            RegisterInventory(GetEnvironment());
         }
 
-        public void RegisterInventory(bool isPlayer = false)   
+        protected void RegisterInventory(IEnvironment environment)   
         {
             inventory = new Inventory(inventoryCapacity);
-            inventoryKey = this.GetModel<InventoryModel>().Register(inventory, isPlayer);
+            environment.Register<Inventory>(this);
         }
 
-        protected void UnregisterInventory()
+        protected void UnregisterInventory(IEnvironment environment)
         {
-            this.GetModel<InventoryModel>().Unregister(inventoryKey);
-            inventoryKey = -1;
+            environment.Unregister<Inventory>(this);
             inventory = null;
         }
 
         protected virtual void OnDestroy()
         {
-            UnregisterInventory();
+            UnregisterInventory(GetEnvironment());
         }
 
+        protected abstract IEnvironment GetEnvironment(); 
+            
         public abstract IArchitecture GetArchitecture();
     }
 }

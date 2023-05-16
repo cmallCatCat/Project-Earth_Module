@@ -1,9 +1,9 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
 using Core.QFramework.Framework.Scripts;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Core.Inventory_And_Item.Data.ItemIdentifications
@@ -17,9 +17,9 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
 
         [SerializeField] private int maxStack = 1;
 
-        [SerializeField] private Sprite spriteIcon;
+        [SerializeField] private Sprite? spriteIcon;
 
-        [SerializeField] private Sprite spriteInGame;
+        [SerializeField] private Sprite? spriteInGame;
 
         [SerializeReference] private List<ItemFeature> itemFeatures = new List<ItemFeature>();
 
@@ -29,21 +29,21 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
 
         public int MaxStack => maxStack;
 
-        public Sprite SpriteIcon => spriteIcon;
+        public Sprite? SpriteIcon => spriteIcon;
 
-        public Sprite SpriteInGame => spriteInGame;
+        public Sprite? SpriteInGame => spriteInGame;
 
         public List<ItemFeature> ItemFeatures => itemFeatures;
 
-        [CanBeNull]
-        public ItemFeature TryToGetFeature(Type type)
+        
+        public ItemFeature? TryToGetFeature(Type type)
         {
             return itemFeatures.FirstOrDefault(itemFeature =>
                 itemFeature.GetType() == type || itemFeature.GetType().IsSubclassOf(type));
         }
 
-        [CanBeNull]
-        public ItemFeature TryToGetFeature(string typeName)
+        
+        public ItemFeature? TryToGetFeature(string typeName)
         {
             return itemFeatures.FirstOrDefault(itemFeature =>
                 itemFeature.GetType().FullName == typeName ||
@@ -62,8 +62,9 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
         
         public ItemFeature[] GetFeatures(Type type)
         {
-            return itemFeatures.Where(itemFeature => itemFeature.GetType() == type || itemFeature.GetType().IsSubclassOf(type))
-                .ToArray();
+            return itemFeatures.Where(itemFeature => 
+                    itemFeature.GetType() == type || 
+                    itemFeature.GetType().IsSubclassOf(type)).ToArray();
         }
         
         public ItemFeature[] GetFeatures(string typeName)
@@ -75,13 +76,13 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
 
         #region EqualsAndHashCode
 
-        public static bool operator ==(ItemIdentification a, ItemIdentification b)
+        public static bool operator ==(ItemIdentification? a, ItemIdentification? b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null)) return true;
             return !ReferenceEquals(a, null) && !ReferenceEquals(b, null) && a.ItemName == b.ItemName;
         }
 
-        public static bool operator !=(ItemIdentification a, ItemIdentification b)
+        public static bool operator !=(ItemIdentification a, ItemIdentification? b)
         {
             return !(a == b);
         }
