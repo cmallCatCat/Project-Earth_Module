@@ -30,8 +30,11 @@ MonoBehaviour:
   - _fullyQualifiedName: UnityEditor.MonoScript
     _showType: 0
     _expandType: 0
+  - _fullyQualifiedName: UnityEngine.Sprite
+    _showType: 0
+    _expandType: 0
   - _fullyQualifiedName: UnityEngine.U2D.SpriteAtlas
-    _showType: 1
+    _showType: 0
     _expandType: 0
   _defaultWindowSize:
   - _targetMode: 2

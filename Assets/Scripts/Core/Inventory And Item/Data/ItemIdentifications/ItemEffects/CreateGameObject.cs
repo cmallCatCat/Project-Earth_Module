@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Create CreateGameObject", fileName = "CreateGameObject", order = 0)]
     public class CreateGameObject : Effect
     {
         [AssetsOnly]

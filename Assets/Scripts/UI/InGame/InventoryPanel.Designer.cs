@@ -28,7 +28,7 @@ namespace UI.InGame
 		{
 			get
 			{
-				return mPrivateData ?? (mPrivateData = new InventoryPanelData(new Inventory(0)));
+				return mPrivateData ?? (mPrivateData = new InventoryPanelData(new Inventory(0), 0));
 			}
 			set
 			{

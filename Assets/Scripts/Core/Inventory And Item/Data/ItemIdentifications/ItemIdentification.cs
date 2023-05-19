@@ -49,6 +49,11 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
                 itemFeature.GetType().FullName == typeName ||
                 itemFeature.GetType().GetAllBaseTypes().Any(type => type.FullName == typeName));
         }
+        
+        public T TryToGetFeature<T>() where T : ItemFeature
+        {
+            return itemFeatures.OfType<T>().FirstOrDefault() ?? throw new InvalidOperationException();
+        }
 
         public bool HasFeature(Type type)
         {

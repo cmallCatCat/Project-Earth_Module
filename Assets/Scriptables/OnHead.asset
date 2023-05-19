@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d80b921a3444359c9c4bcc49dc93cc, type: 3}
   m_Name: OnHead
   m_EditorClassIdentifier: 
-  equipOn:
-  - {fileID: 11400000, guid: 29feb183494cb9743bdfd0b16665a53c, type: 2}
-  equipOff: []
+  equipOn: {fileID: 11400000, guid: 1e4de83aaf5dec94d8acb72e80ae94c1, type: 2}
+  equipOff: {fileID: 11400000, guid: 9ab81a4d5b0aeaa4cb58be02c32ee02a, type: 2}

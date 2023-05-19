@@ -6,76 +6,91 @@ using UnityEngine.UI;
 
 namespace UI.InGame
 {
-	public class InventoryPanelData : UIPanelData
-	{
+    public class InventoryPanelData : UIPanelData
+    {
         public readonly Inventory inventory;
+        public readonly int displayCapacity;
 
-        public InventoryPanelData(Inventory inventory)
+        public InventoryPanelData(Inventory inventory, int displayCapacity)
         {
             this.inventory = inventory;
+            this.displayCapacity = displayCapacity;
         }
     }
-	public partial class InventoryPanel : UIPanel
-	{
+
+    public partial class InventoryPanel : UIPanel
+    {
         private Inventory inventory;
 
         [SerializeField]
         private Transform slotsParent;
 
+        [SerializeField]
+        private GameObject slotPrefab;
+
+        private int displayCapacity;
         private Image[] slotImages;
         private TMP_Text[] slotTexts;
 
         private void Refresh()
         {
             int minLength = slotImages.Length;
-            if (slotImages.Length>inventory.AllSlots().Length)
+            if (slotImages.Length > inventory.AllSlots().Length)
             {
-                Debug.LogWarning("the capacity of inventory is not enough to display all slots");
+                Debug.LogWarning("the displayCapacity of inventory is not enough to display all slots: " +
+                                 "slotImages.Length = " + slotImages.Length + ", inventory.AllSlots().Length = " + inventory.AllSlots().Length);
                 minLength = inventory.AllSlots().Length;
             }
+
             for (int index = 0; index < minLength; index++)
             {
-                slotImages[index].sprite = inventory.AllSlots()[index].ItemStack?.ItemIdentification.SpriteIcon;
-                slotTexts[index].text = inventory.AllSlots()[index].ItemStack?.Number.ToString();
+                ItemStack itemStack = inventory.AllSlots()[index].ItemStack;
+                slotImages[index].sprite = itemStack?.ItemIdentification.SpriteIcon;
+                slotImages[index].color = itemStack != null ? Color.white : Color.clear;
+                slotTexts[index].text = itemStack?.Number.ToString();
             }
         }
 
         protected override void OnInit(IUIData uiData = null)
-		{
+        {
         }
 
         protected override void OnOpen(IUIData uiData = null)
-		{
-            if (uiData==null)
+        {
+            if (uiData == null)
             {
-                uiData = new InventoryPanelData(new Inventory(0));
+                uiData = new InventoryPanelData(new Inventory(0), 0);
                 Debug.LogError("uiData is null");
             }
+
             mData = (InventoryPanelData)uiData;
             // please add init code here
             inventory = mData.inventory;
-            slotImages=new Image[slotsParent.childCount];
-            slotTexts=new TMP_Text[slotsParent.childCount];
-            for (int i = 0; i < slotImages.Length; i++)
+            displayCapacity = mData.displayCapacity;
+            slotImages = new Image[displayCapacity];
+            slotTexts = new TMP_Text[displayCapacity];
+            for (int i = 0; i < displayCapacity; i++)
             {
-                slotImages[i] = slotsParent.GetChild(i).GetComponentInChildren<Image>();
-                slotTexts[i] = slotsParent.GetChild(i).GetComponentInChildren<TMP_Text>();
+                Transform instantiate = Instantiate(slotPrefab, slotsParent).transform;
+                slotImages[i] = instantiate.GetChild(0).GetChild(0).GetComponent<Image>();
+                slotTexts[i] = instantiate.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
             }
+
             inventory.onItemChanged += Refresh;
             Refresh();
-		}
-		
-		protected override void OnShow()
-		{
-		}
-		
-		protected override void OnHide()
-		{
-		}
-		
-		protected override void OnClose()
-		{
+        }
+
+        protected override void OnShow()
+        {
+        }
+
+        protected override void OnHide()
+        {
+        }
+
+        protected override void OnClose()
+        {
             inventory.onItemChanged -= Refresh;
         }
-	}
+    }
 }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc014c1443884bb897a069ca679191cf, type: 3}
+  m_Name: OnHead.equipOff=SequenceEffect
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 11400000, guid: 1d89d92408772704186f6ad2c3807963, type: 2}
+  - {fileID: 11400000, guid: ea18e4720d9453a40bcf097875a59598, type: 2}
+  - {fileID: 11400000, guid: 9bd209cae0626b342adbb9b95bebb5b6, type: 2}

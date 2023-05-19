@@ -176,13 +176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c735b43d62324a8a8cff038a18d03052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryCapacity: 0
-  inventoryKey: 0
+  inventoryCapacity: 20
+  isPlayer: 1
   inventory:
     capacity: 0
     activeIndex: 0
     itemSlots: []
-  isPlayer: 1
 --- !u!114 &2361322963037962353
 MonoBehaviour:
   m_ObjectHideFlags: 0

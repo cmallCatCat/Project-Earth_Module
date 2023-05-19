@@ -70,12 +70,12 @@ namespace Core.Inventory_And_Item.Data
 
         #region 增
 
-        internal void Add(ItemStack stack)
+        public void Add(ItemStack stack)
         {
             Add(stack.ItemIdentification, stack.Number);
         }
 
-        private void Add(ItemIdentification toAddItem, int toAddNumber)
+        public void Add(ItemIdentification toAddItem, int toAddNumber)
         {
             foreach (ItemSlot itemSlot in itemSlots)
             {
@@ -96,12 +96,12 @@ namespace Core.Inventory_And_Item.Data
             throw new Exception("没有足够的空间, 请在添加前检查容量是否足够");
         }
 
-        internal void Add(ItemStack stack, int index)
+        public void Add(ItemStack stack, int index)
         {
             Add(stack.ItemIdentification, stack.Number, index);
         }
 
-        internal void Add(ItemIdentification itemIdentification, int number, int index)
+        public void Add(ItemIdentification itemIdentification, int number, int index)
         {
             ItemSlot itemSlot = itemSlots[index];
             int canAddNumber = itemSlot.CanAddNumber(itemIdentification);
@@ -119,12 +119,12 @@ namespace Core.Inventory_And_Item.Data
 
         #region 删
 
-        internal void Remove(ItemStack stack)
+        public void Remove(ItemStack stack)
         {
             Remove(stack.ItemIdentification, stack.Number);
         }
 
-        internal void Remove(ItemIdentification toRemoveItem, int toRemoveNumber)
+        public void Remove(ItemIdentification toRemoveItem, int toRemoveNumber)
         {
             foreach (ItemSlot itemSlot in itemSlots)
             {
@@ -145,12 +145,12 @@ namespace Core.Inventory_And_Item.Data
             throw new Exception("没有足够的物品可移除, 请在移除前检查物品是否足够");
         }
 
-        internal void Remove(ItemStack stack, int index)
+        public void Remove(ItemStack stack, int index)
         {
             Remove(stack.ItemIdentification, stack.Number, index);
         }
 
-        internal void Remove(ItemIdentification toRemoveItem, int toRemoveNumber, int index)
+        public void Remove(ItemIdentification toRemoveItem, int toRemoveNumber, int index)
         {
             ItemSlot itemSlot = itemSlots[index];
             int canRemoveNumber = itemSlot.CanRemoveNumber(toRemoveItem);
@@ -168,7 +168,7 @@ namespace Core.Inventory_And_Item.Data
 
         #region 改
 
-        internal void MergeOrSwitch(int fromIndex, int toIndex)
+        public void MergeOrSwitch(int fromIndex, int toIndex)
         {
             ItemSlot fromSlot = itemSlots[fromIndex];
             ItemSlot toSlot = itemSlots[toIndex];
@@ -185,7 +185,7 @@ namespace Core.Inventory_And_Item.Data
             BaseAdd(toSlot, toSlot.ItemStack.ItemIdentification, finalAddNumber);
         }
 
-        internal void Switch(int fromIndex, int toIndex)
+        public void Switch(int fromIndex, int toIndex)
         {
             ItemSlot fromSlot = itemSlots[fromIndex];
             ItemSlot toSlot = itemSlots[toIndex];

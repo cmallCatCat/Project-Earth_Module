@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace Core
 
         private GameObject player;
 
-        private Dictionary<Type, List<MonoBehaviour>> data;
+        private Dictionary<Type, List<MonoBehaviour>> data=new Dictionary<Type, List<MonoBehaviour>>();
 
         public GameObject Player
         {
@@ -57,6 +58,20 @@ namespace Core
             {
                 Debug.LogError($"{monoBehaviour} is not registered, can't unregister it.");
             }
+        }
+
+        
+        public void Delay<T>(Action<T> action, T args, float delay)
+        {
+            // TODO: Implement
+            StartCoroutine(Do(action, args,delay));
+            
+        }
+
+        public IEnumerator Do<T>(Action<T> action, T args, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            action.Invoke(args);
         }
 
         private void Awake()
