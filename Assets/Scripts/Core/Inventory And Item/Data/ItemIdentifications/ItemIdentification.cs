@@ -11,17 +11,24 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
     [CreateAssetMenu(menuName = "Create ItemIdentification", fileName = "ItemIdentification", order = 0)]
     public class ItemIdentification : ScriptableObject
     {
-        [SerializeField] private string itemName = "Unnamed Item";
+        [SerializeField]
+        private string itemName = "Unnamed Item";
 
-        [SerializeField] private string itemDescription = "UnDefined Item Description";
+        [SerializeField]
+        [TextArea]
+        private string itemDescription = "UnDefined Item Description";
 
-        [SerializeField] private int maxStack = 1;
+        [SerializeField]
+        private int maxStack = 1;
 
-        [SerializeField] private Sprite? spriteIcon;
+        [SerializeField]
+        private Sprite? spriteIcon;
 
-        [SerializeField] private Sprite? spriteInGame;
+        [SerializeField]
+        private Sprite? spriteInGame;
 
-        [SerializeReference] private List<ItemFeature> itemFeatures = new List<ItemFeature>();
+        [SerializeReference]
+        private ItemFeature[] itemFeatures = Array.Empty<ItemFeature>();
 
         public string ItemName => itemName;
 
@@ -33,51 +40,61 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
 
         public Sprite? SpriteInGame => spriteInGame;
 
-        public List<ItemFeature> ItemFeatures => itemFeatures;
+        public ItemFeature[] ItemFeatures => itemFeatures;
 
-        
+
+        #region Features
+
         public ItemFeature? TryToGetFeature(Type type)
         {
-            return itemFeatures.FirstOrDefault(itemFeature =>
-                itemFeature.GetType() == type || itemFeature.GetType().IsSubclassOf(type));
+            return GetFeatures(type.FullName ?? throw new InvalidOperationException()).FirstOrDefault();
         }
 
-        
+
         public ItemFeature? TryToGetFeature(string typeName)
         {
-            return itemFeatures.FirstOrDefault(itemFeature =>
-                itemFeature.GetType().FullName == typeName ||
-                itemFeature.GetType().GetAllBaseTypes().Any(type => type.FullName == typeName));
+            return GetFeatures(typeName).FirstOrDefault();
         }
-        
-        public T TryToGetFeature<T>() where T : ItemFeature
+
+        public T? TryToGetFeature<T>() where T : ItemFeature
         {
-            return itemFeatures.OfType<T>().FirstOrDefault() ?? throw new InvalidOperationException();
+            return GetFeatures(typeof(T).FullName).FirstOrDefault() as T;
         }
 
         public bool HasFeature(Type type)
         {
-            return TryToGetFeature(type) != null;
+            return GetFeatures(type.FullName ?? throw new InvalidOperationException()).Any();
         }
-        
+
         public bool HasFeature(string typeName)
         {
-            return TryToGetFeature(typeName) != null;
-        }       
-        
+            return GetFeatures(typeName).Any();
+        }
+
+        public bool HasFeature<T>() where T : ItemFeature
+        {
+            return HasFeature(typeof(T));
+        }
+
         public ItemFeature[] GetFeatures(Type type)
         {
-            return itemFeatures.Where(itemFeature => 
-                    itemFeature.GetType() == type || 
-                    itemFeature.GetType().IsSubclassOf(type)).ToArray();
+            return GetFeatures(type.FullName ?? throw new InvalidOperationException());
         }
-        
+
         public ItemFeature[] GetFeatures(string typeName)
         {
             return itemFeatures.Where(itemFeature => itemFeature.GetType().FullName == typeName ||
-                itemFeature.GetType().GetAllBaseTypes().Any(type => type.FullName == typeName))
+                                                     itemFeature.GetType().GetAllBaseTypes()
+                                                         .Any(type => type.FullName == typeName))
                 .ToArray();
         }
+
+        public T[] GetFeatures<T>() where T : ItemFeature
+        {
+            return GetFeatures(typeof(T).FullName) as T[] ?? throw new InvalidOperationException();
+        }
+
+        #endregion
 
         #region EqualsAndHashCode
 
@@ -87,7 +104,7 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
             return !ReferenceEquals(a, null) && !ReferenceEquals(b, null) && a.ItemName == b.ItemName;
         }
 
-        public static bool operator !=(ItemIdentification a, ItemIdentification? b)
+        public static bool operator !=(ItemIdentification? a, ItemIdentification? b)
         {
             return !(a == b);
         }
@@ -97,7 +114,7 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
             return this == other;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;

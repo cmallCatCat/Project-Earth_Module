@@ -17,52 +17,39 @@ namespace Core.Inventory_And_Item.Data
         private int capacity;
 
         [SerializeField]
-        private int activeIndex;
-
-        [SerializeField]
         private ItemSlot[] itemSlots;
 
-
+        private Transform transform;
+        
         public event OnInventoryChanged? onItemChanged;
 
-        public Inventory(int capacity)
+        public int Capacity => capacity;
+
+
+        public Inventory(int capacity, Transform transform)
         {
             this.capacity = capacity;
+            this.transform = transform;
             itemSlots = new ItemSlot[capacity];
             for (int i = 0; i < capacity; i++) itemSlots[i] = new ItemSlot();
 
-            activeIndex = 0;
-        }
-
-        public ItemSlot ActiveItemSlot => itemSlots[activeIndex];
-        public int Capacity => capacity;
-        public int ActiveIndex => activeIndex;
-
-        public void Activate(int index)
-        {
-            if (index < 0 || index >= capacity) throw new Exception("指定的活动栏位越界");
-
-            activeIndex = index;
         }
 
         #region BaseCommands
 
-        private void BaseAdd(ItemSlot itemSlot, ItemIdentification toAddItem, int toAddNumber)
+        private void BaseAdd(ItemSlot itemSlot, ItemStack itemStack)
         {
-            itemSlot.Add(toAddItem, toAddNumber);
-            onItemChanged?.Invoke();
+            itemSlot.Add(itemStack);
         }
 
         private void BaseRemove(ItemSlot itemSlot, int toRemoveNumber)
         {
             itemSlot.Remove(toRemoveNumber);
-            onItemChanged?.Invoke();
         }
 
         private void BaseSet(ItemSlot itemSlot, ItemStack? newStack)
         {
             itemSlot.Set(newStack);
-            onItemChanged?.Invoke();
         }
 
         #endregion
@@ -72,23 +59,22 @@ namespace Core.Inventory_And_Item.Data
 
         public void Add(ItemStack stack)
         {
-            Add(stack.ItemIdentification, stack.Number);
-        }
-
-        public void Add(ItemIdentification toAddItem, int toAddNumber)
-        {
+            ItemIdentification toAddItem = stack.ItemIdentification;
+            ItemDecorator toAddDecorator = stack.ItemDecorator;
+            int toAddNumber = stack.Number;
             foreach (ItemSlot itemSlot in itemSlots)
             {
-                int canAddNumber = itemSlot.CanAddNumber(toAddItem);
+                int canAddNumber = itemSlot.CanAddNumber(toAddItem, toAddDecorator);
                 if (canAddNumber >= toAddNumber)
                 {
-                    BaseAdd(itemSlot, toAddItem, toAddNumber);
+                    BaseAdd(itemSlot, new ItemStack(toAddItem, toAddDecorator, toAddNumber));
+                    onItemChanged?.Invoke();
                     return;
                 }
 
                 if (canAddNumber > 0)
                 {
-                    BaseAdd(itemSlot, toAddItem, canAddNumber);
+                    BaseAdd(itemSlot, new ItemStack(toAddItem, toAddDecorator, canAddNumber));
                     toAddNumber -= canAddNumber;
                 }
             }
@@ -98,16 +84,16 @@ namespace Core.Inventory_And_Item.Data
 
         public void Add(ItemStack stack, int index)
         {
-            Add(stack.ItemIdentification, stack.Number, index);
-        }
+            ItemIdentification toAddIdentification = stack.ItemIdentification;
+            ItemDecorator toAddDecorator = stack.ItemDecorator;
+            int toAddNumber = stack.Number;
 
-        public void Add(ItemIdentification itemIdentification, int number, int index)
-        {
             ItemSlot itemSlot = itemSlots[index];
-            int canAddNumber = itemSlot.CanAddNumber(itemIdentification);
-            if (canAddNumber >= number)
+            int canAddNumber = itemSlot.CanAddNumber(toAddIdentification, toAddDecorator);
+            if (canAddNumber >= toAddNumber)
             {
-                BaseAdd(itemSlot, itemIdentification, number);
+                BaseAdd(itemSlot, new ItemStack(toAddIdentification, toAddDecorator, toAddNumber));
+                onItemChanged?.Invoke();
                 return;
             }
 
@@ -121,17 +107,17 @@ namespace Core.Inventory_And_Item.Data
 
         public void Remove(ItemStack stack)
         {
-            Remove(stack.ItemIdentification, stack.Number);
-        }
+            ItemIdentification toRemoveItem = stack.ItemIdentification;
+            ItemDecorator toRemoveDecorator = stack.ItemDecorator;
+            int toRemoveNumber = stack.Number;
 
-        public void Remove(ItemIdentification toRemoveItem, int toRemoveNumber)
-        {
             foreach (ItemSlot itemSlot in itemSlots)
             {
-                int canRemoveNumber = itemSlot.CanRemoveNumber(toRemoveItem);
+                int canRemoveNumber = itemSlot.CanRemoveNumber(toRemoveItem, toRemoveDecorator);
                 if (canRemoveNumber >= toRemoveNumber)
                 {
                     BaseRemove(itemSlot, toRemoveNumber);
+                    onItemChanged?.Invoke();
                     return;
                 }
 
@@ -147,16 +133,16 @@ namespace Core.Inventory_And_Item.Data
 
         public void Remove(ItemStack stack, int index)
         {
-            Remove(stack.ItemIdentification, stack.Number, index);
-        }
+            ItemIdentification toRemoveItem = stack.ItemIdentification;
+            ItemDecorator toRemoveDecorator = stack.ItemDecorator;
+            int toRemoveNumber = stack.Number;
 
-        public void Remove(ItemIdentification toRemoveItem, int toRemoveNumber, int index)
-        {
             ItemSlot itemSlot = itemSlots[index];
-            int canRemoveNumber = itemSlot.CanRemoveNumber(toRemoveItem);
+            int canRemoveNumber = itemSlot.CanRemoveNumber(toRemoveItem, toRemoveDecorator);
             if (canRemoveNumber >= toRemoveNumber)
             {
                 BaseRemove(itemSlot, toRemoveNumber);
+                onItemChanged?.Invoke();
                 return;
             }
 
@@ -168,31 +154,46 @@ namespace Core.Inventory_And_Item.Data
 
         #region 改
 
-        public void MergeOrSwitch(int fromIndex, int toIndex)
+        public int MergeOrSwitch(int fromIndex, int toIndex, bool invoke = true)
         {
             ItemSlot fromSlot = itemSlots[fromIndex];
             ItemSlot toSlot = itemSlots[toIndex];
             if (fromSlot.ItemStack == null || toSlot.ItemStack == null ||
                 fromSlot.ItemStack.ItemIdentification != toSlot.ItemStack.ItemIdentification)
             {
-                Switch(fromIndex, toIndex);
-                return;
+                Switch(fromIndex, toIndex, invoke);
+                if (invoke)
+                {
+                    onItemChanged?.Invoke();
+                }
+
+                return -1;
             }
 
-            int canAddNumber = toSlot.CanAddNumber(fromSlot.ItemStack.ItemIdentification);
+            int canAddNumber = toSlot.CanAddNumber(fromSlot.ItemStack.ItemIdentification, fromSlot.ItemStack.ItemDecorator);
             int finalAddNumber = Mathf.Min(canAddNumber, fromSlot.ItemStack.Number);
             BaseRemove(fromSlot, finalAddNumber);
-            BaseAdd(toSlot, toSlot.ItemStack.ItemIdentification, finalAddNumber);
+            BaseAdd(toSlot, new ItemStack(toSlot.ItemStack.ItemIdentification, toSlot.ItemStack.ItemDecorator, finalAddNumber));
+            if (invoke)
+            {
+                onItemChanged?.Invoke();
+            }
+
+            return finalAddNumber;
         }
 
-        public void Switch(int fromIndex, int toIndex)
+        public void Switch(int index1, int index2, bool invoke = true)
         {
-            ItemSlot fromSlot = itemSlots[fromIndex];
-            ItemSlot toSlot = itemSlots[toIndex];
-            ItemStack? fromStack = fromSlot.ItemStack;
-            ItemStack? toStack = toSlot.ItemStack;
-            BaseSet(fromSlot, fromStack);
-            BaseSet(toSlot, toStack);
+            ItemSlot slot1 = itemSlots[index1];
+            ItemSlot slot2 = itemSlots[index2];
+            ItemStack? stack1 = slot1.ItemStack;
+            ItemStack? stack2 = slot2.ItemStack;
+            BaseSet(slot1, stack2);
+            BaseSet(slot2, stack1);
+            if (invoke)
+            {
+                onItemChanged?.Invoke();
+            }
         }
 
         #endregion
@@ -205,45 +206,47 @@ namespace Core.Inventory_And_Item.Data
             return itemSlots[index];
         }
 
-        public (ItemSlot?, int) SearchFirstMatchedItem(IdentificationFilter filter)
+        public (ItemSlot?, int) SearchFirstMatchedItem(ItemFilter filter)
         {
             for (int i = 0; i < capacity; i++)
             {
                 ItemIdentification? itemStackItemIdentification = itemSlots[i].ItemStack?.ItemIdentification;
-                if (filter.IsMatch(itemStackItemIdentification))
+                ItemDecorator? itemStackItemDecorator = itemSlots[i].ItemStack?.ItemDecorator;
+                if (filter.IsMatch(itemStackItemIdentification, itemStackItemDecorator))
                     return (itemSlots[i], i);
             }
 
             return (null, -1);
         }
 
-        public (ItemSlot?, int) SearchFirstMatchedSlot(IdentificationFilter filter)
+        public (ItemSlot?, int) SearchFirstMatchedSlot(ItemFilter filter)
         {
             for (int i = 0; i < capacity; i++)
-                if (itemSlots[i].IdentificationFilter == filter)
+                if (itemSlots[i].ItemFilter == filter)
                     return (itemSlots[i], i);
 
             return (null, -1);
         }
 
-        public ItemSlot[] SearchIdentification(IdentificationFilter filter)
+        public ItemSlot[] SearchIdentification(ItemFilter filter)
         {
             List<ItemSlot> slots = new List<ItemSlot>(capacity);
             for (int i = 0; i < capacity; i++)
             {
                 ItemIdentification? itemStackItemIdentification = itemSlots[i].ItemStack?.ItemIdentification;
-                if (filter.IsMatch(itemStackItemIdentification))
+                ItemDecorator? itemStackItemDecorator = itemSlots[i].ItemStack?.ItemDecorator;
+                if (filter.IsMatch(itemStackItemIdentification, itemStackItemDecorator))
                     slots.Add(itemSlots[i]);
             }
 
             return slots.ToArray();
         }
 
-        public ItemSlot[] SearchSlot(IdentificationFilter filter)
+        public ItemSlot[] SearchSlot(ItemFilter filter)
         {
             List<ItemSlot> slots = new List<ItemSlot>(capacity);
             for (int i = 0; i < capacity; i++)
-                if (itemSlots[i].IdentificationFilter == filter)
+                if (itemSlots[i].ItemFilter == filter)
                     slots.Add(itemSlots[i]);
             return slots.ToArray();
         }
@@ -253,19 +256,19 @@ namespace Core.Inventory_And_Item.Data
             return itemSlots;
         }
 
-        public int CanAddNumber(ItemIdentification itemIdentification)
+        public int CanAddNumber(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
         {
-            return itemSlots.Sum(slot => slot.CanAddNumber(itemIdentification));
+            return itemSlots.Sum(slot => slot.CanAddNumber(itemIdentification, itemDecorator));
         }
 
-        public bool CanAddAll(ItemIdentification itemIdentification, int number)
+        public bool CanAddAll(ItemStack itemStack)
         {
-            return CanAddNumber(itemIdentification) >= number;
+            return CanAddNumber(itemStack.ItemIdentification, itemStack.ItemDecorator) >= itemStack.Number;
         }
 
-        public bool IsFull(ItemIdentification itemIdentification)
+        public bool CanAdd(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
         {
-            return CanAddNumber(itemIdentification) > 0;
+            return CanAddNumber(itemIdentification, itemDecorator) > 0;
         }
 
         #endregion

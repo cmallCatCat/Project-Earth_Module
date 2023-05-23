@@ -9,7 +9,8 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
     public class DelayEffect : Effect
     {
         [SerializeField]
-        private float delay;
+        [Min(0.01f)]
+        private float delay = 1;
 
         [SerializeField]
         [EffectGenerator]

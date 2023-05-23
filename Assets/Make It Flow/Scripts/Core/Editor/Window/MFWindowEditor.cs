@@ -192,7 +192,8 @@ namespace MeadowGames.MakeItFlow.EditorTool
 
                 EditorGUILayout.BeginHorizontal(EditorStyles.textArea);
                 {
-                    GUILayout.Label(" ⚙", _width20);
+                    // v1.1.2 - bugfix: gear icon not being displayed in the editor, unicode character not displayed in some systems, changed by the circled asterisk  
+                    GUILayout.Label(" ⊛", _width20);
                     MFEditorUtils.HandleDragDrop(mfObject, currentEvent);
 
                     if (mfObject.GetComponent<Image>())
@@ -280,7 +281,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
                             else
                                 EditorGUILayout.BeginHorizontal(EditorStyles.helpBox);
                             {
-                                GUILayout.Label(" ⚙", _width20);
+                                GUILayout.Label(" ⊛", _width20);
                                 MFEditorUtils.HandleDragDrop(behavior, currentEvent);
 
                                 if (GUILayout.Button(new GUIContent("⊎", "Duplicate behavior"), _width20))
@@ -418,7 +419,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
             else
                 EditorGUILayout.BeginHorizontal(EditorStyles.helpBox);
             {
-                GUILayout.Label(" ⚙ ", _width20);
+                GUILayout.Label(" ⊛ ", _width20);
                 MFEditorUtils.HandleDragDrop(mfObject, currentEvent);
 
                 if (mfObject.GetComponent<Image>())
@@ -453,7 +454,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
                     else
                         EditorGUILayout.BeginHorizontal(EditorStyles.helpBox);
                     {
-                        GUILayout.Label(" ⚙ ", _width20);
+                        GUILayout.Label(" ⊛ ", _width20);
                         MFEditorUtils.HandleDragDrop(bhv, currentEvent);
 
                         string splitBehaviorName = bhv.GetType().ToString().SplitCamelCase().TrimEnd("Behavior");

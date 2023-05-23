@@ -1,27 +1,28 @@
 ﻿using System;
+using Core.Inventory_And_Item.Data;
 using QFramework;
 using UnityEngine;
 
 namespace Core.Inventory_And_Item.Controllers
 {
-    [RequireComponent(typeof(InventoryHolder))]
     public abstract class InventoryGetter : MonoBehaviour, IController
     {
-        [SerializeField]protected InventoryHolder inventoryHolder;
-        protected new Transform transform;
+        private InventoryHolder inventoryHolder;
 
-
-        private void Awake()
+        public InventoryHolder InventoryHolder
         {
-            transform = GetComponent<Transform>();
-            gameObject.AddComponent<CircleCollider2D>();
+            get
+            {
+                if (inventoryHolder == null)
+                {
+                    inventoryHolder = GetInventoryHolder;
+                }
+                
+                return inventoryHolder;
+            }
+            set => inventoryHolder = value;
         }
-
-        public void SetHolder(InventoryHolder inventoryHolder)
-        {
-            this.inventoryHolder = inventoryHolder;
-        }
-
+        
         private void OnTriggerStay2D(Collider2D other)
         {
             if (!other.CompareTag("ItemPicker"))
@@ -29,9 +30,17 @@ namespace Core.Inventory_And_Item.Controllers
                 return;
             }
 
-            other.attachedRigidbody.AddForce((transform.position - other.transform.position).normalized * 100);
+            ItemStack itemStack = other.GetComponent<ItemPicker>().ItemStack;
+            if (!InventoryHolder.Inventory.CanAdd(itemStack.ItemIdentification, itemStack.ItemDecorator))
+            {
+                return;
+            }
+            
+            InventoryHolder.Inventory.Add(itemStack);
+            Destroy(other.gameObject);
         }
 
+        protected abstract InventoryHolder GetInventoryHolder { get; }
         public abstract IArchitecture GetArchitecture();
     }
 }

@@ -11,8 +11,8 @@ public class FindUICamera : MonoBehaviour
     private void Start()
     {
         uiCamera = GameObject.Find("UICamera").GetComponent<Camera>();
-                    GetComponent<Camera>().GetUniversalAdditionalCameraData().cameraStack
-                        .Add(uiCamera);
+        GetComponent<Camera>().GetUniversalAdditionalCameraData().cameraStack
+            .Add(uiCamera);
     }
 
     // Update is called once per frame
@@ -20,7 +20,6 @@ public class FindUICamera : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
         }
     }
 }

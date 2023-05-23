@@ -11,21 +11,17 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
         [EffectGenerator]
         private Effect[] effects = { };
 
-        private int index;
 
         public override void Work(IEffectSender sender, IEnvironment environment)
         {
-            if (index < effects.Length)
+            CounterManager.Counter counter = CounterManager.Get(sender);
+            if (counter >= effects.Length)
             {
-                effects[index].Work(sender, environment);
+                counter.value = 0;
             }
-            else
-            {
-                index = 0;
-                effects[index].Work(sender, environment);
-            }
+            effects[counter].Work(sender, environment);
 
-            index++;
+            counter.value++;
         }
     }
 }

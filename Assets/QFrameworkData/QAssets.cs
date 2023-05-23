@@ -11,11 +11,6 @@
 namespace QAssetBundle
 {
     
-    public class Inventorypanel_prefab
-    {
-        public const string BundleName = "inventorypanel_prefab";
-        public const string INVENTORYPANEL = "inventorypanel";
-    }
     public class Minimalist_cartoon_animal_png
     {
         public const string BundleName = "minimalist cartoon animal_png";
@@ -25,5 +20,10 @@ namespace QAssetBundle
     {
         public const string BundleName = "player_prefab";
         public const string PLAYER = "player";
+    }
+    public class Shortcutinventory_prefab
+    {
+        public const string BundleName = "shortcutinventory_prefab";
+        public const string SHORTCUTINVENTORY = "shortcutinventory";
     }
 }

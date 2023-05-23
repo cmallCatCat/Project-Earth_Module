@@ -22,9 +22,9 @@ namespace MeadowGames.MakeItFlow
         public override bool SecondaryPointerKeyDown => KeyDown(secondaryPointerKey);
         public override bool SecondaryPointerKeyUp => KeyUp(secondaryPointerKey);
 
-        public override bool KeyPressed(KeyCode key) => Input.GetKey(key);
-        public override bool KeyDown(KeyCode key) => Input.GetKeyDown(key);
-        public override bool KeyUp(KeyCode key) => Input.GetKeyUp(key);
+        bool KeyPressed(KeyCode key) => Input.GetKey(key);
+        bool KeyDown(KeyCode key) => Input.GetKeyDown(key);
+        bool KeyUp(KeyCode key) => Input.GetKeyUp(key);
 
         public override bool SecondKeyPressed => Input.GetKey(secondKey);
 

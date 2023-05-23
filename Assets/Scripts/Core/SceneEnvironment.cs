@@ -6,33 +6,22 @@ using UnityEngine;
 
 namespace Core
 {
-    public class SceneEnvironment : MonoBehaviour, IEnvironment
+    public class SceneEnvironment : IEnvironment
     {
         public static SceneEnvironment Instance { get; private set; }
+        
+        private Dictionary<Type, List<MonoBehaviour>> data = new Dictionary<Type, List<MonoBehaviour>>();
 
-        private GameObject player;
+        protected override Camera GetUICamera => GameObject.Find("UICamera").GetComponent<Camera>();
 
-        private Dictionary<Type, List<MonoBehaviour>> data=new Dictionary<Type, List<MonoBehaviour>>();
+        protected override GameObject GetPlayer => GameObject.FindGameObjectWithTag("Player");
 
-        public GameObject Player
-        {
-            get
-            {
-                if (player == null)
-                {
-                    player = GameObject.Find("Player");
-                }
-
-                return player;
-            }
-        }
-
-        public void Instantiate(GameObject toCreate, bool useObjectPool, Vector2 getPosition, Quaternion getRotation)
+        public override void Instantiate(GameObject toCreate, bool useObjectPool, Vector2 getPosition, Quaternion getRotation)
         {
             GameObject.Instantiate(toCreate, getPosition, getRotation).name = toCreate.name;
         }
 
-        public void Register<T>(MonoBehaviour monoBehaviour)
+        public override void Register<T>(MonoBehaviour monoBehaviour)
         {
             if (data.TryGetValue(typeof(T), out List<MonoBehaviour> list))
             {
@@ -44,7 +33,7 @@ namespace Core
             }
         }
 
-        public void Unregister<T>(MonoBehaviour monoBehaviour)
+        public override void Unregister<T>(MonoBehaviour monoBehaviour)
         {
             if (data.TryGetValue(typeof(T), out List<MonoBehaviour> list))
             {
@@ -60,12 +49,11 @@ namespace Core
             }
         }
 
-        
-        public void Delay<T>(Action<T> action, T args, float delay)
+
+        public override void Delay<T>(Action<T> action, T args, float delay)
         {
             // TODO: Implement
-            StartCoroutine(Do(action, args,delay));
-            
+            StartCoroutine(Do(action, args, delay));
         }
 
         public IEnumerator Do<T>(Action<T> action, T args, float delay)

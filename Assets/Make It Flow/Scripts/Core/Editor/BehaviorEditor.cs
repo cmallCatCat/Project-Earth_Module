@@ -231,7 +231,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
                 }
                 EditorGUILayout.EndVertical();
 
-                behavior.showSequenceBehaviors = EditorGUILayout.Foldout(behavior.showSequenceBehaviors, "Sequence Bhvaviors");
+                behavior.showSequenceBehaviors = EditorGUILayout.Foldout(behavior.showSequenceBehaviors, "Sequence Behaviors");
                 EditorGUILayout.BeginVertical(EditorStyles.textArea);
                 if (behavior.showSequenceBehaviors)
                 {
@@ -287,7 +287,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
                 }
                 EditorGUILayout.EndVertical();
 
-                behavior.showComplementaryBehaviors = EditorGUILayout.Foldout(behavior.showComplementaryBehaviors, "Complementary Bhvaviors");
+                behavior.showComplementaryBehaviors = EditorGUILayout.Foldout(behavior.showComplementaryBehaviors, "Complementary Behaviors");
                 EditorGUILayout.BeginVertical(EditorStyles.textArea);
                 if (behavior.showComplementaryBehaviors)
                 {

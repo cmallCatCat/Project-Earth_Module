@@ -10,37 +10,37 @@ using UnityEngine.Serialization;
 namespace Core.Inventory_And_Item.Data
 {
     [Serializable]
-    public class ItemSlot : ISerializationCallbackReceiver, IEffectSender
+    public class ItemSlot : ISerializationCallbackReceiver
     {
         private ItemStack? itemStack;
-        private IdentificationFilter identificationFilter;
+        private ItemFilter itemFilter;
 
         public ItemStack? ItemStack => itemStack;
 
-        public IdentificationFilter IdentificationFilter => identificationFilter;
+        public ItemFilter ItemFilter => itemFilter;
 
         public ItemSlot()
         {
             itemStack = null;
-            identificationFilter = new IdentificationFilter(FilterType.All, Array.Empty<string>());
+            itemFilter = new ItemFilter(FilterType.All, Array.Empty<string>());
         }
 
-        internal void SetIdentificationFilter(IdentificationFilter newIdentificationFilter)
+        internal void SetIdentificationFilter(ItemFilter newItemFilter)
         {
-            if (itemStack != null && !IdentificationFilter.IsMatch(itemStack.ItemIdentification))
+            if (itemStack != null && !ItemFilter.IsMatch(itemStack.ItemIdentification, itemStack.ItemDecorator))
                 throw new Exception("因为该物品栏内物品不符合条件，该物品栏不可应用此IdentificationFilter，请转移物品后再试");
 
-            identificationFilter = newIdentificationFilter;
+            itemFilter = newItemFilter;
         }
 
         #region 修改
 
-        internal void Add(ItemIdentification toAddItem, int toAdd)
+        internal void Add(ItemStack toAddStack)
         {
             if (itemStack == null)
-                itemStack = new ItemStack(toAddItem, toAdd);
+                itemStack = toAddStack;
             else
-                itemStack.Add(toAddItem, toAdd);
+                itemStack.Add(toAddStack);
         }
 
         internal void Remove(int toRemoveNumber)
@@ -58,7 +58,7 @@ namespace Core.Inventory_And_Item.Data
                 return;
             }
 
-            if (IdentificationFilter.IsMatch(newStack.ItemIdentification))
+            if (ItemFilter.IsMatch(newStack.ItemIdentification, newStack.ItemDecorator))
             {
                 itemStack = newStack;
                 return;
@@ -71,40 +71,43 @@ namespace Core.Inventory_And_Item.Data
 
         #region 查询
 
-        public bool Match(ItemIdentification itemIdentification)
-        {
-            return identificationFilter.IsMatch(itemIdentification);
-        }
-
         public bool Match(ItemStack itemStack)
         {
-            return identificationFilter.IsMatch(itemStack.ItemIdentification);
+            return itemFilter.IsMatch(itemStack.ItemIdentification, itemStack.ItemDecorator);
         }
 
-        public int CanAddNumber(ItemIdentification itemIdentification)
+        public int CanAddNumber(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
         {
-            if (!IdentificationFilter.IsMatch(itemIdentification)) return 0;
-
+            if (!ItemFilter.IsMatch(itemIdentification,itemDecorator)) return 0;
             if (itemStack == null) return itemIdentification.MaxStack;
-
-            return itemStack.CanAddNumber(itemIdentification);
+            return itemStack.CanAddNumber(itemIdentification, itemDecorator);
         }
 
-        public int CanRemoveNumber(ItemIdentification toRemoveItem)
+        public int CanRemoveNumber(ItemIdentification toRemoveItem, ItemDecorator itemDecorator)
         {
             if (itemStack == null) return 0;
 
-            return itemStack.CanRemoveNumber(toRemoveItem);
+            return itemStack.CanRemoveNumber(toRemoveItem, itemDecorator);
         }
 
         #endregion
 
         #region 序列化
 
-        [SerializeField] private string itemNameSave = string.Empty;
-        [SerializeField] private int numberSave;
-        [SerializeField] private FilterType filterTypeSave;
-        [SerializeField] private string[] filterStringsSave = Array.Empty<string>();
+        [SerializeField]
+        private string itemNameSave = string.Empty;
+
+        [SerializeField]
+        private int numberSave;
+
+        [SerializeField]
+        private ItemDecorator itemDecorator = new ItemDecorator();
+
+        [SerializeField]
+        private FilterType filterTypeSave;
+
+        [SerializeField]
+        private string[] filterStringsSave = Array.Empty<string>();
 
         public void OnBeforeSerialize()
         {
@@ -112,11 +115,12 @@ namespace Core.Inventory_And_Item.Data
             {
                 itemNameSave = ItemStack.ItemIdentification.GetType().FullName;
                 numberSave = ItemStack.Number;
+                itemDecorator = ItemStack.ItemDecorator;
             }
 
             {
-                filterTypeSave = IdentificationFilter.filterType;
-                filterStringsSave = IdentificationFilter.strings;
+                filterTypeSave = ItemFilter.filterType;
+                filterStringsSave = ItemFilter.strings;
             }
         }
 
@@ -128,19 +132,15 @@ namespace Core.Inventory_And_Item.Data
                 ItemIdentification itemIdentification =
                     SOHelper.CloneScriptableObject(findItemIdentification) ?? throw new InvalidOperationException();
                 int itemNumber = numberSave;
-                Set(new ItemStack(itemIdentification, itemNumber));
+                Set(new ItemStack(itemIdentification, itemDecorator, itemNumber));
             }
 
             {
-                identificationFilter = new IdentificationFilter(filterTypeSave, filterStringsSave);
+                itemFilter = new ItemFilter(filterTypeSave, filterStringsSave);
             }
         }
 
         #endregion
 
-        public Transform GetTransform()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

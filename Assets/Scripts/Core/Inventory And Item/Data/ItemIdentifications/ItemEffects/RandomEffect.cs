@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
@@ -9,16 +10,16 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
     public class RandomEffect : Effect
     {
         [Serializable]
-        public struct EffectsAndPossibilities
+        public class EffectsAndPossibilities
         {
             [EffectGenerator]
             public Effect effect;
 
-            public int probability;
+            [Min(1)]public int probability = 1;
         }
 
-        [SerializeReference]
-        private EffectsAndPossibilities[] effectsAndPossibilities;
+        [SerializeField]
+        private EffectsAndPossibilities[] effectsAndPossibilities = { };
 
         public override void Work(IEffectSender sender, IEnvironment environment)
         {
@@ -34,8 +35,10 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
                     {
                         possibilities.effect.Work(sender, environment);
                     }
+
                     break;
                 }
+
                 random -= possibilities.probability;
             }
         }

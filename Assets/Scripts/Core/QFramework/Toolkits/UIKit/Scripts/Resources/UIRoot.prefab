@@ -190,6 +190,9 @@ GameObject:
   - component: {fileID: 114574186442532806}
   - component: {fileID: 114009023594300624}
   - component: {fileID: 114748361275145794}
+  - component: {fileID: -3139906007465730006}
+  - component: {fileID: 592451975466134818}
+  - component: {fileID: 429164749431741833}
   m_Layer: 5
   m_Name: UIRoot
   m_TagString: Untagged
@@ -306,6 +309,58 @@ MonoBehaviour:
   Common: {fileID: 224382408647199654}
   PopUI: {fileID: 224990554141452176}
   CanvasPanel: {fileID: 224720355990569190}
+--- !u!114 &-3139906007465730006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012438581554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecee88a5204d20bc9bb25fcaf8642e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showHandyFeatures: 1
+  showBehaviorsAsComponents: 0
+  foldoutGroup: 1
+  mainCamera: {fileID: 20000013668380898}
+  _canvas: {fileID: 223938889282763000}
+  sceneMFObjects: []
+  canvasRenderMode: 1
+--- !u!114 &592451975466134818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012438581554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05623e15120fc9ea0b2e9698e39c12dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviorsExecutionTimes: 1
+  _cacheGraphicRaycasters: 1
+--- !u!114 &429164749431741833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012438581554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443415997fb40de25b54faab6e4e93eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useSecondKeyForMultiSelection: 1
+  selectOnDrag: 1
+  dragAllSelected: 1
+  pointerKey: 323
+  secondaryPointerKey: 324
+  secondKey: 304
+  _selectType: 0
 --- !u!1 &1038258765803038
 GameObject:
   m_ObjectHideFlags: 0

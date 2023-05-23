@@ -1,6 +1,9 @@
 Changelog                         {#changelog}
 ============
 
+v1.1.2
+- bugfix: gear icon not being displayed in the editor, unicode character not displayed in some systems, changed by the circled asterisk
+
 v1.1.1
 - bugfix: hierarchy not being drawn correctly
 - bugfix: CompositionSamples scene not correctly set

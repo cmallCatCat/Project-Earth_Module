@@ -39,9 +39,9 @@ namespace MeadowGames.MakeItFlow
         public abstract Vector3 ScreenPointerPosition { get; }
         public abstract Vector3 GetCanvasPointerPosition(CanvasManager canvasManager);
         public abstract MFSelectEnum SelectType { get; }
-        public abstract bool KeyPressed(KeyCode key);
-        public abstract bool KeyDown(KeyCode key);
-        public abstract bool KeyUp(KeyCode key);
+        // public abstract bool KeyPressed(KeyCode key);
+        // public abstract bool KeyDown(KeyCode key);
+        // public abstract bool KeyUp(KeyCode key);
 
         public bool useSecondKeyForMultiSelection = true;
         public bool selectOnDrag = true;

@@ -26,9 +26,9 @@ namespace UI.InGame
         private IEnumerator Start()
         {
             yield return new WaitForSeconds(0.2f);
-            inventory = new Inventory(capacity);
-            inventory.Add(itemIdentification, 1);
-            UIKit.OpenPanel<InventoryPanel>(new InventoryPanelData(inventory,12));
+            inventory = new Inventory(capacity, transform);
+            inventory.Add(new ItemStack(itemIdentification, new ItemDecorator(), 1));
+            UIKit.OpenPanel<ShortcutInventory>(new ShortcutInventoryData(inventory, 12,12,1));
         }
     }
 }
