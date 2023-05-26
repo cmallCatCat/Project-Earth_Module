@@ -1,12 +1,11 @@
 ﻿using System;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
-
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
+using UnityEngine;
 #if UNITY_EDITOR
 using InventoryAndItem.Core.Inventory_And_Item.Editor;
 #endif
-using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures
 {
     [Serializable]
     public abstract class Equipment : ItemFeature

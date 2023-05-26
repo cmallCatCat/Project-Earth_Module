@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -51,7 +50,7 @@ namespace MeadowGames.MakeItFlow
             else
             {
                 _raycasterList.Clear();
-                _raycasterList.AddRange(GameObject.FindObjectsOfType<GraphicRaycaster>());
+                _raycasterList.AddRange(Object.FindObjectsOfType<GraphicRaycaster>());
             }
 
             foreach (GraphicRaycaster gr in _raycasterList)

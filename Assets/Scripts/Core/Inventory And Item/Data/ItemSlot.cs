@@ -1,7 +1,7 @@
 ﻿#nullable enable
 using System;
 using Core.QFramework.Framework.Scripts;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Filters;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         internal void SetIdentificationFilter(ItemFilter newItemFilter)
         {
-            if (itemStack != null && !ItemFilter.IsMatch(itemStack.ItemIdentification, itemStack.ItemDecorator))
+            if (itemStack != null && !ItemFilter.IsMatch(itemStack.ItemInfo, itemStack.ItemDecorator))
                 throw new Exception("因为该物品栏内物品不符合条件，该物品栏不可应用此IdentificationFilter，请转移物品后再试");
 
             itemFilter = newItemFilter;
@@ -56,7 +56,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
                 return;
             }
 
-            if (ItemFilter.IsMatch(newStack.ItemIdentification, newStack.ItemDecorator))
+            if (ItemFilter.IsMatch(newStack.ItemInfo, newStack.ItemDecorator))
             {
                 itemStack = newStack;
                 return;
@@ -71,17 +71,17 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public bool Match(ItemStack itemStack)
         {
-            return itemFilter.IsMatch(itemStack.ItemIdentification, itemStack.ItemDecorator);
+            return itemFilter.IsMatch(itemStack.ItemInfo, itemStack.ItemDecorator);
         }
 
-        public int CanAddNumber(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
+        public int CanAddNumber(ItemInfo itemInfo, ItemDecorator itemDecorator)
         {
-            if (!ItemFilter.IsMatch(itemIdentification, itemDecorator)) return 0;
-            if (itemStack == null) return itemIdentification.MaxStack;
-            return itemStack.CanAddNumber(itemIdentification, itemDecorator);
+            if (!ItemFilter.IsMatch(itemInfo, itemDecorator)) return 0;
+            if (itemStack == null) return itemInfo.MaxStack;
+            return itemStack.CanAddNumber(itemInfo, itemDecorator);
         }
 
-        public int CanRemoveNumber(ItemIdentification toRemoveItem, ItemDecorator itemDecorator)
+        public int CanRemoveNumber(ItemInfo toRemoveItem, ItemDecorator itemDecorator)
         {
             if (itemStack == null) return 0;
 
@@ -114,8 +114,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         {
             if (ItemStack != null)
             {
-                packageNameSave = ItemStack.ItemIdentification.PackageName;
-                itemNameSave = ItemStack.ItemIdentification.ItemName;
+                packageNameSave = ItemStack.ItemInfo.PackageName;
+                itemNameSave = ItemStack.ItemInfo.ItemName;
                 numberSave = ItemStack.Number;
                 itemDecorator = ItemStack.ItemDecorator;
             }
@@ -130,12 +130,12 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         {
             if (itemNameSave != string.Empty)
             {
-                ItemIdentification findItemIdentification
-                    = ItemDatabaseHandler.FindItem(itemNameSave, packageNameSave);
-                ItemIdentification itemIdentification =
-                    SOHelper.CloneScriptableObject(findItemIdentification) ?? throw new InvalidOperationException();
+                ItemInfo findItemInfo
+                    = ItemDatabaseHandler.FindItem(new ItemIdentification(packageNameSave, itemNameSave));
+                ItemInfo itemInfo =
+                    SOHelper.CloneScriptableObject(findItemInfo) ?? throw new InvalidOperationException();
                 int itemNumber = numberSave;
-                Set(new ItemStack(itemIdentification, itemDecorator, itemNumber, null));
+                Set(new ItemStack(itemInfo, itemDecorator, itemNumber, null));
             }
 
             {

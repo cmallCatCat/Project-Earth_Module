@@ -1,7 +1,6 @@
 ﻿using Core.Architectures;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using InventoryAndItem.Core.Inventory_And_Item.Controllers;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using QFramework;
 
 namespace Core

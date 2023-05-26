@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace MeadowGames.MakeItFlow
+﻿namespace MeadowGames.MakeItFlow
 {
     public enum MFBehaviorCalls { StartBehavior, StopOnBehaviorEnd, InterruptBehavior };
 

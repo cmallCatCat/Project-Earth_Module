@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using UnityEngine;
 
 namespace Core

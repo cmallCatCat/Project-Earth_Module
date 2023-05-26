@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 156341314
+CRC: 2755208972
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5da907bbf66691d45afc0bac38034e21
+    Hash: 607a3b730b716caf88fe3aaec49604d5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ff6b3b6dcd1cc09430b114d3fa2e3c06
+    Hash: 1aabbb6e7544fff48f79a43284a55134
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -35,7 +35,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: InventoryAndItem
-  ClassName: Core.Inventory_And_Item.Data.Inventory
+  ClassName: InventoryAndItem.Core.Inventory_And_Item.Data.Inventory
 Assets:
 - Assets/Prefabs/Player.prefab
 Dependencies:

@@ -1,10 +1,10 @@
 ﻿using System;
+using UnityEngine;
 #if UNITY_EDITOR
 using InventoryAndItem.Core.Inventory_And_Item.Editor;
 #endif
-using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 {
     [Serializable]
     public class ParallelEffect : Effect

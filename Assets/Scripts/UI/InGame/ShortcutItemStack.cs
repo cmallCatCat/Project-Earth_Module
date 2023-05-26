@@ -1,13 +1,8 @@
-using System;
-using Core;
-using Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
-using MeadowGames.MakeItFlow;
 using QFramework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
@@ -51,7 +46,7 @@ namespace UI.InGame
 
         public void Init(ItemStack itemSlotItemStack, int i, Vector2 sizeDelta)
         {
-            icon.sprite = itemSlotItemStack.ItemIdentification.SpriteIcon;
+            icon.sprite = itemSlotItemStack.ItemInfo.SpriteIcon;
             count.text = itemSlotItemStack.Number.ToString();
             index = i;
             GetComponent<RectTransform>().sizeDelta = sizeDelta;

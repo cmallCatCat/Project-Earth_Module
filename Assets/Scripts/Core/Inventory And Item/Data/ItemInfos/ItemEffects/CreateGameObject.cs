@@ -3,7 +3,7 @@ using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 {
     [Serializable]
     public class CreateGameObject : Effect

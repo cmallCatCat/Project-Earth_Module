@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
-
 using MeadowGames.MakeItFlow;
 
 public class CallMethodBehavior : Behavior

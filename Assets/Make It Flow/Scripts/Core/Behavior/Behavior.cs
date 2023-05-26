@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -12,7 +11,7 @@ using UnityEditor;
 
 namespace MeadowGames.MakeItFlow
 {
-    [System.Serializable]
+    [Serializable]
     public class Behavior : MonoBehaviour
     {
 #if UNITY_EDITOR
@@ -38,7 +37,7 @@ namespace MeadowGames.MakeItFlow
 
         string[] GetCallMethods()
         {
-            Type behaviorType = this.GetType();
+            Type behaviorType = GetType();
             MethodInfo[] behaviorMethods = behaviorType.GetMethods(
         BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public).Where(
         x => x.DeclaringType == behaviorType && (x.Name == "StartBehavior" || x.Name == "StopOnBehaviorEnd" || x.Name == "InterruptBehavior")).OrderBy(x => x.Name).ToArray();

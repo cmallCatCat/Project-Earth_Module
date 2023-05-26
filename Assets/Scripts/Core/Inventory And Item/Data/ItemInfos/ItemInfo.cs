@@ -2,13 +2,13 @@
 using System;
 using System.Linq;
 using Core.QFramework.Framework.Scripts;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
 {
-    [CreateAssetMenu(menuName = "Create ItemIdentification", fileName = "ItemIdentification", order = 0)]
-    public class ItemIdentification : ScriptableObject
+    [CreateAssetMenu(menuName = "Create ItemInfo", fileName = "ItemInfo", order = 0)]
+    public class ItemInfo : ScriptableObject
     {
         private string packageName = "Default";
 
@@ -46,7 +46,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications
 
         public ItemFeature[] ItemFeatures => itemFeatures;
 
-        public ItemIdentification Init(string packageName, string itemName, string itemDescription, int maxStack,
+        public ItemInfo Init(string packageName, string itemName, string itemDescription, int maxStack,
             string spriteIconPath, string spriteInGamePath,
             ItemFeature[] itemFeatures)
         {
@@ -116,7 +116,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications
 
         #region EqualsAndHashCode
 
-        public static bool operator ==(ItemIdentification? a, ItemIdentification? b)
+        public static bool operator ==(ItemInfo? a, ItemInfo? b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null)) return true;
             if (ReferenceEquals(a, null)) return false;
@@ -124,12 +124,12 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications
             return a.PackageName == b.PackageName && a.ItemName == b.ItemName;
         }
 
-        public static bool operator !=(ItemIdentification? a, ItemIdentification? b)
+        public static bool operator !=(ItemInfo? a, ItemInfo? b)
         {
             return !(a == b);
         }
 
-        protected bool Equals(ItemIdentification other)
+        protected bool Equals(ItemInfo other)
         {
             return this == other;
         }
@@ -139,7 +139,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != GetType()) return false;
-            return Equals((ItemIdentification)obj);
+            return Equals((ItemInfo)obj);
         }
 
         public override int GetHashCode()

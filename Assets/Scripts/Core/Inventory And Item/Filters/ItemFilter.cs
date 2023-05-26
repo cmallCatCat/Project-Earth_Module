@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Filters
 {
@@ -17,20 +17,20 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Filters
             this.strings = strings;
         }
 
-        public bool IsMatch(ItemIdentification? itemIdentification, ItemDecorator? itemDecorator)
+        public bool IsMatch(ItemInfo? itemInfo, ItemDecorator? itemDecorator)
         {
-            if (itemIdentification == null || itemDecorator == null)
+            if (itemInfo == null || itemDecorator == null)
             {
                 return true;
             }
 
             return filterType switch
             {
-                FilterType.Enum => strings.Contains(itemIdentification.GetType().FullName),
-                FilterType.UEnum => !strings.Contains(itemIdentification.GetType().FullName),
-                FilterType.Feature => strings.Any(itemIdentification.HasFeature) ||
+                FilterType.Enum => strings.Contains(itemInfo.GetType().FullName),
+                FilterType.UEnum => !strings.Contains(itemInfo.GetType().FullName),
+                FilterType.Feature => strings.Any(itemInfo.HasFeature) ||
                                       strings.Any(itemDecorator.HasFeature),
-                FilterType.UFeature => !(strings.Any(itemIdentification.HasFeature) ||
+                FilterType.UFeature => !(strings.Any(itemInfo.HasFeature) ||
                                          strings.Any(itemDecorator.HasFeature)),
                 FilterType.All => true,
                 _ => throw new ArgumentOutOfRangeException()

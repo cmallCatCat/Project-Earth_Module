@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Reflection;
 using Core;
 using Core.Architectures;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using QFramework;
 using UI.InGame;
-using UnityEditor;
 using UnityEngine;
-using Color = UnityEngine.Color;
 
-namespace DefaultNamespace
+namespace Tests
 {
     public class ShortcutInventoryTest : MonoBehaviour, IController
     {
         private ResLoader resLoader = ResLoader.Allocate();
-        public ItemIdentification itemIdentification;
+        
+        public ItemInfo itemInfo;
 
         [SerializeField]
         private Sprite modSprite;
@@ -46,7 +41,7 @@ namespace DefaultNamespace
                 );
                 instantiate.name = "Player";
                 instantiate.GetComponentInChildren<InventoryHolderExample>().Inventory
-                    .Add(new ItemStack(itemIdentification, new ItemDecorator(), 1, transform));
+                    .Add(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
             }
         }
 

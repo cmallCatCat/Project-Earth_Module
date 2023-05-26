@@ -8,12 +8,14 @@ namespace Extents
     {
         public static IEnumerable<Type> GetImplements(this Type type, Type[] types)
         {
-            return types.Where(t => t.IsAssignableFrom(type));
+            return types.Where(t =>
+                t.IsAssignableFrom(type) && !t.IsAbstract && !t.IsInterface && !t.IsGenericType);
         }
 
         public static IEnumerable<Type> GetSubClasses(this Type type, Type[] types)
         {
-            return types.Where(t => t.IsSubclassOf(type));
+            return types.Where(t =>
+                t.IsSubclassOf(type) && !t.IsAbstract && !t.IsGenericType);
         }
     }
 }

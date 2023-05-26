@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.QFramework.Framework.Scripts;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using UnityEngine;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Data

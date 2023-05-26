@@ -1,4 +1,5 @@
-﻿namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures
+﻿#if UNITY_EDITOR
+namespace InventoryAndItem.Core.Inventory_And_Item.Editor
 {
     public enum EffectType
     {
@@ -10,6 +11,6 @@
         ParallelEffect,
         RandomEffect,
         SequenceEffect
-
     }
 }
+#endif

@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Core.QFramework.Framework.Scripts;
 using Extents;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
+using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace Mod
     public class ModLoader : MonoBehaviour
     {
         public static ModLoader Instance;
-        public Dictionary<Assembly, ModInfo> ModInfos;
+        public Dictionary<Assembly, ModInfo> ModInfos = new Dictionary<Assembly, ModInfo>();
         public ResLoader resLoader = ResLoader.Allocate();
 
         public static readonly string PluginPath = AppDomain.CurrentDomain.BaseDirectory + "/BepInEx/plugins";
@@ -28,27 +29,35 @@ namespace Mod
             DontDestroyOnLoad(gameObject);
 
 #if !UNITY_EDITOR
-            LoadPlugins();
+            LoadMods();
 #endif
         }
 
-        private void LoadPlugins()
+        [UsedImplicitly]
+        private void LoadMods()
         {
             Assembly[] solutionAssemblies = AssemblyExtents.GetSolutionAssemblies(PluginPath);
-            Debug.Log("-----Load Mods Start-----");
-            Initialize();
+            Debug.Log("------Load Mods Start------");
 
             foreach (Assembly solutionAssembly in solutionAssemblies)
             {
                 LoadMod(solutionAssembly);
             }
 
-            Debug.Log("-----Load Mods End-----");
-        }
+            Debug.Log("------Load Mods End------");
 
-        private void Initialize()
-        {
-            ModInfos = new Dictionary<Assembly, ModInfo>();
+            Debug.Log("------Mods items------");
+            foreach (ModInfo modInfo in ModInfos.Values)
+            {
+                Debug.Log("----new items----");
+                modInfo.newItem.Log();
+                Debug.Log("----delete items----");
+                modInfo.deleteItem.Log();
+                Debug.Log("----change items before----");
+                modInfo.changeItemBefore.Log();
+                Debug.Log("----change items after----");
+                modInfo.changeItemAfter.Log();
+            }
         }
 
         private void LoadMod(Assembly modAssembly)
@@ -71,19 +80,23 @@ namespace Mod
 
             LoadNewItem(modAssembly, allTypes, modInfo);
 
+            LoadDeleteItem(modAssembly, allTypes, modInfo);
+
+            LoadDeleteItemList(modAssembly, allTypes, modInfo);
+
             LoadChangeItem(modAssembly, allTypes, modInfo);
 
-            LoadDeleteItem(modAssembly, allTypes, modInfo);
+            LoadChangeItemList(modAssembly, allTypes, modInfo);
+
         }
 
         private static void LoadNewItem(Assembly modAssembly, Type[] allTypes, ModInfo modInfo)
         {
-            foreach (Type subClass in typeof(NewItemBase).GetSubClasses(allTypes))
+            foreach (Type subClass in typeof(INewItem).GetImplements(allTypes))
             {
                 object instance = modAssembly.CreateInstance(subClass.FullName);
 
-                ItemIdentification newItem
-                    = (ItemIdentification)subClass.GetMethod("NewItem").Invoke(instance, null);
+                ItemInfo newItem = (ItemInfo)subClass.GetMethod("ItemInfo").Invoke(instance, null);
                 bool bNew = ItemDatabaseHandler.New(newItem);
                 if (bNew)
                 {
@@ -94,40 +107,90 @@ namespace Mod
 
         private void LoadDeleteItem(Assembly modAssembly, Type[] allTypes, ModInfo modInfo)
         {
-            foreach (Type subClass in typeof(DeleteItemBase).GetSubClasses(allTypes))
+            foreach (Type subClass in typeof(IDeleteItem).GetImplements(allTypes))
             {
                 object instance = modAssembly.CreateInstance(subClass.FullName);
 
-                string itemPackageName = subClass.GetMethod("DeleteItemPackageName").Invoke(instance, null) as string;
-                string itemName = subClass.GetMethod("DeleteItemName").Invoke(instance, null) as string;
-                
-                ItemIdentification deletedItem = ItemDatabaseHandler.FindItem(itemName, itemPackageName);
-                bool delete = ItemDatabaseHandler.Delete(itemName, itemPackageName);
-                
-                if (delete)
+                ItemIdentification deleteItemIdentification
+                    = (ItemIdentification)subClass.GetMethod("Identification").Invoke(instance, null);
+
+                ItemInfo deletedItem = ItemDatabaseHandler.FindItem(deleteItemIdentification);
+                bool succeed = ItemDatabaseHandler.Delete(deleteItemIdentification);
+
+                if (succeed)
                 {
                     modInfo.deleteItem.Add(deletedItem);
                 }
             }
         }
 
-        private static void LoadChangeItem(Assembly modAssembly, Type[] allTypes, ModInfo modInfo)
+        private void LoadDeleteItemList(Assembly modAssembly, Type[] allTypes, ModInfo modInfo)
         {
-            foreach (Type subClass in typeof(ChangeItemBase).GetSubClasses(allTypes))
+            foreach (Type subClass in typeof(IDeleteItemList).GetImplements(allTypes))
             {
                 object instance = modAssembly.CreateInstance(subClass.FullName);
 
-                string itemPackageName = subClass.GetMethod("ChangeItemPackeageName").Invoke(instance, null) as string;
-                string itemName = subClass.GetMethod("ChangeItemName").Invoke(instance, null) as string;
+                ItemIdentification[] deleteItemIdentifications
+                    = (ItemIdentification[])subClass.GetMethod("Identifications").Invoke(instance, null);
 
-                ItemIdentification original = ItemDatabaseHandler.FindItem(itemName);
-                ItemIdentification changedItem
-                    = (ItemIdentification)subClass.GetMethod("ChangeItem").Invoke(instance, new object[] { original });
+                foreach (ItemIdentification deleteItemIdentification in deleteItemIdentifications)
+                {
+                    ItemInfo deletedItem = ItemDatabaseHandler.FindItem(deleteItemIdentification);
+                    bool succeed = ItemDatabaseHandler.Delete(deleteItemIdentification);
+                    if (succeed)
+                    {
+                        modInfo.deleteItem.Add(deletedItem);
+                    }
+                }
+            }
+        }
 
-                bool change = ItemDatabaseHandler.Change(itemName,changedItem,itemPackageName);
+        private static void LoadChangeItem(Assembly modAssembly, Type[] allTypes, ModInfo modInfo)
+        {
+            foreach (Type subClass in typeof(IChangeItem).GetImplements(allTypes))
+            {
+                object instance = modAssembly.CreateInstance(subClass.FullName);
+
+                ItemIdentification changeItemIdentification
+                    = (ItemIdentification)subClass.GetMethod("Identification").Invoke(instance, null);
+
+                ItemInfo original = ItemDatabaseHandler.FindItem(changeItemIdentification);
+                ItemInfo changedItem
+                    = (ItemInfo)subClass.GetMethod("ItemInfo").Invoke(instance, new object[] { original });
+
+                bool change = ItemDatabaseHandler.Change(changeItemIdentification, changedItem);
                 if (change)
                 {
-                    modInfo.changeItemName.Add(itemName);
+                    modInfo.changeItemBefore.Add(original);
+                    modInfo.changeItemAfter.Add(changedItem);
+                }
+            }
+        }
+
+        private static void LoadChangeItemList(Assembly modAssembly, Type[] allTypes, ModInfo modInfo)
+        {
+            foreach (Type subClass in typeof(IChangeItemList).GetImplements(allTypes))
+            {
+                object instance = modAssembly.CreateInstance(subClass.FullName);
+
+                ItemIdentification[] changeItemIdentifications
+                    = (ItemIdentification[])subClass.GetMethod("Identifications").Invoke(instance, null);
+
+                ItemInfo[] originalList = changeItemIdentifications.Select(ItemDatabaseHandler.FindItem).ToArray();
+                ItemInfo[] changedItems
+                    = (ItemInfo[])subClass.GetMethod("ItemInfos").Invoke(instance, new object[] { originalList });
+
+                for (int index = 0; index < changedItems.Length; index++)
+                {
+                    ItemIdentification changeItemIdentification = changeItemIdentifications[index];
+                    ItemInfo originalItem = originalList[index];
+                    ItemInfo changedItem = changedItems[index];
+                    bool succeed = ItemDatabaseHandler.Change(changeItemIdentification, changedItem);
+                    if (succeed)
+                    {
+                        modInfo.changeItemBefore.Add(originalItem);
+                        modInfo.changeItemAfter.Add(changedItem);
+                    }
                 }
             }
         }

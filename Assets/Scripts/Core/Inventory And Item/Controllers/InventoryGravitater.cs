@@ -33,7 +33,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
             }
             
             ItemStack itemStack = other.GetComponent<ItemPicker>().ItemStack;
-            if (!InventoryHolder.Inventory.CanAdd(itemStack.ItemIdentification, itemStack.ItemDecorator))
+            if (!InventoryHolder.Inventory.CanAdd(itemStack.ItemInfo, itemStack.ItemDecorator))
             {
                 return;
             }

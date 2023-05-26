@@ -1,14 +1,13 @@
-using System;
 using System.Collections.Generic;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 
 namespace Mod
 {
     public class ModInfo
     {
-        public List<ItemIdentification> newItem = new List<ItemIdentification>();
-        public List<ItemIdentification> deleteItem= new List<ItemIdentification>();
-        public List<ItemIdentification> changeItem = new List<ItemIdentification>();
-        public List<string> changeItemName = new List<string>();
+        public List<ItemInfo> newItem = new List<ItemInfo>();
+        public List<ItemInfo> deleteItem= new List<ItemInfo>();
+        public List<ItemInfo> changeItemBefore = new List<ItemInfo>();
+        public List<ItemInfo> changeItemAfter = new List<ItemInfo>();
     }
 }

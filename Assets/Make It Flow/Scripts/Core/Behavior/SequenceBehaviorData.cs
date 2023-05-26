@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace MeadowGames.MakeItFlow
 {
     public enum MFBehaviorEvents { OnBehaviorStart, OnBehaviorEnd, OnBehaviorInterrupt };

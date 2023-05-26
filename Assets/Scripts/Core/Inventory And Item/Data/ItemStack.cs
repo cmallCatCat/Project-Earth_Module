@@ -1,13 +1,13 @@
 ﻿using System;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using UnityEngine;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
     public class ItemStack: IEffectSender
     {
-        private ItemIdentification itemIdentification;
+        private ItemInfo itemInfo;
 
         private ItemDecorator itemDecorator;
         
@@ -15,7 +15,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         private Transform transform;
 
-        public ItemIdentification ItemIdentification => itemIdentification;
+        public ItemInfo ItemInfo => itemInfo;
 
         public int Number => number;
 
@@ -23,9 +23,9 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         
         public Transform Transform => transform;
 
-        public ItemStack(ItemIdentification itemIdentification, ItemDecorator itemDecorator, int number, Transform transform)
+        public ItemStack(ItemInfo itemInfo, ItemDecorator itemDecorator, int number, Transform transform)
         {
-            this.itemIdentification = itemIdentification;
+            this.itemInfo = itemInfo;
             this.itemDecorator = itemDecorator;
             this.number = number;
             this.transform = transform;
@@ -36,23 +36,23 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             this.transform = transform;
         }
 
-        public int CanAddNumber(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
+        public int CanAddNumber(ItemInfo itemInfo, ItemDecorator itemDecorator)
         {
-            if (itemIdentification != this.itemIdentification || itemDecorator != this.itemDecorator) return 0;
+            if (itemInfo != this.itemInfo || itemDecorator != this.itemDecorator) return 0;
 
-            return itemIdentification.MaxStack - number;
+            return itemInfo.MaxStack - number;
         }
 
         public void Add(ItemStack itemStack)
         {
-            if (itemIdentification != itemStack.itemIdentification || itemDecorator != itemStack.itemDecorator)
+            if (itemInfo != itemStack.itemInfo || itemDecorator != itemStack.itemDecorator)
                 throw new Exception("该ItemStack不可应用此添加不同的物品");
             number += itemStack.number;
         }
 
-        public int CanRemoveNumber(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
+        public int CanRemoveNumber(ItemInfo itemInfo, ItemDecorator itemDecorator)
         {
-            if (this.itemIdentification != itemIdentification || this.itemDecorator != itemDecorator)
+            if (this.itemInfo != itemInfo || this.itemDecorator != itemDecorator)
                 return 0;
             return number;
         }

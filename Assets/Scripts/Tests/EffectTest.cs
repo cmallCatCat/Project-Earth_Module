@@ -1,28 +1,25 @@
-using System;
 using Core;
 using Core.Architectures;
-using Core.Inventory_And_Item.Data.ItemIdentifications;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using Core.QFramework.Framework.Scripts;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using QFramework;
-using UI.InGame;
 using UnityEngine;
 
 public class EffectTest : MonoBehaviour, IController
 {
     private ResLoader resLoader = ResLoader.Allocate();
-    public ItemIdentification itemIdentification;
-    private ItemIdentification item;
+    
+    public ItemInfo itemInfo;
+    private ItemInfo item;
     private IEffectSender effectSender;
 
     private void Awake()
     {
         ResKit.Init();
         UIKit.CloseAllPanel();
-        item = SOHelper.CloneScriptableObject(itemIdentification);
+        item = SOHelper.CloneScriptableObject(itemInfo);
         effectSender=new IEffectSenderTest();
     }
 

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using MeadowGames.MakeItFlow;
 using UnityEngine;
 
 namespace MeadowGames.MakeItFlow.Samples

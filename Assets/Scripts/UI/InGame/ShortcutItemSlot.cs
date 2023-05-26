@@ -1,7 +1,4 @@
-using Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
-using MeadowGames.MakeItFlow;
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,6 +17,7 @@ namespace UI.InGame
             stack.parentAfterDrag = transform;
             stack.GetComponent<TranslateToTargetBehavior>().TargetPosition = transform;
             inventory.MergeOrSwitch(stack.index, index, false);
+            
             // Destroy(eventData.pointerDrag);
         }
 

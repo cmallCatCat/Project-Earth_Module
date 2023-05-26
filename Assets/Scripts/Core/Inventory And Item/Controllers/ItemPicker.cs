@@ -1,14 +1,16 @@
 ﻿using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using QFramework;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
 {
     public abstract class ItemPicker : MonoBehaviour, IController
     {
         public ItemStack ItemStack;
-        public ItemIdentification itemIdentification;
+        
+        public ItemInfo itemInfo;
         public ItemDecorator itemDecorator = new ItemDecorator();
         public int number;
 
@@ -16,13 +18,13 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
         {
             if (number > 0)
             {
-                ItemStack = new ItemStack(itemIdentification, itemDecorator, number, transform);
+                ItemStack = new ItemStack(itemInfo, itemDecorator, number, transform);
             }
         }
 
         private void Start()
         {
-            SpriteRenderer.sprite = ItemStack.ItemIdentification.SpriteInGame;
+            SpriteRenderer.sprite = ItemStack.ItemInfo.SpriteInGame;
         }
 
         public void SetStack(ItemStack itemStack)

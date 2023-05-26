@@ -1,6 +1,6 @@
 #if UNITY_EDITOR
 using System;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;

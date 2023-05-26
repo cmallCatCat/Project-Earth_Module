@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using Core.Inventory_And_Item.Data;
-using Core.Inventory_And_Item.Data.ItemIdentifications;
+﻿using System.Collections;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using QFramework;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -18,7 +15,7 @@ namespace UI.InGame
         public Inventory inventory;
 
         [SerializeField]
-        private ItemIdentification itemIdentification;
+        private ItemInfo itemInfo;
 
         private void Awake()
         {
@@ -29,7 +26,7 @@ namespace UI.InGame
         {
             yield return new WaitForSeconds(0.2f);
             inventory = new Inventory(capacity, transform);
-            inventory.Add(new ItemStack(itemIdentification, new ItemDecorator(), 1, transform));
+            inventory.Add(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
             UIKit.OpenPanel<ShortcutInventory>(new ShortcutInventoryData(inventory, 12,12,1));
         }
     }

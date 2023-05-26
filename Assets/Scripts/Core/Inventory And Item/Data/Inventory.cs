@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Filters;
 using UnityEngine;
 
@@ -66,7 +66,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public void Add(ItemStack stack)
         {
-            ItemIdentification toAddItem = stack.ItemIdentification;
+            ItemInfo toAddItem = stack.ItemInfo;
             ItemDecorator toAddDecorator = stack.ItemDecorator;
             int toAddNumber = stack.Number;
             foreach (ItemSlot itemSlot in itemSlots)
@@ -91,15 +91,15 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public void Add(ItemStack stack, int index)
         {
-            ItemIdentification toAddIdentification = stack.ItemIdentification;
+            ItemInfo toAddInfo = stack.ItemInfo;
             ItemDecorator toAddDecorator = stack.ItemDecorator;
             int toAddNumber = stack.Number;
 
             ItemSlot itemSlot = itemSlots[index];
-            int canAddNumber = itemSlot.CanAddNumber(toAddIdentification, toAddDecorator);
+            int canAddNumber = itemSlot.CanAddNumber(toAddInfo, toAddDecorator);
             if (canAddNumber >= toAddNumber)
             {
-                BaseAdd(itemSlot, new ItemStack(toAddIdentification, toAddDecorator, toAddNumber, transform));
+                BaseAdd(itemSlot, new ItemStack(toAddInfo, toAddDecorator, toAddNumber, transform));
                 onItemChanged?.Invoke();
                 return;
             }
@@ -114,7 +114,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public void Remove(ItemStack stack)
         {
-            ItemIdentification toRemoveItem = stack.ItemIdentification;
+            ItemInfo toRemoveItem = stack.ItemInfo;
             ItemDecorator toRemoveDecorator = stack.ItemDecorator;
             int toRemoveNumber = stack.Number;
 
@@ -140,7 +140,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public void Remove(ItemStack stack, int index)
         {
-            ItemIdentification toRemoveItem = stack.ItemIdentification;
+            ItemInfo toRemoveItem = stack.ItemInfo;
             ItemDecorator toRemoveDecorator = stack.ItemDecorator;
             int toRemoveNumber = stack.Number;
 
@@ -166,7 +166,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             ItemSlot fromSlot = itemSlots[fromIndex];
             ItemSlot toSlot = itemSlots[toIndex];
             if (fromSlot.ItemStack == null || toSlot.ItemStack == null ||
-                fromSlot.ItemStack.ItemIdentification != toSlot.ItemStack.ItemIdentification)
+                fromSlot.ItemStack.ItemInfo != toSlot.ItemStack.ItemInfo)
             {
                 Switch(fromIndex, toIndex, invoke);
                 if (invoke)
@@ -177,11 +177,11 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
                 return -1;
             }
 
-            int canAddNumber = toSlot.CanAddNumber(fromSlot.ItemStack.ItemIdentification, fromSlot.ItemStack.ItemDecorator);
+            int canAddNumber = toSlot.CanAddNumber(fromSlot.ItemStack.ItemInfo, fromSlot.ItemStack.ItemDecorator);
             int finalAddNumber = Mathf.Min(canAddNumber, fromSlot.ItemStack.Number);
             BaseRemove(fromSlot, finalAddNumber);
             BaseAdd(toSlot,
-                new ItemStack(toSlot.ItemStack.ItemIdentification, toSlot.ItemStack.ItemDecorator, finalAddNumber, transform));
+                new ItemStack(toSlot.ItemStack.ItemInfo, toSlot.ItemStack.ItemDecorator, finalAddNumber, transform));
             if (invoke)
             {
                 onItemChanged?.Invoke();
@@ -218,7 +218,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         {
             for (int i = 0; i < capacity; i++)
             {
-                ItemIdentification? itemStackItemIdentification = itemSlots[i].ItemStack?.ItemIdentification;
+                ItemInfo? itemStackItemIdentification = itemSlots[i].ItemStack?.ItemInfo;
                 ItemDecorator? itemStackItemDecorator = itemSlots[i].ItemStack?.ItemDecorator;
                 if (filter.IsMatch(itemStackItemIdentification, itemStackItemDecorator))
                     return (itemSlots[i], i);
@@ -241,7 +241,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             List<ItemSlot> slots = new List<ItemSlot>(capacity);
             for (int i = 0; i < capacity; i++)
             {
-                ItemIdentification? itemStackItemIdentification = itemSlots[i].ItemStack?.ItemIdentification;
+                ItemInfo? itemStackItemIdentification = itemSlots[i].ItemStack?.ItemInfo;
                 ItemDecorator? itemStackItemDecorator = itemSlots[i].ItemStack?.ItemDecorator;
                 if (filter.IsMatch(itemStackItemIdentification, itemStackItemDecorator))
                     slots.Add(itemSlots[i]);
@@ -264,19 +264,19 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             return itemSlots;
         }
 
-        public int CanAddNumber(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
+        public int CanAddNumber(ItemInfo itemInfo, ItemDecorator itemDecorator)
         {
-            return itemSlots.Sum(slot => slot.CanAddNumber(itemIdentification, itemDecorator));
+            return itemSlots.Sum(slot => slot.CanAddNumber(itemInfo, itemDecorator));
         }
 
         public bool CanAddAll(ItemStack itemStack)
         {
-            return CanAddNumber(itemStack.ItemIdentification, itemStack.ItemDecorator) >= itemStack.Number;
+            return CanAddNumber(itemStack.ItemInfo, itemStack.ItemDecorator) >= itemStack.Number;
         }
 
-        public bool CanAdd(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
+        public bool CanAdd(ItemInfo itemInfo, ItemDecorator itemDecorator)
         {
-            return CanAddNumber(itemIdentification, itemDecorator) > 0;
+            return CanAddNumber(itemInfo, itemDecorator) > 0;
         }
 
         #endregion
