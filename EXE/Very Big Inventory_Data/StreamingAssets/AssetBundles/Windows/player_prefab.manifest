@@ -1,0 +1,42 @@
+ManifestFileVersion: 0
+CRC: 156341314
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5da907bbf66691d45afc0bac38034e21
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ff6b3b6dcd1cc09430b114d3fa2e3c06
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: e564b6f283984811a2cd0bf750794246, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 166968d578134d19a4f8127b5eb0e92f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a66f5030323458eb53dd4e5a02e3fa7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c735b43d62324a8a8cff038a18d03052, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: InventoryAndItem
+  ClassName: Core.Inventory_And_Item.Data.Inventory
+Assets:
+- Assets/Prefabs/Player.prefab
+Dependencies:
+- D:/Unity/Project-Earth_Module/AssetBundles/Windows/minimalist cartoon animal_png

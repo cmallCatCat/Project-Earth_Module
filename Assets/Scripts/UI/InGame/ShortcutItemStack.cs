@@ -1,6 +1,7 @@
 using System;
 using Core;
 using Core.Inventory_And_Item.Data;
+using InventoryAndItem.Core.Inventory_And_Item.Data;
 using MeadowGames.MakeItFlow;
 using QFramework;
 using TMPro;
@@ -48,16 +49,17 @@ namespace UI.InGame
             transform.SetParent(parentAfterDrag);
         }
 
-        public IArchitecture GetArchitecture()
-        {
-            return Core.Architectures.InGame.Interface;
-        }
-
-        public void Init(ItemStack itemSlotItemStack, int i)
+        public void Init(ItemStack itemSlotItemStack, int i, Vector2 sizeDelta)
         {
             icon.sprite = itemSlotItemStack.ItemIdentification.SpriteIcon;
             count.text = itemSlotItemStack.Number.ToString();
             index = i;
+            GetComponent<RectTransform>().sizeDelta = sizeDelta;
+        }
+
+        public IArchitecture GetArchitecture()
+        {
+            return Core.Architectures.InGame.Interface;
         }
     }
 }

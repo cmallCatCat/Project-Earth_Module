@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 575779423
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d4970a2fb8427978f1f87b8e7cdb977d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Minimalist Cartoon Animal.png
+Dependencies: []

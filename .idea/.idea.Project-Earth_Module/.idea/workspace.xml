@@ -5,215 +5,381 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5acd522d-d7b8-4e60-8def-ec7cabe74ab9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/ShortcutInventory.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/Stack.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/TargetPosition.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/CompositionSamples.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/CheckSelectedText.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/GenerateGrid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/GenerateGrid6.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/GenerateGrid6.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/InstantiateMask.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/InstantiateMask.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/MenuPanelMethods.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/MenuPanelMethods.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/SpawnArrows.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/SpawnArrows.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/BackRays.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/BackRays.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/I_am_Unity-Chan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/I_am_Unity-Chan.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/KoiFlag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/KoiFlag.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/alienBeige_suit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/alienBeige_suit.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/alienBlue_suit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/alienBlue_suit.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/alienPink_suit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/alienPink_suit.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/alienYellow_suit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/alienYellow_suit.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/apple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/apple.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/arrow.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/axe_iron.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/axe_iron.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/blur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/blur.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/bowArrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/bowArrow.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_5.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_6.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_diamonds_7.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_spades_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/card_spades_1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/character.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/character_place.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/character_place.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/circle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/cursor_hand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/cursor_hand.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/cursor_pointerFlat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/cursor_pointerFlat.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/d3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/d3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/d4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/d4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/flail_silver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/flail_silver.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/glassPanel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/glassPanel.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/glassPanel_cornerTL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/glassPanel_cornerTL.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/glassPanel_corners.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/glassPanel_corners.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/grey_arrowUpWhite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/grey_arrowUpWhite.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/grey_box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/grey_box.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/grey_crossWhite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/grey_crossWhite.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/grey_panel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/grey_panel.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/lightning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/lightning.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/map.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/ore_diamond.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/ore_diamond.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/owl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/owl.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/panel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/panel.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/rectangle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/rectangle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/rectangleBorder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/rectangleBorder.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/roundBlur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/roundBlur.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/stew.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/stew.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/sword_silver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/sword_silver.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/wheat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Sprites/wheat.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/ShowcaseScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/ShowcaseScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/SingleBehaviorSamples.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/SingleBehaviorSamples.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/TestUIPanels/InGame/TestShortcutInventory.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/InventoryGravitater.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/InventoryGravitater.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemDecorator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/CounterManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/CounterManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InventoryGravitaterExample.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InventoryGravitaterExample.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ShortcutInventoryTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ShortcutInventoryTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.Designer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemSlot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemSlot.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemStack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemStack.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MakeItFlowTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MakeItFlowTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/InventoryPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/ShortcutInventory.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/InventoryPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/Stack.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/Slot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/Slot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Documentation/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Documentation/ChangeLog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Documentation/Make it Flow - Documentation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Documentation/Make it Flow - Documentation.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/BehaviorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/BehaviorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/Window/MFWindowEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/Window/MFWindowEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Event System/Input Manager/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Event System/Input Manager/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Event System/Input Manager/InputManager_Legacy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Event System/Input Manager/InputManager_Legacy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssetBundles/Windows/Windows" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssetBundles/Windows/Windows.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssetBundles/Windows/minimalist cartoon animal_png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssetBundles/Windows/minimalist cartoon animal_png.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssetBundles/Windows/player_prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssetBundles/Windows/player_prefab.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssetBundles/Windows/shortcutinventory_prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssetBundles/Windows/shortcutinventory_prefab.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/AddConditionalCompilation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/AddConditionalCompilation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New Item Database.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New Item Database.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/AOTGenerationConfig.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/AOTGenerationConfig.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/ImportSettingsConfig.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/ImportSettingsConfig.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemDatabaseHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemDatabaseHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Editor/EffectGeneratorAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Editor/EffectGeneratorAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Editor/EffectMakerAttributeDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Editor/EffectMakerAttributeDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Framework/Scripts/SpriteLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Framework/Scripts/SpriteLoader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extents.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extents/AssemblyExtents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extents/AssemblyExtents.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extents/TypeExtent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extents/TypeExtent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/ChangeItemBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/ChangeItemBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/DeleteItemBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/DeleteItemBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/ModInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/ModInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/ModLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/ModLoader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/NewItemBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/NewItemBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/Windows" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/Windows.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/Windows.manifest.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/Windows.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/minimalist cartoon animal_png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/minimalist cartoon animal_png.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/minimalist cartoon animal_png.manifest.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/minimalist cartoon animal_png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/player_prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/player_prefab.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/player_prefab.manifest.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/player_prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/shortcutinventory_prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/shortcutinventory_prefab.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/shortcutinventory_prefab.manifest.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/shortcutinventory_prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/BepInEx/plugins/PluginTest.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/2.0/machine.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/2.0/settings.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/2.0/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.0/machine.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.0/settings.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.0/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.5/machine.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.5/settings.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/4.5/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/browscap.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/MonoBleedingEdge/etc/mono/mconfig/config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/UnityCrashHandler64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/UnityPlayer.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/AudioKit.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Cinemachine.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/GiantParticle.InspectorGraph.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/InventoryAndItem.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Mono.Security.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Newtonsoft.Json.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/QFramework.CoreKit.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/QFramework.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/ResKit.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/SaveAndLoad.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Sirenix.OdinInspector.Attributes.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Sirenix.Serialization.Config.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Sirenix.Serialization.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Sirenix.Utilities.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.ComponentModel.Composition.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Configuration.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Core.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Data.DataSetExtensions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Data.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Drawing.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.EnterpriseServices.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.IO.Compression.FileSystem.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.IO.Compression.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Net.Http.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Numerics.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Runtime.Serialization.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Security.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.ServiceModel.Internals.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Transactions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Xml.Linq.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.Xml.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/System.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UIKit.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.2D.Animation.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.2D.Common.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.2D.IK.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.2D.PixelPerfect.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.2D.Tilemap.Extras.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.Burst.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.Burst.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.Mathematics.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.TextMeshPro.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.Timeline.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.VisualScripting.Core.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.VisualScripting.Flow.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/Unity.VisualScripting.State.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.AIModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.ARModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.AccessibilityModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.AndroidJNIModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.AnimationModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.AssetBundleModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.AudioModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.AutoStreamingModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.ClothModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.ClusterInputModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.ClusterRendererModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.CoreModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.CrashReportingModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.DSPGraphModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.DirectorModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.GIModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.GameCenterModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.GridModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.HotReloadModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.IMGUIModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.ImageConversionModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.InputLegacyModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.InputModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.JSONSerializeModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.LocalizationModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.NVIDIAModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.ParticleSystemModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.PerformanceReportingModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.Physics2DModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.PhysicsModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.ProfilerModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.ScreenCaptureModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.SharedInternalsModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.SpriteMaskModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.SpriteShapeModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.StreamingModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.SubstanceModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.SubsystemsModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.TLSModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.TerrainModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.TextRenderingModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.TilemapModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UIElementsModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UIElementsNativeModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UIModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UIWidgetsModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UNETModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UmbraModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityConnectModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityCurlModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityWebRequestModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.VFXModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.VRModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.VehiclesModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.VideoModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.VirtualTexturingModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.WindModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.XRModule.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/UnityEngine.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/mscorlib.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Managed/netstandard.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Plugins/x86_64/lib_burst_generated.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Resources/unity default resources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/Resources/unity_builtin_extra" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/RuntimeInitializeOnLoads.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/ScriptingAssemblies.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/Windows" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/Windows.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/asset_bundle_config.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/minimalist cartoon animal_png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/minimalist cartoon animal_png.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/player_prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/player_prefab.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/shortcutinventory_prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/StreamingAssets/AssetBundles/Windows/shortcutinventory_prefab.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/app.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/boot.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/globalgamemanagers" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/globalgamemanagers.assets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/globalgamemanagers.assets.resS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/level0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/resources.assets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/resources.assets.resS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/sharedassets0.assets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EXE/Very Big Inventory_Data/sharedassets0.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/.qframework/PackageManager/PackageInfosRequestCache.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/.qframework/PackageManager/PackageInfosRequestCache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/Stack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/Stack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/Assembly.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/Assembly.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/ApplicationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/ContentViewRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/ContentViewRegistry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/Filters/ITypeFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/Filters/ITypeFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/Filters/TypeFilterByName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/Filters/TypeFilterByName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/Filters/TypeFilterHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/Filters/TypeFilterHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeProcessors/AnimatorControllerObjectNodeProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeProcessors/AnimatorControllerObjectNodeProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeProcessors/BaseObjectNodeProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeProcessors/BaseObjectNodeProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeProcessors/GameObjectObjectNodeProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeProcessors/GameObjectObjectNodeProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeProcessors/IObjectNodeProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeProcessors/IObjectNodeProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ObjectNodeReference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ReferenceNodeFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ReferenceNodeFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ReferenceType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/ReferenceType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/SerializedPropertyProcessors/BaseSerializedPropertyProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/SerializedPropertyProcessors/BaseSerializedPropertyProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/SerializedPropertyProcessors/ISerializedPropertyProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/SerializedPropertyProcessors/ISerializedPropertyProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/SerializedPropertyProcessors/ObjectReferenceSerializedPropertyProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/Nodes/SerializedPropertyProcessors/ObjectReferenceSerializedPropertyProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/WindowData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Data/WindowData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/InspectorGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/InspectorGraph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/InspectorGraphToolbar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/InspectorGraphToolbar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/BaseDragManipulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/BaseDragManipulator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/BaseHoverManipulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/BaseHoverManipulator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/BringToFrontManipulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/BringToFrontManipulator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/DragManipulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/DragManipulator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/HighlightManipulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/HighlightManipulator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/IPositionManipulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/IPositionManipulator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/IScalableManipulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/IScalableManipulator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/ResizeManipulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Manipulators/ResizeManipulator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/BasePreference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/BasePreference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/GeneralPreferences.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/GeneralPreferences.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/IPreference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/IPreference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/IPreferenceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/IPreferenceHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/PreferenceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Preferences/PreferenceHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/ReflectionHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/ReflectionHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/FilterTypeSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/FilterTypeSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/InspectorGraphSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/InspectorGraphSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/InspectorGraphSettingsProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/InspectorGraphSettingsProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/InspectorGraphSettingsRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/InspectorGraphSettingsRegister.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/InspectorWindowSizeSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/InspectorWindowSizeSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/ReferenceColorSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Settings/ReferenceColorSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/BaseUIDocumentCatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/BaseUIDocumentCatalog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/BaseUIDocumentInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/BaseUIDocumentInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/InspectorWindowUIDocumentCatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/InspectorWindowUIDocumentCatalog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/MainWindowUIDocumentCatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/MainWindowUIDocumentCatalog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/SettingsUIDocumentCatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/UIDocuments/SettingsUIDocumentCatalog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ConnectionLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ConnectionLine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/BaseWindowContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/BaseWindowContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/ContentViewMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/ContentViewMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/IMGUIPreviewWindowContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/IMGUIPreviewWindowContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/IMGUIWindowContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/IMGUIWindowContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/InspectorElementWindowContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/InspectorElementWindowContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/StaticPreviewWindowContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/StaticPreviewWindowContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/WindowContentFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentView/WindowContentFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentZoomController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ContentZoomController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/InspectorElementObserver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/InspectorElementObserver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/InspectorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/InspectorWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/BasePropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/BasePropertyDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/FilterTypeOptionsPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/FilterTypeOptionsPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/FilterTypeSettingsPropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/FilterTypeSettingsPropertyDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/InspectorWindowSizeSettingsPropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/InspectorWindowSizeSettingsPropertyDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/ReferenceColorSettingsPropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/PropertyDrawers/ReferenceColorSettingsPropertyDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/QuickStatsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/QuickStatsView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ToolbarContent/ViewModeMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/ToolbarContent/ViewModeMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/WindowStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/Views/WindowStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/VisualElementExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GiantParticleGames/InspectorGraph/Editor/InspectorGraph/VisualElementExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/MFObjectEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/MFObjectEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/QFrameworkData/QAssets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/QFrameworkData/QAssets.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestUIPanels/InGame/TestInventoryPanel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestUIPanels/InGame/TestShortcutInventory.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestUIPanels/InGame/TestInventoryPanel.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/CompositionSamples.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/CreateGameObject.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/CreateGameObject.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/TargetPosition.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptables/OnHead.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=CreateGameObject.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=CreateGameObject.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=DelayEffect.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOn=DelayEffect.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=DelayEffect.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOn=DelayEffect.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=DelayEffect.effect=LogEffect.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=DelayEffect.effect=LogEffect.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=LogEffect.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=LogEffect.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=LoopEffect.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=LoopEffect.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=LoopEffect.effect=LogEffect.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOff=SequenceEffect.data=LoopEffect.effect=LogEffect.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOn=CreateGameObject.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOn=CreateGameObject.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOn=LogEffect.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/OnHead.equipOn=LogEffect.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptables.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptables.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/ItemIdentification.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptables/ItemIdentification.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/InventoryGetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/InventoryGetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/InventoryGravitater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/InventoryGravitater.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/InventoryHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/InventoryHolder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/ItemPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/ItemPicker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemDecorator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/BodySelector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/BodySelector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/CounterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/CounterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/CreateGameObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/CreateGameObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/DelayEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/DelayEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/Effect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/Effect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/IEffectSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/IEffectSender.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/IEnvironment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/IEnvironment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/LogEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/LogEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/LoopEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/LoopEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/ParallelEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/ParallelEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/Position.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/RandomEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/RandomEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/Rotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/Rotation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/SequenceEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemEffects/SequenceEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/EffectMakerAttributeDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/EffectMakerAttributeDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/EffectGeneratorAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/EffectGeneratorAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/EffectMakerAttributeDrawer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/EffectMakerAttributeDrawer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/EffectType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/EffectType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/Equipment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/Equipment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/ItemFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/ItemFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/OnHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemFeatures/OnHead.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemIdentification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemIdentifications/ItemIdentification.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemSlot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemStack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemStack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/SOFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/SOFinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Filters/IdentificationFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Filters/ItemFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Filters/IdentificationFilter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Filters/ItemFilter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/SOFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemDatabase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/SOFinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemDatabase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Filters/FilterType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Filters/FilterType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Filters/ItemFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Filters/ItemFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Inventory And Item.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Inventory And Item.asmdef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InventoryGetterExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InventoryGetterExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InventoryGravitaterExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InventoryGravitaterExample.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InventoryHolderExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InventoryHolderExample.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/ItemPickerExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ItemPickerExample.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Toolkits/SupportOldQF/UIKitCreateService/Editor/UIKitCreateServiceView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Toolkits/SupportOldQF/UIKitCreateService/Editor/UIKitCreateServiceView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Toolkits/UIKit/Scripts/Resources/UIRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Toolkits/UIKit/Scripts/Resources/UIRoot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PlayerExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PlayerExample.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/SceneEnvironment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/SceneEnvironment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FindUICamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FindUICamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EffectTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EffectTest.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PositionTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PositionTest.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/InventoryPanel.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/InventoryPanel.Designer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/CheckSelectedText.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/InventoryPanel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/InventoryPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scenes/Data/Scripts/GenerateGrid.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EffectTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/EffectTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EffectTest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/EffectTest.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FindUICamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/FindUICamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FindUICamera.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/FindUICamera.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Others/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Others/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PositionTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/PositionTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PositionTest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/PositionTest.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShortcutInventoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/ShortcutInventoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShortcutInventoryTest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/ShortcutInventoryTest.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/InventoryUITest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/InventoryUITest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemStack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemStack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/asset_bundle_config.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/Windows/asset_bundle_config.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -226,6 +392,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12f8cb144f094fd1b9a16efd34f6ff7b3e00/e9/884528e0/ImageConversion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/28d694a2939e4826992577f826717d3b15a000/28/5d032b46/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/28d694a2939e4826992577f826717d3b15a000/3f/4014e511/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/28d694a2939e4826992577f826717d3b15a000/4a/4509d2c2/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
@@ -233,21 +400,30 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/28d694a2939e4826992577f826717d3b15a000/91/590f5697/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/28d694a2939e4826992577f826717d3b15a000/ac/a6ff80f0/Sprite.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/28d694a2939e4826992577f826717d3b15a000/c1/adf4ffd1/PropertyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/372f930beb29402b8ea26386e66aa02b7400/13/4beba5ef/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/46b1d98d2dd74f23b6cebf5354de98851f800/de/20d8617a/Collider2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/22/592072a0/Boolean.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/41/9e696ae8/FileStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/57/cf491258/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/91/47624438/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/b2/19f8b0f6/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b4afb4845c6b4d22a6b5ea9d4141887717a738/ce/6e1a4176/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c904b8e8a22c41cbad3c62e10a9032f9820c00/37/870dd12b/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/de80aed0bd3646409e8bfb15c101f005e2000/c7/3b0439ba/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f97e358e7a5e4bf5ba1b3e551d91914610fc00/95/35701962/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFrameworkData/QAssets.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/ItemPicker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemStack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Toolkits/SupportOldQF/AudioKitWithResKitInit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/SceneEnvironment.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FindUICamera.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PositionTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mod/ModLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tests/PositionTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/FindUICamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemStack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MakeItFlowTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.2/Editor/BurstAotCompiler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventData/PointerEventData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -285,7 +461,8 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -301,6 +478,14 @@
       <option name="EXE_PATH" value="D:\Unity\Editer\2021.3.20f1c1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Unity\Project-Earth_Module -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity\Project-Earth_Module" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="独立播放器" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/EXE\Very Big Inventory.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\Unity\Project-Earth_Module\EXE" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -397,7 +582,16 @@
       <workItem from="1684762171453" duration="2574000" />
       <workItem from="1684766201451" duration="7269000" />
       <workItem from="1684778597176" duration="11041000" />
-      <workItem from="1684856860822" duration="1469000" />
+      <workItem from="1684856860822" duration="5074000" />
+      <workItem from="1684861953729" duration="2607000" />
+      <workItem from="1684895121340" duration="5203000" />
+      <workItem from="1684901170799" duration="199000" />
+      <workItem from="1684905568104" duration="2594000" />
+      <workItem from="1684911854157" duration="18054000" />
+      <workItem from="1684945986754" duration="2059000" />
+      <workItem from="1684984732293" duration="2322000" />
+      <workItem from="1685007439255" duration="22296000" />
+      <workItem from="1685077015027" duration="3939000" />
     </task>
     <task id="LOCAL-00001" summary="修改保存系统">
       <created>1681228006809</created>

@@ -2,6 +2,8 @@
 using System.Collections;
 using Core.Inventory_And_Item.Data;
 using Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
 using QFramework;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -27,7 +29,7 @@ namespace UI.InGame
         {
             yield return new WaitForSeconds(0.2f);
             inventory = new Inventory(capacity, transform);
-            inventory.Add(new ItemStack(itemIdentification, new ItemDecorator(), 1));
+            inventory.Add(new ItemStack(itemIdentification, new ItemDecorator(), 1, transform));
             UIKit.OpenPanel<ShortcutInventory>(new ShortcutInventoryData(inventory, 12,12,1));
         }
     }

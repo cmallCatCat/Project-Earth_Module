@@ -1,4 +1,4 @@
-﻿namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures
+﻿namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures
 {
     public enum EffectType
     {

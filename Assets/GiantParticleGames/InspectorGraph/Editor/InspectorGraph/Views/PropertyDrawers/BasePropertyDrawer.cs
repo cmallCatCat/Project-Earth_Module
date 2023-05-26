@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 // ********************************
 // (C) 2023 - Giant Particle Games
 // All rights reserved.
@@ -26,3 +28,6 @@ namespace GiantParticle.InspectorGraph.Editor.PropertyDrawers
         protected abstract void CreateFields(VisualElement root, SerializedProperty property);
     }
 }
+
+
+#endif

@@ -1,16 +1,17 @@
 ﻿#nullable enable
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
 using Core.QFramework.Framework.Scripts;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data.ItemIdentifications
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications
 {
     [CreateAssetMenu(menuName = "Create ItemIdentification", fileName = "ItemIdentification", order = 0)]
     public class ItemIdentification : ScriptableObject
     {
+        private string packageName = "Default";
+
         [SerializeField]
         private string itemName = "Unnamed Item";
 
@@ -30,6 +31,9 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
         [SerializeReference]
         private ItemFeature[] itemFeatures = Array.Empty<ItemFeature>();
 
+        private static readonly string PLUGINS_PATH = AppDomain.CurrentDomain.BaseDirectory + "/BepInEx/plugins/";
+
+        public string PackageName => packageName;
         public string ItemName => itemName;
 
         public string ItemDescription => itemDescription;
@@ -41,6 +45,20 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
         public Sprite? SpriteInGame => spriteInGame;
 
         public ItemFeature[] ItemFeatures => itemFeatures;
+
+        public ItemIdentification Init(string packageName, string itemName, string itemDescription, int maxStack,
+            string spriteIconPath, string spriteInGamePath,
+            ItemFeature[] itemFeatures)
+        {
+            this.packageName = packageName;
+            this.itemName = itemName;
+            this.itemDescription = itemDescription;
+            this.maxStack = maxStack;
+            spriteIcon = SpriteLoader.LoadSprite(PLUGINS_PATH + spriteIconPath);
+            spriteInGame = SpriteLoader.LoadSprite(PLUGINS_PATH + spriteInGamePath);
+            this.itemFeatures = itemFeatures;
+            return this;
+        }
 
 
         #region Features
@@ -101,7 +119,9 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
         public static bool operator ==(ItemIdentification? a, ItemIdentification? b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null)) return true;
-            return !ReferenceEquals(a, null) && !ReferenceEquals(b, null) && a.ItemName == b.ItemName;
+            if (ReferenceEquals(a, null)) return false;
+            if (ReferenceEquals(b, null)) return false;
+            return a.PackageName == b.PackageName && a.ItemName == b.ItemName;
         }
 
         public static bool operator !=(ItemIdentification? a, ItemIdentification? b)
@@ -124,7 +144,7 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications
 
         public override int GetHashCode()
         {
-            return ItemName.GetHashCode();
+            return PackageName.GetHashCode() ^ ItemName.GetHashCode();
         }
 
         #endregion

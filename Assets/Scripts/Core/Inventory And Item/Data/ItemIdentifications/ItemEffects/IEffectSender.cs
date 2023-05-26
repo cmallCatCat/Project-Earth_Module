@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
 {
     public interface IEffectSender
     {

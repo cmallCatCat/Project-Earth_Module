@@ -1,8 +1,10 @@
 {
     "name": "InventoryAndItem",
-    "rootNamespace": "",
+    "rootNamespace": "InventoryAndItem",
     "references": [
-        "QFramework"
+        "QFramework",
+        "ResKit",
+        "QFramework.CoreKit"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

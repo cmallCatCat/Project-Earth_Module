@@ -1,10 +1,9 @@
-﻿using System;
-using Core.Inventory_And_Item.Data;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
+﻿using InventoryAndItem.Core.Inventory_And_Item.Data;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using QFramework;
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Controllers
+namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
 {
     public abstract class InventoryHolder : MonoBehaviour, IController
     {

@@ -1,10 +1,9 @@
 ﻿using System;
-using Core.Inventory_And_Item.Data.ItemIdentifications;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
-using Core.QFramework.Framework.Scripts;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data
+namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
     public class ItemStack: IEffectSender
     {
@@ -13,19 +12,29 @@ namespace Core.Inventory_And_Item.Data
         private ItemDecorator itemDecorator;
         
         private int number;
-        
-        // private Transform transform;
 
-        public ItemStack(ItemIdentification itemIdentification, ItemDecorator itemDecorator, int number)
+        private Transform transform;
+
+        public ItemIdentification ItemIdentification => itemIdentification;
+
+        public int Number => number;
+
+        public ItemDecorator ItemDecorator => itemDecorator;
+        
+        public Transform Transform => transform;
+
+        public ItemStack(ItemIdentification itemIdentification, ItemDecorator itemDecorator, int number, Transform transform)
         {
             this.itemIdentification = itemIdentification;
             this.itemDecorator = itemDecorator;
             this.number = number;
+            this.transform = transform;
         }
-
-        public ItemIdentification ItemIdentification => itemIdentification;
-        public int Number => number;
-        public ItemDecorator ItemDecorator => itemDecorator;
+        
+        public void SetTransform(Transform transform)
+        {
+            this.transform = transform;
+        }
 
         public int CanAddNumber(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
         {

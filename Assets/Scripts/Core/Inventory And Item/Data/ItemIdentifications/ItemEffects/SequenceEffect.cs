@@ -1,14 +1,20 @@
 ﻿using System;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+
+#if UNITY_EDITOR
+
+using InventoryAndItem.Core.Inventory_And_Item.Editor;
+#endif
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
 {
     [Serializable]
     public class SequenceEffect : Effect
     {
         [SerializeReference]
+#if UNITY_EDITOR
         [EffectGenerator]
+#endif
         private Effect[] effects = { };
 
 

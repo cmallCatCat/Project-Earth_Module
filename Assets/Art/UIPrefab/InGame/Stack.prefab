@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showBehaviors: 1
-  selectedBehavior: {fileID: 345492426343437215}
+  selectedBehavior: {fileID: 4849268794994676563}
   foldoutGroup: 1
   _mfTag: 
   _mfCanvasManager: {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
   mfCanvasManager: {fileID: 0}
   _complementaryBehaviors: []
   durationS: {x: 0.05, y: 0.05, z: 0.05}
-  moveToFront: 1
+  moveToFront: 0
 --- !u!114 &4849268794994676563
 MonoBehaviour:
   m_ObjectHideFlags: 0

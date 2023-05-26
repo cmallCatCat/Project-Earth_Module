@@ -1,11 +1,10 @@
 ﻿#nullable enable
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Core.Inventory_And_Item.Data;
-using Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Data;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
 
-namespace Core.Inventory_And_Item.Filters
+namespace InventoryAndItem.Core.Inventory_And_Item.Filters
 {
     public class ItemFilter
     {

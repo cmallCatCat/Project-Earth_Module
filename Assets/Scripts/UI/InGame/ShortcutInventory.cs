@@ -1,5 +1,6 @@
 using System;
 using Core.Inventory_And_Item.Data;
+using InventoryAndItem.Core.Inventory_And_Item.Data;
 using QFramework;
 using TMPro;
 using UnityEngine;
@@ -110,7 +111,7 @@ namespace UI.InGame
             for (int i = 0; i < displayCapacity; i++)
             {
                 Transform instantiate = Instantiate(slotPrefab, slotsParent).transform;
-                // instantiate.GetComponent<GridLayoutGroup>().cellSize = new Vector2(slotSize, slotSize);
+                instantiate.GetComponent<RectTransform>().sizeDelta = new Vector2(slotSize, slotSize);
                 itemSlots[i] = instantiate.GetComponent<ShortcutItemSlot>();
                 itemSlots[i].Init(i, inventory);
             }

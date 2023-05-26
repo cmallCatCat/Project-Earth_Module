@@ -1,4 +1,5 @@
 using Core.Inventory_And_Item.Data;
+using InventoryAndItem.Core.Inventory_And_Item.Data;
 using MeadowGames.MakeItFlow;
 using TMPro;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace UI.InGame
             ShortcutItemStack stack = eventData.pointerDrag.GetComponent<ShortcutItemStack>();
             stack.parentAfterDrag = transform;
             stack.GetComponent<TranslateToTargetBehavior>().TargetPosition = transform;
-            inventory.MergeOrSwitch(stack.index, index,false);
+            inventory.MergeOrSwitch(stack.index, index, false);
             // Destroy(eventData.pointerDrag);
         }
 
@@ -34,7 +35,8 @@ namespace UI.InGame
             if (itemSlot.ItemStack != null && transform.childCount == 0)
             {
                 GameObject instantiate = Instantiate(itemStackPrefab, transform);
-                instantiate.GetComponent<ShortcutItemStack>().Init(itemSlot.ItemStack, index);
+                instantiate.GetComponent<ShortcutItemStack>()
+                    .Init(itemSlot.ItemStack, index, GetComponent<RectTransform>().sizeDelta);
             }
 
             if (itemSlot.ItemStack == null && transform.childCount > 0)

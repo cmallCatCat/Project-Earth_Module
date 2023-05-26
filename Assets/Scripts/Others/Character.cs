@@ -1,5 +1,6 @@
 ﻿using Core.Architectures;
 using Core.Inventory_And_Item.Data;
+using InventoryAndItem.Core.Inventory_And_Item.Data;
 using QFramework;
 using UnityEngine;
 

@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 2660620703
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: player_prefab
+      Dependencies:
+        Dependency_0: minimalist cartoon animal_png
+    Info_1:
+      Name: minimalist cartoon animal_png
+      Dependencies: {}
+    Info_2:
+      Name: shortcutinventory_prefab
+      Dependencies: {}

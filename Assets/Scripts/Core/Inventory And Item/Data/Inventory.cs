@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Core.Inventory_And_Item.Data.ItemIdentifications;
-using Core.Inventory_And_Item.Filters;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Filters;
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data
+namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
     public delegate void OnInventoryChanged();
 
@@ -20,7 +20,7 @@ namespace Core.Inventory_And_Item.Data
         private ItemSlot[] itemSlots;
 
         private Transform transform;
-        
+
         public event OnInventoryChanged? onItemChanged;
 
         public int Capacity => capacity;
@@ -32,13 +32,13 @@ namespace Core.Inventory_And_Item.Data
             this.transform = transform;
             itemSlots = new ItemSlot[capacity];
             for (int i = 0; i < capacity; i++) itemSlots[i] = new ItemSlot();
-
         }
 
         #region BaseCommands
 
         private void BaseAdd(ItemSlot itemSlot, ItemStack itemStack)
         {
+            itemStack.SetTransform(transform);
             itemSlot.Add(itemStack);
         }
 
@@ -49,6 +49,13 @@ namespace Core.Inventory_And_Item.Data
 
         private void BaseSet(ItemSlot itemSlot, ItemStack? newStack)
         {
+            if (newStack == null)
+            {
+                itemSlot.Set(null);
+                return;
+            }
+
+            newStack.SetTransform(transform);
             itemSlot.Set(newStack);
         }
 
@@ -67,14 +74,14 @@ namespace Core.Inventory_And_Item.Data
                 int canAddNumber = itemSlot.CanAddNumber(toAddItem, toAddDecorator);
                 if (canAddNumber >= toAddNumber)
                 {
-                    BaseAdd(itemSlot, new ItemStack(toAddItem, toAddDecorator, toAddNumber));
+                    BaseAdd(itemSlot, new ItemStack(toAddItem, toAddDecorator, toAddNumber, transform));
                     onItemChanged?.Invoke();
                     return;
                 }
 
                 if (canAddNumber > 0)
                 {
-                    BaseAdd(itemSlot, new ItemStack(toAddItem, toAddDecorator, canAddNumber));
+                    BaseAdd(itemSlot, new ItemStack(toAddItem, toAddDecorator, canAddNumber, transform));
                     toAddNumber -= canAddNumber;
                 }
             }
@@ -92,7 +99,7 @@ namespace Core.Inventory_And_Item.Data
             int canAddNumber = itemSlot.CanAddNumber(toAddIdentification, toAddDecorator);
             if (canAddNumber >= toAddNumber)
             {
-                BaseAdd(itemSlot, new ItemStack(toAddIdentification, toAddDecorator, toAddNumber));
+                BaseAdd(itemSlot, new ItemStack(toAddIdentification, toAddDecorator, toAddNumber, transform));
                 onItemChanged?.Invoke();
                 return;
             }
@@ -173,7 +180,8 @@ namespace Core.Inventory_And_Item.Data
             int canAddNumber = toSlot.CanAddNumber(fromSlot.ItemStack.ItemIdentification, fromSlot.ItemStack.ItemDecorator);
             int finalAddNumber = Mathf.Min(canAddNumber, fromSlot.ItemStack.Number);
             BaseRemove(fromSlot, finalAddNumber);
-            BaseAdd(toSlot, new ItemStack(toSlot.ItemStack.ItemIdentification, toSlot.ItemStack.ItemDecorator, finalAddNumber));
+            BaseAdd(toSlot,
+                new ItemStack(toSlot.ItemStack.ItemIdentification, toSlot.ItemStack.ItemDecorator, finalAddNumber, transform));
             if (invoke)
             {
                 onItemChanged?.Invoke();

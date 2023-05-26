@@ -1,4 +1,4 @@
-﻿namespace Core.Inventory_And_Item.Filters
+﻿namespace InventoryAndItem.Core.Inventory_And_Item.Filters
 {
     public enum FilterType
     {

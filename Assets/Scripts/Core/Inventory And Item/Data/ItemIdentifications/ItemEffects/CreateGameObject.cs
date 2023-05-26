@@ -1,8 +1,9 @@
 ﻿using System;
+using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
 {
     [Serializable]
     public class CreateGameObject : Effect

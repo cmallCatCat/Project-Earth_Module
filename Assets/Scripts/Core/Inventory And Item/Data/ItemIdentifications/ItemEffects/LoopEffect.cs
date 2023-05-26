@@ -1,8 +1,12 @@
 ﻿using System;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+
+#if UNITY_EDITOR
+
+using InventoryAndItem.Core.Inventory_And_Item.Editor;
+#endif
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
 {
     [Serializable]
     public class LoopEffect : Effect
@@ -11,7 +15,9 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
         private int times = 1;
 
         [SerializeField]
+#if UNITY_EDITOR
         [EffectGenerator]
+#endif
         private Effect effect;
 
         public override void Work(IEffectSender sender, IEnvironment environment)

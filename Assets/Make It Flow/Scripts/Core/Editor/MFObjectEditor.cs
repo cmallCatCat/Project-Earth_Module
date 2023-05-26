@@ -6,7 +6,7 @@ using UnityEngine;
 namespace MeadowGames.MakeItFlow.EditorTool
 {
     [CustomEditor(typeof(MFObject), true), CanEditMultipleObjects]
-    public class MFObjectEditor : Editor
+    public class MFObjectEditor : UnityEditor.Editor
     {
         [SerializeField] Behavior[] behaviors;
         bool lastToggle;
@@ -17,7 +17,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
             behaviors = mfObject.GetComponents<Behavior>();
             foreach (Behavior behavior in behaviors)
             {
-                Editor be = Editor.CreateEditor(behavior);
+                UnityEditor.Editor be = Editor.CreateEditor(behavior);
                 if (!mfObject.MFCanvasManager.showBehaviorsAsComponents)
                 {
                     if (behavior.hideFlags != HideFlags.HideInInspector)

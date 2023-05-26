@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assembly-CSharp</name>
+    </assembly>
+    <members>
+        <member name="T:Core.PlayerExample">
+            <summary>
+            这是注释
+            </summary>
+        </member>
+        <member name="F:QFramework.ResKitUIPanelTester.PanelName">
+            <summary>
+            页面的名字
+            </summary>
+        </member>
+        <member name="F:QFramework.ResKitUIPanelTester.Level">
+            <summary>
+            层级名字
+            </summary>
+        </member>
+    </members>
+</doc>

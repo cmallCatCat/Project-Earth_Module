@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
+using InventoryAndItem.Core.Inventory_And_Item.Data;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using UnityEngine;
 
 namespace Core
@@ -65,6 +67,7 @@ namespace Core
         private void Awake()
         {
             Instance = this;
+            ItemDatabaseHandler.Init(QAssetBundle.New_item_database_asset.NEW_ITEM_DATABASE);
         }
     }
 }

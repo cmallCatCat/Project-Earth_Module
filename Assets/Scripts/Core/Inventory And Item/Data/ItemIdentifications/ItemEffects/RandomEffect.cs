@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Linq;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
-using Sirenix.OdinInspector;
+
+#if UNITY_EDITOR
+
+using InventoryAndItem.Core.Inventory_And_Item.Editor;
+#endif
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
 {
     [Serializable]
     public class RandomEffect : Effect
@@ -12,10 +15,13 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
         [Serializable]
         public class EffectsAndPossibilities
         {
+#if UNITY_EDITOR
             [EffectGenerator]
+#endif
             public Effect effect;
 
-            [Min(1)]public int probability = 1;
+            [Min(1)]
+            public int probability = 1;
         }
 
         [SerializeField]

@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 // ********************************
 // (C) 2022 - Giant Particle Games
 // All rights reserved.
@@ -12,3 +14,6 @@ namespace GiantParticle.InspectorGraph.Editor.Manipulators
         Vector3 MovementScale { get; set; }
     }
 }
+
+
+#endif

@@ -16,6 +16,11 @@ namespace QAssetBundle
         public const string BundleName = "minimalist cartoon animal_png";
         public const string MINIMALIST_CARTOON_ANIMAL = "minimalist cartoon animal";
     }
+    public class New_item_database_asset
+    {
+        public const string BundleName = "new item database_asset";
+        public const string NEW_ITEM_DATABASE = "new item database";
+    }
     public class Player_prefab
     {
         public const string BundleName = "player_prefab";

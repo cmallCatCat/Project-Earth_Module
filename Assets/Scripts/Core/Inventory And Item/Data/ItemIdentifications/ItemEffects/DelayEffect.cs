@@ -1,9 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
+
+#if UNITY_EDITOR
+
+using InventoryAndItem.Core.Inventory_And_Item.Editor;
+#endif
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
+namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
 {
     [Serializable]
     public class DelayEffect : Effect
@@ -13,7 +16,9 @@ namespace Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects
         private float delay = 1;
 
         [SerializeField]
+#if UNITY_EDITOR
         [EffectGenerator]
+#endif
         private Effect effect;
 
         public struct Args

@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
 using Core.QFramework.Framework.Scripts;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications.ItemFeatures;
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data
+namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
     [Serializable]
     public class ItemDecorator

@@ -2,7 +2,7 @@
 // (C) 2023 - Giant Particle Games
 // All rights reserved.
 // ********************************
-
+#if UNITY_EDITOR
 using System.Collections.Generic;
 using GiantParticle.InspectorGraph.Editor.UIDocuments;
 using UnityEditor;
@@ -59,3 +59,4 @@ namespace GiantParticle.InspectorGraph.Editor.Settings
         }
     }
 }
+#endif

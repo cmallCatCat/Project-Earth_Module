@@ -1,13 +1,11 @@
 ﻿#nullable enable
 using System;
-using Core.Inventory_And_Item.Data.ItemIdentifications;
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
-using Core.Inventory_And_Item.Filters;
 using Core.QFramework.Framework.Scripts;
+using InventoryAndItem.Core.Inventory_And_Item.Data.ItemIdentifications;
+using InventoryAndItem.Core.Inventory_And_Item.Filters;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Core.Inventory_And_Item.Data
+namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
     [Serializable]
     public class ItemSlot : ISerializationCallbackReceiver
@@ -78,7 +76,7 @@ namespace Core.Inventory_And_Item.Data
 
         public int CanAddNumber(ItemIdentification itemIdentification, ItemDecorator itemDecorator)
         {
-            if (!ItemFilter.IsMatch(itemIdentification,itemDecorator)) return 0;
+            if (!ItemFilter.IsMatch(itemIdentification, itemDecorator)) return 0;
             if (itemStack == null) return itemIdentification.MaxStack;
             return itemStack.CanAddNumber(itemIdentification, itemDecorator);
         }
@@ -94,6 +92,9 @@ namespace Core.Inventory_And_Item.Data
 
         #region 序列化
 
+        [SerializeField]
+        private string packageNameSave = string.Empty;
+        
         [SerializeField]
         private string itemNameSave = string.Empty;
 
@@ -113,7 +114,8 @@ namespace Core.Inventory_And_Item.Data
         {
             if (ItemStack != null)
             {
-                itemNameSave = ItemStack.ItemIdentification.GetType().FullName;
+                packageNameSave = ItemStack.ItemIdentification.PackageName;
+                itemNameSave = ItemStack.ItemIdentification.ItemName;
                 numberSave = ItemStack.Number;
                 itemDecorator = ItemStack.ItemDecorator;
             }
@@ -128,11 +130,12 @@ namespace Core.Inventory_And_Item.Data
         {
             if (itemNameSave != string.Empty)
             {
-                ItemIdentification findItemIdentification = SOFinder.FindItemIdentification(itemNameSave);
+                ItemIdentification findItemIdentification
+                    = ItemDatabaseHandler.FindItem(itemNameSave, packageNameSave);
                 ItemIdentification itemIdentification =
                     SOHelper.CloneScriptableObject(findItemIdentification) ?? throw new InvalidOperationException();
                 int itemNumber = numberSave;
-                Set(new ItemStack(itemIdentification, itemDecorator, itemNumber));
+                Set(new ItemStack(itemIdentification, itemDecorator, itemNumber, null));
             }
 
             {
@@ -141,6 +144,5 @@ namespace Core.Inventory_And_Item.Data
         }
 
         #endregion
-
     }
 }

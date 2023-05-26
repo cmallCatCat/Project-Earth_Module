@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 // ********************************
 // (C) 2023 - Giant Particle Games
 // All rights reserved.
@@ -72,3 +74,6 @@ namespace GiantParticle.InspectorGraph.Editor.Data.Nodes.Filters
         }
     }
 }
+
+
+#endif
