@@ -7,24 +7,20 @@ using Extents;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using JetBrains.Annotations;
-using QFramework;
 using UnityEngine;
 
 namespace Mod
 {
     public class ModLoader : MonoBehaviour
     {
-        public static ModLoader Instance;
+        public static ModLoader Instance { get; private set; }
         public Dictionary<Assembly, ModInfo> ModInfos = new Dictionary<Assembly, ModInfo>();
-        public ResLoader resLoader = ResLoader.Allocate();
 
         public static readonly string PluginPath = AppDomain.CurrentDomain.BaseDirectory + "/BepInEx/plugins";
 
-
-        // Start is called before the first frame update
+        
         void Start()
         {
-            ResKit.Init();
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
@@ -46,6 +42,11 @@ namespace Mod
 
             Debug.Log("------Load Mods End------");
 
+            ShowMods();
+        }
+
+        private void ShowMods()
+        {
             Debug.Log("------Mods items------");
             foreach (ModInfo modInfo in ModInfos.Values)
             {
@@ -87,7 +88,6 @@ namespace Mod
             LoadChangeItem(modAssembly, allTypes, modInfo);
 
             LoadChangeItemList(modAssembly, allTypes, modInfo);
-
         }
 
         private static void LoadNewItem(Assembly modAssembly, Type[] allTypes, ModInfo modInfo)

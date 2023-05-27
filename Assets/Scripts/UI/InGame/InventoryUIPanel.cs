@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 namespace UI.InGame
 {
-    public class ShortcutInventoryData : UIPanelData
+    public class InventoryUIPanelData : UIPanelData
     {
         public readonly Inventory inventory;
         public readonly int displayCapacity;
         public readonly int maxX;
         public readonly int maxY;
 
-        public ShortcutInventoryData(Inventory inventory, int displayCapacity, int maxX, int maxY)
+        public InventoryUIPanelData(Inventory inventory, int displayCapacity, int maxX, int maxY)
         {
             this.inventory = inventory;
             this.displayCapacity = displayCapacity;
@@ -21,10 +21,10 @@ namespace UI.InGame
         }
     }
 
-    public partial class ShortcutInventory : UIPanel
+    public partial class InventoryUIPanel : UIPanel
     {
         private Inventory inventory;
-        private ShortcutItemSlot[] itemSlots;
+        private ItemSlotUI[] itemSlots;
 
 
         [SerializeField]
@@ -77,16 +77,16 @@ namespace UI.InGame
             if (uiData == null)
             {
                 inventory = new Inventory(20, transform);
-                uiData = new ShortcutInventoryData(inventory, displayCapacity, maxX, maxY);
+                uiData = new InventoryUIPanelData(inventory, displayCapacity, maxX, maxY);
                 Debug.LogError("uiData is null");
             }
 
-            mData = (ShortcutInventoryData)uiData;
+            MUIPanelData = (InventoryUIPanelData)uiData;
             // please add init code here
-            inventory = mData.inventory;
-            displayCapacity = mData.displayCapacity;
-            maxX = mData.maxX;
-            maxY = mData.maxY;
+            inventory = MUIPanelData.inventory;
+            displayCapacity = MUIPanelData.displayCapacity;
+            maxX = MUIPanelData.maxX;
+            maxY = MUIPanelData.maxY;
             displayCapacity = Mathf.Min(displayCapacity, maxX * maxY, inventory.AllSlots().Length);
 
             // slotPrefab.GetComponent<RectTransform>().sizeDelta = new Vector2(slotSize, slotSize);
@@ -104,12 +104,12 @@ namespace UI.InGame
                 xNum * (slotSize + spacing.x) + padding.x + padding.y - spacing.x,
                 yNum * (slotSize + spacing.y) + padding.z + padding.w - spacing.y);
 
-            itemSlots = new ShortcutItemSlot[displayCapacity];
+            itemSlots = new ItemSlotUI[displayCapacity];
             for (int i = 0; i < displayCapacity; i++)
             {
                 Transform instantiate = Instantiate(slotPrefab, slotsParent).transform;
                 instantiate.GetComponent<RectTransform>().sizeDelta = new Vector2(slotSize, slotSize);
-                itemSlots[i] = instantiate.GetComponent<ShortcutItemSlot>();
+                itemSlots[i] = instantiate.GetComponent<ItemSlotUI>();
                 itemSlots[i].Init(i, inventory);
             }
 

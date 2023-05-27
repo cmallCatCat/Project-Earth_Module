@@ -8,7 +8,6 @@ namespace Core
 
         private void Start()
         {
-            Debug.Log(name);
         }
 
         private void Update()

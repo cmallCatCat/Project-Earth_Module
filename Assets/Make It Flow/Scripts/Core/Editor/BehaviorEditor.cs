@@ -9,7 +9,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
 {
     [CustomEditor(typeof(Behavior), true)]
     [CanEditMultipleObjects]
-    public class BehaviorEditor : Editor
+    public class BehaviorEditor : UnityEditor.Editor
     {
         MFObject mfObject;
         Behavior behavior;

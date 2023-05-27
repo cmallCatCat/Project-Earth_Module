@@ -36,7 +36,7 @@ namespace Tests
 
                 GameObject loadSync = resLoader.LoadSync<GameObject>(QAssetBundle.Player_prefab.PLAYER);
                 GameObject instantiate = Instantiate(loadSync);
-                UIKit.OpenPanel<ShortcutInventory>(new ShortcutInventoryData(
+                UIKit.OpenPanel<InventoryUIPanel>(new InventoryUIPanelData(
                     instantiate.GetComponentInChildren<InventoryHolderExample>().Inventory, 12, 12, 1)
                 );
                 instantiate.name = "Player";

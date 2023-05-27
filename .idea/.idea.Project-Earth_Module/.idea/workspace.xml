@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5acd522d-d7b8-4e60-8def-ec7cabe74ab9" name="Changes" comment="" />
+    <list default="true" id="5acd522d-d7b8-4e60-8def-ec7cabe74ab9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/My Tools.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/My Tools/AddConditionalCompilation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Command/MergeOrSwitchCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Command/MergeOrSwitchCommand.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/ShortcutInventory.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/UIPrefab/InGame/ShortcutInventory.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/AddConditionalCompilation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/AddConditionalCompilation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/My Tools/AddConditionalCompilation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/BehaviorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/BehaviorEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/MFObjectEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Make It Flow/Scripts/Core/Editor/MFObjectEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/QFrameworkData/QAssets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/QFrameworkData/QAssets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestUIPanels/InGame/TestShortcutInventory.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestUIPanels/InGame/TestShortcutInventory.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PlayerExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PlayerExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mod/ModLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/ModLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/ShortcutInventoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/ShortcutInventoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/InventoryUITest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/InventoryUITest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.Designer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutInventory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ItemSlotUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemSlot.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ItemSlotUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemStack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ItemStackUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ShortcutItemStack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGame/ItemStackUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,7 +253,8 @@
       <workItem from="1685077015027" duration="9395000" />
       <workItem from="1685104236153" duration="8586000" />
       <workItem from="1685113579511" duration="58000" />
-      <workItem from="1685113730490" duration="1658000" />
+      <workItem from="1685113730490" duration="4484000" />
+      <workItem from="1685157770804" duration="3505000" />
     </task>
     <task id="LOCAL-00001" summary="修改保存系统">
       <created>1681228006809</created>

@@ -60,6 +60,12 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
             return this;
         }
 
+        public override string ToString()
+        {
+            return "PackageName: " + packageName + ", ItemName: " + itemName + ", ItemDescription: " + itemDescription +
+                   ", MaxStack: " + maxStack;
+        }
+
 
         #region Features
 

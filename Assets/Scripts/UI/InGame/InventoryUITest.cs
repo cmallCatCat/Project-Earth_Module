@@ -27,7 +27,15 @@ namespace UI.InGame
             yield return new WaitForSeconds(0.2f);
             inventory = new Inventory(capacity, transform);
             inventory.Add(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
-            UIKit.OpenPanel<ShortcutInventory>(new ShortcutInventoryData(inventory, 12,12,1));
+            UIKit.OpenPanel<InventoryUIPanel>(new InventoryUIPanelData(inventory, 12,12,1));
+        }
+    }
+
+    public static class UIKitExtensions
+    {
+        public static void ClosePanel<T>(string panelName) where T : UIPanel
+        {
+            
         }
     }
 }

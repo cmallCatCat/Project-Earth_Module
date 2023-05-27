@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b7a3e7dc894eaca1053ef166cdad33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PanelName: ShortcutInventory
+  PanelName: InventoryUIPanel
   Level: 0
   mOtherPanels: []
 --- !u!4 &1995519851

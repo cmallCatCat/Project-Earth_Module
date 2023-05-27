@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace MeadowGames.MakeItFlow.EditorTool
@@ -17,7 +15,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
             behaviors = mfObject.GetComponents<Behavior>();
             foreach (Behavior behavior in behaviors)
             {
-                UnityEditor.Editor be = Editor.CreateEditor(behavior);
+                UnityEditor.Editor be = CreateEditor(behavior);
                 if (!mfObject.MFCanvasManager.showBehaviorsAsComponents)
                 {
                     if (behavior.hideFlags != HideFlags.HideInInspector)
@@ -59,7 +57,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
 
             foreach (Behavior behavior in behaviors)
             {
-                Editor be = Editor.CreateEditor(behavior);
+                UnityEditor.Editor be = CreateEditor(behavior);
                 if (mfObject.MFCanvasManager.showBehaviorsAsComponents != lastToggle)
                 {
                     if (!mfObject.MFCanvasManager.showBehaviorsAsComponents)

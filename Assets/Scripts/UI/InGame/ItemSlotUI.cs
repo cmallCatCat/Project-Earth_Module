@@ -1,10 +1,11 @@
 using InventoryAndItem.Core.Inventory_And_Item.Data;
+using QFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace UI.InGame
 {
-    public class ShortcutItemSlot : MonoBehaviour, IDropHandler
+    public class ItemSlotUI : MonoBehaviour, IDropHandler, IController
     {
         private int index;
         private Inventory inventory;
@@ -13,12 +14,11 @@ namespace UI.InGame
 
         public void OnDrop(PointerEventData eventData)
         {
-            ShortcutItemStack stack = eventData.pointerDrag.GetComponent<ShortcutItemStack>();
-            stack.parentAfterDrag = transform;
-            stack.GetComponent<TranslateToTargetBehavior>().TargetPosition = transform;
-            inventory.MergeOrSwitch(stack.index, index, false);
-            
-            // Destroy(eventData.pointerDrag);
+            ItemStackUI stackUI = eventData.pointerDrag.GetComponent<ItemStackUI>();
+            stackUI.parentAfterDrag = transform;
+            stackUI.GetComponent<TranslateToTargetBehavior>().TargetPosition = transform;
+            inventory.MergeOrSwitch(stackUI.index, index, false);
+            // this.SendCommand<MergeOrSwitchCommand>(eventData.pointerDrag,stackUI.index,index);
         }
 
         public void Init(int index, Inventory inventory)
@@ -33,7 +33,7 @@ namespace UI.InGame
             if (itemSlot.ItemStack != null && transform.childCount == 0)
             {
                 GameObject instantiate = Instantiate(itemStackPrefab, transform);
-                instantiate.GetComponent<ShortcutItemStack>()
+                instantiate.GetComponent<ItemStackUI>()
                     .Init(itemSlot.ItemStack, index, GetComponent<RectTransform>().sizeDelta);
             }
 
@@ -44,6 +44,11 @@ namespace UI.InGame
                     Destroy(transform.GetChild(i).gameObject);
                 }
             }
+        }
+
+        public IArchitecture GetArchitecture()
+        {
+            return Core.Architectures.InGame.Interface;
         }
     }
 }

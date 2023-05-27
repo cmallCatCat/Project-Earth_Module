@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace UI.InGame
 {
-    public class ShortcutItemStack : MonoBehaviour, IController, IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class ItemStackUI : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         [Header("UI")]
         public Image stackImage;
@@ -51,10 +51,6 @@ namespace UI.InGame
             index = i;
             GetComponent<RectTransform>().sizeDelta = sizeDelta;
         }
-
-        public IArchitecture GetArchitecture()
-        {
-            return Core.Architectures.InGame.Interface;
-        }
+        
     }
 }
