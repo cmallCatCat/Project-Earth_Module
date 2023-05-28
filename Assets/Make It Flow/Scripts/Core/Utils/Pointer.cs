@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Make_It_Flow.Scripts.Core.Event_System.Input_Manager;
+using UnityEngine;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Utils
 {
     public class Pointer : MonoBehaviour, IUpdateEvent
     {

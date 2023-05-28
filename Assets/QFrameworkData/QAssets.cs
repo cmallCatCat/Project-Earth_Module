@@ -31,4 +31,9 @@ namespace QAssetBundle
         public const string BundleName = "shortcutinventory_prefab";
         public const string INVENTORYUIPANEL = "inventoryuipanel";
     }
+    public class Stack_prefab
+    {
+        public const string BundleName = "stack_prefab";
+        public const string STACK = "stack";
+    }
 }

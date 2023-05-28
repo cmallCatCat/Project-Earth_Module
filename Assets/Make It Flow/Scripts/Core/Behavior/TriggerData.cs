@@ -1,4 +1,6 @@
-﻿namespace MeadowGames.MakeItFlow
+﻿using Make_It_Flow.Scripts.Core.Objects;
+
+namespace Make_It_Flow.Scripts.Core.Behavior
 {
     public enum MFBehaviorCalls { StartBehavior, StopOnBehaviorEnd, InterruptBehavior };
 

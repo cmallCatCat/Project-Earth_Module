@@ -15,27 +15,26 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
 
         protected void Awake()
         {
-            RegisterInventory(GetEnvironment);
+            RegisterInventory();
         }
 
-        protected void RegisterInventory(IEnvironment environment)
+        protected void RegisterInventory()
         {
             Inventory = new Inventory(inventoryCapacity, transform);
-            environment.Register<Inventory>(this);
+            IEnvironment.Instance.Register<Inventory>(this);
         }
 
-        protected void UnregisterInventory(IEnvironment environment)
+        protected void UnregisterInventory()
         {
-            environment.Unregister<Inventory>(this);
+            IEnvironment.Instance.Unregister<Inventory>(this);
             Inventory = null;
         }
 
         protected virtual void OnDestroy()
         {
-            UnregisterInventory(GetEnvironment);
+            UnregisterInventory();
         }
 
-        protected abstract IEnvironment GetEnvironment { get; }
 
         public abstract IArchitecture GetArchitecture();
     }

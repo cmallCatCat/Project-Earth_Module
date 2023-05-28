@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+#if UNITY_EDITOR
+using Make_It_Flow.Scripts.Core.Behavior;
+using Make_It_Flow.Scripts.Core.Editor.Window;
+using Make_It_Flow.Scripts.Core.Event_System.Event_Groups;
+using Make_It_Flow.Scripts.Core.Objects;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MeadowGames.MakeItFlow.EditorTool
+namespace Make_It_Flow.Scripts.Core.Editor
 {
-    [CustomEditor(typeof(Behavior), true)]
+    [CustomEditor(typeof(Behavior.Behavior), true)]
     [CanEditMultipleObjects]
     public class BehaviorEditor : UnityEditor.Editor
     {
         MFObject mfObject;
-        Behavior behavior;
+        Behavior.Behavior behavior;
 
         EventGroups.EventGroup[] _eventGroups;
         string[] _eventGroupsClass;
@@ -36,7 +38,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
         {
             serializedObject.Update();
 
-            behavior = (Behavior)target;
+            behavior = (Behavior.Behavior)target;
             mfObject = behavior.MFObject;
             EditorGUILayout.BeginHorizontal();
             behavior.showTriggers = EditorGUILayout.Foldout(behavior.showTriggers, "Triggers");
@@ -244,7 +246,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
                         if (behavior.SequenceBehavioDataList[i].behavior != null)
                             GUILayout.Label("# " + behavior.SequenceBehavioDataList[i].behavior.editorIndex, EditorStyles.miniLabel, GUILayout.Width(25), GUILayout.Height(17));
 
-                        Behavior changedBehavior = (Behavior)EditorGUILayout.ObjectField(behavior.SequenceBehavioDataList[i].behavior, typeof(Behavior), true);
+                        Behavior.Behavior changedBehavior = (Behavior.Behavior)EditorGUILayout.ObjectField(behavior.SequenceBehavioDataList[i].behavior, typeof(Behavior.Behavior), true);
                         if (changedBehavior != behavior.SequenceBehavioDataList[i].behavior)
                         {
                             Undo.RecordObject(behavior, "sequence behavior changed");
@@ -300,7 +302,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
                         if (behavior.ComplementaryBehaviors[i])
                             GUILayout.Label("# " + behavior.ComplementaryBehaviors[i].editorIndex, EditorStyles.miniLabel, GUILayout.Width(25), GUILayout.Height(17));
 
-                        Behavior changedComplementaryBehavior = (Behavior)EditorGUILayout.ObjectField(behavior.ComplementaryBehaviors[i], typeof(Behavior), true);
+                        Behavior.Behavior changedComplementaryBehavior = (Behavior.Behavior)EditorGUILayout.ObjectField(behavior.ComplementaryBehaviors[i], typeof(Behavior.Behavior), true);
                         if (changedComplementaryBehavior != behavior.ComplementaryBehaviors[i])
                         {
                             Undo.RecordObject(behavior, "complementary behavior changed");
@@ -391,3 +393,4 @@ namespace MeadowGames.MakeItFlow.EditorTool
     }
 
 }
+#endif

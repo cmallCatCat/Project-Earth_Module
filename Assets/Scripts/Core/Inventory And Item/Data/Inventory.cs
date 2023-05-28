@@ -40,11 +40,13 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         {
             itemStack.SetTransform(transform);
             itemSlot.Add(itemStack);
+            onItemChanged?.Invoke();
         }
 
         private void BaseRemove(ItemSlot itemSlot, int toRemoveNumber)
         {
             itemSlot.Remove(toRemoveNumber);
+            onItemChanged?.Invoke();
         }
 
         private void BaseSet(ItemSlot itemSlot, ItemStack? newStack)
@@ -52,11 +54,13 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             if (newStack == null)
             {
                 itemSlot.Set(null);
+                onItemChanged?.Invoke();
                 return;
             }
 
             newStack.SetTransform(transform);
             itemSlot.Set(newStack);
+            onItemChanged?.Invoke();
         }
 
         #endregion
@@ -75,7 +79,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
                 if (canAddNumber >= toAddNumber)
                 {
                     BaseAdd(itemSlot, new ItemStack(toAddItem, toAddDecorator, toAddNumber, transform));
-                    onItemChanged?.Invoke();
                     return;
                 }
 
@@ -100,7 +103,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             if (canAddNumber >= toAddNumber)
             {
                 BaseAdd(itemSlot, new ItemStack(toAddInfo, toAddDecorator, toAddNumber, transform));
-                onItemChanged?.Invoke();
                 return;
             }
 
@@ -124,7 +126,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
                 if (canRemoveNumber >= toRemoveNumber)
                 {
                     BaseRemove(itemSlot, toRemoveNumber);
-                    onItemChanged?.Invoke();
                     return;
                 }
 
@@ -149,11 +150,21 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             if (canRemoveNumber >= toRemoveNumber)
             {
                 BaseRemove(itemSlot, toRemoveNumber);
-                onItemChanged?.Invoke();
                 return;
             }
 
             throw new Exception("没有足够的物品可移除, 请在移除前检查物品是否足够");
+        }
+        
+        public void Remove(int index)
+        {
+            ItemSlot itemSlot = itemSlots[index];
+            if (itemSlot.ItemStack != null)
+            {
+                BaseRemove(itemSlot, itemSlot.ItemStack.Number);
+                return;
+            }
+            throw new Exception("没有物品可移除");
         }
 
         #endregion
@@ -161,36 +172,53 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         #region 改
 
-        public int MergeOrSwitch(int fromIndex, int toIndex, bool invoke = true)
+        private int MergeOrSwitch(int fromIndex, int toIndex)
         {
             ItemSlot fromSlot = itemSlots[fromIndex];
             ItemSlot toSlot = itemSlots[toIndex];
             if (fromSlot.ItemStack == null || toSlot.ItemStack == null ||
                 fromSlot.ItemStack.ItemInfo != toSlot.ItemStack.ItemInfo)
             {
-                Switch(fromIndex, toIndex, invoke);
-                if (invoke)
-                {
-                    onItemChanged?.Invoke();
-                }
-
+                Switch(fromIndex, toIndex);
                 return -1;
             }
 
             int canAddNumber = toSlot.CanAddNumber(fromSlot.ItemStack.ItemInfo, fromSlot.ItemStack.ItemDecorator);
             int finalAddNumber = Mathf.Min(canAddNumber, fromSlot.ItemStack.Number);
             BaseRemove(fromSlot, finalAddNumber);
-            BaseAdd(toSlot,
-                new ItemStack(toSlot.ItemStack.ItemInfo, toSlot.ItemStack.ItemDecorator, finalAddNumber, transform));
-            if (invoke)
-            {
-                onItemChanged?.Invoke();
-            }
+            BaseAdd(toSlot, new ItemStack(toSlot.ItemStack.ItemInfo, toSlot.ItemStack.ItemDecorator, finalAddNumber, transform));
 
             return finalAddNumber;
         }
 
-        public void Switch(int index1, int index2, bool invoke = true)
+        public ItemStack? MergeOrSwitch(ItemStack fromStack, int toIndex)
+        {
+            ItemSlot toSlot = itemSlots[toIndex];
+            if (!toSlot.Match(fromStack))
+            {
+                return fromStack;
+            }
+
+            int canAddNumber = toSlot.CanAddNumber(fromStack.ItemInfo, fromStack.ItemDecorator);
+            if (canAddNumber > 0)
+            {
+                int finalAddNumber = Mathf.Min(canAddNumber, fromStack.Number);
+                BaseAdd(toSlot, new ItemStack(fromStack.ItemInfo, fromStack.ItemDecorator, finalAddNumber, transform));
+                if (fromStack.Number - finalAddNumber > 0)
+                {
+                    return new ItemStack(fromStack.ItemInfo, fromStack.ItemDecorator, fromStack.Number - finalAddNumber,
+                        transform);
+                }
+
+                return null;
+            }
+            
+            ItemStack? slotItemStack = toSlot.ItemStack;
+            toSlot.Set(fromStack);
+            return slotItemStack;
+        }
+
+        public void Switch(int index1, int index2)
         {
             ItemSlot slot1 = itemSlots[index1];
             ItemSlot slot2 = itemSlots[index2];
@@ -198,10 +226,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             ItemStack? stack2 = slot2.ItemStack;
             BaseSet(slot1, stack2);
             BaseSet(slot2, stack1);
-            if (invoke)
-            {
-                onItemChanged?.Invoke();
-            }
         }
 
         #endregion

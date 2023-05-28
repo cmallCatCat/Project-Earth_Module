@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using Make_It_Flow.Scripts.Core.Event_System;
 using UnityEngine;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Objects
 {
     [AddComponentMenu("MG/Make it Flow/MFObject")]
     [System.Serializable]
@@ -9,7 +10,7 @@ namespace MeadowGames.MakeItFlow
     {
 #if UNITY_EDITOR
         public bool showBehaviors = false;
-        public Behavior selectedBehavior;
+        public Behavior.Behavior selectedBehavior;
         public bool foldoutGroup = true;
 #endif
 

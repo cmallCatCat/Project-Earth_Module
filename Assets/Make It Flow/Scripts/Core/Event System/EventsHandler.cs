@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using Make_It_Flow.Scripts.Core.Event_System.Input_Manager;
+using Make_It_Flow.Scripts.Core.Objects;
+using Make_It_Flow.Scripts.Core.Utils;
 using UnityEngine;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Event_System
 {
     // v1.1 - class EventsHandler added to handle events generated using the default MF inputs.
     // Events handled in the CanvasManager moved to the EventsHandler to improve performance 
@@ -32,7 +35,7 @@ namespace MeadowGames.MakeItFlow
 
         public void OnUpdate()
         {
-            objectsUnderPointer = Raycaster.RaycastMFObjectAll(inputManager.ScreenPointerPosition);
+            objectsUnderPointer = Raycaster.Raycaster.RaycastMFObjectAll(inputManager.ScreenPointerPosition);
 
             if (objectsUnderPointer.Count > 0)
                 firstObjectsUnderPointer = objectsUnderPointer[0];

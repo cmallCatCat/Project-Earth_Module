@@ -41,9 +41,9 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
         [HideIf("referenceRotation", Reference.World)]
         public bool considerHorizontalAxisRotation;
 
-        public override void Work(IEffectSender sender, IEnvironment environment)
+        public override void Work(IEffectSender sender)
         {
-            environment.Instantiate(toCreate,useObjectPool,
+            IEnvironment.Instance.Instantiate(toCreate,useObjectPool,
                 referencePosition.GetPosition(position,
                     sender.GetTransform(), considerHorizontalAxisPosition, considerRotationPosition),
                 referenceRotation.GetRotation(rotation,

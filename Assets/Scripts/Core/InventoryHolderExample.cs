@@ -7,12 +7,10 @@ namespace Core
 {
     public class InventoryHolderExample: InventoryHolder
     {
-
-        protected override IEnvironment GetEnvironment => SceneEnvironment.Instance;
-
+        
         public override IArchitecture GetArchitecture()
         {
-            return InGame.Interface;
+            return Game.Interface;
         }
     }
 }

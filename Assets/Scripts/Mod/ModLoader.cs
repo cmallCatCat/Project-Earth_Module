@@ -7,13 +7,15 @@ using Extents;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using JetBrains.Annotations;
+using QFramework;
 using UnityEngine;
+// ReSharper disable AssignNullToNotNullAttribute
+// ReSharper disable PossibleNullReferenceException
 
 namespace Mod
 {
-    public class ModLoader : MonoBehaviour
+    public class ModLoader : MonoSingleton<ModLoader>
     {
-        public static ModLoader Instance { get; private set; }
         public Dictionary<Assembly, ModInfo> ModInfos = new Dictionary<Assembly, ModInfo>();
 
         public static readonly string PluginPath = AppDomain.CurrentDomain.BaseDirectory + "/BepInEx/plugins";
@@ -21,7 +23,6 @@ namespace Mod
         
         void Start()
         {
-            Instance = this;
             DontDestroyOnLoad(gameObject);
 
 #if !UNITY_EDITOR
@@ -97,7 +98,7 @@ namespace Mod
                 object instance = modAssembly.CreateInstance(subClass.FullName);
 
                 ItemInfo newItem = (ItemInfo)subClass.GetMethod("ItemInfo").Invoke(instance, null);
-                bool bNew = ItemDatabaseHandler.New(newItem);
+                bool bNew = ItemDatabaseHandler.Instance.New(newItem);
                 if (bNew)
                 {
                     modInfo.newItem.Add(newItem);
@@ -114,8 +115,8 @@ namespace Mod
                 ItemIdentification deleteItemIdentification
                     = (ItemIdentification)subClass.GetMethod("Identification").Invoke(instance, null);
 
-                ItemInfo deletedItem = ItemDatabaseHandler.FindItem(deleteItemIdentification);
-                bool succeed = ItemDatabaseHandler.Delete(deleteItemIdentification);
+                ItemInfo deletedItem = ItemDatabaseHandler.Instance.FindItem(deleteItemIdentification);
+                bool succeed = ItemDatabaseHandler.Instance.Delete(deleteItemIdentification);
 
                 if (succeed)
                 {
@@ -135,8 +136,8 @@ namespace Mod
 
                 foreach (ItemIdentification deleteItemIdentification in deleteItemIdentifications)
                 {
-                    ItemInfo deletedItem = ItemDatabaseHandler.FindItem(deleteItemIdentification);
-                    bool succeed = ItemDatabaseHandler.Delete(deleteItemIdentification);
+                    ItemInfo deletedItem = ItemDatabaseHandler.Instance.FindItem(deleteItemIdentification);
+                    bool succeed = ItemDatabaseHandler.Instance.Delete(deleteItemIdentification);
                     if (succeed)
                     {
                         modInfo.deleteItem.Add(deletedItem);
@@ -154,11 +155,11 @@ namespace Mod
                 ItemIdentification changeItemIdentification
                     = (ItemIdentification)subClass.GetMethod("Identification").Invoke(instance, null);
 
-                ItemInfo original = ItemDatabaseHandler.FindItem(changeItemIdentification);
+                ItemInfo original = ItemDatabaseHandler.Instance.FindItem(changeItemIdentification);
                 ItemInfo changedItem
                     = (ItemInfo)subClass.GetMethod("ItemInfo").Invoke(instance, new object[] { original });
 
-                bool change = ItemDatabaseHandler.Change(changeItemIdentification, changedItem);
+                bool change = ItemDatabaseHandler.Instance.Change(changeItemIdentification, changedItem);
                 if (change)
                 {
                     modInfo.changeItemBefore.Add(original);
@@ -176,7 +177,7 @@ namespace Mod
                 ItemIdentification[] changeItemIdentifications
                     = (ItemIdentification[])subClass.GetMethod("Identifications").Invoke(instance, null);
 
-                ItemInfo[] originalList = changeItemIdentifications.Select(ItemDatabaseHandler.FindItem).ToArray();
+                ItemInfo[] originalList = changeItemIdentifications.Select(ItemDatabaseHandler.Instance.FindItem).ToArray();
                 ItemInfo[] changedItems
                     = (ItemInfo[])subClass.GetMethod("ItemInfos").Invoke(instance, new object[] { originalList });
 
@@ -185,7 +186,7 @@ namespace Mod
                     ItemIdentification changeItemIdentification = changeItemIdentifications[index];
                     ItemInfo originalItem = originalList[index];
                     ItemInfo changedItem = changedItems[index];
-                    bool succeed = ItemDatabaseHandler.Change(changeItemIdentification, changedItem);
+                    bool succeed = ItemDatabaseHandler.Instance.Change(changeItemIdentification, changedItem);
                     if (succeed)
                     {
                         modInfo.changeItemBefore.Add(originalItem);

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Make_It_Flow.Scripts.Core.Event_System;
+using Make_It_Flow.Scripts.Core.Objects;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core
 {
     // MF_ExecutionManager changed to MFSystemManager
     [DefaultExecutionOrder(-100)]
@@ -143,10 +145,10 @@ namespace MeadowGames.MakeItFlow
             }
         }
     }
-}
 
 // v1.1 - added IUpdateEvent interface for classes that have an Update call executed by the MFSystemManager
-public interface IUpdateEvent
-{
-    void OnUpdate();
+    public interface IUpdateEvent
+    {
+        void OnUpdate();
+    }
 }

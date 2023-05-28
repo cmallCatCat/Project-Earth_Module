@@ -8,7 +8,7 @@ namespace Core
     {
         public IArchitecture GetArchitecture()
         {
-            return InGame.Interface;
+            return Game.Interface;
         }
     }
 }

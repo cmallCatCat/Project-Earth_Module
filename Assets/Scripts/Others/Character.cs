@@ -12,7 +12,7 @@ namespace Others
 
         public IArchitecture GetArchitecture()
         {
-            return InGame.Interface;
+            return Game.Interface;
         }
 
 

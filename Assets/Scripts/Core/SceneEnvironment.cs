@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
+using QFramework;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Core
 {
     public class SceneEnvironment : IEnvironment
     {
-        public static SceneEnvironment Instance { get; private set; }
         
         private Dictionary<Type, List<MonoBehaviour>> data = new Dictionary<Type, List<MonoBehaviour>>();
 
@@ -17,9 +18,11 @@ namespace Core
 
         protected override GameObject GetPlayer => GameObject.FindGameObjectWithTag("Player");
 
+        public override Canvas UICanvas => GameObject.Find("UIRoot").GetComponent<Canvas>();
+
         public override void Instantiate(GameObject toCreate, bool useObjectPool, Vector2 getPosition, Quaternion getRotation)
         {
-            GameObject.Instantiate(toCreate, getPosition, getRotation).name = toCreate.name;
+            Object.Instantiate(toCreate, getPosition, getRotation).name = toCreate.name;
         }
 
         public override void Register<T>(MonoBehaviour monoBehaviour)
@@ -65,8 +68,8 @@ namespace Core
 
         private void Awake()
         {
-            Instance = this;
-            ItemDatabaseHandler.Init(QAssetBundle.New_item_database_asset.NEW_ITEM_DATABASE);
+            ResKit.Init();
+            ItemDatabaseHandler.Instance.Init(QAssetBundle.New_item_database_asset.NEW_ITEM_DATABASE);
         }
     }
 }

@@ -1,4 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
+using Make_It_Flow.Scripts.Core;
+using Make_It_Flow.Scripts.Core.Behavior;
+using Make_It_Flow.Scripts.Core.Event_System.Input_Manager;
+using Make_It_Flow.Scripts.Core.Objects;
 using UnityEngine;
 
 namespace MeadowGames.MakeItFlow.Samples

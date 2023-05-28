@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Event_System
 {
     [System.Serializable]
-    public class MFEvent<T> : UnityEvent<T> { }
+    public class MFEvent<T> : UnityEvent<T>
+    {
+    }
 
     public class EventsManager<T>
     {
@@ -91,6 +94,7 @@ namespace MeadowGames.MakeItFlow
         public void TriggerEvent(string eventName)
         {
             UnityEvent thisEvent = null;
+
             if (_eventDictionaryObject.TryGetValue(eventName, out thisEvent))
             {
                 thisEvent.Invoke();

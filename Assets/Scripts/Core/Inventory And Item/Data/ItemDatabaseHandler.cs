@@ -3,34 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Filters;
+using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
-    public static class ItemDatabaseHandler
+    [UsedImplicitly]
+    public class ItemDatabaseHandler: Singleton<ItemDatabaseHandler>
     {
-        private static ResLoader resLoader = ResLoader.Allocate();
 
-        public static Dictionary<string, Dictionary<string, ItemInfo>> packageList
+        private ResLoader resLoader = ResLoader.Allocate();
+
+        public Dictionary<string, Dictionary<string, ItemInfo>> packageList
             = new Dictionary<string, Dictionary<string, ItemInfo>>();
 
-        public static void Init(string assetName)
+        public void Init(string assetName)
         {
-            ResKit.Init();
             List<ItemInfo> defaultItemList = resLoader.LoadSync<ItemDatabase>(assetName).itemInfos;
             Dictionary<string, ItemInfo> defaultItemDic = new Dictionary<string, ItemInfo>();
             defaultItemList.ForEach(x => defaultItemDic.Add(x.ItemName, x));
             packageList.Add("Default", defaultItemDic);
         }
 
-        public static ItemInfo FindItem(ItemIdentification itemIdentification)
+        public ItemInfo FindItem(ItemIdentification itemIdentification)
         {
             return packageList[itemIdentification.packageName][itemIdentification.name];
         }
         
 
-        public static bool New(ItemInfo itemInfo)
+        public bool New(ItemInfo itemInfo)
         {
             string packageName = itemInfo.PackageName;
             if (!packageList.ContainsKey(packageName))
@@ -48,7 +50,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             return true;
         }
 
-        public static bool Delete(ItemIdentification itemIdentification)
+        public bool Delete(ItemIdentification itemIdentification)
         {
             string packageName = itemIdentification.packageName;
             string itemName = itemIdentification.name;
@@ -69,7 +71,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             return true;
         }
 
-        public static bool Change( ItemIdentification itemIdentification , ItemInfo itemInfo)
+        public bool Change( ItemIdentification itemIdentification , ItemInfo itemInfo)
         {
             string packageName = itemIdentification.packageName;
             string itemName = itemIdentification.name;
@@ -90,7 +92,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             return true;
         }
 
-        public static ItemInfo[] GetAllItems(ItemFilter filter = null, string packageName = "Default")
+        public ItemInfo[] GetAllItems(ItemFilter filter = null, string packageName = "Default")
         {
             if (!packageList.ContainsKey(packageName))
             {
@@ -105,6 +107,17 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
             return packageList[packageName].Values.Where(x =>
                 filter.IsMatch(x, new ItemDecorator())).ToArray();
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            resLoader.Recycle2Cache();
+            resLoader = null;
+        }
+
+        private ItemDatabaseHandler()
+        {
         }
     }
 }

@@ -4,7 +4,10 @@
     "references": [
         "QFramework",
         "ResKit",
-        "QFramework.CoreKit"
+        "QFramework.CoreKit",
+        "UIKit",
+        "Unity.TextMeshPro",
+        "MakeItFlow"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

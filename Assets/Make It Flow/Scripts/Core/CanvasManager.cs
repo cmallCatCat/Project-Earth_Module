@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Make_It_Flow.Scripts.Core.Objects;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core
 {
     public enum MFSelectEnum { Click, DoubleClick, Hold }
 

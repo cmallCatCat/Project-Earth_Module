@@ -25,7 +25,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
         [SerializeField]
         private EffectsAndPossibilities[] effectsAndPossibilities = { };
 
-        public override void Work(IEffectSender sender, IEnvironment environment)
+        public override void Work(IEffectSender sender)
         {
             int sum = effectsAndPossibilities.Sum(x => x.probability);
 
@@ -37,7 +37,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
                 {
                     if (possibilities.effect != null)
                     {
-                        possibilities.effect.Work(sender, environment);
+                        possibilities.effect.Work(sender);
                     }
 
                     break;

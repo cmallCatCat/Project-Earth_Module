@@ -7,7 +7,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
     public class LogEffect : Effect
     {
         public string message;
-        public override void Work(IEffectSender sender, IEnvironment environment)
+        public override void Work(IEffectSender sender)
         {
             Debug.Log(message);
         }

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3190737882
+CRC: 302558410
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -11,7 +11,11 @@ AssetBundleManifest:
       Dependencies: {}
     Info_2:
       Name: shortcutinventory_prefab
-      Dependencies: {}
+      Dependencies:
+        Dependency_0: stack_prefab
     Info_3:
       Name: new item database_asset
+      Dependencies: {}
+    Info_4:
+      Name: stack_prefab
       Dependencies: {}

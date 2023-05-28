@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -445,7 +444,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 205333487}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &205333485
@@ -1544,7 +1543,6 @@ GameObject:
   - component: {fileID: 662420537}
   - component: {fileID: 662420536}
   - component: {fileID: 662420535}
-  - component: {fileID: 662420539}
   m_Layer: 5
   m_Name: Owl Image (5)
   m_TagString: Untagged
@@ -1721,7 +1719,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 662420535}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &662420537
@@ -1762,18 +1760,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662420533}
   m_CullTransparentMesh: 1
---- !u!114 &662420539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662420533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fc09a634d86d24482a86d3d0a06411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &663389950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,7 +2199,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 859239978}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &859239980
@@ -2520,7 +2506,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 957153759}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!1 &1009222220
@@ -2735,7 +2721,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 1133636892}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &1133636890
@@ -3294,7 +3280,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 1278342049}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!1 &1411116343
@@ -3859,7 +3845,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 1863575797}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &1863575795
@@ -4149,7 +4135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviorsExecutionTimes: 1
-  _cacheGraphicRaycasters: 1
+  _cacheRaycasters: 1
 --- !u!4 &1958453210
 Transform:
   m_ObjectHideFlags: 0
@@ -4240,7 +4226,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 1964610539}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &1964610537
@@ -4511,7 +4497,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 2054863927}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &2054863929
@@ -4689,7 +4675,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 2065007920}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &2065007922
@@ -4900,7 +4886,7 @@ MonoBehaviour:
   showBehaviors: 0
   selectedBehavior: {fileID: 2125138289}
   foldoutGroup: 1
-  _mfTag: 
+  _tag: 
   _mfCanvasManager: {fileID: 9108830901546863548}
   isSelectable: 0
 --- !u!114 &2125138291

@@ -2,16 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Make_It_Flow.Scripts.Core.Event_System.Input_Manager;
+using Make_It_Flow.Scripts.Core.Objects;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Behavior
 {
-    [Serializable]
+    [System.Serializable]
     public class Behavior : MonoBehaviour
     {
 #if UNITY_EDITOR
@@ -37,7 +36,7 @@ namespace MeadowGames.MakeItFlow
 
         string[] GetCallMethods()
         {
-            Type behaviorType = GetType();
+            Type behaviorType = this.GetType();
             MethodInfo[] behaviorMethods = behaviorType.GetMethods(
         BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public).Where(
         x => x.DeclaringType == behaviorType && (x.Name == "StartBehavior" || x.Name == "StopOnBehaviorEnd" || x.Name == "InterruptBehavior")).OrderBy(x => x.Name).ToArray();
@@ -366,9 +365,9 @@ namespace MeadowGames.MakeItFlow
 
 #if UNITY_EDITOR
 
-        public virtual void CustomInspector(Editor editor)
+        public virtual void CustomInspector(UnityEditor.Editor editor)
         {
-            MethodInfo mInfoMethod = typeof(Editor).GetMethod(
+            MethodInfo mInfoMethod = typeof(UnityEditor.Editor).GetMethod(
                 "DrawPropertiesExcluding",
                 BindingFlags.Static | BindingFlags.NonPublic,
                 Type.DefaultBinder,

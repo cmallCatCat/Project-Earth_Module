@@ -1,4 +1,4 @@
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Behavior
 {
     public enum MFBehaviorEvents { OnBehaviorStart, OnBehaviorEnd, OnBehaviorInterrupt };
 

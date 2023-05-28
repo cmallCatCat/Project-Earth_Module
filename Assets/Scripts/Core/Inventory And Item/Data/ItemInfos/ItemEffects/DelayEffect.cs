@@ -22,22 +22,21 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
         public struct Args
         {
             public IEffectSender sender;
-            public IEnvironment environment;
 
-            public static Args Create(IEffectSender effectSender, IEnvironment environment1)
+            public static Args Create(IEffectSender effectSender)
             {
-                return new Args { sender = effectSender, environment = environment1 };
+                return new Args { sender = effectSender };
             }
         }
 
-        public override void Work(IEffectSender sender, IEnvironment environment)
+        public override void Work(IEffectSender sender)
         {
-            environment.Delay(Delay, Args.Create(sender, environment), delay);
+            IEnvironment.Instance.Delay(Delay, Args.Create(sender), delay);
         }
 
         private void Delay(Args args)
         {
-            effect.Work(args.sender, args.environment);
+            effect.Work(args.sender);
         }
     }
 }

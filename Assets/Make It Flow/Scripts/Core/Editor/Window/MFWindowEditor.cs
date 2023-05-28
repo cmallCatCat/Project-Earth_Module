@@ -1,11 +1,15 @@
-using UnityEngine;
-using UnityEditor;
-using UnityEngine.UI;
+#if UNITY_EDITOR
 using System.IO;
+using Make_It_Flow.Scripts.Core.Event_System.Event_Groups;
+using Make_It_Flow.Scripts.Core.Event_System.Input_Manager;
+using Make_It_Flow.Scripts.Core.Objects;
+using Make_It_Flow.Scripts.Core.Utils;
+using UnityEditor;
 using UnityEditor.SceneManagement;
-using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace MeadowGames.MakeItFlow.EditorTool
+namespace Make_It_Flow.Scripts.Core.Editor.Window
 {
     public class MFWindowEditor : EditorWindow
     {
@@ -16,7 +20,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
             window.Show();
         }
 
-        Behavior[] _behaviors;
+        Behavior.Behavior[] _behaviors;
         Vector2 _scrollPos0;
         Vector2 _scrollPos1;
 
@@ -252,14 +256,13 @@ namespace MeadowGames.MakeItFlow.EditorTool
                             if (fileInfo.Extension.ToLower() == ".cs")
                             {
                                 string scriptName = fileInfo.Name.Replace(fileInfo.Extension, "");
-                                System.Type MyScriptType = System.Type.GetType(scriptName + ",Assembly-CSharp");
+                                System.Type MyScriptType = System.Type.GetType(scriptName + ",MakeItFlow");
 
                                 string splitBehaviorName = scriptName.SplitCamelCase().TrimEnd("Behavior");
 
                                 menu.AddItem(new GUIContent(splitBehaviorName), false, delegate
                                {
-                                   Behavior newBehavior = (Behavior)Undo.AddComponent(_activeGameObject, MyScriptType);
-
+                                   Behavior.Behavior newBehavior = (Behavior.Behavior)Undo.AddComponent(_activeGameObject, MyScriptType);
                                    mfObject.selectedBehavior = newBehavior;
                                });
                             }
@@ -269,8 +272,8 @@ namespace MeadowGames.MakeItFlow.EditorTool
                     }
 
                     _scrollPos0 = EditorGUILayout.BeginScrollView(_scrollPos0, GUILayout.Width(270), _expandHeight);
-                    _behaviors = mfObject.GetComponents<Behavior>();
-                    foreach (Behavior behavior in _behaviors)
+                    _behaviors = mfObject.GetComponents<Behavior.Behavior>();
+                    foreach (Behavior.Behavior behavior in _behaviors)
                     {
                         EditorGUILayout.BeginHorizontal();
                         {
@@ -290,7 +293,7 @@ namespace MeadowGames.MakeItFlow.EditorTool
                                     UnityEditorInternal.ComponentUtility.PasteComponentAsNew(behavior.gameObject);
 
                                     // selecte last added behavior
-                                    Behavior[] behaviors = behavior.gameObject.GetComponents<Behavior>();
+                                    Behavior.Behavior[] behaviors = behavior.gameObject.GetComponents<Behavior.Behavior>();
                                     mfObject.selectedBehavior = behaviors[behaviors.Length - 1];
                                 }
 
@@ -439,9 +442,9 @@ namespace MeadowGames.MakeItFlow.EditorTool
 
             MFEditorUtils.DrawRectBorder.Left(Color.yellow, 3);
 
-            Behavior[] objBehaviors = mfObject.GetComponents<Behavior>();
+            Behavior.Behavior[] objBehaviors = mfObject.GetComponents<Behavior.Behavior>();
             int behaviorCount = 0;
-            foreach (Behavior bhv in objBehaviors)
+            foreach (Behavior.Behavior bhv in objBehaviors)
             {
                 EditorGUILayout.BeginHorizontal();
                 {
@@ -476,3 +479,4 @@ namespace MeadowGames.MakeItFlow.EditorTool
 
     }
 }
+#endif

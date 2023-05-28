@@ -4,6 +4,7 @@ using Core.QFramework.Framework.Scripts;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Filters;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
@@ -69,9 +70,9 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         #region 查询
 
-        public bool Match(ItemStack itemStack)
+        public bool Match(ItemStack? itemStack)
         {
-            return itemFilter.IsMatch(itemStack.ItemInfo, itemStack.ItemDecorator);
+            return itemFilter.IsMatch(itemStack?.ItemInfo, itemStack?.ItemDecorator);
         }
 
         public int CanAddNumber(ItemInfo itemInfo, ItemDecorator itemDecorator)
@@ -102,7 +103,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         private int numberSave;
 
         [SerializeField]
-        private ItemDecorator itemDecorator = new ItemDecorator();
+        private ItemDecorator itemDecoratorSave = new ItemDecorator();
 
         [SerializeField]
         private FilterType filterTypeSave;
@@ -117,7 +118,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
                 packageNameSave = ItemStack.ItemInfo.PackageName;
                 itemNameSave = ItemStack.ItemInfo.ItemName;
                 numberSave = ItemStack.Number;
-                itemDecorator = ItemStack.ItemDecorator;
+                itemDecoratorSave = ItemStack.ItemDecorator;
             }
 
             {
@@ -131,11 +132,11 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             if (itemNameSave != string.Empty)
             {
                 ItemInfo findItemInfo
-                    = ItemDatabaseHandler.FindItem(new ItemIdentification(packageNameSave, itemNameSave));
+                    = ItemDatabaseHandler.Instance.FindItem(new ItemIdentification(packageNameSave, itemNameSave));
                 ItemInfo itemInfo =
                     SOHelper.CloneScriptableObject(findItemInfo) ?? throw new InvalidOperationException();
                 int itemNumber = numberSave;
-                Set(new ItemStack(itemInfo, itemDecorator, itemNumber, null));
+                Set(new ItemStack(itemInfo, itemDecoratorSave, itemNumber, null));
             }
 
             {

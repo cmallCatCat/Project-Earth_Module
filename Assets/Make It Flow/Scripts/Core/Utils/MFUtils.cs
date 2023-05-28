@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Make_It_Flow.Scripts.Core.Objects;
 using UnityEditor;
 using UnityEngine;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Utils
 {
     // v1.1 - removed wrong inheritance from MFUtils
     public static class MFUtils

@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
-namespace MeadowGames.MakeItFlow.EditorTool
+namespace Make_It_Flow.Scripts.Core.Editor
 {
     public static class MFEditorUtils
     {
@@ -95,3 +94,4 @@ namespace MeadowGames.MakeItFlow.EditorTool
         }
     }
 }
+#endif

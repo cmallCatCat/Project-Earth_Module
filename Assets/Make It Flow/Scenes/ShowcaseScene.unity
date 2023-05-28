@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1288,7 +1287,6 @@ GameObject:
   - component: {fileID: 581565246}
   - component: {fileID: 581565248}
   - component: {fileID: 581565251}
-  - component: {fileID: 581565252}
   m_Layer: 5
   m_Name: Panel Area (2)
   m_TagString: Untagged
@@ -1337,7 +1335,7 @@ MonoBehaviour:
   isSelectable: 0
 --- !u!114 &581565248
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1413,7 +1411,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!114 &581565251
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1452,18 +1450,6 @@ MonoBehaviour:
   maxAngle: 50
   inverse: 0
   offsetTargetOnStart: 1
---- !u!114 &581565252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581565244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fc09a634d86d24482a86d3d0a06411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &608407015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,7 +2718,6 @@ GameObject:
   - component: {fileID: 1520135318}
   - component: {fileID: 1520135320}
   - component: {fileID: 1520135323}
-  - component: {fileID: 1520135324}
   m_Layer: 5
   m_Name: Panel Area (1)
   m_TagString: Untagged
@@ -2896,18 +2881,6 @@ MonoBehaviour:
   maxAngle: 50
   inverse: 0
   offsetTargetOnStart: 1
---- !u!114 &1520135324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520135316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fc09a634d86d24482a86d3d0a06411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1524776879
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,7 +2895,6 @@ GameObject:
   - component: {fileID: 1524776885}
   - component: {fileID: 1524776884}
   - component: {fileID: 1524776886}
-  - component: {fileID: 1524776887}
   m_Layer: 5
   m_Name: Panel Area
   m_TagString: Untagged
@@ -3040,7 +3012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showBehaviors: 0
-  selectedBehavior: {fileID: 1524776884}
+  selectedBehavior: {fileID: 1524776886}
   foldoutGroup: 1
   _mfTag: 
   _mfCanvasManager: {fileID: 1769693027}
@@ -3086,18 +3058,6 @@ MonoBehaviour:
   maxAngle: 50
   inverse: 0
   offsetTargetOnStart: 1
---- !u!114 &1524776887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524776879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fc09a634d86d24482a86d3d0a06411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1769693018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,7 +3094,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
 --- !u!114 &1769693023
 MonoBehaviour:
   m_ObjectHideFlags: 0

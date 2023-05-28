@@ -22,16 +22,16 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures
 #endif
         public Effect equipOff;
 
-        public void OnEquip(IEffectSender sender, IEnvironment environment)
+        public void OnEquip(IEffectSender sender)
         {
             if (equipOn)
-                equipOn.Work(sender, environment);
+                equipOn.Work(sender);
         }
 
-        public void OffEquip(IEffectSender sender, IEnvironment environment)
+        public void OffEquip(IEffectSender sender)
         {
             if (equipOff)
-                equipOff.Work(sender, environment);
+                equipOff.Work(sender);
         }
     }
 }

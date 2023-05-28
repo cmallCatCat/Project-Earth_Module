@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Event_System.Input_Manager
 {
     // v1.1 - I_MF_InputManager interface changed to InputManager abstract class
     public abstract class InputManager : MonoBehaviour

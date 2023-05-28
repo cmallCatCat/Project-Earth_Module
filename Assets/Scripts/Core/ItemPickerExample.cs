@@ -11,7 +11,7 @@ namespace Core
 
         public override IArchitecture GetArchitecture()
         {
-            return InGame.Interface;
+            return Game.Interface;
         }
     }
 }

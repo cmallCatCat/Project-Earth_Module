@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using Make_It_Flow.Scripts.Core.Objects;
+using Make_It_Flow.Scripts.Core.Utils;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Raycaster
 {
     // v1.1 - Raycaster made non Monobehaviour to reduce needed scene Components
     public class Raycaster
@@ -50,7 +52,7 @@ namespace MeadowGames.MakeItFlow
             else
             {
                 _raycasterList.Clear();
-                _raycasterList.AddRange(Object.FindObjectsOfType<GraphicRaycaster>());
+                _raycasterList.AddRange(GameObject.FindObjectsOfType<GraphicRaycaster>());
             }
 
             foreach (GraphicRaycaster gr in _raycasterList)

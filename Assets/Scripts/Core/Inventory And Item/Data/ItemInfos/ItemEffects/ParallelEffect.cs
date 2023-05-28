@@ -15,11 +15,11 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 #endif
         private Effect[] effects = { };
 
-        public override void Work(IEffectSender sender, IEnvironment environment)
+        public override void Work(IEffectSender sender)
         {
             foreach (Effect effect in effects)
             {
-                effect.Work(sender, environment);
+                effect.Work(sender);
             }
         }
     }

@@ -1,10 +1,12 @@
 ﻿using System;
+using QFramework;
 using UnityEngine;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 {
-    public abstract class IEnvironment : MonoBehaviour
+    public abstract class IEnvironment : MonoSingleton<IEnvironment>
     {
+        public readonly Vector3 FarAway = new Vector3(9999f, 9999f, 9999f);
 
         private Camera uiCamera;
         
@@ -38,6 +40,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
                 return player;
             }
         }
+        
+        public abstract Canvas UICanvas { get; }
 
         public abstract void Instantiate(GameObject toCreate, bool useObjectPool, Vector2 getPosition, Quaternion getRotation); 
         

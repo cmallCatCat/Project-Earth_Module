@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
-    public class ItemStack: IEffectSender
+    public class ItemStack : IEffectSender
     {
         private ItemInfo itemInfo;
 
         private ItemDecorator itemDecorator;
-        
+
         private int number;
 
         private Transform transform;
@@ -20,7 +20,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         public int Number => number;
 
         public ItemDecorator ItemDecorator => itemDecorator;
-        
+
         public Transform Transform => transform;
 
         public ItemStack(ItemInfo itemInfo, ItemDecorator itemDecorator, int number, Transform transform)
@@ -30,7 +30,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             this.number = number;
             this.transform = transform;
         }
-        
+
         public void SetTransform(Transform transform)
         {
             this.transform = transform;
@@ -64,7 +64,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public Transform GetTransform()
         {
-            throw new NotImplementedException();
+            return transform;
         }
     }
 }

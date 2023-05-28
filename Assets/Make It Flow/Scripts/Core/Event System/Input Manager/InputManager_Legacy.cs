@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MeadowGames.MakeItFlow
+namespace Make_It_Flow.Scripts.Core.Event_System.Input_Manager
 {
     public class InputManager_Legacy : InputManager
     {

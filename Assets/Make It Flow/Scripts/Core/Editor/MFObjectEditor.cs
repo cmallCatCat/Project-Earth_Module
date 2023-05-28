@@ -1,19 +1,21 @@
-﻿using UnityEditor;
+#if UNITY_EDITOR
+using Make_It_Flow.Scripts.Core.Objects;
+using UnityEditor;
 using UnityEngine;
 
-namespace MeadowGames.MakeItFlow.EditorTool
+namespace Make_It_Flow.Scripts.Core.Editor
 {
     [CustomEditor(typeof(MFObject), true), CanEditMultipleObjects]
     public class MFObjectEditor : UnityEditor.Editor
     {
-        [SerializeField] Behavior[] behaviors;
+        [SerializeField] Behavior.Behavior[] behaviors;
         bool lastToggle;
 
         private void OnEnable()
         {
             MFObject mfObject = (MFObject)target;
-            behaviors = mfObject.GetComponents<Behavior>();
-            foreach (Behavior behavior in behaviors)
+            behaviors = mfObject.GetComponents<Behavior.Behavior>();
+            foreach (Behavior.Behavior behavior in behaviors)
             {
                 UnityEditor.Editor be = CreateEditor(behavior);
                 if (!mfObject.MFCanvasManager.showBehaviorsAsComponents)
@@ -52,10 +54,10 @@ namespace MeadowGames.MakeItFlow.EditorTool
             mfObject.MFCanvasManager.showBehaviorsAsComponents = EditorGUILayout.Toggle("Show Bhvs as Components", mfObject.MFCanvasManager.showBehaviorsAsComponents);
             mfObject.isSelectable = EditorGUILayout.Toggle("Selectable", mfObject.isSelectable);
 
-            behaviors = mfObject.GetComponents<Behavior>();
+            behaviors = mfObject.GetComponents<Behavior.Behavior>();
             mfObject.showBehaviors = EditorGUILayout.Foldout(mfObject.showBehaviors, "Behaviors");
 
-            foreach (Behavior behavior in behaviors)
+            foreach (Behavior.Behavior behavior in behaviors)
             {
                 UnityEditor.Editor be = CreateEditor(behavior);
                 if (mfObject.MFCanvasManager.showBehaviorsAsComponents != lastToggle)
@@ -119,3 +121,4 @@ namespace MeadowGames.MakeItFlow.EditorTool
         }
     }
 }
+#endif
