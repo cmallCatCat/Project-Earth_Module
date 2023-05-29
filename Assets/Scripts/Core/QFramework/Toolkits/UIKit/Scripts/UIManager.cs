@@ -184,6 +184,14 @@ namespace QFramework
                 panel.Info = null;
             }
         }
+        
+        public void CloseUI(IPanel panel)
+        {
+            panel.Close();
+            UIKit.Table.Remove(panel);
+            panel.Info.Recycle2Cache();
+            panel.Info = null;
+        }
 
         public void RemoveUI(PanelSearchKeys panelSearchKeys)
         {

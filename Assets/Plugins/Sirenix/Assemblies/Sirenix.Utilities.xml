@@ -1038,18 +1038,18 @@
         </member>
         <member name="M:Sirenix.Utilities.RectExtensions.Split(UnityEngine.Rect,System.Int32,System.Int32)">
             <summary>
-            Splits a Rect horizontally into the specified number of sub-rects, and returns a sub-rect for the specified index.
+            Splits a Rect horizontally into the specified number of sub-rects, and returns a sub-rect for the specified displayIndex.
             </summary>
             <param name="rect">The original Rect.</param>
-            <param name="index">The index for the subrect. Includes 0, and excludes count.</param>
+            <param name="displayIndex">The displayIndex for the subrect. Includes 0, and excludes count.</param>
             <param name="count">The amount of subrects the Rect should be split into.</param>
         </member>
         <member name="M:Sirenix.Utilities.RectExtensions.SplitVertical(UnityEngine.Rect,System.Int32,System.Int32)">
             <summary>
-            Splits a Rect vertically into the specified number of sub-rects, and returns a sub-rect for the specified index.
+            Splits a Rect vertically into the specified number of sub-rects, and returns a sub-rect for the specified displayIndex.
             </summary>
             <param name="rect">The original Rect.</param>
-            <param name="index">The index for the subrect. Includes 0, and excludes count.</param>
+            <param name="displayIndex">The displayIndex for the subrect. Includes 0, and excludes count.</param>
             <param name="count">The amount of subrects the Rect should be split into.</param>
         </member>
         <member name="M:Sirenix.Utilities.RectExtensions.SplitGrid(UnityEngine.Rect,System.Single,System.Single,System.Int32)">
@@ -1059,7 +1059,7 @@
             <param name="rect">The original rect.</param>
             <param name="width">The width of a grid cell.</param>
             <param name="height">The height of a grid cell.</param>
-            <param name="index">The index of the grid cell.</param>
+            <param name="displayIndex">The displayIndex of the grid cell.</param>
             <returns></returns>
         </member>
         <member name="M:Sirenix.Utilities.RectExtensions.SplitTableGrid(UnityEngine.Rect,System.Int32,System.Single,System.Int32)">
@@ -1759,14 +1759,14 @@
         </member>
         <member name="M:Sirenix.Utilities.ArrayUtilities.CreateNewArrayWithInsertedElement``1(``0[],System.Int32,``0)">
             <summary>
-            Creates a new array with an element inserted at a given index.
+            Creates a new array with an element inserted at a given displayIndex.
             </summary>
             <typeparam name="T">The element type of the array.</typeparam>
             <param name="array">The array.</param>
-            <param name="index">The index to insert at.</param>
+            <param name="displayIndex">The displayIndex to insert at.</param>
             <param name="value">The value to insert.</param>
             <exception cref="T:System.ArgumentNullException">The given array was null.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">The index to insert at was out of range.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The displayIndex to insert at was out of range.</exception>
         </member>
         <member name="M:Sirenix.Utilities.ArrayUtilities.CreateNewArrayWithRemovedElement``1(``0[],System.Int32)">
             <summary>
@@ -1774,10 +1774,10 @@
             </summary>
             <typeparam name="T">The element type of the array.</typeparam>
             <param name="array">The array.</param>
-            <param name="index">The index to remove an element at.</param>
+            <param name="displayIndex">The displayIndex to remove an element at.</param>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException">The given array was null.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">The given index to remove an element at was out of range.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The given displayIndex to remove an element at was out of range.</exception>
         </member>
         <member name="T:Sirenix.Utilities.Editor.AssetScriptGuidUtility">
             <summary>
@@ -2535,7 +2535,7 @@
             <summary>
             Index accessor.
             </summary>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
         </member>
         <member name="M:Sirenix.Utilities.ImmutableList.Contains(System.Object)">
             <summary>
@@ -2555,7 +2555,7 @@
             Copy the list to an array,
             </summary>
             <param name="array">Target array.</param>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
         </member>
         <member name="M:Sirenix.Utilities.ImmutableList.GetEnumerator">
             <summary>
@@ -2564,7 +2564,7 @@
         </member>
         <member name="M:Sirenix.Utilities.ImmutableList.IndexOf(System.Object)">
             <summary>
-            Get the index of a value.
+            Get the displayIndex of a value.
             </summary>
             <param name="value">The item's value.</param>
         </member>
@@ -2572,13 +2572,13 @@
             <summary>
             Immutable list cannot be edited.
             </summary>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
         </member>
         <member name="M:Sirenix.Utilities.ImmutableList.System#Collections#Generic#IList{System#Object}#Insert(System.Int32,System.Object)">
             <summary>
             Immutable list cannot be edited.
             </summary>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
             <param name="item">Item.</param>
         </member>
         <member name="M:Sirenix.Utilities.ImmutableList.System#Collections#Generic#ICollection{System#Object}#Add(System.Object)">
@@ -2667,7 +2667,7 @@
             <summary>
             Index accessor.
             </summary>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
         </member>
         <member name="M:Sirenix.Utilities.ImmutableList`2.Contains(`1)">
             <summary>
@@ -2686,7 +2686,7 @@
         </member>
         <member name="M:Sirenix.Utilities.ImmutableList`2.IndexOf(`1)">
             <summary>
-            Gets the index of an item.
+            Gets the displayIndex of an item.
             </summary>
         </member>
         <member name="T:Sirenix.Utilities.MathUtilities">
@@ -3361,9 +3361,9 @@
         </member>
         <member name="M:Sirenix.Utilities.MemberAliasPropertyInfo.GetIndexParameters">
             <summary>
-            Gets the index parameters of the property.
+            Gets the displayIndex parameters of the property.
             </summary>
-            <returns>The index parameters of the property.</returns>
+            <returns>The displayIndex parameters of the property.</returns>
         </member>
         <member name="M:Sirenix.Utilities.MemberAliasPropertyInfo.GetSetMethod(System.Boolean)">
             <summary>
@@ -3381,7 +3381,7 @@
             <param name="obj">The object to invoke the getter on.</param>
             <param name="invokeAttr">The <see cref="T:System.Reflection.BindingFlags"/> to invoke with.</param>
             <param name="binder">The binder to use.</param>
-            <param name="index">The indices to use.</param>
+            <param name="displayIndex">The indices to use.</param>
             <param name="culture">The culture to use.</param>
             <returns>The value of the property on the given instance.</returns>
         </member>
@@ -3393,7 +3393,7 @@
             <param name="value">The value to set.</param>
             <param name="invokeAttr">The <see cref="T:System.Reflection.BindingFlags"/> to invoke with.</param>
             <param name="binder">The binder to use.</param>
-            <param name="index">The indices to use.</param>
+            <param name="displayIndex">The indices to use.</param>
             <param name="culture">The culture to use.</param>
         </member>
         <member name="T:Sirenix.Utilities.MultiDimArrayUtilities">
@@ -3403,7 +3403,7 @@
         </member>
         <member name="M:Sirenix.Utilities.MultiDimArrayUtilities.InsertOneColumnLeft``1(``0[0:,0:],System.Int32)">
             <summary>
-            Inserts one column left of the specified column index.
+            Inserts one column left of the specified column displayIndex.
             </summary>
             <typeparam name="TElement">The type of the element.</typeparam>
             <param name="columnIndex">Index of the column.</param>
@@ -3411,7 +3411,7 @@
         </member>
         <member name="M:Sirenix.Utilities.MultiDimArrayUtilities.InsertOneColumnRight``1(``0[0:,0:],System.Int32)">
             <summary>
-            Inserts one column right of the specified column index.
+            Inserts one column right of the specified column displayIndex.
             </summary>
             <typeparam name="TElement">The type of the element.</typeparam>
             <param name="columnIndex">Index of the column.</param>
@@ -3419,15 +3419,15 @@
         </member>
         <member name="M:Sirenix.Utilities.MultiDimArrayUtilities.InsertOneRowAbove``1(``0[0:,0:],System.Int32)">
             <summary>
-            Inserts one row above the specified row index.
+            Inserts one row above the specified row displayIndex.
             </summary>
             <typeparam name="TElement">The type of the element.</typeparam>
             <param name="array">The array.</param>
-            <param name="rowIndex">The row index.</param>
+            <param name="rowIndex">The row displayIndex.</param>
         </member>
         <member name="M:Sirenix.Utilities.MultiDimArrayUtilities.InsertOneRowBelow``1(``0[0:,0:],System.Int32)">
             <summary>
-            Inserts one row below the specified row index.
+            Inserts one row below the specified row displayIndex.
             </summary>
             <typeparam name="TElement">The type of the element.</typeparam>
             <param name="array">The array.</param>

@@ -134,11 +134,11 @@
         </member>
         <member name="M:Sirenix.Serialization.BaseDataReader.ReadExternalReference(System.Int32@)">
             <summary>
-            Reads an external reference index. This call will succeed if the next entry is an <see cref="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex"/>.
+            Reads an external reference displayIndex. This call will succeed if the next entry is an <see cref="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex"/>.
             <para />
             If the call fails (and returns <c>false</c>), it will skip the current entry value, unless that entry is an <see cref="F:Sirenix.Serialization.EntryType.EndOfNode"/> or an <see cref="F:Sirenix.Serialization.EntryType.EndOfArray"/>.
             </summary>
-            <param name="index">The external reference index.</param>
+            <param name="displayIndex">The external reference displayIndex.</param>
             <returns><c>true</c> if reading the value succeeded, otherwise <c>false</c></returns>
         </member>
         <member name="M:Sirenix.Serialization.BaseDataReader.ReadExternalReference(System.Guid@)">
@@ -540,10 +540,10 @@
         </member>
         <member name="M:Sirenix.Serialization.BaseDataWriter.WriteExternalReference(System.String,System.Int32)">
             <summary>
-            Writes an external index reference to the stream.
+            Writes an external displayIndex reference to the stream.
             </summary>
             <param name="name">The name of the value. If this is null, no name will be written.</param>
-            <param name="index">The value to write.</param>
+            <param name="displayIndex">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.BaseDataWriter.WriteExternalReference(System.String,System.Guid)">
             <summary>
@@ -959,11 +959,11 @@
         </member>
         <member name="M:Sirenix.Serialization.BinaryDataReader.ReadExternalReference(System.Int32@)">
             <summary>
-            Reads an external reference index. This call will succeed if the next entry is an <see cref="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex" />.
+            Reads an external reference displayIndex. This call will succeed if the next entry is an <see cref="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex" />.
             <para />
             If the call fails (and returns <c>false</c>), it will skip the current entry value, unless that entry is an <see cref="F:Sirenix.Serialization.EntryType.EndOfNode" /> or an <see cref="F:Sirenix.Serialization.EntryType.EndOfArray" />.
             </summary>
-            <param name="index">The external reference index.</param>
+            <param name="displayIndex">The external reference displayIndex.</param>
             <returns>
               <c>true</c> if reading the value succeeded, otherwise <c>false</c>
             </returns>
@@ -1142,10 +1142,10 @@
         </member>
         <member name="M:Sirenix.Serialization.BinaryDataWriter.WriteExternalReference(System.String,System.Int32)">
             <summary>
-            Writes an external index reference to the stream.
+            Writes an external displayIndex reference to the stream.
             </summary>
             <param name="name">The name of the value. If this is null, no name will be written.</param>
-            <param name="index">The value to write.</param>
+            <param name="displayIndex">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.BinaryDataWriter.WriteExternalReference(System.String,System.String)">
             <summary>
@@ -1298,12 +1298,12 @@
         </member>
         <member name="F:Sirenix.Serialization.BinaryEntryType.NamedExternalReferenceByIndex">
             <summary>
-            Entry denoting a named external reference by index.
+            Entry denoting a named external reference by displayIndex.
             </summary>
         </member>
         <member name="F:Sirenix.Serialization.BinaryEntryType.UnnamedExternalReferenceByIndex">
             <summary>
-            Entry denoting an unnamed external reference by index.
+            Entry denoting an unnamed external reference by displayIndex.
             </summary>
         </member>
         <member name="F:Sirenix.Serialization.BinaryEntryType.NamedExternalReferenceByGuid">
@@ -1642,11 +1642,11 @@
         </member>
         <member name="M:Sirenix.Serialization.IDataReader.ReadExternalReference(System.Int32@)">
             <summary>
-            Reads an external reference index. This call will succeed if the next entry is an <see cref="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex"/>.
+            Reads an external reference displayIndex. This call will succeed if the next entry is an <see cref="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex"/>.
             <para />
             If the call fails (and returns <c>false</c>), it will skip the current entry value, unless that entry is an <see cref="F:Sirenix.Serialization.EntryType.EndOfNode"/> or an <see cref="F:Sirenix.Serialization.EntryType.EndOfArray"/>.
             </summary>
-            <param name="index">The external reference index.</param>
+            <param name="displayIndex">The external reference displayIndex.</param>
             <returns><c>true</c> if reading the value succeeded, otherwise <c>false</c></returns>
         </member>
         <member name="M:Sirenix.Serialization.IDataReader.ReadExternalReference(System.Guid@)">
@@ -1955,10 +1955,10 @@
         </member>
         <member name="M:Sirenix.Serialization.IDataWriter.WriteExternalReference(System.String,System.Int32)">
             <summary>
-            Writes an external index reference to the stream.
+            Writes an external displayIndex reference to the stream.
             </summary>
             <param name="name">The name of the value. If this is null, no name will be written.</param>
-            <param name="index">The value to write.</param>
+            <param name="displayIndex">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.IDataWriter.WriteExternalReference(System.String,System.Guid)">
             <summary>
@@ -2127,7 +2127,7 @@
         </member>
         <member name="F:Sirenix.Serialization.JsonConfig.EXTERNAL_INDEX_REF_SIG">
             <summary>
-            The beginning of the content of an external reference by index entry.
+            The beginning of the content of an external reference by displayIndex entry.
             </summary>
         </member>
         <member name="F:Sirenix.Serialization.JsonConfig.EXTERNAL_GUID_REF_SIG">
@@ -2265,11 +2265,11 @@
         </member>
         <member name="M:Sirenix.Serialization.JsonDataReader.ReadExternalReference(System.Int32@)">
             <summary>
-            Reads an external reference index. This call will succeed if the next entry is an <see cref="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex" />.
+            Reads an external reference displayIndex. This call will succeed if the next entry is an <see cref="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex" />.
             <para />
             If the call fails (and returns <c>false</c>), it will skip the current entry value, unless that entry is an <see cref="F:Sirenix.Serialization.EntryType.EndOfNode" /> or an <see cref="F:Sirenix.Serialization.EntryType.EndOfArray" />.
             </summary>
-            <param name="index">The external reference index.</param>
+            <param name="displayIndex">The external reference displayIndex.</param>
             <returns>
               <c>true</c> if reading the value succeeded, otherwise <c>false</c>
             </returns>
@@ -2697,10 +2697,10 @@
         </member>
         <member name="M:Sirenix.Serialization.JsonDataWriter.WriteExternalReference(System.String,System.Int32)">
             <summary>
-            Writes an external index reference to the stream.
+            Writes an external displayIndex reference to the stream.
             </summary>
             <param name="name">The name of the value. If this is null, no name will be written.</param>
-            <param name="index">The value to write.</param>
+            <param name="displayIndex">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.JsonDataWriter.WriteExternalReference(System.String,System.Guid)">
             <summary>
@@ -4800,10 +4800,10 @@
         </member>
         <member name="P:Sirenix.Serialization.DeserializationContext.IndexReferenceResolver">
             <summary>
-            Gets or sets the index reference resolver.
+            Gets or sets the displayIndex reference resolver.
             </summary>
             <value>
-            The index reference resolver.
+            The displayIndex reference resolver.
             </value>
         </member>
         <member name="P:Sirenix.Serialization.DeserializationContext.StreamingContext">
@@ -4846,10 +4846,10 @@
         </member>
         <member name="M:Sirenix.Serialization.DeserializationContext.GetExternalObject(System.Int32)">
             <summary>
-            Gets an external object reference by index, or null if the index could not be resolved.
+            Gets an external object reference by displayIndex, or null if the displayIndex could not be resolved.
             </summary>
-            <param name="index">The index to resolve.</param>
-            <returns>An external object reference by the given index, or null if the index could not be resolved.</returns>
+            <param name="displayIndex">The displayIndex to resolve.</param>
+            <returns>An external object reference by the given displayIndex, or null if the displayIndex could not be resolved.</returns>
         </member>
         <member name="M:Sirenix.Serialization.DeserializationContext.GetExternalObject(System.Guid)">
             <summary>
@@ -4928,7 +4928,7 @@
         </member>
         <member name="F:Sirenix.Serialization.EntryType.ExternalReferenceByIndex">
             <summary>
-            Entry contains the index of an external object in the DeserializationContext.
+            Entry contains the displayIndex of an external object in the DeserializationContext.
             </summary>
         </member>
         <member name="F:Sirenix.Serialization.EntryType.ExternalReferenceByGuid">
@@ -5095,23 +5095,23 @@
         </member>
         <member name="T:Sirenix.Serialization.IExternalIndexReferenceResolver">
             <summary>
-            Resolves external index references to reference objects during serialization and deserialization.
+            Resolves external displayIndex references to reference objects during serialization and deserialization.
             </summary>
         </member>
         <member name="M:Sirenix.Serialization.IExternalIndexReferenceResolver.TryResolveReference(System.Int32,System.Object@)">
             <summary>
-            Tries to resolve the given reference index to a reference value.
+            Tries to resolve the given reference displayIndex to a reference value.
             </summary>
-            <param name="index">The index to resolve.</param>
+            <param name="displayIndex">The displayIndex to resolve.</param>
             <param name="value">The resolved value.</param>
-            <returns><c>true</c> if the index could be resolved to a value, otherwise <c>false</c>.</returns>
+            <returns><c>true</c> if the displayIndex could be resolved to a value, otherwise <c>false</c>.</returns>
         </member>
         <member name="M:Sirenix.Serialization.IExternalIndexReferenceResolver.CanReference(System.Object,System.Int32@)">
             <summary>
             Determines whether the specified value can be referenced externally via this resolver.
             </summary>
             <param name="value">The value to reference.</param>
-            <param name="index">The index of the resolved value, if it can be referenced.</param>
+            <param name="displayIndex">The displayIndex of the resolved value, if it can be referenced.</param>
             <returns><c>true</c> if the reference can be resolved, otherwise <c>false</c>.</returns>
         </member>
         <member name="T:Sirenix.Serialization.IExternalStringReferenceResolver">
@@ -5388,7 +5388,7 @@
             Reads two bytes from a buffer and converts them into a <see cref="T:System.Int16"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToUInt16(System.Byte[],System.Int32)">
@@ -5396,7 +5396,7 @@
             Reads two bytes from a buffer and converts them into a <see cref="T:System.UInt16"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToInt32(System.Byte[],System.Int32)">
@@ -5404,7 +5404,7 @@
             Reads four bytes from a buffer and converts them into an <see cref="T:System.Int32"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToUInt32(System.Byte[],System.Int32)">
@@ -5412,7 +5412,7 @@
             Reads four bytes from a buffer and converts them into an <see cref="T:System.UInt32"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToInt64(System.Byte[],System.Int32)">
@@ -5420,7 +5420,7 @@
             Reads eight bytes from a buffer and converts them into a <see cref="T:System.Int64"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToUInt64(System.Byte[],System.Int32)">
@@ -5428,7 +5428,7 @@
             Reads eight bytes from a buffer and converts them into an <see cref="T:System.UInt64"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToSingle(System.Byte[],System.Int32)">
@@ -5436,7 +5436,7 @@
             Reads four bytes from a buffer and converts them into an <see cref="T:System.Single"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToDouble(System.Byte[],System.Int32)">
@@ -5444,7 +5444,7 @@
             Reads eight bytes from a buffer and converts them into an <see cref="T:System.Double"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToDecimal(System.Byte[],System.Int32)">
@@ -5452,7 +5452,7 @@
             Reads sixteen bytes from a buffer and converts them into a <see cref="T:System.Decimal"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.ToGuid(System.Byte[],System.Int32)">
@@ -5460,7 +5460,7 @@
             Reads sixteen bytes from a buffer and converts them into a <see cref="T:System.Guid"/> value.
             </summary>
             <param name="buffer">The buffer to read from.</param>
-            <param name="index">The index to start reading at.</param>
+            <param name="displayIndex">The displayIndex to start reading at.</param>
             <returns>The converted value.</returns>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.Int16)">
@@ -5468,7 +5468,7 @@
             Turns a <see cref="T:System.Int16"/> value into two bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.UInt16)">
@@ -5476,7 +5476,7 @@
             Turns an <see cref="T:System.UInt16"/> value into two bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.Int32)">
@@ -5484,7 +5484,7 @@
             Turns an <see cref="T:System.Int32"/> value into four bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.UInt32)">
@@ -5492,7 +5492,7 @@
             Turns an <see cref="T:System.UInt32"/> value into four bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.Int64)">
@@ -5500,7 +5500,7 @@
             Turns a <see cref="T:System.Int64"/> value into eight bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.UInt64)">
@@ -5508,7 +5508,7 @@
             Turns an <see cref="T:System.UInt64"/> value into eight bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.Single)">
@@ -5516,7 +5516,7 @@
             Turns a <see cref="T:System.Single"/> value into four bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.Double)">
@@ -5524,7 +5524,7 @@
             Turns a <see cref="T:System.Double"/> value into eight bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.Decimal)">
@@ -5532,7 +5532,7 @@
             Turns a <see cref="T:System.Decimal"/> value into sixteen bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="M:Sirenix.Serialization.ProperBitConverter.GetBytes(System.Byte[],System.Int32,System.Guid)">
@@ -5540,7 +5540,7 @@
             Turns a <see cref="T:System.Guid"/> value into sixteen bytes and writes those bytes to a given buffer.
             </summary>
             <param name="buffer">The buffer to write to.</param>
-            <param name="index">The index to start writing at.</param>
+            <param name="displayIndex">The displayIndex to start writing at.</param>
             <param name="value">The value to write.</param>
         </member>
         <member name="T:Sirenix.Serialization.SerializationAbortException">
@@ -5698,10 +5698,10 @@
         </member>
         <member name="P:Sirenix.Serialization.SerializationContext.IndexReferenceResolver">
             <summary>
-            Gets or sets the index reference resolver.
+            Gets or sets the displayIndex reference resolver.
             </summary>
             <value>
-            The index reference resolver.
+            The displayIndex reference resolver.
             </value>
         </member>
         <member name="P:Sirenix.Serialization.SerializationContext.StringReferenceResolver">
@@ -5746,11 +5746,11 @@
         </member>
         <member name="M:Sirenix.Serialization.SerializationContext.TryRegisterExternalReference(System.Object,System.Int32@)">
             <summary>
-            Tries to register an external index reference.
+            Tries to register an external displayIndex reference.
             </summary>
             <param name="obj">The object to reference.</param>
-            <param name="index">The index of the referenced object.</param>
-            <returns><c>true</c> if the object could be referenced by index; otherwise, <c>false</c>.</returns>
+            <param name="displayIndex">The displayIndex of the referenced object.</param>
+            <returns><c>true</c> if the object could be referenced by displayIndex; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:Sirenix.Serialization.SerializationContext.TryRegisterExternalReference(System.Object,System.Guid@)">
             <summary>
@@ -5969,10 +5969,10 @@
         </member>
         <member name="M:Sirenix.Serialization.SerializationUtility.DeserializeValueWeak(Sirenix.Serialization.IDataReader,System.Collections.Generic.List{UnityEngine.Object})">
             <summary>
-            Deserializes a value from the given reader, using the given list of Unity objects for external index reference resolution. This might fail with primitive values, as they don't come with type metadata.
+            Deserializes a value from the given reader, using the given list of Unity objects for external displayIndex reference resolution. This might fail with primitive values, as they don't come with type metadata.
             </summary>
             <param name="reader">The reader to use.</param>
-            <param name="referencedUnityObjects">The list of Unity objects to use for external index reference resolution.</param>
+            <param name="referencedUnityObjects">The list of Unity objects to use for external displayIndex reference resolution.</param>
             <returns>
             The deserialized value.
             </returns>
@@ -5987,11 +5987,11 @@
         </member>
         <member name="M:Sirenix.Serialization.SerializationUtility.DeserializeValue``1(Sirenix.Serialization.IDataReader,System.Collections.Generic.List{UnityEngine.Object})">
             <summary>
-            Deserializes a value of a given type from the given reader, using the given list of Unity objects for external index reference resolution.
+            Deserializes a value of a given type from the given reader, using the given list of Unity objects for external displayIndex reference resolution.
             </summary>
             <typeparam name="T">The type to deserialize.</typeparam>
             <param name="reader">The reader to use.</param>
-            <param name="referencedUnityObjects">The list of Unity objects to use for external index reference resolution.</param>
+            <param name="referencedUnityObjects">The list of Unity objects to use for external displayIndex reference resolution.</param>
             <returns>
             The deserialized value.
             </returns>
@@ -6009,11 +6009,11 @@
         </member>
         <member name="M:Sirenix.Serialization.SerializationUtility.DeserializeValueWeak(System.IO.Stream,Sirenix.Serialization.DataFormat,System.Collections.Generic.List{UnityEngine.Object},Sirenix.Serialization.DeserializationContext)">
             <summary>
-            Deserializes a value from the given stream in the given format, using the given list of Unity objects for external index reference resolution. This might fail with primitive values, as they don't come with type metadata.
+            Deserializes a value from the given stream in the given format, using the given list of Unity objects for external displayIndex reference resolution. This might fail with primitive values, as they don't come with type metadata.
             </summary>
             <param name="stream">The stream to read from.</param>
             <param name="format">The format to read.</param>
-            <param name="referencedUnityObjects">The list of Unity objects to use for external index reference resolution.</param>
+            <param name="referencedUnityObjects">The list of Unity objects to use for external displayIndex reference resolution.</param>
             <param name="context">The context.</param>
             <returns>
             The deserialized value.
@@ -6033,12 +6033,12 @@
         </member>
         <member name="M:Sirenix.Serialization.SerializationUtility.DeserializeValue``1(System.IO.Stream,Sirenix.Serialization.DataFormat,System.Collections.Generic.List{UnityEngine.Object},Sirenix.Serialization.DeserializationContext)">
             <summary>
-            Deserializes a value of a given type from the given stream in the given format, using the given list of Unity objects for external index reference resolution.
+            Deserializes a value of a given type from the given stream in the given format, using the given list of Unity objects for external displayIndex reference resolution.
             </summary>
             <typeparam name="T">The type to deserialize.</typeparam>
             <param name="stream">The stream to read from.</param>
             <param name="format">The format to read.</param>
-            <param name="referencedUnityObjects">The list of Unity objects to use for external index reference resolution.</param>
+            <param name="referencedUnityObjects">The list of Unity objects to use for external displayIndex reference resolution.</param>
             <param name="context">The context.</param>
             <returns>
             The deserialized value.
@@ -6057,11 +6057,11 @@
         </member>
         <member name="M:Sirenix.Serialization.SerializationUtility.DeserializeValueWeak(System.Byte[],Sirenix.Serialization.DataFormat,System.Collections.Generic.List{UnityEngine.Object})">
             <summary>
-            Deserializes a value from the given byte array in the given format, using the given list of Unity objects for external index reference resolution. This might fail with primitive values, as they don't come with type metadata.
+            Deserializes a value from the given byte array in the given format, using the given list of Unity objects for external displayIndex reference resolution. This might fail with primitive values, as they don't come with type metadata.
             </summary>
             <param name="bytes">The bytes to deserialize from.</param>
             <param name="format">The format to read.</param>
-            <param name="referencedUnityObjects">The list of Unity objects to use for external index reference resolution.</param>
+            <param name="referencedUnityObjects">The list of Unity objects to use for external displayIndex reference resolution.</param>
             <returns>
             The deserialized value.
             </returns>
@@ -6080,12 +6080,12 @@
         </member>
         <member name="M:Sirenix.Serialization.SerializationUtility.DeserializeValue``1(System.Byte[],Sirenix.Serialization.DataFormat,System.Collections.Generic.List{UnityEngine.Object},Sirenix.Serialization.DeserializationContext)">
             <summary>
-            Deserializes a value of a given type from the given byte array in the given format, using the given list of Unity objects for external index reference resolution.
+            Deserializes a value of a given type from the given byte array in the given format, using the given list of Unity objects for external displayIndex reference resolution.
             </summary>
             <typeparam name="T">The type to deserialize.</typeparam>
             <param name="bytes">The bytes to deserialize from.</param>
             <param name="format">The format to read.</param>
-            <param name="referencedUnityObjects">The list of Unity objects to use for external index reference resolution.</param>
+            <param name="referencedUnityObjects">The list of Unity objects to use for external displayIndex reference resolution.</param>
             <param name="context">The context to use.</param>
             <returns>
             The deserialized value.
@@ -7374,7 +7374,7 @@
         </member>
         <member name="T:Sirenix.Serialization.UnityReferenceResolver">
             <summary>
-            Resolves external index references to Unity objects.
+            Resolves external displayIndex references to Unity objects.
             </summary>
             <seealso cref="T:Sirenix.Serialization.IExternalIndexReferenceResolver" />
             <seealso cref="T:Sirenix.Serialization.Utilities.ICacheNotificationReceiver" />
@@ -7407,19 +7407,19 @@
             Determines whether the specified value can be referenced externally via this resolver.
             </summary>
             <param name="value">The value to reference.</param>
-            <param name="index">The index of the resolved value, if it can be referenced.</param>
+            <param name="displayIndex">The displayIndex of the resolved value, if it can be referenced.</param>
             <returns>
               <c>true</c> if the reference can be resolved, otherwise <c>false</c>.
             </returns>
         </member>
         <member name="M:Sirenix.Serialization.UnityReferenceResolver.TryResolveReference(System.Int32,System.Object@)">
             <summary>
-            Tries to resolve the given reference index to a reference value.
+            Tries to resolve the given reference displayIndex to a reference value.
             </summary>
-            <param name="index">The index to resolve.</param>
+            <param name="displayIndex">The displayIndex to resolve.</param>
             <param name="value">The resolved value.</param>
             <returns>
-              <c>true</c> if the index could be resolved to a value, otherwise <c>false</c>.
+              <c>true</c> if the displayIndex could be resolved to a value, otherwise <c>false</c>.
             </returns>
         </member>
         <member name="M:Sirenix.Serialization.UnityReferenceResolver.Reset">
@@ -9096,7 +9096,7 @@
             <summary>
             Index accessor.
             </summary>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
         </member>
         <member name="M:Sirenix.Serialization.Utilities.ImmutableList.Contains(System.Object)">
             <summary>
@@ -9116,7 +9116,7 @@
             Copy the list to an array,
             </summary>
             <param name="array">Target array.</param>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
         </member>
         <member name="M:Sirenix.Serialization.Utilities.ImmutableList.GetEnumerator">
             <summary>
@@ -9125,7 +9125,7 @@
         </member>
         <member name="M:Sirenix.Serialization.Utilities.ImmutableList.IndexOf(System.Object)">
             <summary>
-            Get the index of a value.
+            Get the displayIndex of a value.
             </summary>
             <param name="value">The item's value.</param>
         </member>
@@ -9133,13 +9133,13 @@
             <summary>
             Immutable list cannot be edited.
             </summary>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
         </member>
         <member name="M:Sirenix.Serialization.Utilities.ImmutableList.System#Collections#Generic#IList{System#Object}#Insert(System.Int32,System.Object)">
             <summary>
             Immutable list cannot be edited.
             </summary>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
             <param name="item">Item.</param>
         </member>
         <member name="M:Sirenix.Serialization.Utilities.ImmutableList.System#Collections#Generic#ICollection{System#Object}#Add(System.Object)">
@@ -9228,7 +9228,7 @@
             <summary>
             Index accessor.
             </summary>
-            <param name="index">Index.</param>
+            <param name="displayIndex">Index.</param>
         </member>
         <member name="M:Sirenix.Serialization.Utilities.ImmutableList`2.Contains(`1)">
             <summary>
@@ -9247,7 +9247,7 @@
         </member>
         <member name="M:Sirenix.Serialization.Utilities.ImmutableList`2.IndexOf(`1)">
             <summary>
-            Gets the index of an item.
+            Gets the displayIndex of an item.
             </summary>
         </member>
         <member name="T:Sirenix.Serialization.Utilities.MemberAliasFieldInfo">
@@ -9652,9 +9652,9 @@
         </member>
         <member name="M:Sirenix.Serialization.Utilities.MemberAliasPropertyInfo.GetIndexParameters">
             <summary>
-            Gets the index parameters of the property.
+            Gets the displayIndex parameters of the property.
             </summary>
-            <returns>The index parameters of the property.</returns>
+            <returns>The displayIndex parameters of the property.</returns>
         </member>
         <member name="M:Sirenix.Serialization.Utilities.MemberAliasPropertyInfo.GetSetMethod(System.Boolean)">
             <summary>
@@ -9672,7 +9672,7 @@
             <param name="obj">The object to invoke the getter on.</param>
             <param name="invokeAttr">The <see cref="T:System.Reflection.BindingFlags"/> to invoke with.</param>
             <param name="binder">The binder to use.</param>
-            <param name="index">The indices to use.</param>
+            <param name="displayIndex">The indices to use.</param>
             <param name="culture">The culture to use.</param>
             <returns>The value of the property on the given instance.</returns>
         </member>
@@ -9684,7 +9684,7 @@
             <param name="value">The value to set.</param>
             <param name="invokeAttr">The <see cref="T:System.Reflection.BindingFlags"/> to invoke with.</param>
             <param name="binder">The binder to use.</param>
-            <param name="index">The indices to use.</param>
+            <param name="displayIndex">The indices to use.</param>
             <param name="culture">The culture to use.</param>
         </member>
         <member name="T:Sirenix.Serialization.Utilities.ReferenceEqualityComparer`1">

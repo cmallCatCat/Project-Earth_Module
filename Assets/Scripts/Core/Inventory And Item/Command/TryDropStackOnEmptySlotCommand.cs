@@ -1,16 +1,17 @@
 #nullable enable
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI;
+using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
+using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using QFramework;
 using UnityEngine;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Command
 {
-    public class TryDropStackOnSlotCommand : AbstractCommand
+    public class TryDropStackOnEmptySlotCommand : AbstractCommand
     {
         public ItemSlotUI itemSlotUI;
 
-        public TryDropStackOnSlotCommand(ItemSlotUI itemSlotUI)
+        public TryDropStackOnEmptySlotCommand(ItemSlotUI itemSlotUI)
         {
             this.itemSlotUI = itemSlotUI;
         }
@@ -19,15 +20,15 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
         {
             PointerStack toDrop = PointerStack.Instance;
 
-            int canAddNumber = itemSlotUI.itemSlot.CanAddNumber(toDrop.ItemInfo, toDrop.ItemDecorator);
+            int canAddNumber = itemSlotUI.ItemSlot.CanAddNumber(toDrop.ItemInfo, toDrop.ItemDecorator);
             int finalAddNumber = Mathf.Min(canAddNumber, toDrop.Number);
             if (canAddNumber == 0)
             {
                 return;
             }
 
-            itemSlotUI.inventory.Add(new ItemStack(toDrop.ItemInfo, toDrop.ItemDecorator, finalAddNumber, null),
-                itemSlotUI.index);
+            itemSlotUI.Inventory.Add(new ItemStack(toDrop.ItemInfo, toDrop.ItemDecorator, finalAddNumber, null),
+                itemSlotUI.InventoryIndex);
             toDrop.Remove(finalAddNumber);
             
         }

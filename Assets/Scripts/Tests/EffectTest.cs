@@ -16,7 +16,6 @@ namespace Tests
 
         private void Awake()
         {
-            UIKit.CloseAllPanel();
             item = SOHelper.CloneScriptableObject(itemInfo);
             effectSender=new IEffectSenderTest();
         }

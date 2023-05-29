@@ -33,11 +33,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1029, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &930921797302500303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,12 +52,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotsParent: {fileID: 6741731223871914376}
   slotPrefab: {fileID: 391688489574376514, guid: 85d16f7e348901349ac6673975d88d0a, type: 3}
-  slotSize: 60
-  spacing: {x: 5, y: 5}
-  padding: {x: 5, y: 5, z: 5, w: 5}
-  maxX: 10
-  maxY: 1
-  displayCapacity: 10
 --- !u!1 &8932669401653506536
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,11 +86,11 @@ RectTransform:
   m_Father: {fileID: 4409309817168255954}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1029, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5886892663084044944
 CanvasRenderer:
   m_ObjectHideFlags: 0

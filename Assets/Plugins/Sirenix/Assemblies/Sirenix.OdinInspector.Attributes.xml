@@ -2558,12 +2558,12 @@
         </member>
         <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.OnBeginListElementGUI">
             <summary>
-            Calls a method before each list element. The member referenced must have a return type of void, and an index parameter of type int which represents the element index being drawn.
+            Calls a method before each list element. The member referenced must have a return type of void, and an displayIndex parameter of type int which represents the element displayIndex being drawn.
             </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.OnEndListElementGUI">
             <summary>
-            Calls a method after each list element. The member referenced must have a return type of void, and an index parameter of type int which represents the element index being drawn.
+            Calls a method after each list element. The member referenced must have a return type of void, and an displayIndex parameter of type int which represents the element displayIndex being drawn.
             </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.AlwaysAddDefaultValue">
@@ -2577,7 +2577,7 @@
             </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.ListDrawerSettingsAttribute.ElementColor">
-            <summary> A resolved string with "int index" and "Color defaultColor" parameters that lets you control the color of individual elements. Supports a variety of color formats, including named colors (e.g. "red", "orange", "green", "blue"), hex codes (e.g. "#FF0000" and "#FF0000FF"), and RGBA (e.g. "RGBA(1,1,1,1)") or RGB (e.g. "RGB(1,1,1)"), including Odin attribute expressions (e.g "@this.MyColor"). Here are the available named colors: black, blue, clear, cyan, gray, green, grey, magenta, orange, purple, red, transparent, transparentBlack, transparentWhite, white, yellow, lightblue, lightcyan, lightgray, lightgreen, lightgrey, lightmagenta, lightorange, lightpurple, lightred, lightyellow, darkblue, darkcyan, darkgray, darkgreen, darkgrey, darkmagenta, darkorange, darkpurple, darkred, darkyellow. </summary>
+            <summary> A resolved string with "int displayIndex" and "Color defaultColor" parameters that lets you control the color of individual elements. Supports a variety of color formats, including named colors (e.g. "red", "orange", "green", "blue"), hex codes (e.g. "#FF0000" and "#FF0000FF"), and RGBA (e.g. "RGBA(1,1,1,1)") or RGB (e.g. "RGB(1,1,1)"), including Odin attribute expressions (e.g "@this.MyColor"). Here are the available named colors: black, blue, clear, cyan, gray, green, grey, magenta, orange, purple, red, transparent, transparentBlack, transparentWhite, white, yellow, lightblue, lightcyan, lightgray, lightgreen, lightgrey, lightmagenta, lightorange, lightpurple, lightred, lightyellow, darkblue, darkcyan, darkgray, darkgreen, darkgrey, darkmagenta, darkorange, darkpurple, darkred, darkyellow. </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.ShowPaging">
             <summary>
@@ -2628,7 +2628,7 @@
         </member>
         <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.ShowIndexLabels">
             <summary>
-            If true, a label is drawn for each element which shows the index of the element.
+            If true, a label is drawn for each element which shows the displayIndex of the element.
             </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.ListDrawerSettingsAttribute.OnTitleBarGUI">
@@ -3370,7 +3370,7 @@
         <member name="T:Sirenix.OdinInspector.ProgressBarAttribute">
              <summary>
              <para>Draws a horizontal progress bar based on the value of the property.</para>
-             <para>Use it for displaying a meter to indicate how full an inventory is, or to make a visual indication of a health bar.</para>
+             <para>Use it for displaying a meter to indicate how full an inventoryUIPanel is, or to make a visual indication of a health bar.</para>
              </summary>
              <example>
              <para>The following example shows how ProgressBar can be used.</para>
@@ -4805,7 +4805,7 @@
         </member>
         <member name="F:Sirenix.OdinInspector.TableListAttribute.ShowIndexLabels">
             <summary>
-            If true, a label is drawn for each element which shows the index of the element.
+            If true, a label is drawn for each element which shows the displayIndex of the element.
             </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.TableListAttribute.DrawScrollView">

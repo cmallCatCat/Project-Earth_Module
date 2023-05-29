@@ -2220,18 +2220,18 @@
         </member>
         <member name="P:Sirenix.Utilities.Editor.GUIPagingHelper.StartIndex">
             <summary>
-            Gets the start index.
+            Gets the start displayIndex.
             </summary>
             <value>
-            The start index.
+            The start displayIndex.
             </value>
         </member>
         <member name="P:Sirenix.Utilities.Editor.GUIPagingHelper.EndIndex">
             <summary>
-            Gets the end index.
+            Gets the end displayIndex.
             </summary>
             <value>
-            The end index.
+            The end displayIndex.
             </value>
         </member>
         <member name="P:Sirenix.Utilities.Editor.GUIPagingHelper.PageCount">
@@ -2570,12 +2570,12 @@
         </member>
         <member name="P:Sirenix.Utilities.Editor.GUITableCell.X">
             <summary>
-            The table column index.
+            The table column displayIndex.
             </summary>
         </member>
         <member name="P:Sirenix.Utilities.Editor.GUITableCell.Y">
             <summary>
-            The table row index.
+            The table row displayIndex.
             </summary>
         </member>
         <member name="F:Sirenix.Utilities.Editor.GUITableCell.GUIStyle">
@@ -2597,7 +2597,7 @@
         </member>
         <member name="F:Sirenix.Utilities.Editor.GUITableColumn.OnGUI">
             <summary>
-            Draws a cell at the given row index for this column.
+            Draws a cell at the given row displayIndex for this column.
             </summary>
         </member>
         <member name="F:Sirenix.Utilities.Editor.GUITableColumn.ColumnTitle">
@@ -2660,12 +2660,12 @@
         </member>
         <member name="P:Sirenix.Utilities.Editor.GUITableRowLayoutGroup.RowIndexFrom">
             <summary>
-            Gets the first visible row index.
+            Gets the first visible row displayIndex.
             </summary>
         </member>
         <member name="P:Sirenix.Utilities.Editor.GUITableRowLayoutGroup.RowIndexTo">
             <summary>
-            Gets the last visible row index.
+            Gets the last visible row displayIndex.
             </summary>
         </member>
         <member name="P:Sirenix.Utilities.Editor.GUITableRowLayoutGroup.OuterRect">
@@ -7464,7 +7464,7 @@
         </member>
         <member name="F:Sirenix.Utilities.Editor.AssetUtilities.AssetSearchResult.CurrentIndex">
             <summary>
-            Current index.
+            Current displayIndex.
             </summary>
         </member>
         <member name="F:Sirenix.Utilities.Editor.AssetUtilities.AssetSearchResult.NumberOfResults">

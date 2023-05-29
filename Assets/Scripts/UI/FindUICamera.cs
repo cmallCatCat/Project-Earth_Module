@@ -9,6 +9,7 @@ namespace UI
 
         private void Start()
         {
+            GameUIController.Instance.CloseAllPanel();
             uiCamera = GameObject.Find("UICamera").GetComponent<Camera>();
             GetComponent<Camera>().GetUniversalAdditionalCameraData().cameraStack
                 .Add(uiCamera);
@@ -17,9 +18,6 @@ namespace UI
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-            }
         }
     }
 }

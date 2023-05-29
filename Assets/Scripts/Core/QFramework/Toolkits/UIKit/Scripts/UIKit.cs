@@ -154,9 +154,9 @@ UIKit.OpenPanelAsync<UIHomePanel>().ToAction().Start(this);
         [APIDescriptionCN("关闭界面")]
         [APIDescriptionEN("Close Panel")]
         [APIExampleCode(@"
-UIKit.ClosePanel<UIHomePanel>();
+UIKit.ClosePanelUnSafe<UIHomePanel>();
 
-UIKit.ClosePanel(""UIHomePanel"");
+UIKit.ClosePanelUnSafe(""UIHomePanel"");
 ")]
 #endif
         public static void ClosePanel<T>() where T : UIPanel
@@ -302,15 +302,9 @@ UIKit.GetPanel(""UIHomePanel"");
             panelSearchKeys.Recycle2Cache();
         }
 
-        public static void ClosePanel(UIPanel panel)
+        public static void ClosePanelUnSafe(UIPanel panel)
         {
-            var panelSearchKeys = PanelSearchKeys.Allocate();
-
-            panelSearchKeys.Panel = panel;
-
-            UIManager.Instance.CloseUI(panelSearchKeys);
-
-            panelSearchKeys.Recycle2Cache();
+            UIManager.Instance.CloseUI(panel);
         }
 
         public static void ShowPanel(string panelName)

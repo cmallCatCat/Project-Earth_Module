@@ -11,6 +11,11 @@
 namespace QAssetBundle
 {
     
+    public class Backpack_inventoryuisetting_asset
+    {
+        public const string BundleName = "backpack_inventoryuisetting_asset";
+        public const string BACKPACK_INVENTORYUISETTING = "backpack_inventoryuisetting";
+    }
     public class Minimalist_cartoon_animal_png
     {
         public const string BundleName = "minimalist cartoon animal_png";
@@ -30,6 +35,11 @@ namespace QAssetBundle
     {
         public const string BundleName = "shortcutinventory_prefab";
         public const string INVENTORYUIPANEL = "inventoryuipanel";
+    }
+    public class Shoutcut_inventoryuisetting_asset
+    {
+        public const string BundleName = "shoutcut_inventoryuisetting_asset";
+        public const string SHOUTCUT_INVENTORYUISETTING = "shoutcut_inventoryuisetting";
     }
     public class Stack_prefab
     {

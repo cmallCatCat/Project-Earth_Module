@@ -14,11 +14,11 @@ namespace Core
         
         private Dictionary<Type, List<MonoBehaviour>> data = new Dictionary<Type, List<MonoBehaviour>>();
 
-        protected override Camera GetUICamera => GameObject.Find("UICamera").GetComponent<Camera>();
+        protected override Camera GetUICamera => UIRoot.Instance.UICamera;
 
         protected override GameObject GetPlayer => GameObject.FindGameObjectWithTag("Player");
 
-        public override Canvas UICanvas => GameObject.Find("UIRoot").GetComponent<Canvas>();
+        public override Canvas UICanvas => UIRoot.Instance.Canvas;
 
         public override void Instantiate(GameObject toCreate, bool useObjectPool, Vector2 getPosition, Quaternion getRotation)
         {

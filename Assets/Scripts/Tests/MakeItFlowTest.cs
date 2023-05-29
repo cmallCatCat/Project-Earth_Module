@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace UI
+namespace Tests
 {
     public class MakeItFlowTest : MonoBehaviour, IDragHandler
     {

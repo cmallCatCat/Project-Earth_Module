@@ -1,9 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Make_It_Flow.Scripts.Core.Behavior;
 using UnityEngine;
-
-using MeadowGames.MakeItFlow;
 
 public class DelayBehavior : Behavior
 {

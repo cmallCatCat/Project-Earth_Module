@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Make_It_Flow.Scripts.Core.Behavior;
+﻿using Make_It_Flow.Scripts.Core.Behavior;
 using Make_It_Flow.Scripts.Core.Event_System.Input_Manager;
 using Make_It_Flow.Scripts.Core.Objects;
 using UnityEngine;
-
-using MeadowGames.MakeItFlow;
 using UnityEditor;
 
 // v1.1 - SetParent behavior improved with new settings 

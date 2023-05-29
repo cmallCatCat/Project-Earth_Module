@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI
+namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles
 {
     [UsedImplicitly]
     public class ItemStackCreator : Singleton<ItemStackCreator>
@@ -24,6 +24,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI
 
         public override void OnSingletonInit()
         {
+            base.OnSingletonInit();
             stackPrefab = resLoader.LoadSync<GameObject>("stack");
         }
 
@@ -32,6 +33,14 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI
             GameObject instantiate = Object.Instantiate(stackPrefab, parent);
             ItemStackUI itemStackUI = instantiate.GetComponent<ItemStackUI>();
             itemStackUI.Init(itemStack, size);
+            return itemStackUI;
+        }
+
+        public ItemStackUI Create(ItemSlotUI itemSlotUI)
+        {
+            GameObject instantiate = Object.Instantiate(stackPrefab, itemSlotUI.transform);
+            ItemStackUI itemStackUI = instantiate.GetComponent<ItemStackUI>();
+            itemStackUI.Init(itemSlotUI);
             return itemStackUI;
         }
     }

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a66f5030323458eb53dd4e5a02e3fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &5754585615653142242
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,10 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c735b43d62324a8a8cff038a18d03052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryCapacity: 20
+  inventoryCapacity: 36
   <Inventory>k__BackingField:
     capacity: 0
-    activeIndex: 0
     itemSlots: []
 --- !u!114 &2361322963037962353
 MonoBehaviour:

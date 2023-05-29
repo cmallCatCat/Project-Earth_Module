@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 60, y: 60}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2101424119620952211
 CanvasRenderer:
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: -2, y: -2, z: -2, w: -2}
   m_Maskable: 0
   m_OnCullStateChanged:
@@ -94,7 +94,8 @@ MonoBehaviour:
   stackImage: {fileID: 220479667841652021}
   icon: {fileID: 8180591710850297626}
   count: {fileID: 8180591711119084547}
-  slot: {fileID: 0}
+  itemSlotUI: {fileID: 0}
+  RectTransform: {fileID: 0}
 --- !u!1 &8180591710850297631
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,8 +205,8 @@ RectTransform:
   m_Father: {fileID: 6018577553280977144}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7, y: -0.1}
-  m_AnchorMax: {x: 1.3, y: 0.4}
+  m_AnchorMin: {x: 0.7, y: 0}
+  m_AnchorMax: {x: 1.1, y: 0.3}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -300,7 +301,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.315197, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

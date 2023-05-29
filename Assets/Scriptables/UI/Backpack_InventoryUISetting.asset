@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f0ee0567aa49a283892b74726427a4, type: 3}
+  m_Name: Backpack_InventoryUISetting
+  m_EditorClassIdentifier: 
+  displayCapacity: 36
+  maxX: 12
+  maxY: 3
+  padding:
+    m_Left: 30
+    m_Right: 30
+    m_Top: 50
+    m_Bottom: 50
+  spacing: {x: 5, y: 5}
+  slotSize: {x: 50, y: 50}
+  anchoredPosition: {x: 0, y: 0}
+  anchorMin: {x: 0.5, y: 0.5}
+  anchorMax: {x: 0.5, y: 0.5}
+  pivot: {x: 0.5, y: 0.5}
+  panelBackground: {fileID: 21300000, guid: 6ce854b11007887f6b72e2364425b394, type: 3}
+  slotBackground: {fileID: 21300000, guid: b0822edacc9499397b437ec96c7bf21a, type: 3}
+  slotSelectedBackground: {fileID: 21300000, guid: 8be1ecefc36e7e318bf7d5a93dbca319, type: 3}

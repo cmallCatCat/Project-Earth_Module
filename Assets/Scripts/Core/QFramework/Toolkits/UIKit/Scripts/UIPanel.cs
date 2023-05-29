@@ -111,7 +111,7 @@ namespace QFramework
 
 		protected void CloseSelf()
 		{
-			UIKit.ClosePanel(this);
+			UIKit.ClosePanelUnSafe(this);
 		}
 
 		protected void Back()

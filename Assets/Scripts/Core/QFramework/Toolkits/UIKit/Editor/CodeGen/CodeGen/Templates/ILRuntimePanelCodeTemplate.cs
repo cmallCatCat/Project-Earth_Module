@@ -98,7 +98,7 @@ namespace QFramework
             strBuilder.AppendLine();
             strBuilder.AppendLine("\t\tpublic void CloseSelf()");
             strBuilder.AppendLine("\t\t{");
-            strBuilder.AppendLine("\t\t\tUIMgr.ClosePanel(NAME);");
+            strBuilder.AppendLine("\t\t\tUIMgr.ClosePanelUnSafe(NAME);");
             strBuilder.AppendLine("\t\t}");
             strBuilder.AppendLine();
             strBuilder.AppendLine("\t\tpublic void InternalClose()");

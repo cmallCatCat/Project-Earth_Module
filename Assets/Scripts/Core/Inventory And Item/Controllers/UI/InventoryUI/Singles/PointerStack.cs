@@ -1,4 +1,3 @@
-using System.Drawing;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
@@ -6,7 +5,7 @@ using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI
+namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles
 {
     [UsedImplicitly]
     public class PointerStack : Singleton<PointerStack>
@@ -47,6 +46,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI
 
         public override void OnSingletonInit()
         {
+            base.OnSingletonInit();
             stackPrefab = resLoader.LoadSync<GameObject>("stack");
         }
 
@@ -60,6 +60,12 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI
         public void Remove(int toRemoveNumber)
         {
             itemStack.Remove(toRemoveNumber);
+            Refresh();
+        }
+
+        public void RemoveAll()
+        {
+            itemStack.Remove(Number);
             Refresh();
         }
 

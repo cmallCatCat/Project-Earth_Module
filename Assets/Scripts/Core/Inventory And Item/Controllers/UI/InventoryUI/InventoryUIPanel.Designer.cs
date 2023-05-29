@@ -1,4 +1,4 @@
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI
+namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
 {
 	// Generate Id:1276c8e2-e54a-43ed-bc72-f138358eb0f3
 	public abstract partial class InventoryUIPanel

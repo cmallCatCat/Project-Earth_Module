@@ -4,7 +4,6 @@ using Core.QFramework.Framework.Scripts;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Filters;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {

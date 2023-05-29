@@ -1,20 +1,21 @@
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI;
+using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
+using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
 using QFramework;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Command
 {
     public class TryHoldStackCommand : AbstractCommand
     {
-        public ItemStackUI stackUI;
-        public TryHoldStackCommand(ItemStackUI itemStackUI)
+        private readonly ItemSlotUI itemSlotUI;
+        public TryHoldStackCommand(ItemSlotUI itemSlotUI)
         {
-            stackUI = itemStackUI;
+            this.itemSlotUI = itemSlotUI;
         }
 
         protected override void OnExecute()
         {
-            PointerStack.Instance.Create(stackUI.itemStack);
-            stackUI.OnRemoved?.Invoke();
+            PointerStack.Instance.Create(itemSlotUI.ItemSlot.ItemStack);
+            itemSlotUI.Inventory.Remove(itemSlotUI.InventoryIndex);
         }
     }
 }

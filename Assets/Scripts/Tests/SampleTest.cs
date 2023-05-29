@@ -1,11 +1,12 @@
 ﻿using System;
 using Core;
 using Core.Architectures;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI;
+using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using QFramework;
+using UI;
 using UnityEngine;
 
 namespace Tests
@@ -22,7 +23,6 @@ namespace Tests
         private void Awake()
         {
             ResKit.Init();
-            UIKit.CloseAllPanel();
         }
 
         private void OnGUI()
@@ -38,11 +38,18 @@ namespace Tests
                 GameObject instantiate = Instantiate(loadSync);
                 InventoryUIPanelData inventoryUIPanelData = new InventoryUIPanelData(
                     instantiate.GetComponentInChildren<InventoryHolderExample>().Inventory,
-                    new InventoryUISetting());
-                UIKit.OpenPanel<InventoryUIPanel>(inventoryUIPanelData);
+                    resLoader.LoadSync<InventoryUISetting>(QAssetBundle.Backpack_inventoryuisetting_asset
+                        .BACKPACK_INVENTORYUISETTING));
+                GameUIController.Instance.OpenPanel<InventoryUIPanel>(inventoryUIPanelData, "InventoryUIPanel",
+                    PanelOpenType.Multiple);
                 instantiate.name = "Player";
                 instantiate.GetComponentInChildren<InventoryHolderExample>().Inventory
                     .Add(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
+            }
+            
+            if (GUILayout.Button("删除"))
+            {
+                GameUIController.Instance.ClosePanel("InventoryUIPanel");
             }
         }
 
