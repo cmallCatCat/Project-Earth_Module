@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 302558410
+CRC: 3296945740
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -18,4 +18,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_4:
       Name: stack_prefab
+      Dependencies: {}
+    Info_5:
+      Name: shoutcut_inventoryuisetting_asset
+      Dependencies: {}
+    Info_6:
+      Name: backpack_inventoryuisetting_asset
       Dependencies: {}

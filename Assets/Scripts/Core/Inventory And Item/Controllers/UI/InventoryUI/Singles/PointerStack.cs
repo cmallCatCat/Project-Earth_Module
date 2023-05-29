@@ -20,6 +20,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
 
         public Vector2 Size = new Vector2(60, 60);
         private GameObject instantiate;
+        private ItemStackUI itemStackUI;
 
 
         public ItemInfo ItemInfo => itemStack.ItemInfo;
@@ -37,7 +38,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
             this.itemStack = new ItemStack(itemStack.ItemInfo, itemStack.ItemDecorator, itemStack.Number, null);
             instantiate = Object.Instantiate(stackPrefab, IEnvironment.Instance.UICanvas.transform);
             instantiate.transform.position = IEnvironment.Instance.FarAway;
-            ItemStackUI itemStackUI = instantiate.GetComponent<ItemStackUI>();
+            itemStackUI = instantiate.GetComponent<ItemStackUI>();
             itemStackUI.Init(this.itemStack, Size);
             itemStackUI.stackImage.raycastTarget = false;
             instantiate.AddComponent<FollowPointer>();
@@ -75,6 +76,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
             {
                 return;
             }
+
+            itemStackUI.Refresh(itemStack, Size);
 
             if (Number == 0)
             {

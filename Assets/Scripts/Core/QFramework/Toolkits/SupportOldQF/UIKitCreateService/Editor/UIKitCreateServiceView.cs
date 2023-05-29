@@ -49,7 +49,7 @@ namespace QFramework
 
         private string mSceneGeneratePath =>
             $"{mModuleFolder}/Scenes/TestUIPanels/{mPanelNameToCreate}".GetFolderPath() +
-            $"/EffectTest{mPanelNameToCreate.GetFileNameWithoutExtend()}.unity";
+            $"/Test{mPanelNameToCreate.GetFileNameWithoutExtend()}.unity";
 
         private string mMainCodeFileGenreatePath => mPrefabGeneratePath.Replace(UIKitSettingData.Load().UIPrefabDir,
                 UIKitSettingData.Load().UIScriptDir)
@@ -165,7 +165,7 @@ namespace QFramework
                 var fullScenePath = $"{mModuleFolder}/Scenes/TestUIPanels/{panelName}".GetFolderPath()
                     .CreateDirIfNotExists()
                     .Builder()
-                    .Append("/EffectTest{0}.unity".FillFormat(panelName.GetFileNameWithoutExtend()))
+                    .Append("/Test{0}.unity".FillFormat(panelName.GetFileNameWithoutExtend()))
                     .ToString();
 
                 var uiKitSettingData = UIKitSettingData.Load();
@@ -239,7 +239,7 @@ namespace QFramework
                     // 标记 AssetBundle
                     ResKitAssetsMenu.MarkAB(panelPrefabPath);
 
-                    var tester = new GameObject("EffectTest{0}".FillFormat(panelName));
+                    var tester = new GameObject("Test{0}".FillFormat(panelName));
                     var uiPanelTester = tester.AddComponent<ResKitUIPanelTester>();
                     uiPanelTester.PanelName = panelName;
 

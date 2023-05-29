@@ -3,18 +3,21 @@ using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
 
-namespace UI
+namespace QFramework
 {
     [UsedImplicitly]
-    public class GameUIController : Singleton<GameUIController>
+    public class UIController : Singleton<UIController>
     {
         private Dictionary<string, UIPanel> panelDic = new Dictionary<string, UIPanel>();
+        public bool isPaused = false;
+
 
         public void OpenPanel<T>(IUIData uiData, string key, PanelOpenType openType) where T : UIPanel
         {
+            
             if (panelDic.ContainsKey(key))
             {
-                Debug.LogError("UI: 已经存在key为" + key+"的UI");
+                Debug.LogWarning($"UI: 已经存在key为{key}的UI");
                 return;
             }
             T openPanel = UIKit.OpenPanel<T>(uiData, openType);
@@ -29,16 +32,10 @@ namespace UI
                 panelDic.Remove(key);
             }
         }
-
-
-        public override void OnSingletonInit()
+        
+        public bool IsOpenPanel(string key)
         {
-            base.OnSingletonInit();
-        }
-
-        public override void Dispose()
-        {
-            base.Dispose();
+            return panelDic.ContainsKey(key);
         }
 
 
@@ -47,7 +44,7 @@ namespace UI
             UIKit.CloseAllPanel();
         }
 
-        private GameUIController()
+        private UIController()
         {
         }
     }

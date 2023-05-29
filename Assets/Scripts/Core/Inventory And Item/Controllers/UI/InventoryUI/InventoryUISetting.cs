@@ -1,7 +1,3 @@
-using System;
-using Sirenix.OdinInspector;
-using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
@@ -10,6 +6,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
     public class InventoryUISetting : ScriptableObject
     {
         public int startIndex;
+        public bool selectable;
         public int displayCapacity;
         public int maxX;
         public int maxY;
@@ -24,7 +21,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
         public Sprite slotBackground;
         public Sprite slotSelectedBackground;
 
-        public static InventoryUISetting Create(int startIndex = 0, int displayCapacity = 10, int maxX = 10, int maxY = 1,
+        public static InventoryUISetting Create(int startIndex = 0, bool selectable = false, int displayCapacity = 10, int maxX = 10, int maxY = 1,
             RectOffset padding = null, Vector2? spacing = null, Vector2? slotSize = null, Vector2? anchoredPosition = null,
             Vector2? anchorMin = null, Vector2? anchorMax = null, Vector2? pivot = null, Sprite panelBackground = null,
             Sprite slotBackground = null, Sprite slotSelectedBackground = null)
@@ -32,6 +29,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
             InventoryUISetting inventoryUISetting = CreateInstance<InventoryUISetting>();
 
             inventoryUISetting.startIndex = startIndex;
+            inventoryUISetting.selectable = selectable;
             inventoryUISetting.displayCapacity = displayCapacity;
             inventoryUISetting.maxX = maxX;
             inventoryUISetting.maxY = maxY;
@@ -49,11 +47,12 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
             return inventoryUISetting;
         }
 
-        public void Deconstruct(out int startIndex, out int displayCapacity, out int maxX, out int maxY, out RectOffset padding, out Vector2 spacing,
+        public void Deconstruct(out int startIndex, out bool selectable, out int displayCapacity, out int maxX, out int maxY, out RectOffset padding, out Vector2 spacing,
             out Vector2 slotSize, out Vector2 anchoredPosition, out Vector2 anchorMin, out Vector2 anchorMax, out Vector2 pivot,
             out Sprite panelBackground, out Sprite slotBackground, out Sprite slotSelectedBackground)
         {
             startIndex = this.startIndex;
+            selectable = this.selectable;
             displayCapacity = this.displayCapacity;
             maxX = this.maxX;
             maxY = this.maxY;

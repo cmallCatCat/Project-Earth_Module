@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f0ee0567aa49a283892b74726427a4, type: 3}
   m_Name: Backpack_InventoryUISetting
   m_EditorClassIdentifier: 
+  startIndex: 12
   displayCapacity: 36
-  maxX: 12
+  maxX: 10
   maxY: 3
   padding:
     m_Left: 30

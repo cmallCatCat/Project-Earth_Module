@@ -16,7 +16,7 @@ namespace QFramework
     [APIDescriptionCN("界面管理方案")]
     [APIDescriptionEN("UI Managements Solution")]
 #endif
-    public class UIKit
+    internal static class UIKit
     {
 
         public static UIKitConfig Config = new UIKitConfig();

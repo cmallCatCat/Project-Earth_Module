@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 2727154787
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ff9e359a279a54d7e25c973635a45623
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7da7f5707842c0a3c677a89d68e13992
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: d4f0ee0567aa49a283892b74726427a4, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.RectOffset
+Assets:
+- Assets/Scriptables/UI/Shoutcut_InventoryUISetting.asset
+Dependencies: []

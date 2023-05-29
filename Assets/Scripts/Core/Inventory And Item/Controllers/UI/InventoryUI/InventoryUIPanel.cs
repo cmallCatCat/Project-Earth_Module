@@ -23,8 +23,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
     {
         public Inventory inventory;
         private ItemSlotUI[] itemSlots;
-        private bool selectable = true;
-        public static bool isPaused = false;
 
         [SerializeField]
         private Transform slotsParent;
@@ -36,7 +34,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
 
         private int selectedIndex;
 
-        public bool SelectableNow => selectable && !isPaused;
+        public bool SelectableNow => inventoryUISetting.selectable && !UIController.Instance.isPaused;
 
         public int SelectedIndex
         {
@@ -70,11 +68,13 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
         private void SetLayout()
         {
             //读取
-            inventoryUISetting.Deconstruct(out int startIndex, out int displayCapacity, out int maxX, out int maxY,
+            inventoryUISetting.Deconstruct(out int startIndex, out bool selectable, out int displayCapacity, out int maxX,
+                out int maxY,
                 out RectOffset padding,
                 out Vector2 spacing, out Vector2 slotSize, out Vector2 anchoredPosition, out Vector2 anchorMin,
                 out Vector2 anchorMax, out Vector2 pivot, out Sprite panelBackground, out Sprite slotBackground,
                 out Sprite slotSelectedBackground);
+            selectedIndex = selectable ? 0 : -1;
             GridLayoutGroup gridLayoutGroup = slotsParent.GetComponent<GridLayoutGroup>();
             RectTransform slotParentRectTransform = slotsParent.GetComponent<RectTransform>();
             Image image = slotsParent.GetComponent<Image>();
@@ -141,7 +141,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
         protected override void OnHide()
         {
         }
-        
+
         public bool IsSelected(int displayIndex)
         {
             return displayIndex == SelectedIndex;

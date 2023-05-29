@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2051155484
+CRC: 1389134887
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e5af9e1b76a8ef07e615e269eb7766e8
+    Hash: 7427855b7182ba7eaa1abb5c5e74a39e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4399d7711f0372cc1b24d00695c007fa
+    Hash: 0548e16043f781b9ab712f07abaa1cb6
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -28,10 +28,6 @@ ClassTypes:
 SerializeReferenceClassIdentifiers:
 - AssemblyName: InventoryAndItem
   ClassName: InventoryAndItem.Core.Inventory_And_Item.Data.Inventory
-- AssemblyName: InventoryAndItem
-  ClassName: InventoryAndItem.Core.Inventory_And_Item.Data.ItemDecorator
-- AssemblyName: InventoryAndItem
-  ClassName: InventoryAndItem.Core.Inventory_And_Item.Data.ItemSlot
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
 - AssemblyName: UnityEngine.CoreModule

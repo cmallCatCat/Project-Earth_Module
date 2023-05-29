@@ -4,7 +4,6 @@ using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using QFramework;
 using Sirenix.OdinInspector;
-using UI;
 using UnityEngine;
 
 namespace Tests
@@ -29,7 +28,7 @@ namespace Tests
             yield return new WaitForSeconds(0.2f);
             inventory = new Inventory(capacity, transform);
             inventory.Add(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
-            GameUIController.Instance.OpenPanel<InventoryUIPanel>(new InventoryUIPanelData(inventory, new InventoryUISetting()),
+            UIController.Instance.OpenPanel<InventoryUIPanel>(new InventoryUIPanelData(inventory, new InventoryUISetting()),
                 "InventoryUIPanel", PanelOpenType.Multiple);
         }
     }

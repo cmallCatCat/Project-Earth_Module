@@ -59,7 +59,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
             {
                 for (int i = 0; i < transform.childCount; i++)
                 {
-                    Destroy(transform.GetChild(i).gameObject);
+                    DestroyImmediate(transform.GetChild(i).gameObject);
                 }
 
                 itemStackUI = null;
@@ -90,7 +90,10 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
             }
             else
             {
-                this.SendCommand(new TryHoldStackCommand(this));
+                if (itemStackUI != null)
+                {
+                    this.SendCommand(new TryHoldStackCommand(this));
+                }
             }
         }
 

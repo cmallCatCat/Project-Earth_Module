@@ -5,6 +5,7 @@ using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using QFramework;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using Object = UnityEngine.Object;
 
 namespace Core

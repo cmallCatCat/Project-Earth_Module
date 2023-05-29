@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 
 namespace Core
 {
@@ -8,6 +9,8 @@ namespace Core
 
         private void Start()
         {
+            name = "Player";
+            GameUI.Instance.OpenShortcutUI();
         }
 
         private void Update()
@@ -20,5 +23,4 @@ namespace Core
             }
         }
     }
-
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using Core;
 using Core.Architectures;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
@@ -35,21 +34,25 @@ namespace Tests
                 }
 
                 GameObject loadSync = resLoader.LoadSync<GameObject>(QAssetBundle.Player_prefab.PLAYER);
-                GameObject instantiate = Instantiate(loadSync);
-                InventoryUIPanelData inventoryUIPanelData = new InventoryUIPanelData(
-                    instantiate.GetComponentInChildren<InventoryHolderExample>().Inventory,
-                    resLoader.LoadSync<InventoryUISetting>(QAssetBundle.Backpack_inventoryuisetting_asset
-                        .BACKPACK_INVENTORYUISETTING));
-                GameUIController.Instance.OpenPanel<InventoryUIPanel>(inventoryUIPanelData, "InventoryUIPanel",
-                    PanelOpenType.Multiple);
-                instantiate.name = "Player";
-                instantiate.GetComponentInChildren<InventoryHolderExample>().Inventory
-                    .Add(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
+                Instantiate(loadSync);
             }
             
-            if (GUILayout.Button("删除"))
+            if (GUILayout.Button("添加"))
             {
-                GameUIController.Instance.ClosePanel("InventoryUIPanel");
+                IEnvironment.Instance.Player.GetComponentInChildren<InventoryHolderExample>().Inventory
+                    .Add(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
+            }
+
+            if (GUILayout.Button("打开"))
+            {
+                GameUI.Instance.OpenBackpackUI();
+                UIController.Instance.isPaused = true;
+            }
+
+            if (GUILayout.Button("关闭"))
+            {
+                GameUI.Instance.CloseBackpackUI();
+                UIController.Instance.isPaused = false;
             }
         }
 

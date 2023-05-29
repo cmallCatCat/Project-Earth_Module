@@ -24,12 +24,9 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
         public RectTransform RectTransform;
 
 
-        public void Init(ItemStack itemSlotItemStack, Vector2 sizeDelta)
+        public void Init(ItemStack itemStack, Vector2 sizeDelta)
         {
-            itemStack = itemSlotItemStack;
-            RectTransform.sizeDelta = sizeDelta;
-            icon.sprite = itemSlotItemStack.ItemInfo.SpriteIcon;
-            count.text = itemSlotItemStack.Number.ToString();
+            Refresh(itemStack, sizeDelta);
         }
 
         public void Init(ItemSlotUI itemSlotUI)
@@ -44,6 +41,14 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
             RectTransform.sizeDelta = itemSlotUI.RectTransform.sizeDelta;
             icon.sprite = itemStack!.ItemInfo.SpriteIcon;
             count.text = itemStack!.Number.ToString();
+        }
+
+        public void Refresh(ItemStack itemStack, Vector2 sizeDelta)
+        {
+            this.itemStack = itemStack;
+            RectTransform.sizeDelta = sizeDelta;
+            icon.sprite = itemStack.ItemInfo.SpriteIcon;
+            count.text = itemStack.Number.ToString();
         }
 
         private void Awake()

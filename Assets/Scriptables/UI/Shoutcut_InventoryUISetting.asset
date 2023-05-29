@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f0ee0567aa49a283892b74726427a4, type: 3}
   m_Name: Shoutcut_InventoryUISetting
   m_EditorClassIdentifier: 
-  displayCapacity: 10
-  maxX: 10
+  startIndex: 0
+  selectable: 1
+  displayCapacity: 12
+  maxX: 12
   maxY: 1
   padding:
     m_Left: 5

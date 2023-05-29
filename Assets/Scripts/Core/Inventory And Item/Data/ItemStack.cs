@@ -66,5 +66,10 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         {
             return transform;
         }
+
+        public ItemStack Clone()
+        {
+            return new ItemStack(itemInfo, itemDecorator, number, transform);
+        }
     }
 }

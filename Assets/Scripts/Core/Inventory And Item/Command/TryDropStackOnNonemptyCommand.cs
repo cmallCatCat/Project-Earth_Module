@@ -29,7 +29,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
                 return;
             }
 
-            int canAddNumber = inventory.CanAddNumber(toDrop.ItemInfo, toDrop.ItemDecorator);
+            int canAddNumber = itemSlot.CanAddNumber(toDrop.ItemInfo, toDrop.ItemDecorator);
             int finalAddNumber = Mathf.Min(canAddNumber, toDrop.Number);
             if (finalAddNumber > 0)
             {
@@ -38,7 +38,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
                 return;
             }
 
-            ItemStack swapStack = itemSlot.ItemStack!;
+            ItemStack swapStack = itemSlot.ItemStack!.Clone();
             inventory.Remove(index);
             inventory.Add(toDropStack_temp, index);
             toDrop.RemoveAll();
