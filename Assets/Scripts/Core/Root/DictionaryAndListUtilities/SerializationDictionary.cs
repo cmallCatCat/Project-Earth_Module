@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.Save_And_Load.DictionaryAndList
+namespace Core.Root.DictionaryAndList
 {
     [Serializable]
     public class SerializationDictionary<TKey, TValue> : ISerializationCallbackReceiver

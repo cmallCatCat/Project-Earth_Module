@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.QFramework
+namespace Core.Root
 {
     [Serializable]
     public struct KeyValueStruct<S, T>

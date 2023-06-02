@@ -2,7 +2,7 @@
 using System.Linq;
 using Core.QFramework;
 
-namespace Core.Save_And_Load.DictionaryAndList
+namespace Core.Root.DictionaryAndList
 {
     public static class DictionaryTransList
     {

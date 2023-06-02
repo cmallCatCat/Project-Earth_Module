@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Core.QFramework.Framework.Scripts
+namespace Core.Root
 {
     public static class TypeUtility
     {

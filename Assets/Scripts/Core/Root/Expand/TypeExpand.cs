@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Extents
+namespace Core.Root
 {
-    public static class TypeExtent
+    public static class TypeExpand
     {
         public static IEnumerable<Type> GetImplements(this Type type, Type[] types)
         {

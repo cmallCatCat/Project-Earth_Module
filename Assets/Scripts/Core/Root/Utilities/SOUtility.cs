@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace Core.QFramework.Framework.Scripts
+namespace Core.Root
 {
     public static class SOHelper
     {

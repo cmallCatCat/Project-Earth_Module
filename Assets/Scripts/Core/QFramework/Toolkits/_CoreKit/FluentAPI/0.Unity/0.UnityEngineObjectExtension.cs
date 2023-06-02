@@ -49,7 +49,7 @@ gameObject
 prefab.Instantiate();
 ")]
 #endif
-        public static T Instantiate<T>(this T selfObj) where T : UnityEngine.Object
+        private static T Instantiate<T>(this T selfObj) where T : UnityEngine.Object
         {
             return UnityEngine.Object.Instantiate(selfObj);
         }
@@ -62,7 +62,7 @@ prefab.Instantiate();
 prefab.Instantiate(Vector3.zero,Quaternion.identity);
 ")]
 #endif
-        public static T Instantiate<T>(this T selfObj, Vector3 position, Quaternion rotation)
+        private static T Instantiate<T>(this T selfObj, Vector3 position, Quaternion rotation)
             where T : UnityEngine.Object
         {
             return UnityEngine.Object.Instantiate(selfObj, position, rotation);
@@ -77,7 +77,7 @@ prefab.Instantiate(Vector3.zero,Quaternion.identity);
 prefab.Instantiate(Vector3.zero,Quaternion.identity,transformRoot);
 ")]
 #endif
-        public static T Instantiate<T>(
+        private static T Instantiate<T>(
             this T selfObj,
             Vector3 position,
             Quaternion rotation,

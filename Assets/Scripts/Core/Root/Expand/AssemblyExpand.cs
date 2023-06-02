@@ -2,9 +2,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Extents
+namespace Core.Root
 {
-    public static class AssemblyExtents
+    public static class AssemblyExpand
     {
         public static Assembly[] GetSolutionAssemblies(string path)
         {

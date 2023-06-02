@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.QFramework.Framework.Scripts
+namespace Core.Root
 {
-    public static class ExtendList
+    public static class ListExpand
     {
         public static void Log<T>(this List<T> list)
         {

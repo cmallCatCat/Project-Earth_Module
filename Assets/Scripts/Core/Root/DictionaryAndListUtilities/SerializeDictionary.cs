@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.Save_And_Load.DictionaryAndList
+namespace Core.Root.DictionaryAndList
 {
     public static class SerializeDictionary
     {
