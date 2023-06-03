@@ -1,4 +1,3 @@
-using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
 using Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -13,20 +12,20 @@ namespace Tests
         [Space]
         [TitleGroup("Position")]
         public Vector2 position;
-        public Reference referencePosition;
+        public PositionUtility.CoordinateReference referencePosition;
 
-        [HideIf("referencePosition", Reference.World)]
+        [HideIf("referencePosition", PositionUtility.CoordinateReference.World)]
         public bool considerHorizontalAxisPosition;
 
-        [HideIf("referencePosition", Reference.World)]
+        [HideIf("referencePosition", PositionUtility.CoordinateReference.World)]
         public bool considerRotationPosition;
 
         [Space]
         [TitleGroup("Rotation")]
         public Quaternion rotation = Quaternion.identity;
-        public Reference referenceRotation;
+        public RotationUtility.CoordinateReference referenceRotation;
 
-        [HideIf("referenceRotation", Reference.World)]
+        [HideIf("referenceRotation", RotationUtility.CoordinateReference.World)]
         public bool considerHorizontalAxisRotation;
 
 

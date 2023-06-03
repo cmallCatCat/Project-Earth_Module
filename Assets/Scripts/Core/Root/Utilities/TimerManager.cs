@@ -1,24 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using QFramework;
 using UnityEngine;
 
 namespace Core.Root.Utilities
 {
-    public class TimerManager : MonoBehaviour
+    public class TimerManager : MonoSingleton<TimerManager>
     {
-        private static TimerManager _instance;
-        public static TimerManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    GameObject go = new GameObject("TimerManager");
-                    _instance = go.AddComponent<TimerManager>();
-                }
-                return _instance;
-            }
-        }
 
         private class TimerData
         {

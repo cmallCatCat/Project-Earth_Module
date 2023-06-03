@@ -90,13 +90,15 @@ namespace Mod
 
         private static void LoadNewItem(Assembly modAssembly, Type[] allTypes, ModInfo modInfo)
         {
-            foreach (Type subClass in typeof(INewItem).GetImplements(allTypes))
+            foreach (Type subClass in typeof(INewItem).GetSubClasses(allTypes))
             {
-                object instance = modAssembly.CreateInstance(subClass.FullName);
-
-                ItemInfo newItem = (ItemInfo)subClass.GetMethod("Info").Invoke(instance, null);
-                bool     bNew    = ItemDatabaseHandler.Instance.New(newItem);
-                if (bNew) modInfo.newItem.Add(newItem);
+                // object instance = modAssembly.CreateInstance(subClass.FullName);
+                //
+                // ItemInfo newItem = (ItemInfo)subClass.GetMethod("Info").Invoke(instance, null);
+                
+                ModItem modItem = (ModItem)ScriptableObject.CreateInstance(subClass);
+                bool    bNew    = ItemDatabaseHandler.Instance.New(modItem);
+                if (bNew) modInfo.newItem.Add(modItem);
             }
         }
 

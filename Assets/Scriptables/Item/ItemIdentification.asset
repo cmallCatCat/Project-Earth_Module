@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a62665b7c9ed428a8edc865e052c0a78, type: 3}
+  m_Script: {fileID: 11500000, guid: 53b76081fe424e41adf13724aa44f25a, type: 3}
   m_Name: ItemIdentification
   m_EditorClassIdentifier: 
   itemName: Unnamed Item
@@ -17,4 +17,3 @@ MonoBehaviour:
   maxStack: 10
   spriteIcon: {fileID: 21300000, guid: a09c527bdb8482776884f3a2bce8a3b6, type: 3}
   spriteInGame: {fileID: 21300000, guid: e0ff88fdd6449f445a0cc86fda1366d4, type: 3}
-  itemFeatures: []

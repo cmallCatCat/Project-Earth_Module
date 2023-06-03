@@ -7,70 +7,37 @@ using UnityEngine;
 
 namespace Core.Inventory_And_Item.Data.ItemInfos
 {
-    [CreateAssetMenu(menuName = "CreateOrAdd ItemInfo", fileName = "ItemInfo", order = 0)]
-    public class ItemInfo : ScriptableObject
+    public abstract class ItemInfo : ScriptableObject
     {
-        private string packageName = "Default";
+        protected string packageName = "Default";
 
         [SerializeField]
-        private string itemName = "Unnamed Item";
+        protected string itemName = "Unnamed Item";
 
         [SerializeField]
         [TextArea]
-        private string itemDescription = "UnDefined Item Description";
+        protected string itemDescription = "UnDefined Item Description";
 
         [SerializeField]
-        private int maxStack = 1;
+        protected int maxStack = 1;
 
         [SerializeField]
-        private Sprite? spriteIcon;
+        protected Sprite? spriteIcon;
 
         [SerializeField]
-        private Sprite? spriteInGame;
+        protected Sprite? spriteInGame;
 
-        [SerializeReference]
-        private ItemFeature[] itemFeatures = Array.Empty<ItemFeature>();
+        protected ItemFeature[] itemFeatures = Array.Empty<ItemFeature>();
 
-        private static readonly string PLUGINS_PATH = AppDomain.CurrentDomain.BaseDirectory + "/BepInEx/plugins/";
+        
 
-        public string PackageName => packageName;
-        public string ItemName    => itemName;
-
-        public string ItemDescription => itemDescription;
-
-        public int MaxStack => maxStack;
-
-        public Sprite? SpriteIcon => spriteIcon;
-
-        public Sprite? SpriteInGame => spriteInGame;
-
-        public ItemFeature[] ItemFeatures => itemFeatures;
-
-        /// <summary>
-        /// 请使用此方法创建模组物品
-        /// </summary>
-        /// <param name="packageName">模组名，用于区分同名的不同物品</param>
-        /// <param name="itemName">物品名</param>
-        /// <param name="itemDescription">物品描述</param>
-        /// <param name="maxStack">最大堆叠数</param>
-        /// <param name="spriteIconPath">在物品栏时显示的图片的路径，为/BepInEx/plugins/之后的相对路径</param>
-        /// <param name="spriteInGamePath">在游戏中显示的图片的路径，为/BepInEx/plugins/之后的相对路径</param>
-        /// <param name="itemFeatures">物品特性，如OnHead代表头部装备</param>
-        /// <returns></returns>
-        public static ItemInfo Create(string packageName,    string itemName, string itemDescription, int maxStack,
-            string                           spriteIconPath, string spriteInGamePath,
-            ItemFeature[]                    itemFeatures)
-        {
-            ItemInfo newItemInfo = CreateInstance<ItemInfo>();
-            newItemInfo.packageName     = packageName;
-            newItemInfo.itemName        = itemName;
-            newItemInfo.itemDescription = itemDescription;
-            newItemInfo.maxStack        = maxStack;
-            newItemInfo.spriteIcon      = SpriteLoader.LoadSprite(PLUGINS_PATH + spriteIconPath);
-            newItemInfo.spriteInGame    = SpriteLoader.LoadSprite(PLUGINS_PATH + spriteInGamePath);
-            newItemInfo.itemFeatures    = itemFeatures;
-            return newItemInfo;
-        }
+        public string        PackageName     => packageName;
+        public string        ItemName        => itemName;
+        public string        ItemDescription => itemDescription;
+        public int           MaxStack        => maxStack;
+        public Sprite?       SpriteIcon      => spriteIcon;
+        public Sprite?       SpriteInGame    => spriteInGame;
+        public ItemFeature[] ItemFeatures    => itemFeatures;
 
         public override string ToString()
         {
@@ -78,6 +45,12 @@ namespace Core.Inventory_And_Item.Data.ItemInfos
                    ", MaxStack: " + maxStack;
         }
 
+        protected virtual void Awake()
+        {
+            itemFeatures = GetFeatures();
+        }
+
+        protected abstract ItemFeature[] GetFeatures();
 
         #region Features
         public ItemFeature? TryToGetFeature(Type type)

@@ -26,6 +26,15 @@ namespace Core.Root.Utilities
 
         private List<TimeScaleModifier> timeScaleModifiers = new List<TimeScaleModifier>();
 
+        private TimeScaleModifier pause;
+
+        private void Awake()
+        {
+            pause                     =  new TimeScaleModifier("Pause", 0f);
+            InputReader.openBackpack  += () => AddModifier(pause);
+            InputReader.closeBackpack += () => RemoveModifier(pause);
+        }
+
         /// <summary>
         /// 向管理器添加一个新的 TimeScaleModifier 实例。这将影响当前的时间缩放值。
         /// </summary>
