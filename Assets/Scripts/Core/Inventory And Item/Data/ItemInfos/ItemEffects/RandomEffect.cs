@@ -23,7 +23,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
         }
 
         [SerializeField]
-        private EffectsAndPossibilities[] effectsAndPossibilities = { };
+        private EffectsAndPossibilities[] effectsAndPossibilities =
+        { };
 
         public override void Work(IEffectSender sender)
         {
@@ -35,10 +36,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
             {
                 if (random < possibilities.probability)
                 {
-                    if (possibilities.effect != null)
-                    {
-                        possibilities.effect.Work(sender);
-                    }
+                    if (possibilities.effect != null) possibilities.effect.Work(sender);
 
                     break;
                 }

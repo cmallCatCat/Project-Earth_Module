@@ -10,9 +10,8 @@ using UnityEngine;
 namespace InventoryAndItem.Core.Inventory_And_Item.Data
 {
     [UsedImplicitly]
-    public class ItemDatabaseHandler: Singleton<ItemDatabaseHandler>
+    public class ItemDatabaseHandler : Singleton<ItemDatabaseHandler>
     {
-
         private ResLoader resLoader = ResLoader.Allocate();
 
         public Dictionary<string, Dictionary<string, ItemInfo>> packageList
@@ -20,8 +19,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public void Init(string assetName)
         {
-            List<ItemInfo> defaultItemList = resLoader.LoadSync<ItemDatabase>(assetName).itemInfos;
-            Dictionary<string, ItemInfo> defaultItemDic = new Dictionary<string, ItemInfo>();
+            List<ItemInfo>               defaultItemList = resLoader.LoadSync<ItemDatabase>(assetName).itemInfos;
+            Dictionary<string, ItemInfo> defaultItemDic  = new Dictionary<string, ItemInfo>();
             defaultItemList.ForEach(x => defaultItemDic.Add(x.ItemName, x));
             packageList.Add("Default", defaultItemDic);
         }
@@ -30,15 +29,12 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         {
             return packageList[itemIdentification.packageName][itemIdentification.name];
         }
-        
+
 
         public bool New(ItemInfo itemInfo)
         {
             string packageName = itemInfo.PackageName;
-            if (!packageList.ContainsKey(packageName))
-            {
-                packageList.Add(packageName, new Dictionary<string, ItemInfo>());
-            }
+            if (!packageList.ContainsKey(packageName)) packageList.Add(packageName, new Dictionary<string, ItemInfo>());
 
             if (packageList[packageName].ContainsKey(itemInfo.ItemName))
             {
@@ -53,7 +49,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         public bool Delete(ItemIdentification itemIdentification)
         {
             string packageName = itemIdentification.packageName;
-            string itemName = itemIdentification.name;
+            string itemName    = itemIdentification.name;
 
             if (!packageList.ContainsKey(packageName))
             {
@@ -71,10 +67,10 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             return true;
         }
 
-        public bool Change( ItemIdentification itemIdentification , ItemInfo itemInfo)
+        public bool Change(ItemIdentification itemIdentification, ItemInfo itemInfo)
         {
             string packageName = itemIdentification.packageName;
-            string itemName = itemIdentification.name;
+            string itemName    = itemIdentification.name;
 
             if (!packageList.ContainsKey(packageName))
             {
@@ -100,10 +96,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
                 return Array.Empty<ItemInfo>();
             }
 
-            if (filter == null)
-            {
-                filter = new ItemFilter(FilterType.All, Array.Empty<string>());
-            }
+            if (filter == null) filter = new ItemFilter(FilterType.All, Array.Empty<string>());
 
             return packageList[packageName].Values.Where(x =>
                 filter.IsMatch(x, new ItemDecorator())).ToArray();
@@ -116,8 +109,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             resLoader = null;
         }
 
-        private ItemDatabaseHandler()
-        {
-        }
+        private ItemDatabaseHandler() { }
     }
 }

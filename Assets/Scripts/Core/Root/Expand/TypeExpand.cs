@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Core.Root
+namespace Core.Root.Expand
 {
     public static class TypeExpand
     {
         public static IEnumerable<Type> GetImplements(this Type type, Type[] types)
         {
             return types.Where(t =>
-                t.IsAssignableFrom(type) && !t.IsAbstract && !t.IsInterface && !t.IsGenericType);
+                type.IsAssignableFrom(t) && !t.IsAbstract && !t.IsInterface && !t.IsGenericType);
         }
 
         public static IEnumerable<Type> GetSubClasses(this Type type, Type[] types)

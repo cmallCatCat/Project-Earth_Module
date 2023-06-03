@@ -13,14 +13,12 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 #if UNITY_EDITOR
         [EffectGenerator]
 #endif
-        private Effect[] effects = { };
+        private Effect[] effects =
+        { };
 
         public override void Work(IEffectSender sender)
         {
-            foreach (Effect effect in effects)
-            {
-                effect.Work(sender);
-            }
+            foreach (Effect effect in effects) effect.Work(sender);
         }
     }
 }

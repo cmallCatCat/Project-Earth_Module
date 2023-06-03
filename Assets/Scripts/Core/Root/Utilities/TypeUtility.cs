@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Core.Root
+namespace Core.Root.Utilities
 {
     public static class TypeUtility
     {

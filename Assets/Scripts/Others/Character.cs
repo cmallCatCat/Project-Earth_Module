@@ -8,7 +8,7 @@ namespace Others
     public class Character : MonoBehaviour, IController
     {
         public Inventory inventory;
-        public int inventoryKey;
+        public int       inventoryKey;
 
         public IArchitecture GetArchitecture()
         {
@@ -30,6 +30,5 @@ namespace Others
                 inventoryKey = this.inventoryKey;
             }
         }
-        
     }
 }

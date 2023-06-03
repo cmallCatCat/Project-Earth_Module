@@ -8,6 +8,5 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
     public class ItemDatabase : ScriptableObject
     {
         public List<ItemInfo> itemInfos = new List<ItemInfo>();
-        
     }
 }

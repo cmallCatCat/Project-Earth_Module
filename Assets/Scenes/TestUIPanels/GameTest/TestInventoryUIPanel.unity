@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 1875545230}
   - component: {fileID: 1875545237}
   - component: {fileID: 1875545236}
-  - component: {fileID: 1875545235}
+  - component: {fileID: 1875545238}
   m_Layer: 5
   m_Name: UIRoot
   m_TagString: Untagged
@@ -758,25 +758,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1875545235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875545228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443415997fb40de25b54faab6e4e93eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useSecondKeyForMultiSelection: 1
-  selectOnDrag: 1
-  dragAllSelected: 1
-  pointerKey: 323
-  secondaryPointerKey: 324
-  secondKey: 304
-  _selectType: 0
 --- !u!114 &1875545236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,6 +791,25 @@ MonoBehaviour:
   _canvas: {fileID: 1875545233}
   sceneMFObjects: []
   canvasRenderMode: 0
+--- !u!114 &1875545238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875545228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443415997fb40de25b54faab6e4e93eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useSecondKeyForMultiSelection: 1
+  selectOnDrag: 1
+  dragAllSelected: 1
+  pointerKey: 323
+  secondaryPointerKey: 324
+  secondKey: 304
+  _selectType: 0
 --- !u!1 &1913110072
 GameObject:
   m_ObjectHideFlags: 0

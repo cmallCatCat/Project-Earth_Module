@@ -1520,7 +1520,7 @@
             <returns>
             The child at the given displayIndex.
             </returns>
-            <exception cref="T:System.IndexOutOfRangeException">The given displayIndex was out of range.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">The given displayIndex was out of Range_Normal.</exception>
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.PropertyChildren.GetPath(System.Int32)">
             <summary>
@@ -1528,7 +1528,7 @@
             </summary>
             <param name="displayIndex">The displayIndex to get the path of.</param>
             <returns>The path of the child at the given displayIndex.</returns>
-            <exception cref="T:System.IndexOutOfRangeException">The given displayIndex was out of range.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">The given displayIndex was out of Range_Normal.</exception>
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.PropertyChildren.Recurse">
             <summary>
@@ -10044,7 +10044,7 @@
         </member>
         <member name="P:Sirenix.OdinInspector.Editor.GlobalPersistentContext.TimeStamp">
             <summary>
-            Time stamp for when the persistent context value was last used.
+            T stamp for when the persistent context value was last used.
             Used for purging unused context.
             </summary>
         </member>

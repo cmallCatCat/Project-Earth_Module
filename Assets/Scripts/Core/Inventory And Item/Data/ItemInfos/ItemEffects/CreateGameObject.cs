@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
+using Core.Root.Base;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -14,7 +15,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
         public bool useObjectPool;
 
         [BoxGroup("Position")]
-        [EnumToggleButtons, HideLabel]
+        [EnumToggleButtons]
+        [HideLabel]
         public Reference referencePosition;
 
         [BoxGroup("Position")]
@@ -30,7 +32,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
         public bool considerRotationPosition;
 
         [BoxGroup("Rotation")]
-        [EnumToggleButtons, HideLabel]
+        [EnumToggleButtons]
+        [HideLabel]
         public Reference referenceRotation;
 
         [BoxGroup("Rotation")]
@@ -43,7 +46,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 
         public override void Work(IEffectSender sender)
         {
-            IEnvironment.Instance.Instantiate(toCreate,useObjectPool,
+            IEnvironment.Instance.Instantiate(toCreate, useObjectPool,
                 referencePosition.GetPosition(position,
                     sender.GetTransform(), considerHorizontalAxisPosition, considerRotationPosition),
                 referenceRotation.GetRotation(rotation,

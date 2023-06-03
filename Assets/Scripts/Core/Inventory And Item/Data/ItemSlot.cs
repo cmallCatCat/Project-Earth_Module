@@ -1,6 +1,6 @@
 ﻿#nullable enable
 using System;
-using Core.QFramework.Framework.Scripts;
+using Core.Root.Utilities;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Filters;
 using UnityEngine;
@@ -19,11 +19,11 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public ItemSlot()
         {
-            itemStack = null;
+            itemStack  = null;
             itemFilter = new ItemFilter(FilterType.All, Array.Empty<string>());
         }
 
-        internal void SetIdentificationFilter(ItemFilter newItemFilter)
+        internal void SetItemInfoFilter(ItemFilter newItemFilter)
         {
             if (itemStack != null && !ItemFilter.IsMatch(itemStack.ItemInfo, itemStack.ItemDecorator))
                 throw new Exception("因为该物品栏内物品不符合条件，该物品栏不可应用此IdentificationFilter，请转移物品后再试");
@@ -32,7 +32,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         }
 
         #region 修改
-
         internal void Add(ItemStack toAddStack)
         {
             if (itemStack == null)
@@ -64,11 +63,9 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
             throw new Exception("该物品栏不可添加此ItemStack");
         }
-
         #endregion
 
         #region 查询
-
         public bool Match(ItemStack? itemStack)
         {
             return itemFilter.IsMatch(itemStack?.ItemInfo, itemStack?.ItemDecorator);
@@ -81,20 +78,23 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             return itemStack.CanAddNumber(itemInfo, itemDecorator);
         }
 
+        public int CanAddNumberFinal(ItemStack itemStack)
+        {
+            return Mathf.Min(CanAddNumber(itemStack.ItemInfo, itemStack.ItemDecorator), itemStack.Number);
+        }
+
         public int CanRemoveNumber(ItemInfo toRemoveItem, ItemDecorator itemDecorator)
         {
             if (itemStack == null) return 0;
 
             return itemStack.CanRemoveNumber(toRemoveItem, itemDecorator);
         }
-
         #endregion
 
         #region 序列化
-
         [SerializeField]
         private string packageNameSave = string.Empty;
-        
+
         [SerializeField]
         private string itemNameSave = string.Empty;
 
@@ -114,14 +114,14 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         {
             if (ItemStack != null)
             {
-                packageNameSave = ItemStack.ItemInfo.PackageName;
-                itemNameSave = ItemStack.ItemInfo.ItemName;
-                numberSave = ItemStack.Number;
+                packageNameSave   = ItemStack.ItemInfo.PackageName;
+                itemNameSave      = ItemStack.ItemInfo.ItemName;
+                numberSave        = ItemStack.Number;
                 itemDecoratorSave = ItemStack.ItemDecorator;
             }
 
             {
-                filterTypeSave = ItemFilter.filterType;
+                filterTypeSave    = ItemFilter.filterType;
                 filterStringsSave = ItemFilter.strings;
             }
         }
@@ -142,7 +142,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
                 itemFilter = new ItemFilter(filterTypeSave, filterStringsSave);
             }
         }
-
         #endregion
     }
 }

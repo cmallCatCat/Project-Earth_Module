@@ -9,31 +9,13 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Editor
     [CustomPropertyDrawer(typeof(EffectGeneratorAttribute))]
     public class EffectMakerAttributeDrawer : PropertyDrawer
     {
+        private bool useResource;
+
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            // Debug.Log(property.propertyType);
-            // if ()
-            // {
-            //     int arraySize = property.arraySize;
-            //     for (int i = 0; i < arraySize; i++)
-            //     {
-            //         ShowOneEffect(position, property.GetArrayElementAtIndex(i), label, i.ToString());
-            //     }
-            // }
-            // else
-            // {
-            ShowOneEffect(position, property, label);
-            // }
-        }
-
-
-        bool useResource = false;
-
-        private void ShowOneEffect(Rect position, SerializedProperty property, GUIContent label)
-        {
             EffectType typeEnum;
-            Object oldEffect = property.objectReferenceValue;
-            Object owner = property.serializedObject.targetObject;
+            Object     oldEffect = property.objectReferenceValue;
+            Object     owner     = property.serializedObject.targetObject;
 
             useResource = EditorGUILayout.Toggle("Use Resource", useResource);
             if (useResource)
@@ -43,23 +25,19 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Editor
             }
 
             if (oldEffect == null)
+            {
                 typeEnum = EffectType.CreateNew;
+            }
             else
             {
-                if (!Enum.TryParse(oldEffect.GetType().Name, out typeEnum))
-                {
-                    throw new Exception("Invalid effect type");
-                }
+                if (!Enum.TryParse(oldEffect.GetType().Name, out typeEnum)) throw new Exception("Invalid effect type");
             }
 
             EffectType newType = (EffectType)EditorGUILayout.EnumPopup("Effect Type", typeEnum);
             if (typeEnum != newType)
             {
                 typeEnum = newType;
-                if (oldEffect != null)
-                {
-                    AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(oldEffect));
-                }
+                if (oldEffect != null) AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(oldEffect));
 
                 if (newType == EffectType.CreateNew)
                 {
@@ -71,7 +49,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Editor
                 {
                     ScriptableObject newEffect = ScriptableObject.CreateInstance(typeEnum.ToString());
                     newEffect.name = property.propertyPath.Replace(".Array.data", "") + "=" + typeEnum;
-                    string ownerPath = AssetDatabase.GetAssetPath(owner);
+                    string ownerPath     = AssetDatabase.GetAssetPath(owner);
                     string newEffectPath = ownerPath.Replace(".asset", $".{newEffect.name}.asset");
 
                     AssetDatabase.CreateAsset(newEffect, newEffectPath);
@@ -83,10 +61,9 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Editor
             }
         }
 
-        // public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-        // {
-        //     return base.GetPropertyHeight(property, label)+EditorGUIUtility.singleLineHeight;
-        // }
+
+
+        
     }
 }
 #endif

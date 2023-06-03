@@ -89,8 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f71bddc5a4d49ab87892f5be5a5a301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 200
-  inventory:
-    capacity: 0
-    itemSlots: []
-  itemStackPrefab: {fileID: 4192657044206871873, guid: 6f26f04f712b1c9419cae5220b41a019, type: 3}
+  inventoryUIPanel: {fileID: 0}
+  displayIndex: 0
+  RectTransform: {fileID: 0}
+  itemStackUI: {fileID: 0}

@@ -7,6 +7,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
     public class TryHoldStackCommand : AbstractCommand
     {
         private readonly ItemSlotUI itemSlotUI;
+
         public TryHoldStackCommand(ItemSlotUI itemSlotUI)
         {
             this.itemSlotUI = itemSlotUI;

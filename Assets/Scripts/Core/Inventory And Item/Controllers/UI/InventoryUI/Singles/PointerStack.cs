@@ -1,6 +1,6 @@
+using Core.Root.Base;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
@@ -18,8 +18,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
 
         private GameObject stackPrefab;
 
-        public Vector2 Size = new Vector2(60, 60);
-        private GameObject instantiate;
+        public  Vector2     Size = new Vector2(60, 60);
+        private GameObject  instantiate;
         private ItemStackUI itemStackUI;
 
 
@@ -29,18 +29,15 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
 
         public int Number => itemStack.Number;
 
-        protected PointerStack()
-        {
-        }
+        protected PointerStack() { }
 
         public ItemStackUI Create(ItemStack itemStack)
         {
-            this.itemStack = new ItemStack(itemStack.ItemInfo, itemStack.ItemDecorator, itemStack.Number, null);
-            instantiate = Object.Instantiate(stackPrefab, IEnvironment.Instance.UICanvas.transform);
+            this.itemStack                 = new ItemStack(itemStack.ItemInfo, itemStack.ItemDecorator, itemStack.Number, null);
+            instantiate                    = Object.Instantiate(stackPrefab, IEnvironment.Instance.UICanvas.transform);
             instantiate.transform.position = IEnvironment.Instance.FarAway;
-            itemStackUI = instantiate.GetComponent<ItemStackUI>();
+            itemStackUI                    = instantiate.GetComponent<ItemStackUI>();
             itemStackUI.Init(this.itemStack, Size);
-            itemStackUI.stackImage.raycastTarget = false;
             instantiate.AddComponent<FollowPointer>();
             return itemStackUI;
         }
@@ -70,12 +67,14 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
             Refresh();
         }
 
+        public ItemStack Clone()
+        {
+            return itemStack.Clone();
+        }
+
         private void Refresh()
         {
-            if (itemStack == null)
-            {
-                return;
-            }
+            if (itemStack == null) return;
 
             itemStackUI.Refresh(itemStack, Size);
 

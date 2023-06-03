@@ -34,4 +34,20 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures
                 equipOff.Work(sender);
         }
     }
+    
+    [Serializable]
+    [CreateAssetMenu(menuName = "Create OnHead", fileName = "OnHead", order = 0)]
+    public class OnHead : Equipment { }
+
+    [Serializable]
+    [CreateAssetMenu(menuName = "Create OnBody", fileName = "OnBody", order = 0)]
+    public class OnBody : Equipment { }
+
+    [Serializable]
+    [CreateAssetMenu(menuName = "Create OnLegs", fileName = "OnLegs", order = 0)]
+    public class OnLegs : Equipment { }
+    
+    [Serializable]
+    [CreateAssetMenu(menuName = "Create Accessory", fileName = "Accessory", order = 0)]
+    public class Accessory : Equipment { }
 }

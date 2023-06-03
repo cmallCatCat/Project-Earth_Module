@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Core.QFramework.Framework.Scripts;
-using Extents;
+using Core.Root.Expand;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
+
 // ReSharper disable AssignNullToNotNullAttribute
 // ReSharper disable PossibleNullReferenceException
 
@@ -20,8 +20,8 @@ namespace Mod
 
         public static readonly string PluginPath = AppDomain.CurrentDomain.BaseDirectory + "/BepInEx/plugins";
 
-        
-        void Start()
+
+        private void Start()
         {
             DontDestroyOnLoad(gameObject);
 
@@ -33,13 +33,10 @@ namespace Mod
         [UsedImplicitly]
         private void LoadMods()
         {
-            Assembly[] solutionAssemblies = AssemblyExtents.GetSolutionAssemblies(PluginPath);
+            Assembly[] solutionAssemblies = AssemblyExpand.GetSolutionAssemblies(PluginPath);
             Debug.Log("------Load Mods Start------");
 
-            foreach (Assembly solutionAssembly in solutionAssemblies)
-            {
-                LoadMod(solutionAssembly);
-            }
+            foreach (Assembly solutionAssembly in solutionAssemblies) LoadMod(solutionAssembly);
 
             Debug.Log("------Load Mods End------");
 
@@ -64,8 +61,8 @@ namespace Mod
 
         private void LoadMod(Assembly modAssembly)
         {
-            Type[] allTypes = modAssembly.GetTypes();
-            Type statement = allTypes.FirstOrDefault(type => type.BaseType.Name == "BaseUnityPlugin");
+            Type[] allTypes  = modAssembly.GetTypes();
+            Type   statement = allTypes.FirstOrDefault(type => type.BaseType.Name == "BaseUnityPlugin");
             Debug.Log("Mod Loading: " + statement);
             if (statement == null)
             {
@@ -97,12 +94,9 @@ namespace Mod
             {
                 object instance = modAssembly.CreateInstance(subClass.FullName);
 
-                ItemInfo newItem = (ItemInfo)subClass.GetMethod("ItemInfo").Invoke(instance, null);
-                bool bNew = ItemDatabaseHandler.Instance.New(newItem);
-                if (bNew)
-                {
-                    modInfo.newItem.Add(newItem);
-                }
+                ItemInfo newItem = (ItemInfo)subClass.GetMethod("Info").Invoke(instance, null);
+                bool     bNew    = ItemDatabaseHandler.Instance.New(newItem);
+                if (bNew) modInfo.newItem.Add(newItem);
             }
         }
 
@@ -116,12 +110,9 @@ namespace Mod
                     = (ItemIdentification)subClass.GetMethod("Identification").Invoke(instance, null);
 
                 ItemInfo deletedItem = ItemDatabaseHandler.Instance.FindItem(deleteItemIdentification);
-                bool succeed = ItemDatabaseHandler.Instance.Delete(deleteItemIdentification);
+                bool     succeed     = ItemDatabaseHandler.Instance.Delete(deleteItemIdentification);
 
-                if (succeed)
-                {
-                    modInfo.deleteItem.Add(deletedItem);
-                }
+                if (succeed) modInfo.deleteItem.Add(deletedItem);
             }
         }
 
@@ -137,11 +128,8 @@ namespace Mod
                 foreach (ItemIdentification deleteItemIdentification in deleteItemIdentifications)
                 {
                     ItemInfo deletedItem = ItemDatabaseHandler.Instance.FindItem(deleteItemIdentification);
-                    bool succeed = ItemDatabaseHandler.Instance.Delete(deleteItemIdentification);
-                    if (succeed)
-                    {
-                        modInfo.deleteItem.Add(deletedItem);
-                    }
+                    bool     succeed     = ItemDatabaseHandler.Instance.Delete(deleteItemIdentification);
+                    if (succeed) modInfo.deleteItem.Add(deletedItem);
                 }
             }
         }
@@ -157,7 +145,8 @@ namespace Mod
 
                 ItemInfo original = ItemDatabaseHandler.Instance.FindItem(changeItemIdentification);
                 ItemInfo changedItem
-                    = (ItemInfo)subClass.GetMethod("ItemInfo").Invoke(instance, new object[] { original });
+                    = (ItemInfo)subClass.GetMethod("Info").Invoke(instance, new object[]
+                    { original });
 
                 bool change = ItemDatabaseHandler.Instance.Change(changeItemIdentification, changedItem);
                 if (change)
@@ -179,14 +168,15 @@ namespace Mod
 
                 ItemInfo[] originalList = changeItemIdentifications.Select(ItemDatabaseHandler.Instance.FindItem).ToArray();
                 ItemInfo[] changedItems
-                    = (ItemInfo[])subClass.GetMethod("ItemInfos").Invoke(instance, new object[] { originalList });
+                    = (ItemInfo[])subClass.GetMethod("Infos").Invoke(instance, new object[]
+                    { originalList });
 
                 for (int index = 0; index < changedItems.Length; index++)
                 {
                     ItemIdentification changeItemIdentification = changeItemIdentifications[index];
-                    ItemInfo originalItem = originalList[index];
-                    ItemInfo changedItem = changedItems[index];
-                    bool succeed = ItemDatabaseHandler.Instance.Change(changeItemIdentification, changedItem);
+                    ItemInfo           originalItem = originalList[index];
+                    ItemInfo           changedItem = changedItems[index];
+                    bool               succeed = ItemDatabaseHandler.Instance.Change(changeItemIdentification, changedItem);
                     if (succeed)
                     {
                         modInfo.changeItemBefore.Add(originalItem);

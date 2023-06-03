@@ -8,12 +8,10 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
     [UsedImplicitly]
     public class ItemStackCreator : Singleton<ItemStackCreator>
     {
-        private ResLoader resLoader = ResLoader.Allocate();
+        private ResLoader  resLoader = ResLoader.Allocate();
         private GameObject stackPrefab;
 
-        protected ItemStackCreator()
-        {
-        }
+        protected ItemStackCreator() { }
 
         public override void Dispose()
         {
@@ -30,7 +28,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
 
         public ItemStackUI Create(ItemStack itemStack, Transform parent, Vector2 size)
         {
-            GameObject instantiate = Object.Instantiate(stackPrefab, parent);
+            GameObject  instantiate = Object.Instantiate(stackPrefab, parent);
             ItemStackUI itemStackUI = instantiate.GetComponent<ItemStackUI>();
             itemStackUI.Init(itemStack, size);
             return itemStackUI;
@@ -38,7 +36,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
 
         public ItemStackUI Create(ItemSlotUI itemSlotUI)
         {
-            GameObject instantiate = Object.Instantiate(stackPrefab, itemSlotUI.transform);
+            GameObject  instantiate = Object.Instantiate(stackPrefab, itemSlotUI.transform);
             ItemStackUI itemStackUI = instantiate.GetComponent<ItemStackUI>();
             itemStackUI.Init(itemSlotUI);
             return itemStackUI;

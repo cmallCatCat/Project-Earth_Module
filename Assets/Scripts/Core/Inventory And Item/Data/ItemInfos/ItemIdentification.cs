@@ -8,7 +8,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
         public ItemIdentification(string packageName, string name)
         {
             this.packageName = packageName;
-            this.name = name;
+            this.name        = name;
         }
     }
 }

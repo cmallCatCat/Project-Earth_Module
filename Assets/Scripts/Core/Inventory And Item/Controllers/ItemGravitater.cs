@@ -5,25 +5,24 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
 {
     public abstract class ItemGravitater : MonoBehaviour, IController
     {
+        [SerializeField]
         private float range;
-        private float time;
+        [SerializeField]
+        private int time;
 
         private InventoryHolder  inventoryHolder;
         private CircleCollider2D circleCollider2D;
 
-
         public float Range => range;
-        public float Time  => time;
-
+        public float T     => 1f / time;
 
         private void Awake()
         {
             circleCollider2D           = gameObject.GetOrAddComponent<CircleCollider2D>();
             circleCollider2D.isTrigger = true;
-            SetValue(range, time);
         }
 
-        private void SetValue(float range = 5f, float time = 0.4f)
+        public void Init(float range = 5f, int time = 20)
         {
             this.range              = range;
             this.time               = time;

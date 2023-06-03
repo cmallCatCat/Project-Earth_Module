@@ -6,6 +6,6 @@ namespace Mod
     public interface INewItem
     {
         [UsedImplicitly]
-        ItemInfo ItemInfo();
+        ItemInfo Info();
     }
 }

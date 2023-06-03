@@ -1,1 +1,5 @@
-{"Namespace":"QFramework.UI","UIScriptDir":"/Scripts/UI","UIPrefabDir":"/Art/UIPrefab"}
+{
+  "Namespace": "QFramework.UI",
+  "UIScriptDir": "/Scripts/UI",
+  "UIPrefabDir": "/Art/UIPrefab"
+}

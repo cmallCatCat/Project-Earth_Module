@@ -7,7 +7,8 @@ namespace Mod
     {
         [UsedImplicitly]
         ItemIdentification[] Identifications();
+
         [UsedImplicitly]
-        ItemInfo[] ItemInfos(ItemInfo[] original);
+        ItemInfo[] Infos(ItemInfo[] original);
     }
 }

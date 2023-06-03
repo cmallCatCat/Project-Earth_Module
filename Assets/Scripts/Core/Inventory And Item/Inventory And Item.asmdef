@@ -1,21 +1,23 @@
 {
-    "name": "InventoryAndItem",
-    "rootNamespace": "InventoryAndItem",
-    "references": [
-        "QFramework",
-        "ResKit",
-        "QFramework.CoreKit",
-        "UIKit",
-        "Unity.TextMeshPro",
-        "MakeItFlow"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "InventoryAndItem",
+  "rootNamespace": "InventoryAndItem",
+  "references": [
+    "QFramework",
+    "ResKit",
+    "QFramework.CoreKit",
+    "UIKit",
+    "Unity.TextMeshPro",
+    "MakeItFlow",
+    "Root",
+    "AYellowpaper.SerializedCollections"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

@@ -25,10 +25,10 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
 
         public ItemStack(ItemInfo itemInfo, ItemDecorator itemDecorator, int number, Transform transform)
         {
-            this.itemInfo = itemInfo;
+            this.itemInfo      = itemInfo;
             this.itemDecorator = itemDecorator;
-            this.number = number;
-            this.transform = transform;
+            this.number        = number;
+            this.transform     = transform;
         }
 
         public void SetTransform(Transform transform)

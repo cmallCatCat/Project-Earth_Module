@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.Root
+namespace Core.Root.Expand
 {
     public static class ListExpand
     {

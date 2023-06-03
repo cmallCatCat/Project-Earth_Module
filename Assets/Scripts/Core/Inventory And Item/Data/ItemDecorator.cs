@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Core.QFramework.Framework.Scripts;
+using Core.Root.Utilities;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using UnityEngine;
 
@@ -15,7 +15,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         private List<ItemFeature> itemFeatures = new List<ItemFeature>();
 
         #region Features
-
         public void AddFeature(ItemFeature itemFeature)
         {
             itemFeatures.Add(itemFeature);
@@ -68,7 +67,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
         {
             return GetFeatures(typeof(T).FullName) as T[] ?? throw new InvalidOperationException();
         }
-
         #endregion
 
         public static bool operator ==(ItemDecorator? a, ItemDecorator? b)

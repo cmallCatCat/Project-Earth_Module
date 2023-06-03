@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.Root.DictionaryAndList
+namespace Core.Root.DictionaryAndListUtilities
 {
     [Serializable]
     public class SerializationList<T>

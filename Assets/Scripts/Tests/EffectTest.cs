@@ -1,5 +1,5 @@
 using Core.Architectures;
-using Core.QFramework.Framework.Scripts;
+using Core.Root.Utilities;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
@@ -10,30 +10,23 @@ namespace Tests
 {
     public class EffectTest : MonoBehaviour, IController
     {
-        public ItemInfo itemInfo;
-        private ItemInfo item;
+        public  ItemInfo      itemInfo;
+        private ItemInfo      item;
         private IEffectSender effectSender;
 
         private void Awake()
         {
-            item = SOHelper.CloneScriptableObject(itemInfo);
-            effectSender=new IEffectSenderTest();
+            item         = SOHelper.CloneScriptableObject(itemInfo);
+            effectSender = new IEffectSenderTest();
         }
 
         private void OnGUI()
         {
-        
-            if (GUILayout.Button("Equip"))
-            {
-                item.TryToGetFeature<OnHead>()?.equipOn.Work(effectSender);
-            }
+            if (GUILayout.Button("Equip")) item.TryToGetFeature<OnHead>()?.equipOn.Work(effectSender);
 
-            if (GUILayout.Button("UnEquip"))
-            {
-                item.TryToGetFeature<OnHead>()?.equipOff.Work(effectSender);
-            }
-        
-        
+            if (GUILayout.Button("UnEquip")) item.TryToGetFeature<OnHead>()?.equipOff.Work(effectSender);
+
+
             // if (GUILayout.Button("加载"))
             // {
             //     this.SendCommand<LoadCommand>();
@@ -51,7 +44,7 @@ namespace Tests
         }
     }
 
-    public class IEffectSenderTest: IEffectSender
+    public class IEffectSenderTest : IEffectSender
     {
         public Transform GetTransform()
         {

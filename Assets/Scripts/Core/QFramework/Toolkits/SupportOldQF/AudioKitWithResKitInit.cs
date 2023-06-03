@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace QFramework
 {
-    public class AudioKitWithResKitInit 
+    public class AudioKitWithResKitInit
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void Init()
@@ -18,15 +18,12 @@ namespace QFramework
         {
             private ResLoader mResLoader = null;
 
-            public AudioClip Clip => mClip;
+            public  AudioClip Clip => mClip;
             private AudioClip mClip;
 
             public AudioClip LoadClip(AudioSearchKeys audioSearchKeys)
             {
-                if (mResLoader == null)
-                {
-                    mResLoader = ResLoader.Allocate();
-                }
+                if (mResLoader == null) mResLoader = ResLoader.Allocate();
 
                 mClip = mResLoader.LoadSync<AudioClip>(audioSearchKeys.AssetName);
 
@@ -35,10 +32,7 @@ namespace QFramework
 
             public void LoadClipAsync(AudioSearchKeys audioSearchKeys, Action<bool, AudioClip> onLoad)
             {
-                if (mResLoader == null)
-                {
-                    mResLoader = ResLoader.Allocate();
-                }
+                if (mResLoader == null) mResLoader = ResLoader.Allocate();
 
                 mResLoader.Add2Load<AudioClip>(audioSearchKeys.AssetName, (b, res) =>
                 {

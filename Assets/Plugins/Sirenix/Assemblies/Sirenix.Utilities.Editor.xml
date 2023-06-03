@@ -2375,7 +2375,7 @@
              <code>
              private GUITable table;
             
-             private void Init()
+             private void Create()
              {
                  bool[,] boolArr = new bool[20,20];
             
@@ -2400,7 +2400,7 @@
              <code>
              private GUITable table;
             
-             private void Init()
+             private void Create()
              {
                  Listt&lt;SomeClasst&gt; someList = new List&lt;SomeClass&gt;() { new SomeClass(), new SomeClass(), new SomeClass() };
             
@@ -3336,7 +3336,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeIntField(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,System.Int32,System.Int32,UnityEngine.GUIStyle)">
             <summary>
-            Draws a range field for ints.
+            Draws a Range_Normal field for ints.
             </summary>
             <param name="rect">Position and size of the field.</param>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
@@ -3348,7 +3348,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeIntField(UnityEngine.Rect,UnityEngine.GUIContent,System.Int32,System.Int32,System.Int32)">
             <summary>
-            Draws a range field for ints.
+            Draws a Range_Normal field for ints.
             </summary>
             <param name="rect">Position and size of the field.</param>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
@@ -3359,7 +3359,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeIntField(UnityEngine.Rect,System.String,System.Int32,System.Int32,System.Int32)">
             <summary>
-            Draws a range field for ints.
+            Draws a Range_Normal field for ints.
             </summary>
             <param name="rect">Position and size of the field.</param>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
@@ -3370,7 +3370,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeIntField(UnityEngine.Rect,System.Int32,System.Int32,System.Int32)">
             <summary>
-            Draws a range field for ints.
+            Draws a Range_Normal field for ints.
             </summary>
             <param name="rect">Position and size of the field.</param>
             <param name="value">Current value.</param>
@@ -3380,7 +3380,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeIntField(UnityEngine.GUIContent,System.Int32,System.Int32,System.Int32,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
             <summary>
-            Drwas a range field for ints.
+            Drwas a Range_Normal field for ints.
             </summary>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
             <param name="value">Current value.</param>
@@ -3392,7 +3392,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeIntField(UnityEngine.GUIContent,System.Int32,System.Int32,System.Int32,UnityEngine.GUILayoutOption[])">
             <summary>
-            Draws a range field for ints.
+            Draws a Range_Normal field for ints.
             </summary>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
             <param name="value">Current value.</param>
@@ -3403,7 +3403,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeIntField(System.String,System.Int32,System.Int32,System.Int32,UnityEngine.GUILayoutOption[])">
             <summary>
-            Draws a range field for ints.
+            Draws a Range_Normal field for ints.
             </summary>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
             <param name="value">Current value.</param>
@@ -3414,7 +3414,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeIntField(System.Int32,System.Int32,System.Int32,UnityEngine.GUILayoutOption[])">
             <summary>
-            Draws a range field for ints.
+            Draws a Range_Normal field for ints.
             </summary>
             <param name="value">Current value.</param>
             <param name="min">Minimum value.</param>
@@ -3998,7 +3998,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeFloatField(UnityEngine.Rect,UnityEngine.GUIContent,System.Single,System.Single,System.Single,UnityEngine.GUIStyle)">
             <summary>
-            Draws a range field for floats.
+            Draws a Range_Normal field for floats.
             </summary>
             <param name="rect">Position and size of the field.</param>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
@@ -4010,7 +4010,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeFloatField(UnityEngine.Rect,UnityEngine.GUIContent,System.Single,System.Single,System.Single)">
             <summary>
-            Draws a range field for floats.
+            Draws a Range_Normal field for floats.
             </summary>
             <param name="rect">Position and size of the field.</param>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
@@ -4021,7 +4021,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeFloatField(UnityEngine.Rect,System.String,System.Single,System.Single,System.Single)">
             <summary>
-            Draws a range field for floats.
+            Draws a Range_Normal field for floats.
             </summary>
             <param name="rect">Position and size of the field.</param>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
@@ -4032,7 +4032,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeFloatField(UnityEngine.Rect,System.Single,System.Single,System.Single)">
             <summary>
-            Draws a range field for floats.
+            Draws a Range_Normal field for floats.
             </summary>
             <param name="rect">Position and size of the field.</param>
             <param name="value">Current value.</param>
@@ -4042,7 +4042,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeFloatField(UnityEngine.GUIContent,System.Single,System.Single,System.Single,UnityEngine.GUIStyle,UnityEngine.GUILayoutOption[])">
             <summary>
-            Draws a range field for floats.
+            Draws a Range_Normal field for floats.
             </summary>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
             <param name="value">Current value.</param>
@@ -4054,7 +4054,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeFloatField(UnityEngine.GUIContent,System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
             <summary>
-            Draws a range field for floats.
+            Draws a Range_Normal field for floats.
             </summary>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
             <param name="value">Current value.</param>
@@ -4065,7 +4065,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeFloatField(System.String,System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
             <summary>
-            Draws a range field for floats.
+            Draws a Range_Normal field for floats.
             </summary>
             <param name="label">Label of field. Set to <c>null</c> for no label.</param>
             <param name="value">Current value.</param>
@@ -4076,7 +4076,7 @@
         </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.RangeFloatField(System.Single,System.Single,System.Single,UnityEngine.GUILayoutOption[])">
             <summary>
-            Draws a range field for floats.
+            Draws a Range_Normal field for floats.
             </summary>
             <param name="value">Current value.</param>
             <param name="min">Minimum value.</param>

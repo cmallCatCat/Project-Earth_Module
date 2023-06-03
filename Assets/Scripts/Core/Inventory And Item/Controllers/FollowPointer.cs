@@ -1,4 +1,4 @@
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
+using Core.Root.Base;
 using UnityEngine;
 
 namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
@@ -6,7 +6,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
     public class FollowPointer : MonoBehaviour
     {
         private Camera uiCamera;
-        
+
         private void Awake()
         {
             uiCamera = IEnvironment.Instance.UiCamera;

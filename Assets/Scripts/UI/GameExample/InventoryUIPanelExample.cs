@@ -4,7 +4,7 @@ using QFramework;
 
 namespace UI.GameExample
 {
-    public class InventoryUIPanelExample: InventoryUIPanel
+    public class InventoryUIPanelExample : InventoryUIPanel
     {
         public override IArchitecture GetArchitecture()
         {

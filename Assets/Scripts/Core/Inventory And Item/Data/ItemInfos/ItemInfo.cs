@@ -1,7 +1,7 @@
 ﻿#nullable enable
 using System;
 using System.Linq;
-using Core.QFramework.Framework.Scripts;
+using Core.Root.Utilities;
 using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using UnityEngine;
 
@@ -34,7 +34,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
         private static readonly string PLUGINS_PATH = AppDomain.CurrentDomain.BaseDirectory + "/BepInEx/plugins/";
 
         public string PackageName => packageName;
-        public string ItemName => itemName;
+        public string ItemName    => itemName;
 
         public string ItemDescription => itemDescription;
 
@@ -46,18 +46,30 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
 
         public ItemFeature[] ItemFeatures => itemFeatures;
 
-        public ItemInfo Init(string packageName, string itemName, string itemDescription, int maxStack,
-            string spriteIconPath, string spriteInGamePath,
-            ItemFeature[] itemFeatures)
+        /// <summary>
+        /// 请使用此方法创建模组物品
+        /// </summary>
+        /// <param name="packageName">模组名，用于区分同名的不同物品</param>
+        /// <param name="itemName">物品名</param>
+        /// <param name="itemDescription">物品描述</param>
+        /// <param name="maxStack">最大堆叠数</param>
+        /// <param name="spriteIconPath">在物品栏时显示的图片的路径，为/BepInEx/plugins/之后的相对路径</param>
+        /// <param name="spriteInGamePath">在游戏中显示的图片的路径，为/BepInEx/plugins/之后的相对路径</param>
+        /// <param name="itemFeatures">物品特性，如OnHead代表头部装备</param>
+        /// <returns></returns>
+        public static ItemInfo Create(string packageName,    string itemName, string itemDescription, int maxStack,
+            string                           spriteIconPath, string spriteInGamePath,
+            ItemFeature[]                    itemFeatures)
         {
-            this.packageName = packageName;
-            this.itemName = itemName;
-            this.itemDescription = itemDescription;
-            this.maxStack = maxStack;
-            spriteIcon = SpriteLoader.LoadSprite(PLUGINS_PATH + spriteIconPath);
-            spriteInGame = SpriteLoader.LoadSprite(PLUGINS_PATH + spriteInGamePath);
-            this.itemFeatures = itemFeatures;
-            return this;
+            ItemInfo newItemInfo = CreateInstance<ItemInfo>();
+            newItemInfo.packageName     = packageName;
+            newItemInfo.itemName        = itemName;
+            newItemInfo.itemDescription = itemDescription;
+            newItemInfo.maxStack        = maxStack;
+            newItemInfo.spriteIcon      = SpriteLoader.LoadSprite(PLUGINS_PATH + spriteIconPath);
+            newItemInfo.spriteInGame    = SpriteLoader.LoadSprite(PLUGINS_PATH + spriteInGamePath);
+            newItemInfo.itemFeatures    = itemFeatures;
+            return newItemInfo;
         }
 
         public override string ToString()
@@ -68,7 +80,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
 
 
         #region Features
-
         public ItemFeature? TryToGetFeature(Type type)
         {
             return GetFeatures(type.FullName ?? throw new InvalidOperationException()).FirstOrDefault();
@@ -117,11 +128,9 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
         {
             return GetFeatures(typeof(T).FullName) as T[] ?? throw new InvalidOperationException();
         }
-
         #endregion
 
         #region EqualsAndHashCode
-
         public static bool operator ==(ItemInfo? a, ItemInfo? b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null)) return true;
@@ -152,7 +161,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
         {
             return PackageName.GetHashCode() ^ ItemName.GetHashCode();
         }
-
         #endregion
     }
 }

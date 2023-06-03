@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Backpack_InventoryUISetting
   m_EditorClassIdentifier: 
   startIndex: 12
-  displayCapacity: 36
+  selectable: 0
+  displayCapacity: 30
   maxX: 10
   maxY: 3
   padding:
@@ -24,9 +25,10 @@ MonoBehaviour:
   spacing: {x: 5, y: 5}
   slotSize: {x: 50, y: 50}
   anchoredPosition: {x: 0, y: 0}
-  anchorMin: {x: 0.5, y: 0.5}
-  anchorMax: {x: 0.5, y: 0.5}
+  anchor: {x: 0.5, y: 0.5}
   pivot: {x: 0.5, y: 0.5}
   panelBackground: {fileID: 21300000, guid: 6ce854b11007887f6b72e2364425b394, type: 3}
-  slotBackground: {fileID: 21300000, guid: b0822edacc9499397b437ec96c7bf21a, type: 3}
+  slotDefaultBackground: {fileID: 21300000, guid: b0822edacc9499397b437ec96c7bf21a, type: 3}
   slotSelectedBackground: {fileID: 21300000, guid: 8be1ecefc36e7e318bf7d5a93dbca319, type: 3}
+  slotBackground:
+    _serializedList: []

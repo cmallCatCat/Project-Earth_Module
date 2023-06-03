@@ -16,6 +16,16 @@ namespace QAssetBundle
         public const string BundleName = "backpack_inventoryuisetting_asset";
         public const string BACKPACK_INVENTORYUISETTING = "backpack_inventoryuisetting";
     }
+    public class Equipment_inventoryuisetting_asset
+    {
+        public const string BundleName = "equipment_inventoryuisetting_asset";
+        public const string EQUIPMENT_INVENTORYUISETTING = "equipment_inventoryuisetting";
+    }
+    public class Itempickerprefab_prefab
+    {
+        public const string BundleName = "itempickerprefab_prefab";
+        public const string ITEMPICKERPREFAB = "itempickerprefab";
+    }
     public class Minimalist_cartoon_animal_png
     {
         public const string BundleName = "minimalist cartoon animal_png";

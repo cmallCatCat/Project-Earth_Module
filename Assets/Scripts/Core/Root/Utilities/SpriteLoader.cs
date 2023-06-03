@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace Core.Root
+namespace Core.Root.Utilities
 {
     public static class SpriteLoader
     {

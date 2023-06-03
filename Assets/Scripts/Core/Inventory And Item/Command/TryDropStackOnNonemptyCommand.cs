@@ -18,19 +18,15 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
 
         protected override void OnExecute()
         {
-            PointerStack toDrop = PointerStack.Instance;
-            Inventory inventory = itemSlotUI.Inventory;
-            int index = itemSlotUI.InventoryIndex;
-            ItemSlot itemSlot = inventory.GetSlot(index);
-            ItemStack toDropStack_temp = new ItemStack(toDrop.ItemInfo, toDrop.ItemDecorator, toDrop.Number, null);
+            PointerStack toDrop            = PointerStack.Instance;
+            Inventory    inventory         = itemSlotUI.Inventory;
+            int          index             = itemSlotUI.InventoryIndex;
+            ItemSlot     itemSlot          = inventory.GetSlot(index);
+            ItemStack    clone = toDrop.Clone();
 
-            if (!itemSlot.Match(toDropStack_temp))
-            {
-                return;
-            }
+            if (!itemSlot.Match(clone)) return;
 
-            int canAddNumber = itemSlot.CanAddNumber(toDrop.ItemInfo, toDrop.ItemDecorator);
-            int finalAddNumber = Mathf.Min(canAddNumber, toDrop.Number);
+            int finalAddNumber = itemSlot.CanAddNumberFinal(toDrop.Clone());
             if (finalAddNumber > 0)
             {
                 inventory.Add(new ItemStack(toDrop.ItemInfo, toDrop.ItemDecorator, finalAddNumber, null), index);
@@ -40,11 +36,9 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
 
             ItemStack swapStack = itemSlot.ItemStack!.Clone();
             inventory.Remove(index);
-            inventory.Add(toDropStack_temp, index);
+            inventory.Add(clone, index);
             toDrop.RemoveAll();
             toDrop.Create(swapStack);
-            
-            
         }
     }
 }

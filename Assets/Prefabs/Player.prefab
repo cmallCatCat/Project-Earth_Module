@@ -31,6 +31,8 @@ Transform:
   m_Children:
   - {fileID: 5220937626750349673}
   - {fileID: 4408903185015774007}
+  - {fileID: 6700679815487307458}
+  - {fileID: 1849756220866477767}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,6 +133,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7448261443078164254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849756220866477767}
+  - component: {fileID: 3667526372227557190}
+  m_Layer: 0
+  m_Name: EquipmentHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1849756220866477767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448261443078164254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8318705788591132665}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3667526372227557190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448261443078164254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976249fd5d21418db1a2f6312b16d0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Inventory>k__BackingField:
+    capacity: 0
+    itemSlots: []
 --- !u!1 &7719790419945288738
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,11 +189,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6700679815487307458}
-  - component: {fileID: 3480878488078223436}
   - component: {fileID: 3212723475591230782}
   m_Layer: 0
   m_Name: ItemGravitater
-  m_TagString: Untagged
+  m_TagString: ItemGravitater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,30 +204,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7719790419945288738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5220937626750349673}
-  m_RootOrder: 0
+  m_Father: {fileID: 8318705788591132665}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3480878488078223436
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719790419945288738}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
 --- !u!114 &3212723475591230782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e564b6f283984811a2cd0bf750794246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
+  range: 0
+  time: 0
 --- !u!1 &7761728667163463939
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +237,6 @@ GameObject:
   - component: {fileID: 5220937626750349673}
   - component: {fileID: 5625319286754115678}
   - component: {fileID: 2361322963037962353}
-  - component: {fileID: 2071511286965120947}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -223,8 +255,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6700679815487307458}
+  m_Children: []
   m_Father: {fileID: 8318705788591132665}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -240,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c735b43d62324a8a8cff038a18d03052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryCapacity: 36
+  inventoryCapacity: 64
   <Inventory>k__BackingField:
     capacity: 0
     itemSlots: []
@@ -256,19 +287,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166968d578134d19a4f8127b5eb0e92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &2071511286965120947
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7761728667163463939}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1

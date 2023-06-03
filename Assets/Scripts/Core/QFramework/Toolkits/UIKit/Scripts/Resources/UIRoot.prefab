@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013761627304}
   - component: {fileID: 114000012765308980}
-  - component: {fileID: 114000013945856272}
+  - component: {fileID: 2035560184245639511}
   m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
---- !u!114 &114000013945856272
+--- !u!114 &2035560184245639511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,17 +166,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011782492680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: c95aa7125f920ed499be96e388b738f4, type: 3}
+  m_PointAction: {fileID: -6333336435909473666, guid: c95aa7125f920ed499be96e388b738f4, type: 3}
+  m_MoveAction: {fileID: 0}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: -1730187505596711130, guid: c95aa7125f920ed499be96e388b738f4, type: 3}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: -4975471619013393116, guid: c95aa7125f920ed499be96e388b738f4, type: 3}
+  m_ScrollWheelAction: {fileID: -4089163636143328536, guid: c95aa7125f920ed499be96e388b738f4, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1000012438581554
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +202,7 @@ GameObject:
   - component: {fileID: 114748361275145794}
   - component: {fileID: -3139906007465730006}
   - component: {fileID: 592451975466134818}
-  - component: {fileID: 429164749431741833}
+  - component: {fileID: 6628558241999538061}
   m_Layer: 5
   m_Name: UIRoot
   m_TagString: Untagged
@@ -342,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorsExecutionTimes: 1
   _cacheGraphicRaycasters: 1
---- !u!114 &429164749431741833
+--- !u!114 &6628558241999538061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

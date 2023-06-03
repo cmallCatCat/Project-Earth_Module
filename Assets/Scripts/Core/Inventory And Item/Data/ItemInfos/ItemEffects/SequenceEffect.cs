@@ -13,16 +13,14 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 #if UNITY_EDITOR
         [EffectGenerator]
 #endif
-        private Effect[] effects = { };
+        private Effect[] effects =
+        { };
 
 
         public override void Work(IEffectSender sender)
         {
-            CounterManager.Counter counter = CounterManager.Get(sender);
-            if (counter >= effects.Length)
-            {
-                counter.value = 0;
-            }
+            CounterManager.Counter counter               = CounterManager.Get(sender);
+            if (counter >= effects.Length) counter.value = 0;
             effects[counter].Work(sender);
 
             counter.value++;

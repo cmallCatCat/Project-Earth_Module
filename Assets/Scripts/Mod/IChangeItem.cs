@@ -6,9 +6,9 @@ namespace Mod
     public interface IChangeItem
     {
         [UsedImplicitly]
-        ItemIdentification ChangeItemIdentification();
+        ItemIdentification Identification();
 
         [UsedImplicitly]
-        ItemInfo ItemInfo(ItemInfo original);
+        ItemInfo Info(ItemInfo original);
     }
 }

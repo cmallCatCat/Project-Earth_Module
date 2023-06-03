@@ -1,6 +1,6 @@
 using Core;
+using Core.Root.Base;
 using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using QFramework;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -9,8 +9,10 @@ namespace UI
 {
     public class GameUI : MonoSingleton<GameUI>
     {
-        private const string BackpackUiPanel = "InventoryUIPanel";
-        private const string ShortcutUiPanel = "ShortcutUIPanel";
+        private const string BackpackUiPanel  = "InventoryUIPanel";
+        private const string ShortcutUiPanel  = "ShortcutUIPanel";
+        private const string EquipmentUiPanel = "EquipmentUIPanel";
+
         private ResLoader resLoader = ResLoader.Allocate();
 
         private void Awake()
@@ -57,15 +59,33 @@ namespace UI
             );
         }
 
-
         public void CloseShortcutUI()
         {
+            UIController.Instance.ClosePanel(ShortcutUiPanel);
         }
+
+        public void OpenEquipmentUI()
+        {
+            InventoryUISetting equipmentUISetting
+                = resLoader.LoadSync<InventoryUISetting>(QAssetBundle.Equipment_inventoryuisetting_asset
+                    .EQUIPMENT_INVENTORYUISETTING);
+            GameObject instancePlayer = IEnvironment.Instance.Player;
+            UIController.Instance.OpenPanel<InventoryUIPanel>(
+                new InventoryUIPanelData(
+                    instancePlayer.GetComponentInChildren<EquipmentHolderExample>().Inventory,
+                    equipmentUISetting
+                ),
+                EquipmentUiPanel,
+                PanelOpenType.Multiple
+            );
+        }
+
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
             resLoader.Recycle2Cache();
+            resLoader = null;
         }
     }
 }

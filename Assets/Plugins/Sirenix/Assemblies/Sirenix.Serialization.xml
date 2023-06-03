@@ -8463,7 +8463,7 @@
         </member>
         <member name="F:Sirenix.Serialization.Utilities.Editor.AssemblyImportSettingsUtilities.JITPlatforms">
             <summary>
-            All valid Unity BuildTarget platforms that support Just In Time compilation.
+            All valid Unity BuildTarget platforms that support Just In T compilation.
             </summary>
         </member>
         <member name="F:Sirenix.Serialization.Utilities.Editor.AssemblyImportSettingsUtilities.JITScriptingBackends">

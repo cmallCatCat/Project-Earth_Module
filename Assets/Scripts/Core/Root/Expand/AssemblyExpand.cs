@@ -2,7 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Core.Root
+namespace Core.Root.Expand
 {
     public static class AssemblyExpand
     {

@@ -9,32 +9,27 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Filters
     public class ItemFilter
     {
         public readonly FilterType filterType;
-        public readonly string[] strings;
+        public readonly string[]   strings;
 
         internal ItemFilter(FilterType type, string[] strings)
         {
-            filterType = type;
+            filterType   = type;
             this.strings = strings;
         }
 
         public bool IsMatch(ItemInfo? itemInfo, ItemDecorator? itemDecorator)
         {
-            if (itemInfo == null || itemDecorator == null)
-            {
-                return true;
-            }
+            if (itemInfo == null || itemDecorator == null) return true;
 
             return filterType switch
-            {
-                FilterType.Enum => strings.Contains(itemInfo.GetType().FullName),
-                FilterType.UEnum => !strings.Contains(itemInfo.GetType().FullName),
-                FilterType.Feature => strings.Any(itemInfo.HasFeature) ||
-                                      strings.Any(itemDecorator.HasFeature),
-                FilterType.UFeature => !(strings.Any(itemInfo.HasFeature) ||
-                                         strings.Any(itemDecorator.HasFeature)),
-                FilterType.All => true,
-                _ => throw new ArgumentOutOfRangeException()
-            };
+            { FilterType.Enum  => strings.Contains(itemInfo.GetType().FullName),
+              FilterType.UEnum => !strings.Contains(itemInfo.GetType().FullName),
+              FilterType.Feature => strings.Any(itemInfo.HasFeature) ||
+                                    strings.Any(itemDecorator.HasFeature),
+              FilterType.UFeature => !(strings.Any(itemInfo.HasFeature) ||
+                                       strings.Any(itemDecorator.HasFeature)),
+              FilterType.All => true,
+              _              => throw new ArgumentOutOfRangeException() };
         }
 
         public static bool operator ==(ItemFilter left, ItemFilter right)

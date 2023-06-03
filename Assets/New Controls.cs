@@ -71,6 +71,15 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PointerDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""55e6b563-f522-401c-a36a-8aefc86a6df8"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""action"": ""OpenBackpack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""910af532-f046-47f2-a719-1b994318123c"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""PointerDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -179,24 +199,6 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             ""name"": ""UI"",
             ""id"": ""88b743a1-660c-4cd3-be7a-1a40c42fc3d7"",
             ""actions"": [
-                {
-                    ""name"": ""PointerClick"",
-                    ""type"": ""Button"",
-                    ""id"": ""7688bbf0-5edc-4028-9d36-f9858e3db855"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SecondaryClick"",
-                    ""type"": ""Button"",
-                    ""id"": ""5be5cd46-6b7a-4428-a182-897418a588a2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
                 {
                     ""name"": ""ScrollWheel"",
                     ""type"": ""Value"",
@@ -207,30 +209,68 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""7577233b-82ec-4597-b1fe-655e47aa86ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondaryClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""65d41be6-bad8-4796-ae0d-ed5f02c647dd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CloseBackpack"",
+                    ""type"": ""Button"",
+                    ""id"": ""615f693b-ca8d-4d35-aadc-fc7b7ad8e3f8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""PointerPosition"",
-                    ""type"": ""Value"",
-                    ""id"": ""11427340-8515-4c84-a0da-873c08807ce2"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""6b86ee29-62d9-4ce4-8fdb-67c4101ce803"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""f0f9282b-fe1f-4804-98cf-542e414a878a"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""403fad8e-1823-4eb3-a662-789c95da5154"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Computer"",
-                    ""action"": ""PointerClick"",
+                    ""action"": ""ScrollWheel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c027b496-c21a-4f37-a3cd-ff5bfc6bf987"",
+                    ""id"": ""04b9c383-6c51-462d-a0a0-ef7e4035ccb2"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2de3a86-4b35-44d9-a742-983297e09b76"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -241,23 +281,23 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""cd99c332-e25d-4982-9427-f780ce4b1d00"",
-                    ""path"": ""<Mouse>/position"",
+                    ""id"": ""706ea627-de85-4035-979c-421bc2765da5"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Computer"",
-                    ""action"": ""PointerPosition"",
+                    ""action"": ""CloseBackpack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""403fad8e-1823-4eb3-a662-789c95da5154"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""id"": ""1a2bf9d9-e57a-4174-aa16-bc6d076b586b"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Computer"",
-                    ""action"": ""ScrollWheel"",
+                    ""action"": ""PointerPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -301,11 +341,13 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_InGame_Click = m_InGame.FindAction("Click", throwIfNotFound: true);
         m_InGame_SecondaryClick = m_InGame.FindAction("SecondaryClick", throwIfNotFound: true);
         m_InGame_OpenBackpack = m_InGame.FindAction("OpenBackpack", throwIfNotFound: true);
+        m_InGame_PointerDelta = m_InGame.FindAction("PointerDelta", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_PointerClick = m_UI.FindAction("PointerClick", throwIfNotFound: true);
-        m_UI_SecondaryClick = m_UI.FindAction("SecondaryClick", throwIfNotFound: true);
         m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
+        m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
+        m_UI_SecondaryClick = m_UI.FindAction("SecondaryClick", throwIfNotFound: true);
+        m_UI_CloseBackpack = m_UI.FindAction("CloseBackpack", throwIfNotFound: true);
         m_UI_PointerPosition = m_UI.FindAction("PointerPosition", throwIfNotFound: true);
     }
 
@@ -373,6 +415,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_Click;
     private readonly InputAction m_InGame_SecondaryClick;
     private readonly InputAction m_InGame_OpenBackpack;
+    private readonly InputAction m_InGame_PointerDelta;
     public struct InGameActions
     {
         private @NewControls m_Wrapper;
@@ -382,6 +425,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         public InputAction @Click => m_Wrapper.m_InGame_Click;
         public InputAction @SecondaryClick => m_Wrapper.m_InGame_SecondaryClick;
         public InputAction @OpenBackpack => m_Wrapper.m_InGame_OpenBackpack;
+        public InputAction @PointerDelta => m_Wrapper.m_InGame_PointerDelta;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -406,6 +450,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @OpenBackpack.started += instance.OnOpenBackpack;
             @OpenBackpack.performed += instance.OnOpenBackpack;
             @OpenBackpack.canceled += instance.OnOpenBackpack;
+            @PointerDelta.started += instance.OnPointerDelta;
+            @PointerDelta.performed += instance.OnPointerDelta;
+            @PointerDelta.canceled += instance.OnPointerDelta;
         }
 
         private void UnregisterCallbacks(IInGameActions instance)
@@ -425,6 +472,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @OpenBackpack.started -= instance.OnOpenBackpack;
             @OpenBackpack.performed -= instance.OnOpenBackpack;
             @OpenBackpack.canceled -= instance.OnOpenBackpack;
+            @PointerDelta.started -= instance.OnPointerDelta;
+            @PointerDelta.performed -= instance.OnPointerDelta;
+            @PointerDelta.canceled -= instance.OnPointerDelta;
         }
 
         public void RemoveCallbacks(IInGameActions instance)
@@ -446,17 +496,19 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     // UI
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
-    private readonly InputAction m_UI_PointerClick;
-    private readonly InputAction m_UI_SecondaryClick;
     private readonly InputAction m_UI_ScrollWheel;
+    private readonly InputAction m_UI_Click;
+    private readonly InputAction m_UI_SecondaryClick;
+    private readonly InputAction m_UI_CloseBackpack;
     private readonly InputAction m_UI_PointerPosition;
     public struct UIActions
     {
         private @NewControls m_Wrapper;
         public UIActions(@NewControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @PointerClick => m_Wrapper.m_UI_PointerClick;
-        public InputAction @SecondaryClick => m_Wrapper.m_UI_SecondaryClick;
         public InputAction @ScrollWheel => m_Wrapper.m_UI_ScrollWheel;
+        public InputAction @Click => m_Wrapper.m_UI_Click;
+        public InputAction @SecondaryClick => m_Wrapper.m_UI_SecondaryClick;
+        public InputAction @CloseBackpack => m_Wrapper.m_UI_CloseBackpack;
         public InputAction @PointerPosition => m_Wrapper.m_UI_PointerPosition;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
@@ -467,15 +519,18 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
-            @PointerClick.started += instance.OnPointerClick;
-            @PointerClick.performed += instance.OnPointerClick;
-            @PointerClick.canceled += instance.OnPointerClick;
-            @SecondaryClick.started += instance.OnSecondaryClick;
-            @SecondaryClick.performed += instance.OnSecondaryClick;
-            @SecondaryClick.canceled += instance.OnSecondaryClick;
             @ScrollWheel.started += instance.OnScrollWheel;
             @ScrollWheel.performed += instance.OnScrollWheel;
             @ScrollWheel.canceled += instance.OnScrollWheel;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+            @SecondaryClick.started += instance.OnSecondaryClick;
+            @SecondaryClick.performed += instance.OnSecondaryClick;
+            @SecondaryClick.canceled += instance.OnSecondaryClick;
+            @CloseBackpack.started += instance.OnCloseBackpack;
+            @CloseBackpack.performed += instance.OnCloseBackpack;
+            @CloseBackpack.canceled += instance.OnCloseBackpack;
             @PointerPosition.started += instance.OnPointerPosition;
             @PointerPosition.performed += instance.OnPointerPosition;
             @PointerPosition.canceled += instance.OnPointerPosition;
@@ -483,15 +538,18 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IUIActions instance)
         {
-            @PointerClick.started -= instance.OnPointerClick;
-            @PointerClick.performed -= instance.OnPointerClick;
-            @PointerClick.canceled -= instance.OnPointerClick;
-            @SecondaryClick.started -= instance.OnSecondaryClick;
-            @SecondaryClick.performed -= instance.OnSecondaryClick;
-            @SecondaryClick.canceled -= instance.OnSecondaryClick;
             @ScrollWheel.started -= instance.OnScrollWheel;
             @ScrollWheel.performed -= instance.OnScrollWheel;
             @ScrollWheel.canceled -= instance.OnScrollWheel;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+            @SecondaryClick.started -= instance.OnSecondaryClick;
+            @SecondaryClick.performed -= instance.OnSecondaryClick;
+            @SecondaryClick.canceled -= instance.OnSecondaryClick;
+            @CloseBackpack.started -= instance.OnCloseBackpack;
+            @CloseBackpack.performed -= instance.OnCloseBackpack;
+            @CloseBackpack.canceled -= instance.OnCloseBackpack;
             @PointerPosition.started -= instance.OnPointerPosition;
             @PointerPosition.performed -= instance.OnPointerPosition;
             @PointerPosition.canceled -= instance.OnPointerPosition;
@@ -537,12 +595,14 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         void OnClick(InputAction.CallbackContext context);
         void OnSecondaryClick(InputAction.CallbackContext context);
         void OnOpenBackpack(InputAction.CallbackContext context);
+        void OnPointerDelta(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
-        void OnPointerClick(InputAction.CallbackContext context);
-        void OnSecondaryClick(InputAction.CallbackContext context);
         void OnScrollWheel(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        void OnSecondaryClick(InputAction.CallbackContext context);
+        void OnCloseBackpack(InputAction.CallbackContext context);
         void OnPointerPosition(InputAction.CallbackContext context);
     }
 }

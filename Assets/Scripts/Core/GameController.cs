@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public abstract class GameController: MonoBehaviour,IController
+    public abstract class GameController : MonoBehaviour, IController
     {
         public IArchitecture GetArchitecture()
         {

@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.Root.Base;
 using UnityEngine;
 #if UNITY_EDITOR
 using InventoryAndItem.Core.Inventory_And_Item.Editor;
@@ -25,7 +26,8 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 
             public static Args Create(IEffectSender effectSender)
             {
-                return new Args { sender = effectSender };
+                return new Args
+                { sender = effectSender };
             }
         }
 

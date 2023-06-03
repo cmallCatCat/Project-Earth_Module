@@ -316,7 +316,7 @@
             public class MyComponent : MonoBehaviour
             {
             	[Button]
-            	private void Init()
+            	private void Create()
             	{
             		// ...
             	}
@@ -395,7 +395,7 @@
         </member>
         <member name="P:Sirenix.OdinInspector.ButtonAttribute.ButtonAlignment">
             <summary>
-            The alignment of the button represented by a range from 0 to 1 where 0 is the left edge of the available space and 1 is the right edge.
+            The alignment of the button represented by a Range_Normal from 0 to 1 where 0 is the left edge of the available space and 1 is the right edge.
             ButtonAlignment only has an effect when Stretch is set to false.
             </summary>
         </member>
@@ -580,7 +580,7 @@
         </member>
         <member name="P:Sirenix.OdinInspector.ButtonGroupAttribute.ButtonAlignment">
             <summary>
-            The alignment of the button represented by a range from 0 to 1 where 0 is the left edge of the available space and 1 is the right edge.
+            The alignment of the button represented by a Range_Normal from 0 to 1 where 0 is the left edge of the available space and 1 is the right edge.
             </summary>
         </member>
         <member name="P:Sirenix.OdinInspector.ButtonGroupAttribute.Stretch">
@@ -2727,7 +2727,7 @@
         </member>
         <member name="T:Sirenix.OdinInspector.MinMaxSliderAttribute">
             <summary>
-            <para>Draw a special slider the user can use to specify a range between a min and a max value.</para>
+            <para>Draw a special slider the user can use to specify a Range_Normal between a min and a max value.</para>
             <para>Uses a Vector2 where x is min and y is max.</para>
             </summary>
             <example>
@@ -3761,7 +3761,7 @@
         </member>
         <member name="T:Sirenix.OdinInspector.PropertyRangeAttribute">
             <summary>
-            <para>PropertyRange attribute creates a slider control to set the value of a property to between the specified range.</para>
+            <para>PropertyRange attribute creates a slider control to set the value of a property to between the specified Range_Normal.</para>
             <para>This is equivalent to Unity's Range attribute, but this attribute can be applied to both fields and property.</para>
             </summary>
             <example>The following example demonstrates how PropertyRange is used.</example>
@@ -3777,7 +3777,7 @@
             	[PropertyRange(-100, -50)]
             	public decimal MyDouble;
             	
-                // This attribute also supports dynamically referencing members by name to assign the min and max values for the range field.
+                // This attribute also supports dynamically referencing members by name to assign the min and max values for the Range_Normal field.
                 [PropertyRange("DynamicMin", "DynamicMax"]
                 public float MyDynamicValue;
                 
@@ -3821,28 +3821,28 @@
         </member>
         <member name="M:Sirenix.OdinInspector.PropertyRangeAttribute.#ctor(System.Double,System.Double)">
             <summary>
-            Creates a slider control to set the value of the property to between the specified range..
+            Creates a slider control to set the value of the property to between the specified Range_Normal..
             </summary>
             <param name="min">The minimum value.</param>
             <param name="max">The maximum value.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.PropertyRangeAttribute.#ctor(System.String,System.Double)">
             <summary>
-            Creates a slider control to set the value of the property to between the specified range..
+            Creates a slider control to set the value of the property to between the specified Range_Normal..
             </summary>
             <param name="minGetter">A resolved string that should evaluate to a float value, and will be used as the min bounds.</param>
             <param name="max">The maximum value.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.PropertyRangeAttribute.#ctor(System.Double,System.String)">
             <summary>
-            Creates a slider control to set the value of the property to between the specified range..
+            Creates a slider control to set the value of the property to between the specified Range_Normal..
             </summary>
             <param name="min">The minimum value.</param>
             <param name="maxGetter">A resolved string that should evaluate to a float value, and will be used as the max bounds.</param>
         </member>
         <member name="M:Sirenix.OdinInspector.PropertyRangeAttribute.#ctor(System.String,System.String)">
             <summary>
-            Creates a slider control to set the value of the property to between the specified range..
+            Creates a slider control to set the value of the property to between the specified Range_Normal..
             </summary>
             <param name="minGetter">A resolved string that should evaluate to a float value, and will be used as the min bounds.</param>
             <param name="maxGetter">A resolved string that should evaluate to a float value, and will be used as the max bounds.</param>
@@ -5781,7 +5781,7 @@
         </member>
         <member name="T:Sirenix.OdinInspector.WrapAttribute">
             <summary>
-            <para>Wrap is used on most primitive property, and allows for wrapping the value when it goes out of the defined range.</para>
+            <para>Wrap is used on most primitive property, and allows for wrapping the value when it goes out of the defined Range_Normal.</para>
             <para>Use this when you want a value that goes around in circle, like for example an angle.</para>
             </summary>
             <remarks>
@@ -5811,7 +5811,7 @@
         </member>
         <member name="M:Sirenix.OdinInspector.WrapAttribute.#ctor(System.Double,System.Double)">
             <summary>
-            Wraps the value of the property round when the values goes out of range.
+            Wraps the value of the property round when the values goes out of Range_Normal.
             </summary>
             <param name="min">The lowest value for the property.</param>
             <param name="max">The highest value for the property.</param>

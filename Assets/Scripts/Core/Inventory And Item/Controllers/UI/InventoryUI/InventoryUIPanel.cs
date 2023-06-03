@@ -1,4 +1,6 @@
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
+using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
+using Core.Root.Utilities;
 using InventoryAndItem.Core.Inventory_And_Item.Data;
 using QFramework;
 using UnityEngine;
@@ -8,20 +10,20 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
 {
     public class InventoryUIPanelData : UIPanelData
     {
-        public readonly Inventory inventory;
+        public readonly Inventory          inventory;
         public readonly InventoryUISetting inventoryUISetting;
 
 
         public InventoryUIPanelData(Inventory inventory, InventoryUISetting inventoryUISetting)
         {
-            this.inventory = inventory;
+            this.inventory          = inventory;
             this.inventoryUISetting = inventoryUISetting;
         }
     }
 
     public abstract partial class InventoryUIPanel : UIPanel, IController
     {
-        public Inventory inventory;
+        public  Inventory    inventory;
         private ItemSlotUI[] itemSlots;
 
         [SerializeField]
@@ -52,12 +54,12 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
             if (uiData == null)
             {
                 inventory = new Inventory(20, transform);
-                uiData = new InventoryUIPanelData(inventory, InventoryUISetting.Create());
+                uiData    = new InventoryUIPanelData(inventory, InventoryUISetting.Create());
                 Debug.LogError("uiData is null");
             }
 
-            mUIPanelData = (InventoryUIPanelData)uiData;
-            inventory = mUIPanelData.inventory;
+            mUIPanelData       = (InventoryUIPanelData)uiData;
+            inventory          = mUIPanelData.inventory;
             inventoryUISetting = mUIPanelData.inventoryUISetting;
 
             inventory.onItemChanged += Refresh;
@@ -68,16 +70,26 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
         private void SetLayout()
         {
             //读取
-            inventoryUISetting.Deconstruct(out int startIndex, out bool selectable, out int displayCapacity, out int maxX,
+            inventoryUISetting.Deconstruct(
+                out int startIndex,
+                out bool selectable,
+                out int displayCapacity,
+                out int maxX,
                 out int maxY,
                 out RectOffset padding,
-                out Vector2 spacing, out Vector2 slotSize, out Vector2 anchoredPosition, out Vector2 anchorMin,
-                out Vector2 anchorMax, out Vector2 pivot, out Sprite panelBackground, out Sprite slotBackground,
-                out Sprite slotSelectedBackground);
-            selectedIndex = selectable ? 0 : -1;
-            GridLayoutGroup gridLayoutGroup = slotsParent.GetComponent<GridLayoutGroup>();
-            RectTransform slotParentRectTransform = slotsParent.GetComponent<RectTransform>();
-            Image image = slotsParent.GetComponent<Image>();
+                out Vector2 spacing,
+                out Vector2 slotSize,
+                out Vector2 anchoredPosition,
+                out Vector2 anchor,
+                out Vector2 pivot,
+                out Sprite panelBackground,
+                out Sprite slotDefaultBackground,
+                out Sprite slotSelectedBackground,
+                out SerializedDictionary<int, Sprite> slotBackground);
+
+            GridLayoutGroup gridLayoutGroup         = slotsParent.GetComponent<GridLayoutGroup>();
+            RectTransform   slotParentRectTransform = slotsParent.GetComponent<RectTransform>();
+            Image           image                   = slotsParent.GetComponent<Image>();
 
             //计算
             displayCapacity = Mathf.Min(displayCapacity, maxX * maxY, inventory.AllSlots().Length - startIndex);
@@ -95,19 +107,22 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
             }
 
             //赋值
-            gridLayoutGroup.padding.top = padding.top;
-            gridLayoutGroup.padding.bottom = padding.bottom;
-            gridLayoutGroup.padding.left = padding.left;
-            gridLayoutGroup.padding.right = padding.right;
-            gridLayoutGroup.spacing = spacing;
-            gridLayoutGroup.cellSize = slotSize;
-            slotParentRectTransform.sizeDelta = sizeDelta;
+            gridLayoutGroup.padding.top              = padding.top;
+            gridLayoutGroup.padding.bottom           = padding.bottom;
+            gridLayoutGroup.padding.left             = padding.left;
+            gridLayoutGroup.padding.right            = padding.right;
+            gridLayoutGroup.spacing                  = spacing;
+            gridLayoutGroup.cellSize                 = slotSize;
+            slotParentRectTransform.sizeDelta        = sizeDelta;
             slotParentRectTransform.anchoredPosition = anchoredPosition;
-            slotParentRectTransform.anchorMin = anchorMin;
-            slotParentRectTransform.anchorMax = anchorMax;
-            slotParentRectTransform.pivot = pivot;
+            slotParentRectTransform.anchorMin        = anchor;
+            slotParentRectTransform.anchorMax        = anchor;
+            slotParentRectTransform.pivot            = pivot;
+
             image.sprite = panelBackground;
-            image.type = Image.Type.Sliced;
+            image.type   = Image.Type.Sliced;
+
+            selectedIndex = selectable ? 0 : -1;
 
             //刷新
             LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)slotsParent);
@@ -124,23 +139,14 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
                 minLength = inventory.AllSlots().Length;
             }
 
-            for (int index = 0; index < minLength; index++)
-            {
-                itemSlots[index].Refresh();
-            }
+            for (int index = 0; index < minLength; index++) itemSlots[index].Refresh();
         }
 
-        protected override void OnInit(IUIData uiData = null)
-        {
-        }
+        protected override void OnInit(IUIData uiData = null) { }
 
-        protected override void OnShow()
-        {
-        }
+        protected override void OnShow() { }
 
-        protected override void OnHide()
-        {
-        }
+        protected override void OnHide() { }
 
         public bool IsSelected(int displayIndex)
         {

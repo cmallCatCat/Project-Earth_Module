@@ -19,18 +19,14 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
         protected override void OnExecute()
         {
             PointerStack toDrop = PointerStack.Instance;
+            ItemStack    clone  = toDrop.Clone();
 
-            int canAddNumber = itemSlotUI.ItemSlot.CanAddNumber(toDrop.ItemInfo, toDrop.ItemDecorator);
-            int finalAddNumber = Mathf.Min(canAddNumber, toDrop.Number);
-            if (canAddNumber == 0)
-            {
-                return;
-            }
+            int finalAddNumber = itemSlotUI.ItemSlot.CanAddNumberFinal(clone);
+            if (finalAddNumber == 0) return;
 
             itemSlotUI.Inventory.Add(new ItemStack(toDrop.ItemInfo, toDrop.ItemDecorator, finalAddNumber, null),
                 itemSlotUI.InventoryIndex);
             toDrop.Remove(finalAddNumber);
-            
         }
     }
 }

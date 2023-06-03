@@ -16,7 +16,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
         /// <returns></returns>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static Quaternion GetRotation(this Reference reference, Quaternion quaternion, Transform transform,
-            bool horizontalAxis)
+            bool                                            horizontalAxis)
         {
             switch (reference)
             {
@@ -25,10 +25,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
                 case Reference.Local:
                     Quaternion delta = quaternion;
 
-                    if (horizontalAxis && transform.localScale.x < 0)
-                    {
-                        delta *= Quaternion.Euler(0, 180, 0);
-                    }
+                    if (horizontalAxis && transform.localScale.x < 0) delta *= Quaternion.Euler(0, 180, 0);
 
                     delta *= transform.rotation;
 
