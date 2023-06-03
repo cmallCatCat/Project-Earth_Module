@@ -1,8 +1,8 @@
-using InventoryAndItem.Core.Inventory_And_Item.Controllers;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Controllers;
+using Core.Inventory_And_Item.Data;
 using QFramework;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Command
+namespace Core.Inventory_And_Item.Command
 {
     public class PickupCommand: AbstractCommand
     {
@@ -21,7 +21,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
             ItemStack toAdd             = itemPicker.itemStack;
             Inventory inventory         = itemGravitater.InventoryHolder.Inventory;
             int       numberFinal = inventory.CanAddNumberFinal(toAdd);
-            inventory.Add(new ItemStack(toAdd.ItemInfo, toAdd.ItemDecorator, numberFinal, null));
+            inventory.Add(toAdd.Clone(numberFinal));
             toAdd.Remove(numberFinal);
         }
     }

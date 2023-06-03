@@ -1,9 +1,9 @@
 ﻿using System;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
+using Core.Inventory_And_Item.Data.ItemInfos;
+using Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data
+namespace Core.Inventory_And_Item.Data
 {
     public class ItemStack : IEffectSender
     {
@@ -67,8 +67,10 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Data
             return transform;
         }
 
-        public ItemStack Clone()
+        public ItemStack Clone(int number = -1)
         {
+            if (number == -1) 
+                number = this.number;
             return new ItemStack(itemInfo, itemDecorator, number, transform);
         }
     }

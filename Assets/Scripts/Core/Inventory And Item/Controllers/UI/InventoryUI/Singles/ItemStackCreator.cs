@@ -1,9 +1,9 @@
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data;
 using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles
+namespace Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles
 {
     [UsedImplicitly]
     public class ItemStackCreator : Singleton<ItemStackCreator>

@@ -10,6 +10,5 @@
 [Message:   BepInEx] Preloader finished
 [Message:   BepInEx] Chainloader ready
 [Message:   BepInEx] Chainloader started
-[Info   :   BepInEx] 1 plugins to load
-[Info   :   BepInEx] Loading [Test Plugin 1.0]
+[Info   :   BepInEx] 0 plugins to load
 [Message:   BepInEx] Chainloader startup complete

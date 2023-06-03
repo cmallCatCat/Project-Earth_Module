@@ -1,13 +1,13 @@
 ﻿#nullable enable
 using System;
 using System.Linq;
+using Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using Core.Root.Utilities;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos
+namespace Core.Inventory_And_Item.Data.ItemInfos
 {
-    [CreateAssetMenu(menuName = "Create ItemInfo", fileName = "ItemInfo", order = 0)]
+    [CreateAssetMenu(menuName = "CreateOrAdd ItemInfo", fileName = "ItemInfo", order = 0)]
     public class ItemInfo : ScriptableObject
     {
         private string packageName = "Default";

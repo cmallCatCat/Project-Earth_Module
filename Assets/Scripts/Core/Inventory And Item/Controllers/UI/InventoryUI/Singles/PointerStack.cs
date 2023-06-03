@@ -1,18 +1,18 @@
+using Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data.ItemInfos;
 using Core.Root.Base;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using JetBrains.Annotations;
 using QFramework;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles
+namespace Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles
 {
     [UsedImplicitly]
     public class PointerStack : Singleton<PointerStack>
     {
-        private ItemStack itemStack;
+        private ItemStack hold;
 
-        public bool itemOnHold => itemStack != null;
+        public bool ItemOnHold => hold != null;
 
         private ResLoader resLoader = ResLoader.Allocate();
 
@@ -23,23 +23,50 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
         private ItemStackUI itemStackUI;
 
 
-        public ItemInfo ItemInfo => itemStack.ItemInfo;
+        public ItemInfo ItemInfo => hold.ItemInfo;
 
-        public ItemDecorator ItemDecorator => itemStack.ItemDecorator;
+        public ItemDecorator ItemDecorator => hold.ItemDecorator;
 
-        public int Number => itemStack.Number;
+        public int Number => hold.Number;
 
         protected PointerStack() { }
 
-        public ItemStackUI Create(ItemStack itemStack)
+        public void CreateOrAdd(ItemStack itemStack)
         {
-            this.itemStack                 = new ItemStack(itemStack.ItemInfo, itemStack.ItemDecorator, itemStack.Number, null);
-            instantiate                    = Object.Instantiate(stackPrefab, IEnvironment.Instance.UICanvas.transform);
+            if (itemStack.Number==0)
+            {
+                return;
+            }
+            if (hold == null)
+            {
+                Create(itemStack);
+            }
+            else
+            {
+                Add(itemStack);
+            }
+        }
+
+        private void Create(ItemStack itemStack)
+        {
+            hold                           = new ItemStack(itemStack.ItemInfo, itemStack.ItemDecorator, itemStack.Number, IEnvironment.Player.transform);
+            instantiate                    = Object.Instantiate(stackPrefab, IEnvironment.Canvas.transform);
             instantiate.transform.position = IEnvironment.Instance.FarAway;
             itemStackUI                    = instantiate.GetComponent<ItemStackUI>();
-            itemStackUI.Init(this.itemStack, Size);
+            itemStackUI.Init(hold, Size);
             instantiate.AddComponent<FollowPointer>();
-            return itemStackUI;
+        }
+
+        public bool CanAdd(ItemStack itemStack)
+        {
+            if (hold == null) return true;
+            return hold.CanAddNumber(itemStack.ItemInfo, itemStack.ItemDecorator) > 0;
+        }
+
+        public void Add(ItemStack itemStack)
+        {
+            hold.Add(itemStack);
+            Refresh();
         }
 
         public override void OnSingletonInit()
@@ -57,32 +84,34 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Si
 
         public void Remove(int toRemoveNumber)
         {
-            itemStack.Remove(toRemoveNumber);
+            hold.Remove(toRemoveNumber);
             Refresh();
         }
 
         public void RemoveAll()
         {
-            itemStack.Remove(Number);
+            hold.Remove(Number);
             Refresh();
         }
 
-        public ItemStack Clone()
+        public ItemStack Clone(int number = -1)
         {
-            return itemStack.Clone();
+            return hold.Clone(number);
         }
 
         private void Refresh()
         {
-            if (itemStack == null) return;
+            if (hold == null) return;
 
-            itemStackUI.Refresh(itemStack, Size);
+            itemStackUI.Refresh(hold, Size);
 
             if (Number == 0)
             {
-                itemStack = null;
+                hold = null;
                 Object.Destroy(instantiate);
             }
         }
+
+
     }
 }

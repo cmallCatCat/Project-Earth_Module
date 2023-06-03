@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Core.Inventory_And_Item.Command;
+using Core.Inventory_And_Item.Data;
 using Core.Root.Expand;
-using InventoryAndItem.Core.Inventory_And_Item.Command;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
 using QFramework;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
+namespace Core.Inventory_And_Item.Controllers
 {
     public abstract class ItemPicker : MonoBehaviour, IController
     {

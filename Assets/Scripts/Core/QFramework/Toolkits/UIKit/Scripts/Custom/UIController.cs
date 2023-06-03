@@ -8,8 +8,17 @@ namespace QFramework
     public class UIController : Singleton<UIController>
     {
         private Dictionary<string, UIPanel> panelDic = new Dictionary<string, UIPanel>();
-        public bool isPaused = false;
-
+        
+        private bool isPaused;
+        public bool IsPaused
+        {
+            get => isPaused;
+            set
+            {
+                isPaused = value;
+                Debug.Log($"isPaused: {isPaused}");
+            }
+        }
 
         public void OpenPanel<T>(IUIData uiData, string key, PanelOpenType openType) where T : UIPanel
         {

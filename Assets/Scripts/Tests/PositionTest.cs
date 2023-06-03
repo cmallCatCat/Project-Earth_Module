@@ -1,5 +1,5 @@
 using Core.Inventory_And_Item.Data.ItemIdentifications.ItemEffects;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
+using Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

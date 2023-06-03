@@ -1,6 +1,7 @@
 using System;
 using JetBrains.Annotations;
 using QFramework;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,7 @@ namespace Core
         public static event Action          secondaryClick;
         public static event Action          secondaryClickEnd;
         public static event Action          openBackpack;
+        public static event Action          closeBackpack;
 
         public static Vector2 Move            => controls.InGame.Move.ReadValue<Vector2>();
         public static Vector2 PointerPosition => controls.InGame.PointerPosition.ReadValue<Vector2>();
@@ -27,12 +29,14 @@ namespace Core
         public static bool    Click           => controls.InGame.Click.ReadValue<bool>();
         public static bool    SecondaryClick  => controls.InGame.SecondaryClick.ReadValue<bool>();
         public static bool    OpenBackpack    => controls.InGame.OpenBackpack.ReadValue<bool>();
+        public static bool    CloseBackpack   => controls.UI.CloseBackpack.ReadValue<bool>();
 
-        static InputReader()
+        public static void Init()
         {
             controls = new NewControls();
 
             controls.Enable();
+            InputResume();
 
             controls.InGame.Move.started              += ctx => moveStart?.Invoke(ctx.ReadValue<Vector2>());
             controls.InGame.Move.performed            += ctx => movePerformed?.Invoke(ctx.ReadValue<Vector2>());
@@ -44,17 +48,19 @@ namespace Core
             controls.InGame.SecondaryClick.started    += ctx => secondaryClick?.Invoke();
             controls.InGame.SecondaryClick.canceled   += ctx => secondaryClickEnd?.Invoke();
             controls.InGame.OpenBackpack.started      += ctx => openBackpack?.Invoke();
+            controls.UI.CloseBackpack.started         += ctx => closeBackpack?.Invoke();
+        }
 
-            controls.InGame.Move.started              += ctx => Debug.Log("Move Started");
-            controls.InGame.Move.performed            += ctx => Debug.Log("Move Performed");
-            controls.InGame.Move.canceled             += ctx => Debug.Log("Move Canceled");
-            controls.InGame.PointerPosition.performed += ctx => Debug.Log("Pointer Position Performed");
-            controls.InGame.PointerDelta.performed    += ctx => Debug.Log("Pointer Delta Performed");
-            controls.InGame.Click.started             += ctx => Debug.Log("Click Started");
-            controls.InGame.Click.canceled            += ctx => Debug.Log("Click Canceled");
-            controls.InGame.SecondaryClick.started    += ctx => Debug.Log("SecondaryClick Started");
-            controls.InGame.SecondaryClick.canceled   += ctx => Debug.Log("SecondaryClick Canceled");
-            controls.InGame.OpenBackpack.started      += ctx => Debug.Log("OpenBackpack Started");
+        public static void InputPause()
+        {
+            controls.InGame.Disable();
+            controls.UI.Enable();
+        }
+        
+        public static void InputResume()
+        {
+            controls.InGame.Enable();
+            controls.UI.Disable();
         }
     }
 }

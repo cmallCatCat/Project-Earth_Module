@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI;
+using Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data.ItemInfos;
 using QFramework;
 using Sirenix.OdinInspector;
 using UnityEngine;

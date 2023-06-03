@@ -1,11 +1,10 @@
 #nullable enable
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
+using Core.Inventory_And_Item.Data;
 using QFramework;
-using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Command
+namespace Core.Inventory_And_Item.Command
 {
     public class TryDropStackOnEmptySlotCommand : AbstractCommand
     {
@@ -24,8 +23,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
             int finalAddNumber = itemSlotUI.ItemSlot.CanAddNumberFinal(clone);
             if (finalAddNumber == 0) return;
 
-            itemSlotUI.Inventory.Add(new ItemStack(toDrop.ItemInfo, toDrop.ItemDecorator, finalAddNumber, null),
-                itemSlotUI.InventoryIndex);
+            itemSlotUI.Inventory.Add(toDrop.Clone(finalAddNumber), itemSlotUI.InventoryIndex);
             toDrop.Remove(finalAddNumber);
         }
     }

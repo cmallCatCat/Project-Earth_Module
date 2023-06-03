@@ -1,5 +1,5 @@
 using Core.Architectures;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data;
 using QFramework;
 
 namespace Core

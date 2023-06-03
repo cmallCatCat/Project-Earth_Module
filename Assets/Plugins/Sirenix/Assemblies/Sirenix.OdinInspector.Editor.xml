@@ -729,7 +729,7 @@
             The contained value.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContext`1.Create">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContext`1.CreateOrAdd">
             <summary>
             Creates a new PropertyContext.
             </summary>
@@ -1591,7 +1591,7 @@
             Whether the Expanded state was true or not during the last layout event.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyState.Create``1(System.String,System.Boolean,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyState.CreateOrAdd``1(System.String,System.Boolean,``0)">
             <summary>
             Creates a custom state with a given name.
             </summary>
@@ -1946,14 +1946,14 @@
             <param name="type">The type to inspect.</param>
             <returns>A PropertyTree instance for inspecting the type.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(System.Object)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(System.Object)">
             <summary>
             Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree" /> for a given target value.
             </summary>
             <param name="target">The target to create a tree for.</param>
             <exception cref="T:System.ArgumentNullException">target is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(System.Object,Sirenix.OdinInspector.Editor.SerializationBackend)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(System.Object,Sirenix.OdinInspector.Editor.SerializationBackend)">
             <summary>
             Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree" /> for a given target value.
             </summary>
@@ -1961,7 +1961,7 @@
             <param name="backend">The serialization backend to use for the tree root.</param>
             <exception cref="T:System.ArgumentNullException">target is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(System.Object[])">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(System.Object[])">
             <summary>
             <para>Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree" /> for a set of given target values.</para>
             <para>Note that the targets all need to be of the same type.</para>
@@ -1969,14 +1969,14 @@
             <param name="targets">The targets to create a tree for.</param>
             <exception cref="T:System.ArgumentNullException">targets is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(UnityEditor.SerializedObject)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(UnityEditor.SerializedObject)">
             <summary>
             Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree" /> for all target values of a <see cref="T:UnityEditor.SerializedObject" />.
             </summary>
             <param name="serializedObject">The serialized object to create a tree for.</param>
             <exception cref="T:System.ArgumentNullException">serializedObject is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(UnityEditor.SerializedObject,Sirenix.OdinInspector.Editor.SerializationBackend)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(UnityEditor.SerializedObject,Sirenix.OdinInspector.Editor.SerializationBackend)">
             <summary>
             Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree" /> for all target values of a <see cref="T:UnityEditor.SerializedObject" />.
             </summary>
@@ -1984,14 +1984,14 @@
             <exception cref="T:System.ArgumentNullException">serializedObject is null</exception>
             <param name="backend">The serialization backend to use for the tree root.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(System.Collections.IList)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(System.Collections.IList)">
             <summary>
             <para>Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree"/> for a set of given target values.</para>
             <para>Note that the targets all need to be of the same type.</para>
             </summary>
             <param name="targets">The targets to create a tree for.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(System.Collections.IList,Sirenix.OdinInspector.Editor.SerializationBackend)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(System.Collections.IList,Sirenix.OdinInspector.Editor.SerializationBackend)">
             <summary>
             <para>Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree"/> for a set of given target values.</para>
             <para>Note that the targets all need to be of the same type.</para>
@@ -1999,7 +1999,7 @@
             <param name="targets">The targets to create a tree for.</param>
             <param name="backend">The serialization backend to use for the tree root.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(System.Collections.IList,UnityEditor.SerializedObject)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(System.Collections.IList,UnityEditor.SerializedObject)">
             <summary>
             <para>Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree"/> for a set of given target values, represented by a given <see cref="T:UnityEditor.SerializedObject"/>.</para>
             <para>Note that the targets all need to be of the same type.</para>
@@ -2007,7 +2007,7 @@
             <param name="targets">The targets to create a tree for.</param>
             <param name="serializedObject">The serialized object to create a tree for. Note that the target values of the given <see cref="T:UnityEditor.SerializedObject"/> must be the same values given in the targets parameter.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.Create(System.Collections.IList,UnityEditor.SerializedObject,Sirenix.OdinInspector.Editor.SerializationBackend)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.CreateOrAdd(System.Collections.IList,UnityEditor.SerializedObject,Sirenix.OdinInspector.Editor.SerializationBackend)">
             <summary>
             <para>Creates a new <see cref="T:Sirenix.OdinInspector.Editor.PropertyTree"/> for a set of given target values, represented by a given <see cref="T:UnityEditor.SerializedObject"/>.</para>
             <para>Note that the targets all need to be of the same type.</para>
@@ -2351,7 +2351,7 @@
             Attribute processor that can add, change and remove attributes from a property.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.OdinAttributeProcessor.Create(System.Type)">
+        <member name="M:Sirenix.OdinInspector.Editor.OdinAttributeProcessor.CreateOrAdd(System.Type)">
             <summary>
             Instanciates an OdinAttributeProcessor instance of the specified type.
             </summary>
@@ -3434,7 +3434,7 @@
             Creates an alias value entry of a given type, for a given value entry. This is used to implement polymorphism in Odin.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyValueEntry.Create(Sirenix.OdinInspector.Editor.InspectorProperty,System.Type,System.Boolean)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyValueEntry.CreateOrAdd(Sirenix.OdinInspector.Editor.InspectorProperty,System.Type,System.Boolean)">
             <summary>
             Creates a value entry for a given property, of a given value type. Note that the created value entry is returned un-updated, and needs to have <see cref="M:Sirenix.OdinInspector.Editor.PropertyValueEntry.Update"/> called on it before it can be used.
             </summary>
@@ -8008,7 +8008,7 @@
                  {
                      var isToggled = entry.Context(this, "toggled", false);
                      isToggled.Value = SirenixEditorGUI.Label(isToggled.Value, label);
-                     if (SirenixEditorGUI.BeginFadeGroup(UniqueDrawerKey.Create(entry, this), isToggled.Value))
+                     if (SirenixEditorGUI.BeginFadeGroup(UniqueDrawerKey.CreateOrAdd(entry, this), isToggled.Value))
                      {
                          EditorGUI.indentLevel++;
                          this.CallNextDrawer(entry.Property, null);
@@ -8020,7 +8020,7 @@
              </code>
              </example>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.UniqueDrawerKey.Create(Sirenix.OdinInspector.Editor.IPropertyValueEntry,Sirenix.OdinInspector.Editor.OdinDrawer)">
+        <member name="M:Sirenix.OdinInspector.Editor.UniqueDrawerKey.CreateOrAdd(Sirenix.OdinInspector.Editor.IPropertyValueEntry,Sirenix.OdinInspector.Editor.OdinDrawer)">
             <summary>
             Gets a unique key for any given property within a drawer.
             </summary>
@@ -8028,7 +8028,7 @@
             <param name="drawer">The drawer.</param>
             <returns></returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.UniqueDrawerKey.Create(Sirenix.OdinInspector.Editor.InspectorProperty,Sirenix.OdinInspector.Editor.OdinDrawer)">
+        <member name="M:Sirenix.OdinInspector.Editor.UniqueDrawerKey.CreateOrAdd(Sirenix.OdinInspector.Editor.InspectorProperty,Sirenix.OdinInspector.Editor.OdinDrawer)">
             <summary>
             Gets a unique key for any given property within a drawer.
             </summary>
@@ -10069,7 +10069,7 @@
             The value of the context.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.GlobalPersistentContext`1.Create">
+        <member name="M:Sirenix.OdinInspector.Editor.GlobalPersistentContext`1.CreateOrAdd">
             <summary>
             Creates a new persistent context object.
             </summary>
@@ -10092,7 +10092,7 @@
             Changing this value, also changes the global context value, but the global value does not change the local value.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.LocalPersistentContext`1.Create(Sirenix.OdinInspector.Editor.GlobalPersistentContext{`0})">
+        <member name="M:Sirenix.OdinInspector.Editor.LocalPersistentContext`1.CreateOrAdd(Sirenix.OdinInspector.Editor.GlobalPersistentContext{`0})">
             <summary>
             Creates a local context object for the provided global context.
             </summary>

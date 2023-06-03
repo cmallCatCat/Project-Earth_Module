@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
+using Core.Inventory_And_Item.Data.ItemInfos;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data
+namespace Core.Inventory_And_Item.Data
 {
     [CreateAssetMenu]
     public class ItemDatabase : ScriptableObject

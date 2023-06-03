@@ -2367,7 +2367,7 @@
         <member name="T:Sirenix.Utilities.Editor.GUITable">
              <summary>
              <para>A Utility class for creating tables in Unity's editor GUI.</para>
-             <para>A table can either be created from scratch using new GUITable(xCount,yCount), or created using one of the static GUITable.Create overloads.</para>
+             <para>A table can either be created from scratch using new GUITable(xCount,yCount), or created using one of the static GUITable.CreateOrAdd overloads.</para>
              <para>See the online documentation, for examples and more information.</para>
              </summary>
              <example>
@@ -2375,11 +2375,11 @@
              <code>
              private GUITable table;
             
-             private void Create()
+             private void CreateOrAdd()
              {
                  bool[,] boolArr = new bool[20,20];
             
-                 this.table = GUITable.Create(
+                 this.table = GUITable.CreateOrAdd(
                      twoDimArray: boolArr,
                      drawElement: (rect, x, y) => boolArr[x, y] = EditorGUI.Toggle(rect, boolArr[x, y]),
                      horizontalLabel: "Optional Horizontal Label",               // horizontalLabel is optional and can be null.
@@ -2400,11 +2400,11 @@
              <code>
              private GUITable table;
             
-             private void Create()
+             private void CreateOrAdd()
              {
                  Listt&lt;SomeClasst&gt; someList = new List&lt;SomeClass&gt;() { new SomeClass(), new SomeClass(), new SomeClass() };
             
-                 this.table = GUITable.Create(someList, "Optional Title",
+                 this.table = GUITable.CreateOrAdd(someList, "Optional Title",
                      new GUITableColumn()
                      {
                          ColumnTitle = "A",
@@ -2515,22 +2515,22 @@
             the width or height of individual table cells, remember to call this method when you're done.</para>
             </summary>
         </member>
-        <member name="M:Sirenix.Utilities.Editor.GUITable.Create(System.Int32,System.Int32,System.Action{UnityEngine.Rect,System.Int32,System.Int32},System.String,System.Action{UnityEngine.Rect,System.Int32},System.String,System.Action{UnityEngine.Rect,System.Int32},System.Boolean)">
+        <member name="M:Sirenix.Utilities.Editor.GUITable.CreateOrAdd(System.Int32,System.Int32,System.Action{UnityEngine.Rect,System.Int32,System.Int32},System.String,System.Action{UnityEngine.Rect,System.Int32},System.String,System.Action{UnityEngine.Rect,System.Int32},System.Boolean)">
             <summary>
             Creates a table.
             </summary>
         </member>
-        <member name="M:Sirenix.Utilities.Editor.GUITable.Create(System.Int32,System.String,Sirenix.Utilities.Editor.GUITableColumn[])">
+        <member name="M:Sirenix.Utilities.Editor.GUITable.CreateOrAdd(System.Int32,System.String,Sirenix.Utilities.Editor.GUITableColumn[])">
             <summary>
             Creates a table.
             </summary>
         </member>
-        <member name="M:Sirenix.Utilities.Editor.GUITable.Create``1(``0[0:,0:],System.Action{UnityEngine.Rect,System.Int32,System.Int32},System.String,System.Action{UnityEngine.Rect,System.Int32},System.String,System.Action{UnityEngine.Rect,System.Int32})">
+        <member name="M:Sirenix.Utilities.Editor.GUITable.CreateOrAdd``1(``0[0:,0:],System.Action{UnityEngine.Rect,System.Int32,System.Int32},System.String,System.Action{UnityEngine.Rect,System.Int32},System.String,System.Action{UnityEngine.Rect,System.Int32})">
             <summary>
             Creates a table.
             </summary>
         </member>
-        <member name="M:Sirenix.Utilities.Editor.GUITable.Create``1(System.Collections.Generic.IList{``0},System.String,Sirenix.Utilities.Editor.GUITableColumn[])">
+        <member name="M:Sirenix.Utilities.Editor.GUITable.CreateOrAdd``1(System.Collections.Generic.IList{``0},System.String,Sirenix.Utilities.Editor.GUITableColumn[])">
             <summary>
             Creates a table.
             </summary>
@@ -2590,7 +2590,7 @@
         </member>
         <member name="T:Sirenix.Utilities.Editor.GUITableColumn">
             <summary>
-            GUITableColumns used creating a table list using GUITable.Create().
+            GUITableColumns used creating a table list using GUITable.CreateOrAdd().
             </summary>
             <seealso cref="T:Sirenix.Utilities.Editor.GUITable"/>
             <seealso cref="T:Sirenix.Utilities.Editor.GUITableCell"/>

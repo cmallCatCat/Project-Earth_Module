@@ -1,10 +1,10 @@
 using System.Linq;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
-using InventoryAndItem.Core.Inventory_And_Item.Filters;
+using Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
+using Core.Inventory_And_Item.Filters;
 using QFramework;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data
+namespace Core.Inventory_And_Item.Data
 {
     public abstract class EquipmentHolder : MonoBehaviour, IController
     {

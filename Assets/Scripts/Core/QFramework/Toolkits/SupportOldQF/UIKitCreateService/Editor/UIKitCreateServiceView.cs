@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using QFramework;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -8,7 +9,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-namespace QFramework
+namespace Core.QFramework.Toolkits.SupportOldQF.UIKitCreateService.Editor
 {
     public class UIKitCreateServiceView
     {
@@ -251,7 +252,7 @@ namespace QFramework
 
         class LocaleText
         {
-            public static string CreateUIPanel => LocaleKitEditor.IsCN.Value ? "创建 UI Panel" : "Create UI Panel";
+            public static string CreateUIPanel => LocaleKitEditor.IsCN.Value ? "创建 UI Panel" : "CreateOrAdd UI Panel";
             public static string ModuleFolder => LocaleKitEditor.IsCN.Value ? "模块目录:" : "Module Folder";
 
             public static string ResolutionOrMatchWidthOrHeight =>

@@ -1,7 +1,7 @@
 using Core.Root.Base;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
+namespace Core.Inventory_And_Item.Controllers
 {
     public class FollowPointer : MonoBehaviour
     {

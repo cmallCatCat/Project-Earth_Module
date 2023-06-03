@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
+using Core.Inventory_And_Item.Data.ItemInfos;
 
 namespace Mod
 {

@@ -249,7 +249,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""403fad8e-1823-4eb3-a662-789c95da5154"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Computer"",

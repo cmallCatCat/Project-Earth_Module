@@ -316,7 +316,7 @@
             public class MyComponent : MonoBehaviour
             {
             	[Button]
-            	private void Create()
+            	private void CreateOrAdd()
             	{
             		// ...
             	}
@@ -5154,7 +5154,7 @@
         </member>
         <member name="M:Sirenix.OdinInspector.ToggleAttribute.#ctor(System.String)">
             <summary>
-            Create a togglable property in the inspector.
+            CreateOrAdd a togglable property in the inspector.
             </summary>
             <param name="toggleMemberName">Name of any bool field or property to enable or disable the object.</param>
         </member>

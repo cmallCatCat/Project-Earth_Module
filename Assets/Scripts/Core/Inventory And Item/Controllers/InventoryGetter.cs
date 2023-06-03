@@ -1,10 +1,8 @@
-﻿using System;
-using Core.Root.Expand;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+﻿using Core.Inventory_And_Item.Data;
 using QFramework;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
+namespace Core.Inventory_And_Item.Controllers
 {
     public abstract class InventoryGetter : MonoBehaviour, IController
     {

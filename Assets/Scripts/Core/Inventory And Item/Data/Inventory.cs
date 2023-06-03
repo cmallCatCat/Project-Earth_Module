@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
-using InventoryAndItem.Core.Inventory_And_Item.Filters;
+using Core.Inventory_And_Item.Data.ItemInfos;
+using Core.Inventory_And_Item.Filters;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data
+namespace Core.Inventory_And_Item.Data
 {
     public delegate void OnInventoryChanged();
 

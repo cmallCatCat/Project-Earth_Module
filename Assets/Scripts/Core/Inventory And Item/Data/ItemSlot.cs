@@ -1,11 +1,11 @@
 ﻿#nullable enable
 using System;
+using Core.Inventory_And_Item.Data.ItemInfos;
+using Core.Inventory_And_Item.Filters;
 using Core.Root.Utilities;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
-using InventoryAndItem.Core.Inventory_And_Item.Filters;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data
+namespace Core.Inventory_And_Item.Data
 {
     [Serializable]
     public class ItemSlot : ISerializationCallbackReceiver

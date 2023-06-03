@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 3848025251
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f616df722a1ff77ba89c1f7ff2faecb4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ee50d03d70d22711f3648d024fdf5101
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 033893a720ab43b88e5f43eb177c79f8, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefabs/ItemPickerPrefab.prefab
+Dependencies: []

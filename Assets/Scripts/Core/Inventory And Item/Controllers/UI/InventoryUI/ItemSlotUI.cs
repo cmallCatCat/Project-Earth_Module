@@ -1,14 +1,14 @@
-using InventoryAndItem.Core.Inventory_And_Item.Command;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
+using Core.Inventory_And_Item.Data;
 using QFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
+namespace Core.Inventory_And_Item.Controllers.UI.InventoryUI
 {
-    public abstract class ItemSlotUI : MonoBehaviour, IController, IPointerClickHandler
+    public abstract partial class ItemSlotUI : MonoBehaviour, IController, IPointerClickHandler, IScrollHandler,
+        IPointerEnterHandler, IPointerExitHandler
     {
         public InventoryUIPanel inventoryUIPanel;
 
@@ -62,36 +62,6 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
             if (itemStackUI != null) itemStackUI.Refresh();
         }
 
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            if (eventData.button == PointerEventData.InputButton.Left)
-            {
-                if (inventoryUIPanel.SelectableNow)
-                {
-                    this.SendCommand(new SelectItemCommand(this));
-                }
-                else
-                {
-                    if (PointerStack.Instance.itemOnHold)
-                    {
-                        if (itemStackUI == null)
-                            this.SendCommand(new TryDropStackOnEmptySlotCommand(this));
-                        else
-                            this.SendCommand(new TryDropStackOnNonemptyCommand(this));
-                    }
-                    else
-                    {
-                        if (itemStackUI != null) this.SendCommand(new TryHoldStackCommand(this));
-                    }
-                }
-            }
-            else if (eventData.button == PointerEventData.InputButton.Right)
-            {
-                if (!inventoryUIPanel.SelectableNow && !PointerStack.Instance.itemOnHold && itemStackUI != null)
-                    this.SendCommand(new TrySplitStackCommand(this));
-            }
-        }
-
         private void Awake()
         {
             backgroundImage = GetComponent<Image>();
@@ -99,27 +69,5 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
         }
 
         public abstract IArchitecture GetArchitecture();
-    }
-
-    public class TrySplitStackCommand : AbstractCommand
-    {
-        private readonly ItemSlotUI itemSlotUI;
-
-        public TrySplitStackCommand(ItemSlotUI itemSlotUI)
-        {
-            this.itemSlotUI = itemSlotUI;
-        }
-
-        protected override void OnExecute()
-        {
-            ItemStack stack = itemSlotUI.ItemSlot.ItemStack;
-            if (stack != null)
-            {
-                ItemStack removed = new ItemStack(stack.ItemInfo, stack.ItemDecorator,
-                    Mathf.CeilToInt(stack.Number / 2.0f), stack.Transform);
-                itemSlotUI.Inventory.Remove(removed, itemSlotUI.InventoryIndex);
-                PointerStack.Instance.Create(removed);
-            }
-        }
     }
 }

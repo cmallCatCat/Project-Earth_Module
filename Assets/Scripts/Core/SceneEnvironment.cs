@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.Inventory_And_Item.Data;
 using Core.Root.Base;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
 using QFramework;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -12,11 +12,7 @@ namespace Core
     public class SceneEnvironment : IEnvironment
     {
         private Dictionary<Type, List<MonoBehaviour>> data = new Dictionary<Type, List<MonoBehaviour>>();
-
-        protected override Camera     GetUICamera => UIRoot.Instance.UICamera;
-        protected override GameObject GetPlayer   => GameObject.FindGameObjectWithTag("Player");
-        public override    Canvas     UICanvas    => UIRoot.Instance.Canvas;
-
+        
         public override GameObject Instantiate(GameObject toCreate, bool useObjectPool, Vector2 getPosition,
             Quaternion                                    getRotation)
         {

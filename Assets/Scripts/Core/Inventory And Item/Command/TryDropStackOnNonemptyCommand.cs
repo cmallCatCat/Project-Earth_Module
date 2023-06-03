@@ -1,11 +1,10 @@
 #nullable enable
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI.Singles;
+using Core.Inventory_And_Item.Data;
 using QFramework;
-using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Command
+namespace Core.Inventory_And_Item.Command
 {
     public class TryDropStackOnNonemptyCommand : AbstractCommand
     {
@@ -18,13 +17,11 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
 
         protected override void OnExecute()
         {
-            PointerStack toDrop            = PointerStack.Instance;
-            Inventory    inventory         = itemSlotUI.Inventory;
-            int          index             = itemSlotUI.InventoryIndex;
-            ItemSlot     itemSlot          = inventory.GetSlot(index);
-            ItemStack    clone = toDrop.Clone();
-
-            if (!itemSlot.Match(clone)) return;
+            PointerStack toDrop    = PointerStack.Instance;
+            Inventory    inventory = itemSlotUI.Inventory;
+            int          index     = itemSlotUI.InventoryIndex;
+            ItemSlot     itemSlot  = inventory.GetSlot(index);
+            ItemStack    clone     = toDrop.Clone();
 
             int finalAddNumber = itemSlot.CanAddNumberFinal(toDrop.Clone());
             if (finalAddNumber > 0)
@@ -38,7 +35,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Command
             inventory.Remove(index);
             inventory.Add(clone, index);
             toDrop.RemoveAll();
-            toDrop.Create(swapStack);
+            toDrop.CreateOrAdd(swapStack);
         }
     }
 }

@@ -1,5 +1,5 @@
 using Core.Architectures;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI;
 using QFramework;
 
 namespace UI.GameExample

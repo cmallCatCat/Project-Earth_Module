@@ -1,8 +1,8 @@
 using Core.Architectures;
+using Core.Inventory_And_Item.Data.ItemInfos;
+using Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
+using Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using Core.Root.Utilities;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using QFramework;
 using UnityEngine;
 

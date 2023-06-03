@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3472271836
+CRC: 305505243
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: aa4069240484f62f2e91bc90f4fc0307
+    Hash: d47caf0a79124b54f3eb44e37231ceab
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4fa177c9a0a17ab5b029488784366b02
+    Hash: 5bb6b626af9446d41fd9280e88a51a90
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -17,8 +17,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
-- Class: 58
-  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: e564b6f283984811a2cd0bf750794246, type: 3}
 - Class: 114
@@ -27,6 +25,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 2a66f5030323458eb53dd4e5a02e3fa7, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: c735b43d62324a8a8cff038a18d03052, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 976249fd5d21418db1a2f6312b16d0e8, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -34,8 +34,8 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
-- AssemblyName: InventoryAndItem
-  ClassName: InventoryAndItem.Core.Inventory_And_Item.Data.Inventory
+- AssemblyName: Assembly-CSharp
+  ClassName: Core.Inventory_And_Item.Data.Inventory
 Assets:
 - Assets/Prefabs/Player.prefab
 Dependencies:

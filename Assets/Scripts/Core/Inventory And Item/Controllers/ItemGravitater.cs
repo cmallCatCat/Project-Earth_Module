@@ -1,7 +1,7 @@
 using QFramework;
 using UnityEngine;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers
+namespace Core.Inventory_And_Item.Controllers
 {
     public abstract class ItemGravitater : MonoBehaviour, IController
     {

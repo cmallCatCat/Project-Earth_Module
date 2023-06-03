@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
+namespace Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
 {
     public static class CounterManager
     {

@@ -1,6 +1,6 @@
 using Core;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI;
 using Core.Root.Base;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
 using QFramework;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -20,14 +20,33 @@ namespace UI
             ResKit.Init();
             UIController.Instance.CloseAllPanel();
             IEnvironment.Instance.MainCamera.GetUniversalAdditionalCameraData().cameraStack.Add(IEnvironment.Instance.UiCamera);
+            InputReader.openBackpack += OpenBackpackAndOthers;
+            InputReader.closeBackpack += CloseBackpackAndOthers;
         }
+
+        private void OpenBackpackAndOthers()
+        {
+            OpenBackpackUI();
+            OpenEquipmentUI();
+            InputReader.InputPause();
+            UIController.Instance.IsPaused = true;
+        }
+        
+        private void CloseBackpackAndOthers()
+        {
+            CloseBackpackUI();
+            CloseEquipmentUI();
+            InputReader.InputResume();
+            UIController.Instance.IsPaused = false;
+        }
+        
 
         public void OpenBackpackUI()
         {
             InventoryUISetting inventoryUISetting
                 = resLoader.LoadSync<InventoryUISetting>(QAssetBundle.Backpack_inventoryuisetting_asset
                     .BACKPACK_INVENTORYUISETTING);
-            GameObject instancePlayer = IEnvironment.Instance.Player;
+            GameObject instancePlayer = IEnvironment.Player;
             UIController.Instance.OpenPanel<InventoryUIPanel>(
                 new InventoryUIPanelData(
                     instancePlayer.GetComponentInChildren<InventoryHolderExample>().Inventory,
@@ -48,7 +67,7 @@ namespace UI
             InventoryUISetting inventoryUISetting
                 = resLoader.LoadSync<InventoryUISetting>(QAssetBundle.Shoutcut_inventoryuisetting_asset
                     .SHOUTCUT_INVENTORYUISETTING);
-            GameObject instancePlayer = IEnvironment.Instance.Player;
+            GameObject instancePlayer = IEnvironment.Player;
             UIController.Instance.OpenPanel<InventoryUIPanel>(
                 new InventoryUIPanelData(
                     instancePlayer.GetComponentInChildren<InventoryHolderExample>().Inventory,
@@ -69,7 +88,7 @@ namespace UI
             InventoryUISetting equipmentUISetting
                 = resLoader.LoadSync<InventoryUISetting>(QAssetBundle.Equipment_inventoryuisetting_asset
                     .EQUIPMENT_INVENTORYUISETTING);
-            GameObject instancePlayer = IEnvironment.Instance.Player;
+            GameObject instancePlayer = IEnvironment.Player;
             UIController.Instance.OpenPanel<InventoryUIPanel>(
                 new InventoryUIPanelData(
                     instancePlayer.GetComponentInChildren<EquipmentHolderExample>().Inventory,
@@ -78,6 +97,21 @@ namespace UI
                 EquipmentUiPanel,
                 PanelOpenType.Multiple
             );
+        }
+
+        public void CloseEquipmentUI()
+        {
+            UIController.Instance.ClosePanel(EquipmentUiPanel);
+        }
+
+        public void OpenItemInfoUI(ItemSlotUI itemSlotUI)
+        {
+            Debug.Log("OpenItemInfoUI"+((RectTransform)itemSlotUI.transform).rect);
+        }
+
+        public void CloseItemInfoUI()
+        {
+            Debug.Log("CloseItemInfoUI");
         }
 
 

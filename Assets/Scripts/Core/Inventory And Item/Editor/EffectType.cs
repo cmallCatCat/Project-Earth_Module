@@ -1,5 +1,5 @@
-﻿#if UNITY_EDITOR
-namespace InventoryAndItem.Core.Inventory_And_Item.Editor
+﻿
+namespace Core.Inventory_And_Item.Editor
 {
     public enum EffectType
     {
@@ -13,4 +13,3 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Editor
         SequenceEffect
     }
 }
-#endif

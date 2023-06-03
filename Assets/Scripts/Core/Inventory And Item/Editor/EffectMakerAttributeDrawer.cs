@@ -1,10 +1,9 @@
-#if UNITY_EDITOR
 using System;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Editor
+namespace Core.Inventory_And_Item.Editor
 {
     [CustomPropertyDrawer(typeof(EffectGeneratorAttribute))]
     public class EffectMakerAttributeDrawer : PropertyDrawer
@@ -66,4 +65,3 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Editor
         
     }
 }
-#endif

@@ -1,7 +1,7 @@
-using InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI;
+using Core.Inventory_And_Item.Controllers.UI.InventoryUI;
 using QFramework;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Command
+namespace Core.Inventory_And_Item.Command
 {
     public class SelectItemCommand : AbstractCommand
     {

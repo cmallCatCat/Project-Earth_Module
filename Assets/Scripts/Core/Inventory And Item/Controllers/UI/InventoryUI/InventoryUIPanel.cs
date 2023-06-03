@@ -1,12 +1,10 @@
-using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
-using Core.Root.Utilities;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data;
 using QFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
+namespace Core.Inventory_And_Item.Controllers.UI.InventoryUI
 {
     public class InventoryUIPanelData : UIPanelData
     {
@@ -36,7 +34,7 @@ namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
 
         private int selectedIndex;
 
-        public bool SelectableNow => inventoryUISetting.selectable && !UIController.Instance.isPaused;
+        public bool SelectableNow => inventoryUISetting.selectable && !UIController.Instance.IsPaused;
 
         public int SelectedIndex
         {

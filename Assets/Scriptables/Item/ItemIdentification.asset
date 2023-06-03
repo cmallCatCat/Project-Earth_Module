@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Unnamed Item
   itemDescription: UnDefined Item Description
-  maxStack: 2
+  maxStack: 10
   spriteIcon: {fileID: 21300000, guid: a09c527bdb8482776884f3a2bce8a3b6, type: 3}
   spriteInGame: {fileID: 21300000, guid: e0ff88fdd6449f445a0cc86fda1366d4, type: 3}
   itemFeatures: []

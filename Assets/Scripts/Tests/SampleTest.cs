@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using Core;
 using Core.Architectures;
+using Core.Inventory_And_Item.Controllers;
+using Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data.ItemInfos;
 using Core.Root.Base;
-using InventoryAndItem.Core.Inventory_And_Item.Controllers;
-using InventoryAndItem.Core.Inventory_And_Item.Data;
-using InventoryAndItem.Core.Inventory_And_Item.Data.ItemInfos;
+using Core.Root.Utilities;
 using QAssetBundle;
 using QFramework;
 using UI;
@@ -21,18 +23,26 @@ namespace Tests
         private void Awake()
         {
             ResKit.Init();
+            InputReader.Init();
 
             GameObject pickerPrefab = resLoader.LoadSync<GameObject>(Itempickerprefab_prefab.ITEMPICKERPREFAB);
             GameObject instantiate
                 = IEnvironment.Instance.Instantiate(pickerPrefab, false, new Vector3(10, 0, 0), Quaternion.identity);
             instantiate.GetComponent<ItemPicker>().Init(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
+
+            // TimeScaleModifier timeScaleModifier= new TimeScaleModifier("Test", 0.1f);
+            // TimeScaleManager.Instance.AddModifier(timeScaleModifier);
+            // TimeScaleManager.Instance.RemoveModifier(timeScaleModifier);
         }
+
+        TimeScaleModifier timeScaleModifier = new TimeScaleModifier("Test", 0.1f);
+
 
         private void OnGUI()
         {
             if (GUILayout.Button("创建"))
             {
-                if (IEnvironment.Instance.Player != null) throw new Exception("Player is already created");
+                if (IEnvironment.Player != null) throw new Exception("Player is already created");
 
                 GameObject loadSync = resLoader.LoadSync<GameObject>(Player_prefab.PLAYER);
                 GameObject instantiate
@@ -41,20 +51,16 @@ namespace Tests
             }
 
             if (GUILayout.Button("添加"))
-                IEnvironment.Instance.Player.GetComponentInChildren<InventoryHolderExample>().Inventory
+                IEnvironment.Player.GetComponentInChildren<InventoryHolderExample>().Inventory
                     .Add(new ItemStack(itemInfo, new ItemDecorator(), 1, transform));
 
-            if (GUILayout.Button("打开"))
+            if (GUILayout.Button("慢镜头"))
             {
-                GameUI.Instance.OpenBackpackUI();
-                GameUI.Instance.OpenEquipmentUI();
-                UIController.Instance.isPaused = true;
+                StartCoroutine(TimeScaleManager.Instance.ApplySlowMotion(timeScaleModifier));
             }
-
-            if (GUILayout.Button("关闭"))
+            if (GUILayout.Button("慢镜头移除"))
             {
-                GameUI.Instance.CloseBackpackUI();
-                UIController.Instance.isPaused = false;
+                StartCoroutine(TimeScaleManager.Instance.RemoveSlowMotion(timeScaleModifier));
             }
         }
 

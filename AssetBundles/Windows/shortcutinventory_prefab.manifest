@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1389134887
+CRC: 80455536
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7427855b7182ba7eaa1abb5c5e74a39e
+    Hash: e7f22d27256b54477010096cf9b0ea47
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 0548e16043f781b9ab712f07abaa1cb6
+    Hash: 703f126fba184ed96243e61d4bfa4467
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -19,6 +19,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 2f71bddc5a4d49ab87892f5be5a5a301, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0fef27dcab6d477182590735900bd7f5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 805843062ced4a605a9cb048f70b828a, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 222
@@ -26,8 +28,8 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
-- AssemblyName: InventoryAndItem
-  ClassName: InventoryAndItem.Core.Inventory_And_Item.Data.Inventory
+- AssemblyName: Assembly-CSharp
+  ClassName: Core.Inventory_And_Item.Data.Inventory
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
 - AssemblyName: UnityEngine.CoreModule
@@ -36,5 +38,4 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
 - Assets/Art/UIPrefab/Game/InventoryUIPanel.prefab
-Dependencies:
-- D:/Unity/Project-Earth_Module/AssetBundles/Windows/stack_prefab
+Dependencies: []

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3296945740
+CRC: 849851077
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -11,8 +11,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_2:
       Name: shortcutinventory_prefab
-      Dependencies:
-        Dependency_0: stack_prefab
+      Dependencies: {}
     Info_3:
       Name: new item database_asset
       Dependencies: {}
@@ -24,4 +23,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_6:
       Name: backpack_inventoryuisetting_asset
+      Dependencies: {}
+    Info_7:
+      Name: itempickerprefab_prefab
+      Dependencies: {}
+    Info_8:
+      Name: equipment_inventoryuisetting_asset
       Dependencies: {}

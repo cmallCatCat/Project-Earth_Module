@@ -1,10 +1,10 @@
-using InventoryAndItem.Core.Inventory_And_Item.Data;
+using Core.Inventory_And_Item.Data;
 using QFramework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace InventoryAndItem.Core.Inventory_And_Item.Controllers.UI.InventoryUI
+namespace Core.Inventory_And_Item.Controllers.UI.InventoryUI
 {
     public abstract class ItemStackUI : MonoBehaviour, IController
     {

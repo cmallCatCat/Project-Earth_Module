@@ -24,10 +24,11 @@ MonoBehaviour:
     m_Bottom: 5
   spacing: {x: 5, y: 5}
   slotSize: {x: 50, y: 50}
-  anchoredPosition: {x: 0, y: 0}
-  anchorMin: {x: 0.5, y: 0}
-  anchorMax: {x: 0.5, y: 0}
+  anchoredPosition: {x: 0.5, y: 0}
+  anchor: {x: 0.5, y: 0}
   pivot: {x: 0.5, y: 0}
   panelBackground: {fileID: 21300000, guid: 67a4cb856f5531b8684b15e55d0ab592, type: 3}
-  slotBackground: {fileID: 21300000, guid: b0822edacc9499397b437ec96c7bf21a, type: 3}
-  slotSelectedBackground: {fileID: 0}
+  slotDefaultBackground: {fileID: 0}
+  slotSelectedBackground: {fileID: 21300000, guid: 707c620eb29e2e4e9a7cbd97f4b82989, type: 3}
+  slotBackground:
+    _serializedList: []

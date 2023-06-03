@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3562493516
+CRC: 1577261608
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1338b618d085e89deb8ac71549621722
+    Hash: 98881d3b9c39bf3834ba4b7d98a315f6
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7da7f5707842c0a3c677a89d68e13992
+    Hash: 6d32a9d41b98a32194b545f80326e254
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -18,6 +18,8 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: AYellowpaper.SerializedCollections
+  ClassName: AYellowpaper.SerializedCollections.SerializedDictionary`2[System.Int32,UnityEngine.Sprite]
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.RectOffset
 Assets:
