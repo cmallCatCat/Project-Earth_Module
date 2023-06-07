@@ -8,61 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5acd522d-d7b8-4e60-8def-ec7cabe74ab9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/PositionUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/RotationUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/Accessory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/Accessory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/OnBody.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/OnBody.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/OnHead.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/OnHead.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/OnLegs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/OnLegs.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ModItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ModItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/SampleItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/SampleItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/SampleModItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/SampleModItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/GameObjectPool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/GameObjectPool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/RandomUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/RandomUtility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/TargetSelector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/TargetSelector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/VoronoiMapGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/VoronoiMapGenerator.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project-Earth_Module/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/Item/OnHead.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/Item/OnHead.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/Item/OnHead.equipOn=DelayEffect.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptables/Item/OnHead.equipOn=DelayEffect.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/CreateGameObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/CreateGameObject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/DelayEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/DelayEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/Effect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/Effect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/LogEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/LogEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/LoopEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/LoopEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/ParallelEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/ParallelEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/Position.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/Position.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/PositionUtility.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/RandomEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/RandomEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/Reference.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/Reference.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/Rotation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/Rotation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/RotationUtility.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/SequenceEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/SequenceEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/Equipment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/Equipment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/ItemFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/ItemFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/TimeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/TimerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/TimeManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/TimerManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/TimeScaleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/TimeScaleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mod/ModLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mod/ModLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/EffectTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/EffectTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/EffectGeneratorAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/EffectGeneratorAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/PositionUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/PositionUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/PositionUtility.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/PositionUtility.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/RotationUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/RotationUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/RotationUtility.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Root/Utilities/RotationUtility.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Editor/EffectMakerAttributeDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Editor/EffectMakerAttributeDrawer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/PositionTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/PositionTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +52,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/46b1d98d2dd74f23b6cebf5354de98851f800/de/20d8617a/Collider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/895d69c8bbd742ea97f1cc362dee7e19180000/4f/d8497e21/IInputActionCollection2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/895d69c8bbd742ea97f1cc362dee7e19180000/91/081a44a1/Key.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/10/594b5b83/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/22/592072a0/Boolean.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/41/9e696ae8/FileStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93a8f82184b4439ca5abff025375fe32564da0/57/cf491258/Object.cs" root0="SKIP_HIGHLIGHTING" />
@@ -105,12 +66,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f97e358e7a5e4bf5ba1b3e551d91914610fc00/95/35701962/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFrameworkData/QAssets.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Controllers/ItemPicker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemEffects/LoopEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemFeatures/Equipment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemInfos/ItemIdentification.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Data/ItemStack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/EffectType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory And Item/Editor/EffectType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Toolkits/UIKit/Scripts/Custom/ResKitUIPanelTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Toolkits/UIKit/Scripts/Custom/UIKitWithResKitInit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/QFramework/Toolkits/_CoreKit/FluentAPI/0.Unity/0.UnityEngineObjectExtension.cs" root0="FORCE_HIGHLIGHTING" />
@@ -314,7 +274,8 @@
       <workItem from="1685459107474" duration="10023000" />
       <workItem from="1685714216666" duration="37811000" />
       <workItem from="1685808866349" duration="775000" />
-      <workItem from="1685809883648" duration="14142000" />
+      <workItem from="1685809883648" duration="19195000" />
+      <workItem from="1685974298162" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="修改保存系统">
       <created>1681228006809</created>

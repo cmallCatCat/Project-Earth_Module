@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Core.Inventory_And_Item.Data.ItemInfos.ItemEffects
+namespace Core.Root.Utilities
 {
     public static class RotationUtility
     {
