@@ -14,9 +14,9 @@ namespace Core.Inventory_And_Item.Controllers.UI.InventoryUI
 
         public int displayIndex;
 
-        public Inventory Inventory => inventoryUIPanel.inventory;
+        public Inventory Inventory => inventoryUIPanel.Inventory;
 
-        public ItemSlot ItemSlot => Inventory.GetSlot(InventoryIndex);
+        public ItemSlot ItemSlot => Inventory.Slots[InventoryIndex];
 
         public int InventoryIndex => displayIndex + inventoryUIPanel.inventoryUISetting.startIndex;
 

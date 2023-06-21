@@ -27,7 +27,7 @@ namespace Core.Inventory_And_Item.Data
 
         public ItemInfo FindItem(ItemIdentification itemIdentification)
         {
-            return packageList[itemIdentification.packageName][itemIdentification.name];
+            return packageList[itemIdentification.PackageName][itemIdentification.Name];
         }
 
 
@@ -48,8 +48,8 @@ namespace Core.Inventory_And_Item.Data
 
         public bool Delete(ItemIdentification itemIdentification)
         {
-            string packageName = itemIdentification.packageName;
-            string itemName    = itemIdentification.name;
+            string packageName = itemIdentification.PackageName;
+            string itemName    = itemIdentification.Name;
 
             if (!packageList.ContainsKey(packageName))
             {
@@ -69,8 +69,8 @@ namespace Core.Inventory_And_Item.Data
 
         public bool Change(ItemIdentification itemIdentification, ItemInfo itemInfo)
         {
-            string packageName = itemIdentification.packageName;
-            string itemName    = itemIdentification.name;
+            string packageName = itemIdentification.PackageName;
+            string itemName    = itemIdentification.Name;
 
             if (!packageList.ContainsKey(packageName))
             {

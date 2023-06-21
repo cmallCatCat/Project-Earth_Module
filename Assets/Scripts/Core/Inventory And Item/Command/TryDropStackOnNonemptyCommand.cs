@@ -20,7 +20,7 @@ namespace Core.Inventory_And_Item.Command
             PointerStack toDrop    = PointerStack.Instance;
             Inventory    inventory = itemSlotUI.Inventory;
             int          index     = itemSlotUI.InventoryIndex;
-            ItemSlot     itemSlot  = inventory.GetSlot(index);
+            ItemSlot     itemSlot  = inventory.Slots[index];
             ItemStack    clone     = toDrop.Clone();
 
             int finalAddNumber = itemSlot.CanAddNumberFinal(toDrop.Clone());

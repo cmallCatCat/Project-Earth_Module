@@ -5,6 +5,7 @@ using System.Linq;
 using Core.Inventory_And_Item.Data.ItemInfos;
 using Core.Inventory_And_Item.Filters;
 using UnityEngine;
+using UnityEngine.InputSystem.Utilities;
 
 namespace Core.Inventory_And_Item.Data
 {
@@ -22,8 +23,8 @@ namespace Core.Inventory_And_Item.Data
         private Transform transform;
 
         public event OnInventoryChanged? onItemChanged;
-
-        public int Capacity => capacity;
+        
+        public ReadOnlyArray<ItemSlot> Slots => itemSlots;
 
 
         public Inventory(int capacity, Transform transform)
@@ -219,10 +220,6 @@ namespace Core.Inventory_And_Item.Data
 
 
         #region 查
-        public ItemSlot GetSlot(int index)
-        {
-            return itemSlots[index];
-        }
 
         public (ItemSlot?, int) SearchFirstMatchedItem(ItemFilter filter)
         {
@@ -269,10 +266,7 @@ namespace Core.Inventory_And_Item.Data
             return slots.ToArray();
         }
 
-        public ItemSlot[] AllSlots()
-        {
-            return itemSlots;
-        }
+    
 
         public int CanAddNumber(ItemInfo itemInfo, ItemDecorator itemDecorator)
         {

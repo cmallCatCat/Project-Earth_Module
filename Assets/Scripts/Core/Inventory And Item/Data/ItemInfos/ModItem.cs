@@ -11,13 +11,12 @@ namespace Core.Inventory_And_Item.Data.ItemInfos
         protected override void Awake()
         {
             base.Awake();
-            itemName        = GetItemName();
-            packageName     = GetPackageName();
-            itemDescription = GetDescription();
-            maxStack        = GetMaxStack();
-            spriteIcon      = SpriteLoader.LoadSprite(PLUGINS_PATH + GetSpriteIconPath());
-            spriteInGame    = SpriteLoader.LoadSprite(PLUGINS_PATH + GetSpriteInGamePath());
-            itemFeatures    = GetItemFeatures();
+            ItemIdentification = new ItemIdentification(GetPackageName(), GetItemName());
+            itemDescription    = GetDescription();
+            maxStack           = GetMaxStack();
+            spriteIcon         = SpriteLoader.LoadSprite(PLUGINS_PATH + GetSpriteIconPath());
+            spriteInGame       = SpriteLoader.LoadSprite(PLUGINS_PATH + GetSpriteInGamePath());
+            itemFeatures       = GetItemFeatures();
         }
 
         ///模组名，用于区分同名的不同物品

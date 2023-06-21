@@ -35,14 +35,14 @@ namespace Core.Inventory_And_Item.Data
             
             for (int i = 0; i < itemFilters.Length; i++)
             {
-                Inventory.GetSlot(i).SetItemInfoFilter(itemFilters[i]);
+                Inventory.Slots[i].SetItemInfoFilter(itemFilters[i]);
             }
         }
 
         public ItemStack[] Get<T>() where T : Equipment
         {
             string feature = typeof(T).FullName;
-            return Inventory.AllSlots()
+            return Inventory.Slots
                 .Where(slot => slot.ItemFilter.strings.Contains(feature) && slot.ItemStack != null)
                 .Select(slot => slot.ItemStack).ToArray();
         }

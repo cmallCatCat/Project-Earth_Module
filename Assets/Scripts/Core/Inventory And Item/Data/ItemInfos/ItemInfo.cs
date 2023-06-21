@@ -3,16 +3,16 @@ using System;
 using System.Linq;
 using Core.Inventory_And_Item.Data.ItemInfos.ItemFeatures;
 using Core.Root.Utilities;
+using Sirenix.OdinInspector;
+using UnityEditor;
 using UnityEngine;
 
 namespace Core.Inventory_And_Item.Data.ItemInfos
 {
     public abstract class ItemInfo : ScriptableObject
     {
-        protected string packageName = "Default";
-
         [SerializeField]
-        protected string itemName = "Unnamed Item";
+        protected ItemIdentification ItemIdentification = new ItemIdentification("Default", "UnDefined Item Name");
 
         [SerializeField]
         [TextArea]
@@ -31,17 +31,16 @@ namespace Core.Inventory_And_Item.Data.ItemInfos
 
         
 
-        public string        PackageName     => packageName;
-        public string        ItemName        => itemName;
+        public string        PackageName     => ItemIdentification.PackageName;
+        public string        ItemName        => ItemIdentification.Name;
         public string        ItemDescription => itemDescription;
         public int           MaxStack        => maxStack;
         public Sprite?       SpriteIcon      => spriteIcon;
         public Sprite?       SpriteInGame    => spriteInGame;
-        public ItemFeature[] ItemFeatures    => itemFeatures;
 
         public override string ToString()
         {
-            return "PackageName: " + packageName + ", ItemName: " + itemName + ", ItemDescription: " + itemDescription +
+            return "PackageName: " + PackageName + ", ItemName: " + ItemName + ", ItemDescription: " + itemDescription +
                    ", MaxStack: " + maxStack;
         }
 
